@@ -18,16 +18,13 @@ public class PlayerLook : MonoBehaviour
 
     [Header("Camera")]
     [SerializeField] private float xRotation;
-    [SerializeField] private float yRotation;
-
-    [SerializeField] AntMovement antmovement;
+    [SerializeField] private float yRotation;    
     
     
     private void Start()
     {        
         Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
-        antmovement = GetComponent<AntMovement>();
+        Cursor.visible = false;        
     }
 
     private void Update()

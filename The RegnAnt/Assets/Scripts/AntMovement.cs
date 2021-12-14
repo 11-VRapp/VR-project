@@ -17,11 +17,8 @@ public class AntMovement : MonoBehaviour
     [Header("Slope variables")]        
     [SerializeField] private float _gravity = 10f;  //fixa il fatto che il player parte verso l'alto tenendolo incollato alla superficie
     private Vector3 _slopeMoveDirection;
-    RaycastHit hitGround;
-    RaycastHit hitWall;
-
-    [SerializeField] private Transform _groundCheckPosition;
-    
+    private RaycastHit _hitGround;
+    [SerializeField] private Transform _groundCheckPosition;    
 
     private Rigidbody _rb;        
 
@@ -34,8 +31,7 @@ public class AntMovement : MonoBehaviour
     private void Update()
     {
         MyInput();
-
-        _slopeMoveDirection = Vector3.ProjectOnPlane(_moveDirection, hitGround.normal);        
+        _slopeMoveDirection = Vector3.ProjectOnPlane(_moveDirection, _hitGround.normal);        
     }
 
     void MyInput()
@@ -58,7 +54,7 @@ public class AntMovement : MonoBehaviour
         if (Input.GetKey(KeyCode.Space)) 
         {           
             _falling = true;            
-            var hitRotation = Quaternion.FromToRotation(Vector3.up, Vector3.up);            
+            Quaternion hitRotation = Quaternion.FromToRotation(Vector3.up, Vector3.up);            
             transform.rotation = Quaternion.Slerp(transform.rotation, hitRotation, 0.3f); 
         }          
 
@@ -75,26 +71,28 @@ public class AntMovement : MonoBehaviour
 
     private void groundCheck() //fattibile con sphere collider?
     {     
-        if(Physics.SphereCast(_groundCheckPosition.position, 1f, -transform.up, out hitGround, 3f)) 
+        if(Physics.SphereCast(_groundCheckPosition.position, 1f, -transform.up, out _hitGround, 3f)) 
         {
             _falling = false;
             moveSpeed = 3f;
-
-            Debug.Log("GroundDet " + hitGround.transform.gameObject.name);
-            var hitRotation = Quaternion.FromToRotation(Vector3.up, hitGround.normal);            
-            transform.rotation = Quaternion.Slerp(transform.rotation, hitRotation, _rotateSpeed);  
+            
+            rotateToSurfaceNormal(_hitGround.normal, _rotateSpeed);
         }                   
     }  
 
     private void wallCheck() 
     {     
-        if(Physics.SphereCast(transform.position, 0.5f, orientation.forward, out hitWall, 1f) || Physics.SphereCast(transform.position, 0.5f, -orientation.forward, out hitWall, 0.5f)) //only forward/back check
-        {            
-            Debug.Log("WallDet " + hitWall.transform.gameObject.name);
-            var hitRotation = Quaternion.FromToRotation(Vector3.up, hitWall.normal);            
-            transform.rotation = Quaternion.Slerp(transform.rotation, hitRotation, _rotateSpeed);  
-        }                   
+        if(Physics.SphereCast(transform.position, 0.5f, orientation.forward, out _hitGround, 1f) 
+        || Physics.SphereCast(transform.position, 0.5f, -orientation.forward, out _hitGround, 0.5f)) //only forward/back check
+           rotateToSurfaceNormal(_hitGround.normal, _rotateSpeed);
+                          
     }  
+
+    private void rotateToSurfaceNormal(Vector3 vectorToReach, float speed)
+    {
+        Quaternion hitRotation = Quaternion.FromToRotation(Vector3.up, vectorToReach);            
+        transform.rotation = Quaternion.Slerp(transform.rotation, hitRotation, speed); 
+    }
 
     void OnDrawGizmosSelected()
     {
