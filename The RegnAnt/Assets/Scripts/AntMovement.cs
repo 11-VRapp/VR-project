@@ -17,6 +17,7 @@ public class AntMovement : MonoBehaviour
     [Header("Slope variables")]        
     [SerializeField] private float _gravity = 10f;  //fixa il fatto che il player parte verso l'alto tenendolo incollato alla superficie
     private Vector3 _slopeMoveDirection;
+    RaycastHit hitGround;
     RaycastHit hitWall;
 
     [SerializeField] private Transform _groundCheckPosition;
@@ -34,7 +35,7 @@ public class AntMovement : MonoBehaviour
     {
         MyInput();
 
-        _slopeMoveDirection = Vector3.ProjectOnPlane(_moveDirection, hitWall.normal);        
+        _slopeMoveDirection = Vector3.ProjectOnPlane(_moveDirection, hitGround.normal);        
     }
 
     void MyInput()
@@ -48,6 +49,7 @@ public class AntMovement : MonoBehaviour
     private void FixedUpdate()
     {
         groundCheck();
+        wallCheck();
         MovePlayer();        
     }
 
@@ -71,14 +73,24 @@ public class AntMovement : MonoBehaviour
        
     }
 
-    private void groundCheck()
+    private void groundCheck() //fattibile con sphere collider?
     {     
-        if(Physics.SphereCast(_groundCheckPosition.position, 1f, -transform.up, out hitWall, 3f)) 
+        if(Physics.SphereCast(_groundCheckPosition.position, 1f, -transform.up, out hitGround, 3f)) 
         {
             _falling = false;
             moveSpeed = 3f;
 
-            Debug.Log("GroundDet " + hitWall.transform.gameObject.name);
+            Debug.Log("GroundDet " + hitGround.transform.gameObject.name);
+            var hitRotation = Quaternion.FromToRotation(Vector3.up, hitGround.normal);            
+            transform.rotation = Quaternion.Slerp(transform.rotation, hitRotation, _rotateSpeed);  
+        }                   
+    }  
+
+    private void wallCheck() 
+    {     
+        if(Physics.SphereCast(transform.position, 0.5f, orientation.forward, out hitWall, 1f) || Physics.SphereCast(transform.position, 0.5f, -orientation.forward, out hitWall, 0.5f)) //only forward/back check
+        {            
+            Debug.Log("WallDet " + hitWall.transform.gameObject.name);
             var hitRotation = Quaternion.FromToRotation(Vector3.up, hitWall.normal);            
             transform.rotation = Quaternion.Slerp(transform.rotation, hitRotation, _rotateSpeed);  
         }                   
