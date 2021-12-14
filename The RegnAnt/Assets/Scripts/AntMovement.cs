@@ -13,14 +13,13 @@ public class AntMovement : MonoBehaviour
     private float _verticalMovement;
     private Vector3 _moveDirection;       
 
-    [Header("Slope variables")]
-    private Vector3 _slopeMoveDirection;
+    [Header("Slope variables")]    
     [SerializeField] private float _playerHeight = 0.25f;
     [SerializeField] private float _stickyForce = 10f;  //fixa il fatto che il player parte verso l'alto tenendolo incollato alla superficie
+    private Vector3 _slopeMoveDirection;
     RaycastHit slopeHit;
 
-    private Rigidbody _rb;
-    private PlayerLook _pl;
+    private Rigidbody _rb;    
 
     private bool OnSlope()
     {
@@ -33,8 +32,7 @@ public class AntMovement : MonoBehaviour
 
     private void Start()
     {
-        _rb = GetComponent<Rigidbody>();
-        _pl = GetComponent<PlayerLook>();
+        _rb = GetComponent<Rigidbody>();       
         _rb.freezeRotation = true;
     }
     private void Update()
@@ -91,7 +89,7 @@ public class AntMovement : MonoBehaviour
             Debug.Log("GroundDet");
             var hitRotation = Quaternion.FromToRotation(Vector3.up, hitWall.normal);
             //transform.rotation = hitRotation;
-            transform.rotation = Quaternion.Slerp(transform.rotation, hitRotation, _rotateSpeed);
+            transform.rotation = Quaternion.Slerp(transform.rotation, hitRotation, _rotateSpeed);            
             _rb.useGravity = false; //riabilitarla quando non è grounded... quindi uno sphere raycast?
         }
         else 

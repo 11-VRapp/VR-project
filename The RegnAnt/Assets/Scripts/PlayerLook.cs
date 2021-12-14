@@ -16,8 +16,9 @@ public class PlayerLook : MonoBehaviour
 
     float multiplier = 0.01f;
 
-    float xRotation;
-    public float yRotation;
+    [Header("Camera")]
+    [SerializeField] private float xRotation;
+    [SerializeField] private float yRotation;
 
     [SerializeField] AntMovement antmovement;
     
@@ -39,7 +40,8 @@ public class PlayerLook : MonoBehaviour
 
         xRotation = Mathf.Clamp(xRotation, -90f, 90f);
 
-        cam.transform.rotation = Quaternion.Euler(xRotation, yRotation, 0);
-        //orientation.transform.eulerAngles = new Vector3(0, yRotation, 0);         
+        cam.transform.localRotation = Quaternion.Euler(xRotation, yRotation, cam.transform.rotation.z);
+        orientation.transform.localEulerAngles = new Vector3(orientation.transform.localEulerAngles.x, yRotation, orientation.transform.localEulerAngles.z);   
+           
     }
 }
