@@ -5,41 +5,36 @@ using UnityEngine;
 public class AntMovement : MonoBehaviour
 {
     [Header("Movement")]
-    public float moveSpeed = 6f;
+    public float moveSpeed = 3f;
     public float movementMultiplier = 10f;
     [SerializeField] private float _rotateSpeed = 0.1f;
     [SerializeField] Transform orientation = null;
     private float _horizontalMovement;
     private float _verticalMovement;
-    private Vector3 _moveDirection;       
+    private Vector3 _moveDirection;    
+    private bool _falling = false;
 
-    [Header("Slope variables")]    
-    [SerializeField] private float _playerHeight = 0.25f;
-    [SerializeField] private float _stickyForce = 10f;  //fixa il fatto che il player parte verso l'alto tenendolo incollato alla superficie
+    [Header("Slope variables")]        
+    [SerializeField] private float _gravity = 10f;  //fixa il fatto che il player parte verso l'alto tenendolo incollato alla superficie
     private Vector3 _slopeMoveDirection;
-    RaycastHit slopeHit;
+    RaycastHit hitWall;
 
-    private Rigidbody _rb;    
+    [SerializeField] private Transform _groundCheckPosition;
+    
 
-    private bool OnSlope()
-    {
-        Debug.DrawRay(transform.position, -transform.up, Color.green);
-        if (Physics.Raycast(transform.position, -transform.up, out slopeHit, _playerHeight / 2 + 2.5f))
-            return slopeHit.normal != Vector3.up ? true : false; //cambia... up e down e right e left
-
-        return false;
-    }
+    private Rigidbody _rb;        
 
     private void Start()
     {
-        _rb = GetComponent<Rigidbody>();       
+        _rb = GetComponent<Rigidbody>();            
         _rb.freezeRotation = true;
+        _rb.useGravity = false;
     }
     private void Update()
     {
         MyInput();
 
-        _slopeMoveDirection = Vector3.ProjectOnPlane(_moveDirection, slopeHit.normal);        
+        _slopeMoveDirection = Vector3.ProjectOnPlane(_moveDirection, hitWall.normal);        
     }
 
     void MyInput()
@@ -52,61 +47,47 @@ public class AntMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        MovePlayer();
-        onWall();
+        groundCheck();
+        MovePlayer();        
     }
 
     void MovePlayer()
     {
-        if (OnSlope()) //non so ma se lo tolgo nel pezzo verticale in alto si stacca, così invece no //o forse devo farlo anche per le altre in onSlope()
+        if (Input.GetKey(KeyCode.Space)) 
+        {           
+            _falling = true;            
+            var hitRotation = Quaternion.FromToRotation(Vector3.up, Vector3.up);            
+            transform.rotation = Quaternion.Slerp(transform.rotation, hitRotation, 0.3f); 
+        }          
+
+        if (_falling) 
         {
-            Debug.Log("aaaaa");
-            _rb.AddForce(_slopeMoveDirection.normalized * moveSpeed * movementMultiplier, ForceMode.Acceleration);   
-            _rb.AddForce(-transform.up * _stickyForce, ForceMode.Acceleration); //fixa il fatto che il player parte verso l'alto tenendolo incollato alla superficie
-        }
-        else
-        {
-            _rb.AddForce(_moveDirection.normalized * moveSpeed * movementMultiplier, ForceMode.Acceleration);
-            _rb.AddForce(-transform.up * _stickyForce, ForceMode.Acceleration); //fixa il fatto che il player parte verso l'alto tenendolo incollato alla superficie
-        }
+            _rb.AddForce(-Vector3.up * _gravity, ForceMode.Acceleration);
+            moveSpeed = 1f;           
+        }        
+
+        _rb.AddForce(_slopeMoveDirection.normalized * moveSpeed * movementMultiplier, ForceMode.Acceleration);   
+        _rb.AddForce(-transform.up * _gravity, ForceMode.Acceleration); //gravità fittizia alle pareti per tenerlo incollato
+       
     }
 
-    private void onWall()
-    {
-        //Debug.DrawRay(transform.position, (transform.forward / 3 - transform.up), Color.black);
-        //Debug.DrawRay(transform.position, (transform.forward / 3 - transform.up), Color.red);
-        //RaycastHit forwardHitWall;
-        /*if(Physics.Raycast(transform.position, (transform.forward / 3 - transform.up), out forwardHitWall, 3f))
+    private void groundCheck()
+    {     
+        if(Physics.SphereCast(_groundCheckPosition.position, 1f, -transform.up, out hitWall, 3f)) 
         {
-            Debug.Log("bbbb");
-            var hitRotation = Quaternion.FromToRotation(Vector3.up, forwardHitWall.normal);
-            transform.rotation = hitRotation;
-            _rb.useGravity = false; //riabilitarla quando non è grounded... quindi uno sphere raycast?
-        }*/
+            _falling = false;
+            moveSpeed = 3f;
 
-        if(Physics.SphereCast(transform.position, 1f, -transform.up, out RaycastHit hitWall, 3f) && Physics.SphereCast(transform.position, 1f, -transform.up, out RaycastHit groundHit, 1f)) //doppio cast, uno piccolo per vedere se tocca terra prima di disabilitare gravità
-        {
-            Debug.Log("GroundDet");
-            var hitRotation = Quaternion.FromToRotation(Vector3.up, hitWall.normal);
-            //transform.rotation = hitRotation;
-            transform.rotation = Quaternion.Slerp(transform.rotation, hitRotation, _rotateSpeed);            
-            _rb.useGravity = false; //riabilitarla quando non è grounded... quindi uno sphere raycast?
-        }
-        else 
-        {
-            Debug.Log("WallDet");
-            var hitRotation = Quaternion.FromToRotation(Vector3.up, Vector3.up);
-            //transform.rotation = hitRotation;
-            transform.rotation = Quaternion.Slerp(transform.rotation, hitRotation, _rotateSpeed); //transizione smooth, ma in pezzi sottili troppo lenta e fa fare salti... aumentare sticky?
-            _rb.useGravity = true;
-        }            
+            Debug.Log("GroundDet " + hitWall.transform.gameObject.name);
+            var hitRotation = Quaternion.FromToRotation(Vector3.up, hitWall.normal);            
+            transform.rotation = Quaternion.Slerp(transform.rotation, hitRotation, _rotateSpeed);  
+        }                   
     }  
 
     void OnDrawGizmosSelected()
     {
-        // Draw a yellow sphere at the hitpoint position
+        // Draw a yellow sphere at the position
         Gizmos.color = Color.yellow;
-        Gizmos.DrawSphere(slopeHit.point, 1f);
+        Gizmos.DrawSphere(_groundCheckPosition.position, 1f);
     }
-   
 }
