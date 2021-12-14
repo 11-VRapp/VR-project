@@ -7,18 +7,19 @@ public class AntMovement : MonoBehaviour
     [Header("Movement")]
     public float moveSpeed = 6f;
     public float movementMultiplier = 10f;
-
-
+    [SerializeField] private float _rotateSpeed = 0.1f;
     [SerializeField] Transform orientation = null;
     private float _horizontalMovement;
     private float _verticalMovement;
-    private Vector3 _moveDirection;
-    private Vector3 _slopeMoveDirection;
-    private Rigidbody _rb;
+    private Vector3 _moveDirection;       
 
+    [Header("Slope variables")]
+    private Vector3 _slopeMoveDirection;
     [SerializeField] private float _playerHeight = 0.25f;
+    [SerializeField] private float _stickyForce = 10f;  //fixa il fatto che il player parte verso l'alto tenendolo incollato alla superficie
     RaycastHit slopeHit;
 
+    private Rigidbody _rb;
     private PlayerLook _pl;
 
     private bool OnSlope()
@@ -26,7 +27,6 @@ public class AntMovement : MonoBehaviour
         Debug.DrawRay(transform.position, -transform.up, Color.green);
         if (Physics.Raycast(transform.position, -transform.up, out slopeHit, _playerHeight / 2 + 2.5f))
             return slopeHit.normal != Vector3.up ? true : false; //cambia... up e down e right e left
-
 
         return false;
     }
@@ -64,15 +64,13 @@ public class AntMovement : MonoBehaviour
         {
             Debug.Log("aaaaa");
             _rb.AddForce(_slopeMoveDirection.normalized * moveSpeed * movementMultiplier, ForceMode.Acceleration);   
-            _rb.AddForce(-transform.up * 10f, ForceMode.Acceleration); //fixa il fatto che il player parte verso l'alto tenendolo incollato alla superficie
+            _rb.AddForce(-transform.up * _stickyForce, ForceMode.Acceleration); //fixa il fatto che il player parte verso l'alto tenendolo incollato alla superficie
         }
         else
         {
             _rb.AddForce(_moveDirection.normalized * moveSpeed * movementMultiplier, ForceMode.Acceleration);
-            _rb.AddForce(-transform.up * 10f, ForceMode.Acceleration); //fixa il fatto che il player parte verso l'alto tenendolo incollato alla superficie
+            _rb.AddForce(-transform.up * _stickyForce, ForceMode.Acceleration); //fixa il fatto che il player parte verso l'alto tenendolo incollato alla superficie
         }
-           
-        
     }
 
     private void onWall()
@@ -90,32 +88,27 @@ public class AntMovement : MonoBehaviour
 
         if(Physics.SphereCast(transform.position, 1f, -transform.up, out RaycastHit hitWall, 3f) && Physics.SphereCast(transform.position, 1f, -transform.up, out RaycastHit groundHit, 1f)) //doppio cast, uno piccolo per vedere se tocca terra prima di disabilitare gravità
         {
-            Debug.Log("bbbb");
+            Debug.Log("GroundDet");
             var hitRotation = Quaternion.FromToRotation(Vector3.up, hitWall.normal);
-            transform.rotation = hitRotation;
+            //transform.rotation = hitRotation;
+            transform.rotation = Quaternion.Slerp(transform.rotation, hitRotation, _rotateSpeed);
             _rb.useGravity = false; //riabilitarla quando non è grounded... quindi uno sphere raycast?
         }
         else 
         {
+            Debug.Log("WallDet");
             var hitRotation = Quaternion.FromToRotation(Vector3.up, Vector3.up);
-            transform.rotation = hitRotation;
+            //transform.rotation = hitRotation;
+            transform.rotation = Quaternion.Slerp(transform.rotation, hitRotation, _rotateSpeed); //transizione smooth, ma in pezzi sottili troppo lenta e fa fare salti... aumentare sticky?
             _rb.useGravity = true;
-        }
-            
-    }   
-
+        }            
+    }  
 
     void OnDrawGizmosSelected()
     {
-        // Draw a yellow sphere at the transform's position
+        // Draw a yellow sphere at the hitpoint position
         Gizmos.color = Color.yellow;
         Gizmos.DrawSphere(slopeHit.point, 1f);
     }
-
-
-
-    // TO DO: transizione smooth qua
-    //var hitRotation = Quaternion.FromToRotation(Vector3.up, hitWall.normal);            
-    //transform.rotation = hitRotation;
    
 }
