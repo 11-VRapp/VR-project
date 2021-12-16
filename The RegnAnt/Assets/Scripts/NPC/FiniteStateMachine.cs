@@ -53,14 +53,14 @@ public class FiniteStateMachine<T>
 
     private State GetNextState()
     {
-        /*if(_currentTransitions == null)
+        if(_currentTransitions == null)
             Debug.LogError($"Current State {_currentState.Name} has NO transitions");
 
         foreach (Transition transition in _currentTransitions)
         {
             if (transition.Condition())
                 return transition.NextState;
-        }*/
+        }
 
         return null;
     }
