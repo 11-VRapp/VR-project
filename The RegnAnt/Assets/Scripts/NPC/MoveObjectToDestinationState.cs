@@ -2,24 +2,24 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LoadObjectState : State
+public class MoveObjectToDestinationState : State
 {
     private AntFSM _ant;
-    public LoadObjectState(string name, AntFSM ant) : base(name)
+    public MoveObjectToDestinationState(string name, AntFSM ant) : base(name)
     {
         _ant = ant;
     }
 
     public override void Enter()
-    {        
+    {
         /*_guard.StopAgent(false);
         _guard.Renderer.material.color = _guard.OriginalColor;*/
     }
 
     public override void Tik()
     {        
-        _ant.moveToFood();
-       
+        _ant.moveToDestination();
+        
     }
 
     public override void Exit()
@@ -28,3 +28,4 @@ public class LoadObjectState : State
     }
     
 }
+

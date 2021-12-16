@@ -18,6 +18,7 @@ public class AntFSM : MonoBehaviour
     public float offset_y;
 
     [SerializeField] private Transform _objectToLoad;
+    [SerializeField] private Transform _nest;
     bool test = false;
 
     // Start is called before the first frame update
@@ -32,16 +33,18 @@ public class AntFSM : MonoBehaviour
         //STATES
         State wanderState = new WanderState("Wander", this);
         State loadObjectState = new LoadObjectState("loadObject", this);
-
+        State moveObjectToDestinationState = new MoveObjectToDestinationState("moveToDestination", this);
         State followRailState = new FollowRailState("followRail", this);        
-        //State moveObjectToDestinationState = new moveObjectToDestinationState("moveToDestination", this);
+        //
 
         //TRANSITIONS
         _stateMachine.AddTransition(wanderState, loadObjectState, () => _objectToLoad != null);
+        _stateMachine.AddTransition(loadObjectState,moveObjectToDestinationState, () => moveToFood() <= 1.5f);
+        _stateMachine.AddTransition(moveObjectToDestinationState,wanderState, () => test == true);
         _stateMachine.AddTransition(loadObjectState, followRailState, () => test == true);
         _stateMachine.AddTransition(wanderState, followRailState, () => test == true);
-        /*_stateMachine.AddTransition(chaseState,stopState, () => DistanceFromTarget() <= _stoppingDistance);
-        _stateMachine.AddTransition(stopState,chaseState, () => DistanceFromTarget() > _stoppingDistance);*/
+        
+        //_stateMachine.AddTransition(stopState,chaseState, () => DistanceFromTarget() > _stoppingDistance);
 
         //START STATE
         _stateMachine.SetState(wanderState);
@@ -86,12 +89,11 @@ public class AntFSM : MonoBehaviour
     {
         Debug.DrawLine(transform.position + new Vector3(0, offset_y, 0), transform.position + new Vector3(0, offset_y, 0) + 5f * transform.forward);
         if(Physics.SphereCast(transform.position + new Vector3(0, offset_y, 0), 1f, transform.forward, out RaycastHit hit, 5f)) 
-        {   
-            Debug.Log("Something Detected " + hit.transform.gameObject.name);
+        {               
             //if food, layer, pheromones
             if(hit.transform.gameObject.layer == 7) //food layer
             {
-                Debug.Log("Food detected");
+                //Debug.Log("Food detected");
                 //move to object state
                 _objectToLoad = hit.transform;
             }            
@@ -99,9 +101,16 @@ public class AntFSM : MonoBehaviour
     }
 
 
-    public void moveToFood()
+    public float moveToFood()
     {
          _navMeshAgent.SetDestination(_objectToLoad.position - _navMeshAgent.stoppingDistance * transform.forward); 
+         Debug.Log(" " + (_objectToLoad.position - transform.position).magnitude);
+         return (_objectToLoad.position - transform.position).magnitude;       
+    }
+
+    public void moveToDestination ()
+    {
+          _navMeshAgent.SetDestination(_nest.position - _navMeshAgent.stoppingDistance * transform.forward);   
     }
 
     /*public void groundCheck() 
