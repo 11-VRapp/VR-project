@@ -9,7 +9,6 @@ public class AntFSM : MonoBehaviour
     private FiniteStateMachine<AntFSM> _stateMachine;
     private NavMeshAgent _navMeshAgent;
 
-    [Range(0, 100)] public float speed;
     [Range(0, 500)] public float walkRadius;
 
     Vector3 destination;
@@ -17,18 +16,17 @@ public class AntFSM : MonoBehaviour
     private RaycastHit _hitGround;    
     public float offset_y;
 
-    [SerializeField] private Transform _objectToLoad;
-    [SerializeField] private Transform _nest;
+    public Transform objectToLoad;
+    [SerializeField] private Transform _nest;    
     bool test = false;
 
-    // Start is called before the first frame update
+
     void Start()
     {
-        _navMeshAgent = GetComponent<NavMeshAgent>();
-        _navMeshAgent.speed = speed;
+        _navMeshAgent = GetComponent<NavMeshAgent>();        
 
         _stateMachine = new FiniteStateMachine<AntFSM>(this);
-        _objectToLoad = null;
+        objectToLoad = null;
 
         //STATES
         State wanderState = new WanderState("Wander", this);
@@ -38,9 +36,9 @@ public class AntFSM : MonoBehaviour
         //
 
         //TRANSITIONS
-        _stateMachine.AddTransition(wanderState, loadObjectState, () => _objectToLoad != null);
+        _stateMachine.AddTransition(wanderState, loadObjectState, () => objectToLoad != null);
         _stateMachine.AddTransition(loadObjectState,moveObjectToDestinationState, () => moveToFood() <= 1.5f);
-        _stateMachine.AddTransition(moveObjectToDestinationState,wanderState, () => test == true);
+        _stateMachine.AddTransition(moveObjectToDestinationState,wanderState, () => moveToDestination() <= 9f);
         _stateMachine.AddTransition(loadObjectState, followRailState, () => test == true);
         _stateMachine.AddTransition(wanderState, followRailState, () => test == true);
         
@@ -92,25 +90,23 @@ public class AntFSM : MonoBehaviour
         {               
             //if food, layer, pheromones
             if(hit.transform.gameObject.layer == 7) //food layer
-            {
-                //Debug.Log("Food detected");
+            {                
                 //move to object state
-                _objectToLoad = hit.transform;
+                objectToLoad = hit.transform;
             }            
         } 
     }
 
-
     public float moveToFood()
     {
-         _navMeshAgent.SetDestination(_objectToLoad.position - _navMeshAgent.stoppingDistance * transform.forward); 
-         Debug.Log(" " + (_objectToLoad.position - transform.position).magnitude);
-         return (_objectToLoad.position - transform.position).magnitude;       
+         _navMeshAgent.SetDestination(objectToLoad.position - _navMeshAgent.stoppingDistance * transform.forward);          
+         return (objectToLoad.position - transform.position).magnitude;    //_navMeshAgent.remainingDistance <= _navMeshAgent.stoppingDistance   
     }
 
-    public void moveToDestination ()
+    public float moveToDestination ()
     {
           _navMeshAgent.SetDestination(_nest.position - _navMeshAgent.stoppingDistance * transform.forward);   
+          return (_nest.position - transform.position).magnitude;   
     }
 
     /*public void groundCheck() 

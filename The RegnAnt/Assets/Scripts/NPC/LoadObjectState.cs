@@ -24,7 +24,7 @@ public class LoadObjectState : State
 
     public override void Exit()
     {
-        
+        _ant.objectToLoad = null;
     }
     
 }
