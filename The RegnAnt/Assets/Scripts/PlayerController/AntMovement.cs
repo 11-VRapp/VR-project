@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class AntMovement : MonoBehaviour
 {
+    [SerializeField] LayerMask terrainLayer = default;
+
     [Header("Movement")]
     public float moveSpeed = 3f;
     public float movementMultiplier = 10f;
@@ -18,9 +20,12 @@ public class AntMovement : MonoBehaviour
     [SerializeField] private float _gravity = 10f;  //fixa il fatto che il player parte verso l'alto tenendolo incollato alla superficie
     private Vector3 _slopeMoveDirection;
     private RaycastHit _hitGround;
+    private RaycastHit _hitWall;
     [SerializeField] private Transform _groundCheckPosition;    
 
-    private Rigidbody _rb;        
+    private Rigidbody _rb; 
+
+    public bool test;          
 
     private void Start()
     {
@@ -43,10 +48,11 @@ public class AntMovement : MonoBehaviour
     }
 
     private void FixedUpdate()
-    {
-        groundCheck();
-        wallCheck();
-        MovePlayer();        
+    {   
+        MovePlayer();      
+        if (wallCheck() == false)
+            groundCheck();
+               
     }
 
     void MovePlayer()
@@ -70,9 +76,10 @@ public class AntMovement : MonoBehaviour
     }
 
     private void groundCheck() //fattibile con sphere collider?
-    {     
-        if(Physics.SphereCast(_groundCheckPosition.position, 1f, -transform.up, out _hitGround, 3f)) 
+    {             
+        if(Physics.SphereCast(_groundCheckPosition.position, 1f, -transform.up, out _hitGround, 4f, terrainLayer.value)) 
         {
+            Debug.Log("HitGround");
             _falling = false;
             moveSpeed = 3f;
             
@@ -80,11 +87,29 @@ public class AntMovement : MonoBehaviour
         }                   
     }  
 
-    private void wallCheck() 
-    {     
-        if(Physics.SphereCast(transform.position, 0.5f, orientation.forward, out _hitGround, 1f) 
-        || Physics.SphereCast(transform.position, 0.5f, -orientation.forward, out _hitGround, 0.5f)) //only forward/back check
-           rotateToSurfaceNormal(_hitGround.normal, _rotateSpeed);
+    private bool wallCheck() 
+    {   
+        Debug.Log("Checking Wall");
+        Debug.DrawLine(transform.position - 1f * orientation.up, transform.position - 1f * orientation.up + 2.5f * orientation.forward, Color.black);  
+
+        if(Physics.Raycast(transform.position - 1f * orientation.up, orientation.forward, out _hitGround, 2.5f, terrainLayer.value) 
+        || Physics.Raycast(transform.position - 1f * orientation.up, -orientation.forward, out _hitGround, 2.5f, terrainLayer.value)) //only forward/back check
+        {
+            Debug.LogWarning("Wall detected");
+            rotateToSurfaceNormal(_hitGround.normal, _rotateSpeed);
+            return true;
+        }
+         return false;
+         
+
+        /*if(Physics.SphereCast(transform.position - 1f * orientation.up, 0.5f, orientation.forward, out _hitGround, 2f, terrainLayer.value)
+        || Physics.SphereCast(transform.position - 1f * orientation.up, 0.5f, -orientation.forward, out _hitGround, 2f, terrainLayer.value)) //only forward/back check
+        {
+            Debug.LogWarning("Wall detected");
+            rotateToSurfaceNormal(_hitGround.normal, _rotateSpeed);
+            return true;
+        }
+         return false;*/
                           
     }  
 
@@ -98,6 +123,6 @@ public class AntMovement : MonoBehaviour
     {
         // Draw a yellow sphere at the position
         Gizmos.color = Color.yellow;
-        Gizmos.DrawSphere(_groundCheckPosition.position, 1f);
+        Gizmos.DrawSphere(_hitGround.point, 1f);
     }
 }
