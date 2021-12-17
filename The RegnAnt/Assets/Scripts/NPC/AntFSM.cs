@@ -37,7 +37,7 @@ public class AntFSM : MonoBehaviour
 
         //TRANSITIONS
         _stateMachine.AddTransition(wanderState, loadObjectState, () => objectToLoad != null);
-        _stateMachine.AddTransition(loadObjectState,moveObjectToDestinationState, () => moveToFood() <= 1.5f);
+        _stateMachine.AddTransition(loadObjectState,moveObjectToDestinationState, () => moveToFood() <= 8f);
         _stateMachine.AddTransition(moveObjectToDestinationState,wanderState, () => moveToDestination() <= 9f);
         _stateMachine.AddTransition(loadObjectState, followRailState, () => test == true);
         _stateMachine.AddTransition(wanderState, followRailState, () => test == true);
@@ -85,8 +85,8 @@ public class AntFSM : MonoBehaviour
 
     public void LookAround()
     {
-        Debug.DrawLine(transform.position + new Vector3(0, offset_y, 0), transform.position + new Vector3(0, offset_y, 0) + 5f * transform.forward);
-        if(Physics.SphereCast(transform.position + new Vector3(0, offset_y, 0), 1f, transform.forward, out RaycastHit hit, 5f)) 
+        Debug.DrawLine(transform.position + new Vector3(0, offset_y, 0), transform.position + new Vector3(0, offset_y, 0) + 8f * transform.forward);
+        if(Physics.SphereCast(transform.position + new Vector3(0, offset_y, 0), 1f, transform.forward, out RaycastHit hit, 8f)) 
         {               
             //if food, layer, pheromones
             if(hit.transform.gameObject.layer == 7) //food layer
@@ -108,21 +108,7 @@ public class AntFSM : MonoBehaviour
           _navMeshAgent.SetDestination(_nest.position - _navMeshAgent.stoppingDistance * transform.forward);   
           return (_nest.position - transform.position).magnitude;   
     }
-
-    /*public void groundCheck() 
-    {     
-        if(Physics.SphereCast(transform.position + new Vector3(0, offset_y, 0), 1f, -transform.up, out _hitGround, 1f)) 
-        {   
-            rotateToSurfaceNormal(_hitGround.normal, 1f);
-        }                   
-    }*/
-
-    /*private void rotateToSurfaceNormal(Vector3 vectorToReach, float speed)
-    {
-        Quaternion hitRotation = Quaternion.FromToRotation(transform.up, vectorToReach); //* transform.rotation;            
-        transform.rotation = Quaternion.Slerp(transform.rotation, hitRotation, speed); 
-    }*/
-
+    
     void OnDrawGizmosSelected()
     {
         // Draw a yellow sphere at the destination point
