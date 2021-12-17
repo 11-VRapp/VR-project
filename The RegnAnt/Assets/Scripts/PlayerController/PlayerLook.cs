@@ -15,10 +15,9 @@ public class PlayerLook : MonoBehaviour
     float mouseY;
 
     float multiplier = 0.01f;
-
-    [Header("Camera")]
-    [SerializeField] private float xRotation;
-    [SerializeField] private float yRotation;    
+   
+    private float xRotation;
+    private float yRotation;    
     
     
     private void Start()
