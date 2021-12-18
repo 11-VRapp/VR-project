@@ -14,7 +14,7 @@ public class PheromoneRailPoint : MonoBehaviour
         trace = gameObject.GetComponentInParent<PheromoneRailTrace>();        
         ps = GetComponent<ParticleSystem>();
         triggerBox = GetComponent<BoxCollider>();
-        life = 20f;
+        life = 200f;
     }
     void Update() 
     {

@@ -21,7 +21,7 @@ public class WanderState : State
 {
     private AntFSM _ant;
     public WanderState(string name, AntFSM ant) : base(name) => _ant = ant;
-    
+
 
     public override void Enter()
     {
@@ -30,78 +30,71 @@ public class WanderState : State
     }
 
     public override void Tik()
-    {        
-        _ant.SetRandomPointDestination();        
+    {
+        _ant.SetRandomPointDestination();
         _ant.LookAround();
     }
 
-    public override void Exit()
-    {
-        
-    }
-    
+    public override void Exit() { }
 }
 
 
 public class LoadFoodState : State
 {
     private AntFSM _ant;
-    public LoadFoodState(string name, AntFSM ant) : base(name) => _ant = ant; 
+    public LoadFoodState(string name, AntFSM ant) : base(name) => _ant = ant;
 
-    public override void Enter(){}
+    public override void Enter() { }
 
-    public override void Tik() => _ant.moveToFood();       
-    
+    public override void Tik() => _ant.moveToFood();
 
-    public override void Exit() {}
-    
-    
+
+    public override void Exit() { }
+
+
 }
 
 public class FollowPheromoneTraceState : State
 {
     private AntFSM _ant;
-    public FollowPheromoneTraceState(string name, AntFSM ant) : base(name) => _ant = ant; 
+    public FollowPheromoneTraceState(string name, AntFSM ant) : base(name) => _ant = ant;
 
-    public override void Enter(){}
+    public override void Enter() { }
 
     public override void Tik()
-    {        
-        
+    {
+        _ant.followPheromoneTrace();
     }
 
-    public override void Exit()
-    {
-        
-    }
-    
+    public override void Exit() { }
+
 }
 
 public class SpawnNewPheromoneTraceState : State
 {
     private AntFSM _ant;
-    public SpawnNewPheromoneTraceState(string name, AntFSM ant) : base(name) => _ant = ant; 
+    public SpawnNewPheromoneTraceState(string name, AntFSM ant) : base(name) => _ant = ant;
 
-    public override void Enter(){}
+    public override void Enter() { }
 
-    public override void Tik() => _ant.spawnNewPheromoneTrace();    
+    public override void Tik() => _ant.spawnNewPheromoneTrace();
 
-    public override void Exit(){}
+    public override void Exit() { }
 }
 
 public class FollowPheromoneTraceToNestState : State
 {
     private AntFSM _ant;
-    public FollowPheromoneTraceToNestState(string name, AntFSM ant) : base(name) => _ant = ant; 
+    public FollowPheromoneTraceToNestState(string name, AntFSM ant) : base(name) => _ant = ant;
 
-    public override void Enter(){}
+    public override void Enter() { }
 
     public override void Tik()
-    {        
+    {
         _ant.followPheromoneTraceToNestState();
     }
 
-    public override void Exit(){}
-    
+    public override void Exit() { }
+
 }
 

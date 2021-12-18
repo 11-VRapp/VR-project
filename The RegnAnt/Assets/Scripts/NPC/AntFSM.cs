@@ -32,34 +32,35 @@ public class AntFSM : MonoBehaviour
         //STATES
         State wanderState = new WanderState("Wander", this);
         State loadFoodState = new LoadFoodState("loadFood", this);
-        
+
         State followPheromoneTraceState = new FollowPheromoneTraceState("followPheromoneTrace", this);
         State spawnNewPheromoneTraceState = new SpawnNewPheromoneTraceState("spawnNewPheromoneTrace", this);
         State followPheromoneTraceToNestState = new FollowPheromoneTraceToNestState("followPheromoneTraceToNest", this);
-        
-    
+
+
         //TRANSITIONS
         _stateMachine.AddTransition(wanderState, loadFoodState, () => objectToLoad != null);
 
-        _stateMachine.AddTransition(wanderState, followPheromoneTraceState, () => pheromoneTrace != null); //sicuro?
+        _stateMachine.AddTransition(wanderState, followPheromoneTraceState, () => pheromoneTrace != null); //sicuro? _currentPheromonePoint == null
+        _stateMachine.AddTransition(followPheromoneTraceState, wanderState, () => _currentPheromonePoint == null);
         _stateMachine.AddTransition(followPheromoneTraceState, loadFoodState, () => objectToLoad != null);
 
         _stateMachine.AddTransition(loadFoodState, spawnNewPheromoneTraceState, () => DistanceFromTarget(objectToLoad.gameObject) <= 4f && pheromoneTrace == null);
-        _stateMachine.AddTransition(loadFoodState, followPheromoneTraceToNestState, () => DistanceFromTarget(objectToLoad.gameObject) <= 4f && pheromoneTrace != null);        
+        _stateMachine.AddTransition(loadFoodState, followPheromoneTraceToNestState, () => DistanceFromTarget(objectToLoad.gameObject) <= 4f && pheromoneTrace != null);
 
         _stateMachine.AddTransition(spawnNewPheromoneTraceState, wanderState, () => DistanceFromTarget(_nest.gameObject) <= 1f);
         _stateMachine.AddTransition(followPheromoneTraceToNestState, wanderState, () => DistanceFromTarget(_nest.gameObject) <= 1f);
 
-        
+
 
         //START STATE
         _stateMachine.SetState(wanderState);
     }
 
-    // Update is called once per frame
+
     void Update() => _stateMachine.Tik();
 
-    private float DistanceFromTarget(GameObject _target) => Vector3.Distance(new Vector3(_target.transform.position.x, transform.position.y,_target.transform.position.z), transform.position);
+    private float DistanceFromTarget(GameObject _target) => Vector3.Distance(new Vector3(_target.transform.position.x, transform.position.y, _target.transform.position.z), transform.position);
 
     public void SetRandomPointDestination()
     {
@@ -93,6 +94,12 @@ public class AntFSM : MonoBehaviour
             {
                 //move to object state
                 objectToLoad = hit.transform;
+            }
+            else if (hit.transform.gameObject.layer == 8) //pheromone layer
+            {
+                //move to object state
+                pheromoneTrace = hit.transform.GetComponent<PheromoneRailPoint>().trace;
+                _currentPheromonePoint = pheromoneTrace.getNodeByPoint(hit.transform.GetComponent<PheromoneRailPoint>());
             }
         }
     }
@@ -134,8 +141,7 @@ public class AntFSM : MonoBehaviour
 
     public void followPheromoneTraceToNestState()
     {
-
-        if (_navMeshAgent.remainingDistance <= _navMeshAgent.stoppingDistance && _navMeshAgent.velocity.sqrMagnitude <= 0f)
+        if (_navMeshAgent.remainingDistance <= 2f)
         {
             Vector3 nextWayPointPos;
             if (_currentPheromonePoint == pheromoneTrace.getTailNode())
@@ -151,6 +157,23 @@ public class AntFSM : MonoBehaviour
 
                 nextWayPointPos = _currentPheromonePoint.Value.gameObject.transform.position;
             }
+            _navMeshAgent.SetDestination(nextWayPointPos);
+        }
+    }
+
+    public void followPheromoneTrace()
+    {
+        if (_currentPheromonePoint == null) //necessario? o il next è nullo?
+            return;
+        Debug.Log(_currentPheromonePoint.Value.transform.localPosition);
+
+        if (_navMeshAgent.remainingDistance <= 2f)
+        {
+            Vector3 nextWayPointPos;            
+
+            _currentPheromonePoint = pheromoneTrace.getPrevPoint(_currentPheromonePoint);
+            nextWayPointPos = _currentPheromonePoint.Value.gameObject.transform.position;
+
             _navMeshAgent.SetDestination(nextWayPointPos);
         }
     }
