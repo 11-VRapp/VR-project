@@ -84,3 +84,72 @@ public class LoadFoodState : State
     
 }
 
+public class FollowPheromoneTraceState : State
+{
+    private AntFSM _ant;
+    public FollowPheromoneTraceState(string name, AntFSM ant) : base(name) => _ant = ant; 
+
+    public override void Enter()
+    {
+       Debug.Log("Follow rail state");
+        
+    }
+
+    public override void Tik()
+    {        
+        
+    }
+
+    public override void Exit()
+    {
+        
+    }
+    
+}
+
+public class SpawnNewPheromoneTraceState : State
+{
+    private AntFSM _ant;
+    public SpawnNewPheromoneTraceState(string name, AntFSM ant) : base(name) => _ant = ant; 
+
+    public override void Enter()
+    {
+       Debug.Log("Follow rail state");
+        
+    }
+
+    public override void Tik()
+    {        
+        
+    }
+
+    public override void Exit()
+    {
+        
+    }
+    
+}
+
+public class FollowPheromoneTraceToNestState : State
+{
+    private AntFSM _ant;
+    public FollowPheromoneTraceToNestState(string name, AntFSM ant) : base(name) => _ant = ant; 
+
+    public override void Enter()
+    {
+       Debug.Log("Follow rail state");
+        
+    }
+
+    public override void Tik()
+    {        
+        
+    }
+
+    public override void Exit()
+    {
+        
+    }
+    
+}
+
