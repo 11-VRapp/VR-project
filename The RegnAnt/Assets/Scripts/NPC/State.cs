@@ -25,8 +25,8 @@ public class WanderState : State
 
     public override void Enter()
     {
-        /*_guard.StopAgent(false);
-        _guard.Renderer.material.color = _guard.OriginalColor;*/
+        _ant.objectToLoad = null;
+        _ant.pheromoneTrace = null;
     }
 
     public override void Tik()
@@ -43,43 +43,17 @@ public class WanderState : State
 }
 
 
-public class MoveFoodToNestState : State
-{
-    private AntFSM _ant;
-    public MoveFoodToNestState(string name, AntFSM ant) : base(name) { _ant = ant; }
-    public override void Enter()
-    {
-        
-    }
-
-    public override void Tik() => _ant.moveToDestination();        
-    
-
-    public override void Exit()
-    {
-        
-    }
-    
-}
-
 public class LoadFoodState : State
 {
     private AntFSM _ant;
     public LoadFoodState(string name, AntFSM ant) : base(name) => _ant = ant; 
 
-    public override void Enter()
-    {        
-        /*_guard.StopAgent(false);
-        _guard.Renderer.material.color = _guard.OriginalColor;*/
-    }
+    public override void Enter(){}
 
-    public override void Tik()
-    {        
-        _ant.moveToFood();
-       
-    }
+    public override void Tik() => _ant.moveToFood();       
+    
 
-    public override void Exit() =>  _ant.objectToLoad = null;
+    public override void Exit() {}
     
     
 }
@@ -89,11 +63,7 @@ public class FollowPheromoneTraceState : State
     private AntFSM _ant;
     public FollowPheromoneTraceState(string name, AntFSM ant) : base(name) => _ant = ant; 
 
-    public override void Enter()
-    {
-       Debug.Log("Follow rail state");
-        
-    }
+    public override void Enter(){}
 
     public override void Tik()
     {        
@@ -112,22 +82,11 @@ public class SpawnNewPheromoneTraceState : State
     private AntFSM _ant;
     public SpawnNewPheromoneTraceState(string name, AntFSM ant) : base(name) => _ant = ant; 
 
-    public override void Enter()
-    {
-       Debug.Log("Follow rail state");
-        
-    }
+    public override void Enter(){}
 
-    public override void Tik()
-    {        
-        
-    }
+    public override void Tik() => _ant.spawnNewPheromoneTrace();    
 
-    public override void Exit()
-    {
-        
-    }
-    
+    public override void Exit(){}
 }
 
 public class FollowPheromoneTraceToNestState : State
@@ -135,21 +94,14 @@ public class FollowPheromoneTraceToNestState : State
     private AntFSM _ant;
     public FollowPheromoneTraceToNestState(string name, AntFSM ant) : base(name) => _ant = ant; 
 
-    public override void Enter()
-    {
-       Debug.Log("Follow rail state");
-        
-    }
+    public override void Enter(){}
 
     public override void Tik()
     {        
-        
+        _ant.followPheromoneTraceToNestState();
     }
 
-    public override void Exit()
-    {
-        
-    }
+    public override void Exit(){}
     
 }
 

@@ -5,11 +5,11 @@ using UnityEngine;
 public class FoodManager : MonoBehaviour
 {
     public PheromoneRailTrace phTrace;
-    
+
     //[SerializeField] private int pieces;
 
     private void Start()
     {
-        phTrace = null;
+        phTrace = new PheromoneRailTrace();
     }
 }

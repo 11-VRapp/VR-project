@@ -8,14 +8,15 @@ public class AntFSM : MonoBehaviour
 {
     [Header("NPC values")]
     [Range(0, 500)] public float walkRadius;
-    Vector3 destination;    private FiniteStateMachine<AntFSM> _stateMachine;
-    private NavMeshAgent _navMeshAgent; 
+    Vector3 destination; private FiniteStateMachine<AntFSM> _stateMachine;
+    private NavMeshAgent _navMeshAgent;
     public float offset_y;
 
     [Header("Pheromones")]
     public Transform objectToLoad;
     [SerializeField] private Transform _nest;
-    [SerializeField] private PheromoneRailTrace pheromoneTrace;    
+    public PheromoneRailTrace pheromoneTrace;
+    private LinkedListNode<PheromoneRailPoint> _currentPheromonePoint;
     [SerializeField] private GameObject _pheromonePrefab;
     bool test = false;
     private float timeleft = -1f;
@@ -31,27 +32,25 @@ public class AntFSM : MonoBehaviour
         //STATES
         State wanderState = new WanderState("Wander", this);
         State loadFoodState = new LoadFoodState("loadFood", this);
-        //State moveFoodToNestState = new MoveFoodToNestState("moveFoodToNest", this);
+        
         State followPheromoneTraceState = new FollowPheromoneTraceState("followPheromoneTrace", this);
         State spawnNewPheromoneTraceState = new SpawnNewPheromoneTraceState("spawnNewPheromoneTrace", this);
         State followPheromoneTraceToNestState = new FollowPheromoneTraceToNestState("followPheromoneTraceToNest", this);
-        //
-
+        
+    
         //TRANSITIONS
         _stateMachine.AddTransition(wanderState, loadFoodState, () => objectToLoad != null);
 
         _stateMachine.AddTransition(wanderState, followPheromoneTraceState, () => pheromoneTrace != null); //sicuro?
         _stateMachine.AddTransition(followPheromoneTraceState, loadFoodState, () => objectToLoad != null);
 
-        _stateMachine.AddTransition(loadFoodState, spawnNewPheromoneTraceState, () => moveToFood() && pheromoneTrace == null);
-        _stateMachine.AddTransition(loadFoodState, followPheromoneTraceToNestState, () => moveToFood() && pheromoneTrace != null);
+        _stateMachine.AddTransition(loadFoodState, spawnNewPheromoneTraceState, () => DistanceFromTarget(objectToLoad.gameObject) <= 4f && pheromoneTrace == null);
+        _stateMachine.AddTransition(loadFoodState, followPheromoneTraceToNestState, () => DistanceFromTarget(objectToLoad.gameObject) <= 4f && pheromoneTrace != null);        
 
-        //_stateMachine.AddTransition(moveFoodToNestState,wanderState, () => moveToDestination() <= 9f);
+        _stateMachine.AddTransition(spawnNewPheromoneTraceState, wanderState, () => DistanceFromTarget(_nest.gameObject) <= 1f);
+        _stateMachine.AddTransition(followPheromoneTraceToNestState, wanderState, () => DistanceFromTarget(_nest.gameObject) <= 1f);
 
-        _stateMachine.AddTransition(spawnNewPheromoneTraceState, wanderState, () => test == true);
-        _stateMachine.AddTransition(followPheromoneTraceToNestState, wanderState, () => test == true);
-
-        //_stateMachine.AddTransition(stopState,chaseState, () => DistanceFromTarget() > _stoppingDistance);
+        
 
         //START STATE
         _stateMachine.SetState(wanderState);
@@ -60,15 +59,7 @@ public class AntFSM : MonoBehaviour
     // Update is called once per frame
     void Update() => _stateMachine.Tik();
 
-    /*public void SetWayPointDestination()
-    {
-        if (_navMeshAgent.remainingDistance <= _navMeshAgent.stoppingDistance && _navMeshAgent.velocity.sqrMagnitude <= 0f)
-        {
-            _currentWayPointIndex = (_currentWayPointIndex + 1) % _waypoints.Count;
-            Vector3 nextWayPointPos = _waypoints[_currentWayPointIndex].position;
-            _navMeshAgent.SetDestination(new Vector3(nextWayPointPos.x, transform.position.y, nextWayPointPos.z));
-        }
-    }*/
+    private float DistanceFromTarget(GameObject _target) => Vector3.Distance(new Vector3(_target.transform.position.x, transform.position.y,_target.transform.position.z), transform.position);
 
     public void SetRandomPointDestination()
     {
@@ -106,33 +97,11 @@ public class AntFSM : MonoBehaviour
         }
     }
 
-    public bool moveToFood()
+    public void moveToFood()
     {
-        _navMeshAgent.SetDestination(objectToLoad.position - _navMeshAgent.stoppingDistance * transform.forward);
+        _navMeshAgent.SetDestination(objectToLoad.position);
         pheromoneTrace = objectToLoad.GetComponent<FoodManager>().phTrace;
-        return (objectToLoad.position - transform.position).magnitude <= 8f;
-    }
-
-    public float moveToDestination()
-    {
-        _navMeshAgent.SetDestination(_nest.position - _navMeshAgent.stoppingDistance * transform.forward);
-
-        if (objectToLoad.GetComponent<FoodManager>().phTrace == null)
-        {
-            //set up a new phTrace
-
-        }
-        else
-        {
-            //follow trace
-        }
-        timeleft -= Time.deltaTime;
-        if (timeleft <= 0f)
-        {
-            timeleft += 2f;
-        }
-
-        return (_nest.position - transform.position).magnitude;
+        //return (objectToLoad.position - transform.position).magnitude <= 8f;
     }
 
     public float spawnNewPheromoneTrace()
@@ -147,7 +116,7 @@ public class AntFSM : MonoBehaviour
             objectToLoad.GetComponent<FoodManager>().phTrace = pheromoneTrace;
         }
 
-        _navMeshAgent.SetDestination(_nest.position - _navMeshAgent.stoppingDistance * transform.forward);
+        _navMeshAgent.SetDestination(new Vector3(_nest.position.x, transform.position.y, _nest.position.z));
         timeleft -= Time.deltaTime;
         if (timeleft <= 0f)
         {
@@ -155,14 +124,36 @@ public class AntFSM : MonoBehaviour
             Physics.Raycast(transform.position, -transform.up, out RaycastHit groundHit); //on ground Layer!
             GameObject newPoint = GameObject.Instantiate(_pheromonePrefab, groundHit.point, Quaternion.identity, pheromoneTrace.gameObject.transform); //spawn on the terrain...
             PheromoneRailPoint pheromone_point = newPoint.AddComponent<PheromoneRailPoint>();
-            pheromoneTrace.pushPointToTrace(pheromone_point);
+            pheromoneTrace.pushPointToTrace(pheromone_point); //stampa un errore a caso... ma va tutto
 
-            timeleft += 2f;            
+            timeleft += 2f;
         }
 
         return (_nest.position - transform.position).magnitude;
     }
 
+    public void followPheromoneTraceToNestState()
+    {
+
+        if (_navMeshAgent.remainingDistance <= _navMeshAgent.stoppingDistance && _navMeshAgent.velocity.sqrMagnitude <= 0f)
+        {
+            Vector3 nextWayPointPos;
+            if (_currentPheromonePoint == pheromoneTrace.getTailNode())
+            {
+                nextWayPointPos = new Vector3(_nest.position.x, transform.position.y, _nest.position.z);
+            }
+            else
+            {
+                if (_currentPheromonePoint == null)
+                    _currentPheromonePoint = pheromoneTrace.getHeadNode();
+                else
+                    _currentPheromonePoint = pheromoneTrace.getNextPoint(_currentPheromonePoint);
+
+                nextWayPointPos = _currentPheromonePoint.Value.gameObject.transform.position;
+            }
+            _navMeshAgent.SetDestination(nextWayPointPos);
+        }
+    }
     void OnDrawGizmosSelected()
     {
         // Draw a yellow sphere at the destination point
