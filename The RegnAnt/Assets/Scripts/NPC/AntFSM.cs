@@ -8,17 +8,17 @@ public class AntFSM : MonoBehaviour
 {
     private FiniteStateMachine<AntFSM> _stateMachine;
     private NavMeshAgent _navMeshAgent;
-
     [Range(0, 500)] public float walkRadius;
-
     Vector3 destination;
-
     private RaycastHit _hitGround;    
     public float offset_y;
+
 
     public Transform objectToLoad;
     [SerializeField] private Transform _nest;    
     bool test = false;
+
+    private float timeleft = 2f;
 
 
     void Start()
@@ -30,16 +30,16 @@ public class AntFSM : MonoBehaviour
 
         //STATES
         State wanderState = new WanderState("Wander", this);
-        State loadObjectState = new LoadObjectState("loadObject", this);
-        State moveObjectToDestinationState = new MoveObjectToDestinationState("moveToDestination", this);
+        State loadFoodState = new LoadFoodState("loadFood", this);
+        State moveFoodToNestState = new MoveFoodToNestState("moveFoodToNest", this);
         State followRailState = new FollowRailState("followRail", this);        
         //
 
         //TRANSITIONS
-        _stateMachine.AddTransition(wanderState, loadObjectState, () => objectToLoad != null);
-        _stateMachine.AddTransition(loadObjectState,moveObjectToDestinationState, () => moveToFood() <= 8f);
-        _stateMachine.AddTransition(moveObjectToDestinationState,wanderState, () => moveToDestination() <= 9f);
-        _stateMachine.AddTransition(loadObjectState, followRailState, () => test == true);
+        _stateMachine.AddTransition(wanderState, loadFoodState, () => objectToLoad != null);
+        _stateMachine.AddTransition(loadFoodState,moveFoodToNestState, () => moveToFood() <= 8f);
+        _stateMachine.AddTransition(moveFoodToNestState,wanderState, () => moveToDestination() <= 9f);
+        _stateMachine.AddTransition(loadFoodState, followRailState, () => test == true);
         _stateMachine.AddTransition(wanderState, followRailState, () => test == true);
         
         //_stateMachine.AddTransition(stopState,chaseState, () => DistanceFromTarget() > _stoppingDistance);
@@ -103,10 +103,26 @@ public class AntFSM : MonoBehaviour
          return (objectToLoad.position - transform.position).magnitude;    //_navMeshAgent.remainingDistance <= _navMeshAgent.stoppingDistance   
     }
 
-    public float moveToDestination ()
+    public float moveToDestination()
     {
-          _navMeshAgent.SetDestination(_nest.position - _navMeshAgent.stoppingDistance * transform.forward);   
-          return (_nest.position - transform.position).magnitude;   
+        _navMeshAgent.SetDestination(_nest.position - _navMeshAgent.stoppingDistance * transform.forward);  
+
+        if (objectToLoad.GetComponent<FoodManager>().phTrace == null)
+        {
+            //set up a new phTrace
+            
+        }
+        else
+        {
+            //follow trace
+        }
+        timeleft -= Time.deltaTime; 
+        if(timeleft <= 0f)
+        {
+            timeleft += 2f;
+        }
+
+        return (_nest.position - transform.position).magnitude;   
     }
     
     void OnDrawGizmosSelected()
