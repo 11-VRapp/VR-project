@@ -19,7 +19,7 @@ public class AntFSM : MonoBehaviour
     private LinkedListNode<PheromoneRailPoint> _currentPheromonePoint;
     [SerializeField] private GameObject _pheromonePrefab;
     bool test = false;
-    private float timeleft = -1f;
+    private float timeleft = 2f;
 
 
     void Start()
@@ -107,8 +107,7 @@ public class AntFSM : MonoBehaviour
     public void moveToFood()
     {
         _navMeshAgent.SetDestination(objectToLoad.position);
-        pheromoneTrace = objectToLoad.GetComponent<FoodManager>().phTrace;
-        //return (objectToLoad.position - transform.position).magnitude <= 8f;
+        pheromoneTrace = objectToLoad.GetComponent<FoodManager>().phTrace;        
     }
 
     public float spawnNewPheromoneTrace()
@@ -131,7 +130,7 @@ public class AntFSM : MonoBehaviour
             Physics.Raycast(transform.position, -transform.up, out RaycastHit groundHit); //on ground Layer!
             GameObject newPoint = GameObject.Instantiate(_pheromonePrefab, groundHit.point, Quaternion.identity, pheromoneTrace.gameObject.transform); //spawn on the terrain...
             PheromoneRailPoint pheromone_point = newPoint.AddComponent<PheromoneRailPoint>();
-            pheromoneTrace.pushPointToTrace(pheromone_point); //stampa un errore a caso... ma va tutto
+            pheromoneTrace.pushPointToTrace(pheromone_point); 
 
             timeleft += 2f;
         }
@@ -172,6 +171,8 @@ public class AntFSM : MonoBehaviour
             Vector3 nextWayPointPos;            
 
             _currentPheromonePoint = pheromoneTrace.getPrevPoint(_currentPheromonePoint);
+            if(_currentPheromonePoint == null)
+                return;
             nextWayPointPos = _currentPheromonePoint.Value.gameObject.transform.position;
 
             _navMeshAgent.SetDestination(nextWayPointPos);
