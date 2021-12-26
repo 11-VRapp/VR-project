@@ -27,7 +27,7 @@ public class PheromoneRailPoint : MonoBehaviour
             triggerBox.enabled = false; 
     }  
 
-    public void addNewLife()  
+    public void addLife()  
     {
         life += 20f;
         triggerBox.enabled = true; 

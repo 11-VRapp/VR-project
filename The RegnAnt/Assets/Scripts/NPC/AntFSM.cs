@@ -16,9 +16,9 @@ public class AntFSM : MonoBehaviour
     public Transform objectToLoad;
     [SerializeField] private Transform _nest;
     public PheromoneRailTrace pheromoneTrace;
-    private LinkedListNode<PheromoneRailPoint> _currentPheromonePoint;
-    [SerializeField] private GameObject _pheromonePrefab;
-    bool test = false;
+    private LinkedListNode<PheromoneRailPoint> _currentPheromonePoint;    
+    private bool _lastPoint = false;
+    [SerializeField] private GameObject _pheromonePrefab;    
     private float timeleft = 2f;
 
 
@@ -140,22 +140,31 @@ public class AntFSM : MonoBehaviour
 
     public void followPheromoneTraceToNestState()
     {
-        if (_navMeshAgent.remainingDistance <= 2f)
+        if (_navMeshAgent.remainingDistance <= 1f && !_lastPoint)
         {
             Vector3 nextWayPointPos;
+            LinkedListNode<PheromoneRailPoint> prev = null;
             if (_currentPheromonePoint == pheromoneTrace.getTailNode())
             {
+                Debug.Log("Tail");
                 nextWayPointPos = new Vector3(_nest.position.x, transform.position.y, _nest.position.z);
+                _lastPoint = true;
             }
             else
             {
                 if (_currentPheromonePoint == null)
                     _currentPheromonePoint = pheromoneTrace.getHeadNode();
                 else
+                {
+                    prev = _currentPheromonePoint;
                     _currentPheromonePoint = pheromoneTrace.getNextPoint(_currentPheromonePoint);
+                }                  
 
                 nextWayPointPos = _currentPheromonePoint.Value.gameObject.transform.position;
             }
+
+            if(prev != null || prev == pheromoneTrace.getTailNode())
+                prev.Value.GetComponent<PheromoneRailPoint>().addLife();
             _navMeshAgent.SetDestination(nextWayPointPos);
         }
     }
