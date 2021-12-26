@@ -1,10 +1,17 @@
 # Vita-da-formica
 ## Repository per il progetto di Virtual Reality
 
+# Contents
+
+- [Storia](#storia)
+- [NPC](#NPC)
+
+
+# storia
 Nascita e scelta tipo formica, opzioni tra operaio/soldato, regina e maschio, la regina e il maschio non sono presenti nella demo, oscurati
 
 * Operaia
-    * Cinematic, nascita, "formiche dottore", spiegazione di chi sei, cosa fai, ecc. da paerte delle formiche che si prendono cura di te, et intanto cresci
+    * Cinematic, nascita, "formiche dottore", spiegazione di chi sei, cosa fai, ecc. da parte delle formiche che si prendono cura di te, et intanto cresci
     * Quando compare l'esoscheletro finisce la cinematica (appare la scheda esoscheletro)
     * Raccogli uova da regina (slide regina) (Tutorial) e portarle alla stanza delle uova. spiegazione dei comandi, segui le altre formiche che fanno lo stesso
 1. Inizia ad accudire le larve
@@ -17,3 +24,15 @@ Nascita e scelta tipo formica, opzioni tra operaio/soldato, regina e maschio, la
 3. Attacco al nido
     * Ti armi e vai a combattere per difendere il nido
     * Dopo battaglia estenuante muori, inizia cinematica con zoom out con finale battaglia e raccolta cadaveri --> scritta o narratore che dice "Tu e altre siete cadute per la colonia, ma il nido continuerà"
+
+# NPC
+| ![NPC FSM](/ReadmeImages/NPCFSM.png "NPC FSM") |
+|:----------------------------------------------:|
+|                   *NPC FSM*                    |
+
+- `SetRandomPointDestination()` (in `AntFSM.cs`): Ottiene una posizione random via RandomNavMeshLocation() in un certo walkRadius e la imposta come destinazione
+- `LookAround()` (in `AntFSM.cs`): Lancia uno spherecast per identificare il tipo di oggetto (food, pheromone, enemy) di fronte a sé
+- `moveToFood()` (in `AntFSM.cs`): 
+- `spawnNewPheromoneTrace()` (in `AntFSM.cs`): 
+- `followPheromoneTraceToNestState()` (in `AntFSM.cs`): 
+- `followPheromoneTrace()` (in `AntFSM.cs`): 
