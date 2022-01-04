@@ -3,11 +3,12 @@
 
 # Contents
 
-- [Storia](#storia)
+- [Storia](#Storia)
+- [Storyboard](#Storyboard)
 - [NPC](#NPC)
 
 
-# storia
+# Storia
 Nascita e scelta tipo formica, opzioni tra operaio/soldato, regina e maschio, la regina e il maschio non sono presenti nella demo, oscurati
 
 * Operaia
@@ -24,6 +25,15 @@ Nascita e scelta tipo formica, opzioni tra operaio/soldato, regina e maschio, la
 3. Attacco al nido
     * Ti armi e vai a combattere per difendere il nido
     * Dopo battaglia estenuante muori, inizia cinematica con zoom out con finale battaglia e raccolta cadaveri --> scritta o narratore che dice "Tu e altre siete cadute per la colonia, ma il nido continuerà"
+
+# Storyboard
+||
+|:-----------------------------------------:|
+| ![S1](/ReadmeImages/Storyboard1.png "s1") |
+| ![S2](/ReadmeImages/Storyboard2.png "s2") |
+| ![S3](/ReadmeImages/Storyboard3.png "s3") |
+| ![S4](/ReadmeImages/Storyboard4.png "s4") |
+
 
 # NPC
 | ![NPC FSM](/ReadmeImages/NPCFSM.png "NPC FSM") |
