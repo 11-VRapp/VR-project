@@ -46,3 +46,9 @@ Nascita e scelta tipo formica, opzioni tra operaio/soldato, regina e maschio, la
 - `spawnNewPheromoneTrace()` (in `AntFSM.cs`): 
 - `followPheromoneTraceToNestState()` (in `AntFSM.cs`): 
 - `followPheromoneTrace()` (in `AntFSM.cs`): 
+
+
+
+# Attributions
+
+Book cover in diary system to: <a href="https://www.vecteezy.com/free-vector/ornament">Ornament Vectors by Vecteezy</a>
