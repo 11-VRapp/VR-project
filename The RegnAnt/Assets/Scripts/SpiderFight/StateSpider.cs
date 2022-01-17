@@ -29,11 +29,11 @@ public class AttackState : State
     private spiderFSM _spider;
     public AttackState(string name, spiderFSM spider) : base(name) => _spider = spider;
 
-    public override void Enter() { }
+    public override void Enter() => _spider.setUpAttack();
 
     public override void Tik()
     {
-        
+        _spider.AttackWithLegs();
     }
 
 

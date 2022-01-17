@@ -19,6 +19,9 @@ public class FootIKSolver : MonoBehaviour
     [SerializeField] private float lerp;
     [SerializeField] private float footSpacingLat = 2f;
     [SerializeField] private float footSpacingForw = 2f;
+
+
+    private Transform _legElevateFinalPosition;
     
    
     void Start()
@@ -63,10 +66,8 @@ public class FootIKSolver : MonoBehaviour
         {
             oldPosition = newPosition;
             oldNormal = newNormal;
-        }
-        
+        }        
     }
-
 
     void OnDrawGizmos()
     {
