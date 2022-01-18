@@ -13,6 +13,7 @@ public class RunState : State
     public override void Enter()
     {
        _spider.SetRandomPointDestination();
+       _spider.SetSemaphoreLegsCounter(0);
     }
 
     public override void Tik()
@@ -29,11 +30,11 @@ public class AttackState : State
     private spiderFSM _spider;
     public AttackState(string name, spiderFSM spider) : base(name) => _spider = spider;
 
-    public override void Enter() => _spider.setUpAttack();
+    public override void Enter() => _spider.Attack();
 
     public override void Tik()
     {
-        _spider.AttackWithLegs();
+        
     }
 
 

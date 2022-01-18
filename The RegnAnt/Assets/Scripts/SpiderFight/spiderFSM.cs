@@ -3,29 +3,28 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.Animations.Rigging;
-
+using DG.Tweening;
 
 public class spiderFSM : MonoBehaviour
 {
     [Header("NPC values")]
-    [Range(0, 500)] public float walkRadius;
+    [Range(0, 500)] public float walkRadius = 250;
 
-    [SerializeField] private float _minDistance;
+    [SerializeField] private float _minDistance = 150;
     private FiniteStateMachine<spiderFSM> _stateMachine;
     private NavMeshAgent _navMeshAgent;
     [SerializeField] private Transform _terrain;
     Vector3 destination;
-    bool test = false;
-
+    
     [SerializeField] private List<GameObject> _legRigs;
     [SerializeField] private List<FootIKSolver> _legIKSolver;
 
-    private int _attackPhase = 0;
+    private int sem_leg_counter;
 
     private List<int> legsAttacking;
 
     void Start()
-    {
+    {        
         _navMeshAgent = GetComponent<NavMeshAgent>();
 
         _stateMachine = new FiniteStateMachine<spiderFSM>(this);
@@ -37,13 +36,14 @@ public class spiderFSM : MonoBehaviour
 
         //TRANSITIONS
         _stateMachine.AddTransition(runState, attackState, () => _navMeshAgent.remainingDistance <= _navMeshAgent.stoppingDistance);
-        _stateMachine.AddTransition(attackState, attackCloseState, () => test);
+        _stateMachine.AddTransition(attackState, runState, () => sem_leg_counter == 4); //counter of 
 
         //START STATE
-        _stateMachine.SetState(runState);
+        _stateMachine.SetState(runState); //runState
 
 
         legsAttacking = new List<int>();
+
     }
 
     // Update is called once per frame
@@ -71,7 +71,7 @@ public class spiderFSM : MonoBehaviour
 
         return finalPosition;
     }
-    
+
     private Vector3 direction;
     public void RotateTowards()
     {
@@ -83,12 +83,12 @@ public class spiderFSM : MonoBehaviour
         }
     }
 
-    public void setUpAttack()
+    public void Attack()
     {
         /* Choosing legs preparing to attack */
         int z_sx = Random.Range(1, 3); //maxExclusive        
 
-        Debug.Log(z_sx);
+        //print("z_sx: " + z_sx);
 
         for (int i = 2; i <= 6; i += 2)  // Only one leg on the left side  // so get central one on sx, others but non central on dx     
             legsAttacking.Add(i - z_sx); //indexes of legsRigs relative to the legs chosen
@@ -96,56 +96,40 @@ public class spiderFSM : MonoBehaviour
         legsAttacking.Add(Random.Range(1, 3) + 5); //one of the two frontal legs
 
         /* disable legIkSolver to elevate the leg */
-
-        foreach (int legIndex in legsAttacking)
-        {
-            _legIKSolver[legIndex].enabled = false;
-            _legRigs[legIndex].GetComponent<MultiRotationConstraint>().weight = 1;
-            //_legRigs[legIndex].GetComponent<TwoBoneIKConstraint>().weight = 0;
-            //_legRigs[legIndex].GetComponent<ChainIKConstraint>().weight = 1;
-        }
+        foreach (int legIndex in legsAttacking)   
+            StartCoroutine(AttackCoroutine(_legIKSolver[legIndex], _legRigs[legIndex])); 
+        
     }
 
-    public void AttackWithLegs()
+
+    IEnumerator AttackCoroutine(FootIKSolver leg, GameObject legParent)
     {
-        switch (_attackPhase)
+        leg.enabled = false;   
+        legParent.GetComponent<MultiRotationConstraint>().weight = 1;
+
+        while (leg.transform.position.y < 10f)
         {
-            case 0:
-                RiseLegs();
-                break;
-            case 1:
-                LookingNearestObject();
-                break;
+            leg.transform.Translate(Vector3.up * 3f * Time.deltaTime, Space.World);            
+            yield return null;
         }
+
+        leg.transform.DOShakePosition(3f, .6f, 2, 10);
+        yield return new WaitForSeconds(2f);
+
+        Transform target = leg.GetComponent<footController>().CheckEnemyToAttack();
+        if (target != null)
+            StartCoroutine(leg.GetComponent<footController>().LegAttack(target));
+
+        print("EndOfCorutine");
+        yield return new WaitForSeconds (5f);
+
+        legParent.GetComponent<MultiRotationConstraint>().weight = 0;
+        leg.enabled = true;   
+        sem_leg_counter++;
     }
 
 
-    private void RiseLegs()
-    {
-        foreach (int legIndex in legsAttacking)
-        {
-            _legIKSolver[legIndex].transform.position = Vector3.MoveTowards(_legIKSolver[legIndex].transform.position, new Vector3(_legIKSolver[legIndex].transform.position.x, 11f, _legIKSolver[legIndex].transform.position.z), 3f * Time.deltaTime);
-
-            // Check if the position of the cube and sphere are approximately equal.
-            if (Vector3.Distance(transform.position, new Vector3(_legIKSolver[legIndex].transform.position.x, 11f, _legIKSolver[legIndex].transform.position.z)) < 0.001f)
-            {
-                _attackPhase = 1;
-                return;
-            }
-        }
-    }
-    
-    private void LookingNearestObject()
-    {
-       foreach (int legIndex in legsAttacking)
-        {
-            _legIKSolver[legIndex].GetComponent<SphereCollider>().enabled = true;
-            //_legRigs[legIndex].GetComponent<MultiRotationConstraint>().weight = 1;
-            //_legRigs[legIndex].GetComponent<TwoBoneIKConstraint>().weight = 0;
-            //_legRigs[legIndex].GetComponent<ChainIKConstraint>().weight = 1;
-        }
-    }
-
+    public void SetSemaphoreLegsCounter(int cnt) => sem_leg_counter = cnt;
 
     void OnDrawGizmosSelected()
     {
@@ -155,6 +139,6 @@ public class spiderFSM : MonoBehaviour
 
         Gizmos.color = Color.green;
         Gizmos.DrawSphere(direction, 5f);
-        
+
     }
 }

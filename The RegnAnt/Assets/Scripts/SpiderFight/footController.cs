@@ -5,38 +5,53 @@ using System.Linq;
 
 public class footController : MonoBehaviour
 {
+    [SerializeField] private Transform _player;
     [SerializeField] private LayerMask _antMask;
+
+    private float _smoothing = 10f;
+    [SerializeField] private float currentDist;
 
     public Transform CheckEnemyToAttack()
     {
+        print("CheckEnemyToAttack()");  
         
-        RaycastHit[] hits = Physics.SphereCastAll(transform.position, 5, -transform.up, 10f, _antMask);
+        RaycastHit[] hits = Physics.SphereCastAll(transform.position, 7f, -Vector3.up, 10f, _antMask);
 
-        foreach (RaycastHit hit in hits) //just for debug        
-            Debug.Log(hit.collider.gameObject.name + " " + hit.distance);
-        
+        if(hits.Count() == 0)
+        {
+            print(transform.name +" No object colliding");
+            return null;
+        }
+            
 
+        foreach (RaycastHit hit in hits) //just for debug   
+        {
+            currentDist = hit.distance;
+            Debug.Log(transform.name + " " + hit.collider.gameObject.name + " " + hit.distance);
+            if(hit.transform.tag == "Player")
+                return _player;
+        }          
+                
         return hits.OrderBy(h => h.distance).First().transform;
     }
 
-    /*public int GetIndexOfLowestValue(float[] arr)
+    public IEnumerator LegAttack(Transform target)
     {
-        float value = float.PositiveInfinity;
-        int index = -1;
-        for (int i = 0; i < arr.Length; i++)
+        print("LegAttack");
+        while(Vector3.Distance(transform.position, target.position) > 0.05f)
         {
-            if (arr[i] < value)
-            {
-                index = i;
-                value = arr[i];
-            }
+            transform.position = Vector3.Lerp(transform.position, target.position, _smoothing * Time.deltaTime);
+            yield return null;
         }
-        return index;
-    }*/
+        print("Reached the target");
+        yield return new WaitForSeconds (3f);        
+    }    
 
     void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;
-        Gizmos.DrawSphere(transform.position, 5f);
+        //Gizmos.DrawSphere(transform.position, 2f);
+        Debug.DrawLine(transform.position, transform.position - Vector3.up * currentDist, Color.magenta); 
+        Gizmos.DrawWireSphere(transform.position -Vector3.up * currentDist, 7f);
     }
 }

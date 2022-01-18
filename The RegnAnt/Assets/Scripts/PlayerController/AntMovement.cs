@@ -7,7 +7,7 @@ public class AntMovement : MonoBehaviour
     [SerializeField] LayerMask terrainLayer = default;
 
     [Header("Movement")]
-    public float moveSpeed = 3f;
+    public float moveSpeed = 7f;
     public float movementMultiplier = 10f;
     [SerializeField] private float _rotateSpeed = 0.1f;
     [SerializeField] Transform orientation = null;
@@ -77,7 +77,7 @@ public class AntMovement : MonoBehaviour
         {
             Debug.Log("HitGround");
             _falling = false;
-            moveSpeed = 3f;          
+            moveSpeed = 7f;          
             
             rotateToSurfaceNormal(_hitGround.normal, _rotateSpeed * Time.deltaTime);
         }                   
