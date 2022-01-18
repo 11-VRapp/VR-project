@@ -75,7 +75,7 @@ public class AntMovement : MonoBehaviour
     {             
         if(Physics.SphereCast(_groundCheckPosition.position + 1f * orientation.forward, 0.5f, -transform.up, out _hitGround, 4f, terrainLayer.value)) 
         {
-            Debug.Log("HitGround");
+            //Debug.Log("HitGround");
             _falling = false;
             moveSpeed = 7f;          
             
@@ -85,13 +85,13 @@ public class AntMovement : MonoBehaviour
 
     private bool wallCheck() 
     {   
-        Debug.Log("Checking Wall");
+        //Debug.Log("Checking Wall");
         Debug.DrawLine(transform.position - 1f * orientation.up, transform.position - 1f * orientation.up + 2.5f * orientation.forward, Color.black);  
         
         if(Physics.Raycast(transform.position - 1f * orientation.up, orientation.forward, out _hitGround, 2.5f, terrainLayer.value))
         //|| Physics.Raycast(transform.position - 1f * orientation.up, -orientation.forward, out _hitGround, 2.5f, terrainLayer.value))
         {
-            Debug.LogWarning("Wall detected");
+            //Debug.LogWarning("Wall detected");
             rotateToSurfaceNormal(_hitGround.normal, _rotateSpeed * Time.deltaTime);
             return true;
         }

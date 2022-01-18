@@ -34,7 +34,7 @@ public class AttackState : State
 
     public override void Tik()
     {
-        
+        _spider.CheckPlayerNotTooClose();
     }
 
 
