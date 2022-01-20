@@ -43,7 +43,6 @@ public class spiderFSM : MonoBehaviour
         //STATES
         State runState = new RunState("Run", this);
         State attackState = new AttackState("Attack", this);
-        State attackCloseState = new AttackState("AttackClose", this);
 
         //TRANSITIONS
         _stateMachine.AddTransition(runState, attackState, () => _navMeshAgent.remainingDistance <= _navMeshAgent.stoppingDistance);
@@ -99,7 +98,7 @@ public class spiderFSM : MonoBehaviour
 
     public void StartAttack()
     {
-        _maxAttacksPerRound = Random.Range(2, 5); 
+        _maxAttacksPerRound = Random.Range(2, 5);
         StartCoroutine(AttackManager());
     }
     private IEnumerator AttackManager()
@@ -111,7 +110,7 @@ public class spiderFSM : MonoBehaviour
             StartCoroutine(Attack());
             yield return new WaitUntil(() => (sem_leg_counter == 4));
 
-            yield return new WaitForSeconds(2f);   
+            //yield return new WaitForSeconds(2f);   
         }
 
         yield return null;
@@ -152,8 +151,8 @@ public class spiderFSM : MonoBehaviour
             yield return null;
         }
 
-        leg.transform.DOShakePosition(3f, .6f, 2, 10);
-        yield return new WaitForSeconds(2f);
+        //leg.transform.DOShakePosition(3f, .6f, 2, 10);
+        yield return new WaitForSeconds(.5f);
 
         Transform target = leg.GetComponent<footController>().CheckEnemyToAttack();
         if (target != null)
@@ -162,13 +161,15 @@ public class spiderFSM : MonoBehaviour
             StartCoroutine(leg.GetComponent<footController>().LegAttack(new Vector3(target.position.x, 0f, target.position.z)));
         }
 
-        //print("EndOfCorutine");
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(.5f);
+        legsAttacking.Clear(); //in questo modo se provi a salire su gamba a terra dopo attacco non vieni ferito
+        yield return new WaitForSeconds(2f);
+        
         re_Posing(false);
 
         legParent.GetComponent<MultiRotationConstraint>().weight = 0;
         leg.enabled = true;
-        sem_leg_counter++;        
+        sem_leg_counter++;
     }
 
     public void CheckPlayerNotTooClose()
@@ -176,7 +177,7 @@ public class spiderFSM : MonoBehaviour
         if (Vector3.Distance(transform.position, _player.position) > _biteDistance)
             _animator.SetBool("AttackZone", false);
 
-        if (Vector3.Distance(transform.position, _player.position) < _warningDistance && !_waitingToRe_pose) //ma NON nell'istante in cui si è fermato dopo attacco!!
+        if (Vector3.Distance(transform.position, _player.position) < _warningDistance && !_waitingToRe_pose) //NON re-posing nell'istante in cui si è fermato dopo attacco!!
         {
             Debug.LogWarning("Too CLOSE!");
             Vector3 targetDirection = _player.transform.position - transform.position;
@@ -188,16 +189,16 @@ public class spiderFSM : MonoBehaviour
             Vector3 newDirection = Vector3.RotateTowards(transform.forward, targetDirection, rotationStep, 0.0f);
             transform.rotation = Quaternion.LookRotation(newDirection, transform.up);
 
-           
-            _headTarget.transform.position = _player.position - Vector3.up * offset;
+
+            _headTarget.transform.position = _player.position - Vector3.up * offset; //DOMove?
 
             if (Vector3.Distance(transform.position, _player.position) < _biteDistance)
                 _animator.SetBool("AttackZone", true);
 
             return;
         }
-        else        
-           _headTarget.transform.localPosition = new Vector3(0f, 1.7f, 0f);
+        else
+            _headTarget.transform.localPosition = new Vector3(0f, 1.7f, 0f);
     }
 
     public void re_Posing(bool p) => _waitingToRe_pose = p;
@@ -205,6 +206,12 @@ public class spiderFSM : MonoBehaviour
 
 
     public void SetSemaphoreLegsCounter(int cnt) => sem_leg_counter = cnt;
+
+
+    public bool collidingWithAttackingLeg(int index)
+    {
+        return legsAttacking.Contains(index);
+    }
 
     void OnDrawGizmosSelected()
     {

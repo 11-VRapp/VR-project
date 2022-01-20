@@ -302,6 +302,7 @@ GameObject:
   - component: {fileID: 1224882983584980673}
   - component: {fileID: 248514210689624016}
   - component: {fileID: 248514210689624029}
+  - component: {fileID: 4752741428755659651}
   m_Layer: 0
   m_Name: Ant Controller UI
   m_TagString: Untagged
@@ -379,6 +380,18 @@ MonoBehaviour:
   orientation: {fileID: 248514210915198233}
   _gravity: 10
   _groundCheckPosition: {fileID: 248514210648688598}
+--- !u!114 &4752741428755659651
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2968231720804719897}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e604142eb37c2149b0281d4dd8bb0da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3093236092361549485
 GameObject:
   m_ObjectHideFlags: 0

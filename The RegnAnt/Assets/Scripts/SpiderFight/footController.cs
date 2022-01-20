@@ -8,7 +8,7 @@ public class footController : MonoBehaviour
     [SerializeField] private Transform _player;
     [SerializeField] private LayerMask _antMask;
 
-    private float _smoothing = 10f;
+    private float _smoothing = 30f;
     [SerializeField] private float currentDist;
 
     public Transform CheckEnemyToAttack()
