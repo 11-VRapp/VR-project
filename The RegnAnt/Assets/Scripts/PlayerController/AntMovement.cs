@@ -23,6 +23,8 @@ public class AntMovement : MonoBehaviour
     [SerializeField] private Transform _groundCheckPosition;   
     private Rigidbody _rb; 
 
+    public bool canMove = true;  //from spider hook
+
     private void Start()
     {
         _rb = GetComponent<Rigidbody>();            
@@ -44,7 +46,9 @@ public class AntMovement : MonoBehaviour
     }
 
     private void FixedUpdate()
-    {   
+    { 
+        if(!canMove)
+            return;  
         MovePlayer();  
         //wallCheck();    
         if (wallCheck() == false)

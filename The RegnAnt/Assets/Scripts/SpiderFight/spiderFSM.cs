@@ -33,6 +33,8 @@ public class spiderFSM : MonoBehaviour
     [SerializeField] private int _maxAttacksPerRound = 3;
     private int attackCounter = 1;
 
+    public bool JawsHooking = false;
+
     void Start()
     {
         _navMeshAgent = GetComponent<NavMeshAgent>();
@@ -94,8 +96,6 @@ public class spiderFSM : MonoBehaviour
             transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.fixedDeltaTime * 5f);
         }
     }
-
-
     public void StartAttack()
     {
         _maxAttacksPerRound = Random.Range(2, 5);
@@ -138,8 +138,6 @@ public class spiderFSM : MonoBehaviour
 
         yield return null;
     }
-
-
     private IEnumerator AttackCoroutine(FootIKSolverSpider leg, GameObject legParent)
     {
         leg.enabled = false;
@@ -174,6 +172,12 @@ public class spiderFSM : MonoBehaviour
 
     public void CheckPlayerNotTooClose()
     {
+        if(JawsHooking)
+        {
+            _animator.SetBool("AttackZone", false);            
+            return;
+        }
+
         if (Vector3.Distance(transform.position, _player.position) > _biteDistance)
             _animator.SetBool("AttackZone", false);
 
@@ -199,19 +203,11 @@ public class spiderFSM : MonoBehaviour
         }
         else
             _headTarget.transform.localPosition = new Vector3(0f, 1.7f, 0f);
-    }
+    }    
 
     public void re_Posing(bool p) => _waitingToRe_pose = p;
-
-
-
     public void SetSemaphoreLegsCounter(int cnt) => sem_leg_counter = cnt;
-
-
-    public bool collidingWithAttackingLeg(int index)
-    {
-        return legsAttacking.Contains(index);
-    }
+    public bool collidingWithAttackingLeg(int index) => legsAttacking.Contains(index);    
 
     void OnDrawGizmosSelected()
     {
