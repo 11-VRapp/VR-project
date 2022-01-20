@@ -17,10 +17,9 @@ public class footController : MonoBehaviour
 
         if(hits.Count() == 0)
         {
-            print(transform.name +" No object colliding");
+            //print(transform.name +" No object colliding");
             return null;
-        }
-            
+        }            
 
         foreach (RaycastHit hit in hits)   
         {
@@ -35,13 +34,13 @@ public class footController : MonoBehaviour
 
     public IEnumerator LegAttack(Vector3 target)
     {
-        print("LegAttack");
+        //print("LegAttack");
         while(Vector3.Distance(transform.position, target) > 0.05f) 
         {
             transform.position = Vector3.Lerp(transform.position, target, _smoothing * Time.deltaTime); //fixed?
             yield return null;
         }        
-        print("Reached the target");             
+        //print("Reached the target");             
     }    
 
     void OnDrawGizmosSelected()

@@ -4,11 +4,11 @@ using UnityEngine;
 
 /** for leg movement **/
 
-public class FootIKSolver : MonoBehaviour
+public class FootIKSolverSpider : MonoBehaviour
 {
     [SerializeField] LayerMask terrainLayer = default;
     [SerializeField] private Transform body;
-    [SerializeField] private FootIKSolver otherFoot;
+    [SerializeField] private FootIKSolverSpider otherFoot;
     
     private Vector3 oldPosition, currentPosition, newPosition;
     private Vector3 oldNormal, currentNormal, newNormal;
@@ -18,7 +18,10 @@ public class FootIKSolver : MonoBehaviour
     [SerializeField] private float stepHeight = 0.2f;
     [SerializeField] private float lerp;
     [SerializeField] private float footSpacingLat = 2f;
-    [SerializeField] private float footSpacingForw = 2f;    
+    [SerializeField] private float footSpacingForw = 2f;   
+
+    [SerializeField] private spiderFSM _state; 
+    
    
     void Start()
     {
@@ -40,7 +43,7 @@ public class FootIKSolver : MonoBehaviour
         {      
             Debug.DrawLine(transform.position, info.point, Color.green);
             //transform.position = info.point; stick it to the point
-            if(Vector3.Distance(newPosition, info.point) > stepDistance && !otherFoot.IsMoving() && lerp >= 1)             
+            if(Vector3.Distance(newPosition, info.point) > stepDistance && (!otherFoot.IsMoving() || !_state.moving) && lerp >= 1)             
             {               
                 lerp = 0;
                 int direction = body.InverseTransformPoint(info.point).z > body.InverseTransformPoint(newPosition).z ? 1 : -1;

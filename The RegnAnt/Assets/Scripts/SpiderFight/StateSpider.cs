@@ -12,13 +12,14 @@ public class RunState : State
 
     public override void Enter()
     {
-       _spider.SetRandomPointDestination();
-       _spider.SetSemaphoreLegsCounter(0);
+        _spider.moving = true;
+        _spider.SetRandomPointDestination();
+        _spider.SetSemaphoreLegsCounter(0);
     }
 
     public override void Tik()
     {
-        _spider.RotateTowards();
+        _spider.RotateTowardsCenter();
     }
 
     public override void Exit() { }
@@ -30,15 +31,15 @@ public class AttackState : State
     private spiderFSM _spider;
     public AttackState(string name, spiderFSM spider) : base(name) => _spider = spider;
 
-    public override void Enter() => _spider.Attack();
-
-    public override void Tik()
+    public override void Enter()
     {
-        _spider.CheckPlayerNotTooClose();
+        _spider.moving = false;
+        _spider.StartAttack();
     }
 
+    public override void Tik() => _spider.CheckPlayerNotTooClose();
 
-    public override void Exit() { }
+    public override void Exit() { _spider.StopAllCoroutines(); }
 
 
 }

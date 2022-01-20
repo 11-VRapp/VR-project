@@ -17,7 +17,7 @@ public class spiderFSM : MonoBehaviour
     Vector3 destination;
 
     [SerializeField] private List<GameObject> _legRigs;
-    [SerializeField] private List<FootIKSolver> _legIKSolver;
+    [SerializeField] private List<FootIKSolverSpider> _legIKSolver;
 
     [SerializeField] private Transform _player;
     [SerializeField] [Range(0, 20)] private float _warningDistance;
@@ -25,8 +25,13 @@ public class spiderFSM : MonoBehaviour
     private int sem_leg_counter;
     private List<int> legsAttacking;
     private bool _waitingToRe_pose = false;
-
+    [SerializeField] private Transform _headTarget;
     private Animator _animator;
+    public float offset = 0;
+    public bool moving = true;
+
+    [SerializeField] private int _maxAttacksPerRound = 3;
+    private int attackCounter = 1;
 
     void Start()
     {
@@ -42,7 +47,7 @@ public class spiderFSM : MonoBehaviour
 
         //TRANSITIONS
         _stateMachine.AddTransition(runState, attackState, () => _navMeshAgent.remainingDistance <= _navMeshAgent.stoppingDistance);
-        _stateMachine.AddTransition(attackState, runState, () => sem_leg_counter == 4); //counter of legs
+        _stateMachine.AddTransition(attackState, runState, () => attackCounter == _maxAttacksPerRound); //counter of legs
 
         //START STATE
         _stateMachine.SetState(runState); //runState
@@ -78,20 +83,46 @@ public class spiderFSM : MonoBehaviour
         return finalPosition;
     }
 
-    private Vector3 direction;
-    public void RotateTowards()
+    private Vector3 _direction;
+    public void RotateTowardsCenter()
     {
         if (_navMeshAgent.remainingDistance <= _navMeshAgent.stoppingDistance + 15f)
         {
-            direction = (_terrain.position - transform.position).normalized;
-            Quaternion lookRotation = Quaternion.LookRotation(direction);
+            _direction = _terrain.position - transform.position;
+            _direction.y = 0f;
+            _direction.Normalize();
+            Quaternion lookRotation = Quaternion.LookRotation(_direction);
             transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.fixedDeltaTime * 5f);
         }
     }
 
-    public void Attack()
+
+    public void StartAttack()
     {
+        _maxAttacksPerRound = Random.Range(2, 5); 
+        StartCoroutine(AttackManager());
+    }
+    private IEnumerator AttackManager()
+    {
+        for (attackCounter = 0; attackCounter < _maxAttacksPerRound; attackCounter++)
+        {
+            Debug.Log("Counter attack: " + attackCounter + "/" + _maxAttacksPerRound);
+            sem_leg_counter = 0;
+            StartCoroutine(Attack());
+            yield return new WaitUntil(() => (sem_leg_counter == 4));
+
+            yield return new WaitForSeconds(2f);   
+        }
+
+        yield return null;
+    }
+
+    private IEnumerator Attack()
+    {
+        foreach (FootIKSolverSpider leg in _legIKSolver)
+            leg.enabled = true;
         legsAttacking.Clear();
+
         /* Choosing legs preparing to attack */
         int z_sx = Random.Range(1, 3); //maxExclusive        
 
@@ -106,10 +137,11 @@ public class spiderFSM : MonoBehaviour
         foreach (int legIndex in legsAttacking)
             StartCoroutine(AttackCoroutine(_legIKSolver[legIndex], _legRigs[legIndex]));
 
+        yield return null;
     }
 
 
-    private IEnumerator AttackCoroutine(FootIKSolver leg, GameObject legParent)
+    private IEnumerator AttackCoroutine(FootIKSolverSpider leg, GameObject legParent)
     {
         leg.enabled = false;
         legParent.GetComponent<MultiRotationConstraint>().weight = 1;
@@ -129,22 +161,20 @@ public class spiderFSM : MonoBehaviour
             re_Posing(true);
             StartCoroutine(leg.GetComponent<footController>().LegAttack(new Vector3(target.position.x, 0f, target.position.z)));
         }
-            
 
-
-        print("EndOfCorutine");
+        //print("EndOfCorutine");
         yield return new WaitForSeconds(5f);
         re_Posing(false);
 
         legParent.GetComponent<MultiRotationConstraint>().weight = 0;
         leg.enabled = true;
-        sem_leg_counter++;
+        sem_leg_counter++;        
     }
 
     public void CheckPlayerNotTooClose()
     {
-        if(Vector3.Distance(transform.position, _player.position) > _biteDistance)            
-             _animator.SetBool("AttackZone", false);
+        if (Vector3.Distance(transform.position, _player.position) > _biteDistance)
+            _animator.SetBool("AttackZone", false);
 
         if (Vector3.Distance(transform.position, _player.position) < _warningDistance && !_waitingToRe_pose) //ma NON nell'istante in cui si è fermato dopo attacco!!
         {
@@ -154,21 +184,27 @@ public class spiderFSM : MonoBehaviour
             targetDirection.Normalize();
 
             //Rotate toward target direction
-            float rotationStep = 5f * Time.deltaTime;
+            float rotationStep = 2f * Time.deltaTime;
             Vector3 newDirection = Vector3.RotateTowards(transform.forward, targetDirection, rotationStep, 0.0f);
             transform.rotation = Quaternion.LookRotation(newDirection, transform.up);
 
-            if(Vector3.Distance(transform.position, _player.position) < _biteDistance)
-            {
+           
+            _headTarget.transform.position = _player.position - Vector3.up * offset;
+
+            if (Vector3.Distance(transform.position, _player.position) < _biteDistance)
                 _animator.SetBool("AttackZone", true);
-            }            
+
+            return;
         }
+        else        
+           _headTarget.transform.localPosition = new Vector3(0f, 1.7f, 0f);
     }
 
     public void re_Posing(bool p) => _waitingToRe_pose = p;
 
 
-    public void SetSemaphoreLegsCounter(int cnt) => sem_leg_counter = cnt;    
+
+    public void SetSemaphoreLegsCounter(int cnt) => sem_leg_counter = cnt;
 
     void OnDrawGizmosSelected()
     {
@@ -177,7 +213,7 @@ public class spiderFSM : MonoBehaviour
         Gizmos.DrawSphere(destination, 5f);
 
         Gizmos.color = Color.green;
-        Gizmos.DrawSphere(direction, 5f);
+        Gizmos.DrawSphere(_direction, 5f);
 
         Debug.DrawLine(transform.position, transform.position + Vector3.forward * _warningDistance, Color.yellow);
         Debug.DrawLine(transform.position, transform.position + Vector3.forward * _biteDistance, Color.red);
