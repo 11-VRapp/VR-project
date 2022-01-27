@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1473430621660666438}
   - component: {fileID: 2584352385149916643}
   - component: {fileID: 304416856601239849}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: margherita
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -60,9 +60,9 @@ MeshRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2746693734237461342, guid: ae2f2819b77a3c54b9c73c690eebd21b, type: 3}
-  - {fileID: 728679583452585941, guid: ae2f2819b77a3c54b9c73c690eebd21b, type: 3}
+  - {fileID: 2100000, guid: ae63e3133500420469b3b2230163bc06, type: 2}
   - {fileID: 5630517183104872607, guid: ae2f2819b77a3c54b9c73c690eebd21b, type: 3}
-  - {fileID: -2443798845963021356, guid: ae2f2819b77a3c54b9c73c690eebd21b, type: 3}
+  - {fileID: 2100000, guid: 880b757c86deedb45be72e09104e2861, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
