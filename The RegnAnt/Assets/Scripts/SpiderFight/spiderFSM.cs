@@ -87,13 +87,15 @@ public class spiderFSM : MonoBehaviour
     private Vector3 _direction;
     public void RotateTowardsCenter()
     {
-        if (_navMeshAgent.remainingDistance <= _navMeshAgent.stoppingDistance + 15f)
+        if (_navMeshAgent.remainingDistance <= _navMeshAgent.stoppingDistance + 45f)
         {
             _direction = _terrain.position - transform.position;
             _direction.y = 0f;
             _direction.Normalize();
             Quaternion lookRotation = Quaternion.LookRotation(_direction);
-            transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.fixedDeltaTime * 5f);
+            
+            transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.fixedDeltaTime * .25f);
+            //transform.DORotate(_direction, 2.5f, RotateMode.Fast);
         }
     }
     public void StartAttack()
@@ -105,7 +107,7 @@ public class spiderFSM : MonoBehaviour
     {
         for (attackCounter = 0; attackCounter < _maxAttacksPerRound; attackCounter++)
         {
-            Debug.Log("Counter attack: " + attackCounter + "/" + _maxAttacksPerRound);
+            //Debug.Log("Counter attack: " + attackCounter + "/" + _maxAttacksPerRound);
             sem_leg_counter = 0;
             StartCoroutine(Attack());
             yield return new WaitUntil(() => (sem_leg_counter == 4));
