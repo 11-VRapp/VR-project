@@ -1,11 +1,12 @@
 # The regnANT
 ## Repository per il progetto di Virtual Reality
-ciao
 # Contents
 
 - [Storia](#Storia)
 - [Storyboard](#Storyboard)
 - [NPC](#NPC)
+- [Boss Fight](#Boss_Fight)
+- [Attributions](#Attributions)
 
 
 # Storia
@@ -47,8 +48,17 @@ Nascita e scelta tipo formica, opzioni tra operaio/soldato, regina e maschio, la
 - `followPheromoneTraceToNestState()` (in `AntFSM.cs`): 
 - `followPheromoneTrace()` (in `AntFSM.cs`): 
 
+# Boss_Fight
 
+| ![spider FSM](/ReadmeImages/spiderFSM.png "spider FSM") |
+|:----------------------------------------------:|
+|                   *spider FSM*                    |
+
+- `SetRandomPointDestination()` (in `spiderFSM.cs`): Ottiene una posizione random via RandomNavMeshLocation() in un certo walkRadius e la imposta come destinazione
+- `RandomNavMeshLocation()` (in `spiderFSM.cs`): Lancia uno spherecast per identificare il tipo di oggetto (food, pheromone, enemy) di fronte a sé
 
 # Attributions
 
 Book cover in diary system to: <a href="https://www.vecteezy.com/free-vector/ornament">Ornament Vectors by Vecteezy</a>
+
+Spider model by: misfit410 <a href="https://skfb.ly/6BGpt"> on sketchfab</a>
