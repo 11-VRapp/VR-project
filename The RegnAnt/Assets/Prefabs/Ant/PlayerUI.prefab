@@ -5417,11 +5417,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2581322614238710311}
-  - component: {fileID: 2925478908898955416}
   - component: {fileID: 2925478908898955423}
   - component: {fileID: 2925478908898955422}
+  - component: {fileID: 7303489622438866877}
   m_Layer: 0
-  m_Name: PlayerUI6
+  m_Name: Ant
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5444,51 +5444,6 @@ Transform:
   m_Father: {fileID: 7624277552810656445}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2925478908898955416
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2925478908898955421}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b2d8418b0b9634b1892b0268dd9c2743, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  boneShape: 1
-  drawBones: 1
-  drawTripods: 0
-  boneSize: 0.33
-  tripodSize: 1
-  boneColor: {r: 0, g: 0, b: 1, a: 0.5}
-  m_Transforms:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
 --- !u!114 &2925478908898955423
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5515,7 +5470,7 @@ Animator:
   m_GameObject: {fileID: 2925478908898955421}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 13e99b670ae5a8e42bf02e7431ae0f34, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -5524,6 +5479,53 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &7303489622438866877
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2925478908898955421}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2d8418b0b9634b1892b0268dd9c2743, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  boneShape: 1
+  drawBones: 1
+  drawTripods: 0
+  boneSize: 1
+  tripodSize: 1
+  boneColor: {r: 0, g: 0, b: 1, a: 0.5}
+  m_Transforms:
+  - {fileID: 4129603364830369848}
+  - {fileID: 165795591729691079}
+  - {fileID: 2143513773496117157}
+  - {fileID: 137176210624256684}
+  - {fileID: 3526314521211855373}
+  - {fileID: 6657908945215090922}
+  - {fileID: 3287420055450547509}
+  - {fileID: 7105304713730888992}
+  - {fileID: 264316875097220267}
+  - {fileID: 2994418392421553835}
+  - {fileID: 8980753855836885181}
+  - {fileID: 2270412572388105866}
+  - {fileID: 3548135453935979737}
+  - {fileID: 4606803402458318011}
+  - {fileID: 1726723150344934964}
+  - {fileID: 6810711266326111990}
+  - {fileID: 2539960033648557805}
+  - {fileID: 3132662351662539353}
+  - {fileID: 2875829373891136817}
+  - {fileID: 4475442241338856518}
+  - {fileID: 4978801006851267071}
+  - {fileID: 2328546232738088268}
+  - {fileID: 3740101043254434885}
+  - {fileID: 2659761398478070218}
+  - {fileID: 5432921670075430783}
+  - {fileID: 3260175108202309052}
+  - {fileID: 8596591117171113975}
+  - {fileID: 3530866562451262220}
 --- !u!1 &2935639914929935051
 GameObject:
   m_ObjectHideFlags: 0
@@ -5877,7 +5879,7 @@ GameObject:
   - component: {fileID: 3119067597090311628}
   m_Layer: 0
   m_Name: PlayerUI
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 2488908585195742037, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6130,10 +6132,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 1.0030063
-  m_Height: 3.34
+  m_Radius: 0.6021987
+  m_Height: 2.4837646
   m_Direction: 2
-  m_Center: {x: 0, y: 0.15, z: 0}
+  m_Center: {x: 0, y: 0.14999998, z: 0.123117685}
 --- !u!1 &5900914677613384029
 GameObject:
   m_ObjectHideFlags: 0
