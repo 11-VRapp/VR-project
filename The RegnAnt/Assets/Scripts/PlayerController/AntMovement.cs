@@ -43,6 +43,8 @@ public class AntMovement : MonoBehaviour
     {
         MyInput();
         _slopeMoveDirection = Vector3.ProjectOnPlane(_moveDirection, _hitGround.normal);
+
+        Attack();        
     }
 
     void MyInput()
@@ -144,6 +146,13 @@ public class AntMovement : MonoBehaviour
 
     private void rotateToSurfaceNormal(Vector3 vectorToReach, float speed) => transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.FromToRotation(transform.up, vectorToReach) * transform.rotation, speed);
 
+    private void Attack()
+    {
+        if(Input.GetMouseButtonDown(0)) 
+        {
+            _animator.SetTrigger("attack");
+        }
+    }
     void OnDrawGizmosSelected()
     {
         // Draw a yellow sphere at the position
