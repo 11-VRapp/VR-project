@@ -6,7 +6,17 @@ ModelImporter:
   - first:
       74: -623603649343465320
     second: Scene
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Ant body main
+    second: {fileID: 2100000, guid: f09c1a3286cd0694297e2e5b8a490eeb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: eyes
+    second: {fileID: 2100000, guid: 9e173a7e4af07a048be646621677b48e, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

@@ -75,11 +75,11 @@ public class SpawnNewPheromoneTraceState : State
     private AntFSM _ant;
     public SpawnNewPheromoneTraceState(string name, AntFSM ant) : base(name) => _ant = ant;
 
-    public override void Enter() { }
+    public override void Enter() { _ant.newPheromoneTraceHandler();}
 
-    public override void Tik() => _ant.spawnNewPheromoneTrace();
+    public override void Tik() {}
 
-    public override void Exit() { }
+    public override void Exit() { _ant.StopCoroutine(_ant.spawnPheromoneCoroutine); }
 }
 
 public class FollowPheromoneTraceToNestState : State

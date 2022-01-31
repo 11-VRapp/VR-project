@@ -89,6 +89,8 @@ MonoBehaviour:
   offset_y: 0
   objectToLoad: {fileID: 0}
   _nest: {fileID: 0}
+  pheromoneTrace: {fileID: 0}
+  _pheromonePrefab: {fileID: 0}
 --- !u!1 &4102198763520082218
 GameObject:
   m_ObjectHideFlags: 0

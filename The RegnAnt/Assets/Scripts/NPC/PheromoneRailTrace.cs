@@ -8,10 +8,8 @@ public class PheromoneRailTrace : MonoBehaviour
 
     //public FoodManager foodRelativeTo;
 
-    void Start()
-    {
-        list = new LinkedList<PheromoneRailPoint>();
-    }
+    void Start() => list = new LinkedList<PheromoneRailPoint>();
+    
 
     public LinkedListNode<PheromoneRailPoint> getNodeByPoint(PheromoneRailPoint point) => list.Find(point); 
     public LinkedListNode<PheromoneRailPoint> getHeadNode() => list.First; 

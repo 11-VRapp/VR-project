@@ -68,9 +68,9 @@ public class FootIKSolver : MonoBehaviour
     void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
-        Gizmos.DrawSphere(newPosition, 0.2f);
+        Gizmos.DrawSphere(newPosition, 0.1f);
         Gizmos.color = Color.green;
-        Gizmos.DrawSphere(body.position + (body.right * footSpacingLat) + (body.forward * footSpacingForw) + body.up * 0.5f, 0.2f);
+        Gizmos.DrawSphere(body.position + (body.right * footSpacingLat) + (body.forward * footSpacingForw) + body.up * 0.5f, 0.1f);
         
     }
 
