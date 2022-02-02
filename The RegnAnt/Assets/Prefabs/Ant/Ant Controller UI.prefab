@@ -380,12 +380,13 @@ MonoBehaviour:
   orientation: {fileID: 248514210915198233}
   _gravity: 10
   _groundCheckPosition: {fileID: 248514210648688598}
+  _headPosition: {fileID: 2542207541368522641}
   _antennaLeft: {fileID: 7078828882539537912}
   _antennaRight: {fileID: 7078828883873953684}
   _antennaLstartPos: {fileID: 3842975725000073768}
   _antennaRstartPos: {fileID: 1414114772156561605}
+  _animator: {fileID: 0}
   canMove: 1
-  _headPosition: {fileID: 2542207541368522641}
 --- !u!114 &4752741428755659651
 MonoBehaviour:
   m_ObjectHideFlags: 0
