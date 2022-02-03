@@ -97,30 +97,19 @@ public class AntFSM : MonoBehaviour
         {
             //if food, layer, pheromones
             if (_hitPoint.transform.gameObject.layer == 7) //food layer
-            {
-                //move to object state
-                //Debug.LogWarning(hit.transform.name); PADREEE
+            {                
+                //hit.transform.name); PADRE  hit.collider.transform.name  FIGLIO  
                 _objectToLoad_Parent = _hitPoint.transform;
-                objectToLoad = _hitPoint.collider.transform; //in questo momento object to load è il padre, devo prendere il figlio
-                //Debug.LogWarning(hit.collider.transform.name); //IL FIGLIO      
+                objectToLoad = _hitPoint.collider.transform;  
             }
             else if (_hitPoint.transform.gameObject.layer == 8) //pheromone layer
-            {
-                Debug.Log("Pheromone: " + _hitPoint.transform.name);
-                //move to object state
+            {                
                 pheromoneTrace = _hitPoint.transform.parent.GetComponent<PheromoneRailTrace>();
                 _currentPheromonePoint = pheromoneTrace.getNodeByPoint(_hitPoint.transform.GetComponent<PheromoneRailPoint>());
-
+                _animator.SetTrigger("seenObject");  
             }
         }
     }
-    /*public void moveToFood()
-    {
-        _navMeshAgent.SetDestination(objectToLoad.position);  //in questo momento object to load è il padre, devo prendere il figlio
-        pheromoneTrace = _objectToLoad_Parent.GetComponent<FoodManager>().phTrace; ///problema. Come con spider, con rb se collido mi da automaticamente il padre
-        _animator.SetTrigger("loadObject"); 
-    }*/
-
 
     public IEnumerator moveToFood()
     {    
@@ -136,7 +125,6 @@ public class AntFSM : MonoBehaviour
 
     public void grabFood()
     {   /* set food as children */
-
         //create pivotPoint as hitPoint and parent to foodObject
         GameObject pivot = new GameObject("pivotPoint");
         pivot.transform.position = _hitPoint.point;
@@ -148,21 +136,6 @@ public class AntFSM : MonoBehaviour
         _headController_target.DOLocalMove(_headController_target_startPosition, 2f);
         returnBack = true;
     }
-
-    /*public void FoodLoaderHandler()
-    {        
-        //first go to object
-        destination = objectToLoad.position;
-        _navMeshAgent.SetDestination(objectToLoad.position);
-        pheromoneTrace = objectToLoad.GetComponent<FoodManager>().phTrace;
-
-        //then grab (+Animation)
-        StartCoroutine()
-
-        //if parent has phTrace null -> return to nest spawning new Ph Trace
-
-        //if parent has phTrace != null -> just follow that PhTrace
-    }*/
 
     public void newPheromoneTraceHandler()
     {
@@ -186,11 +159,11 @@ public class AntFSM : MonoBehaviour
         yield return new WaitUntil(() => pheromoneTrace != null);
         yield return new WaitForSeconds(2f); //sicuro? per spawnare il primo non subito attaccato, magari diminuire a 1 sec
         while (DistanceFromTarget(_nest) > _navMeshAgent.stoppingDistance)
-        {
+        { 
             Physics.Raycast(transform.position, -transform.up, out RaycastHit groundHit); //on ground Layer!
-            GameObject newPoint = GameObject.Instantiate(_pheromonePrefab, groundHit.point, Quaternion.identity, pheromoneTrace.gameObject.transform); //spawn on the terrain...
-            PheromoneRailPoint pheromone_point = newPoint.AddComponent<PheromoneRailPoint>();
-            pheromoneTrace.pushPointToTrace(pheromone_point);
+            GameObject newPoint = GameObject.Instantiate(_pheromonePrefab, groundHit.point,  Quaternion.Euler(-90f, 0f, 0f), pheromoneTrace.gameObject.transform); //spawn on the terrain...
+            newPoint.GetComponent<PheromoneRailPoint>().trace = pheromoneTrace;            
+            pheromoneTrace.pushPointToTrace(newPoint.GetComponent<PheromoneRailPoint>());   
 
             yield return new WaitForSeconds(2f);
         }

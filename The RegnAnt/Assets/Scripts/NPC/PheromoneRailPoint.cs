@@ -5,21 +5,26 @@ using UnityEngine;
 public class PheromoneRailPoint : MonoBehaviour
 {
     public float life;
+    private float _maxLife = 500f;
     public PheromoneRailTrace trace;
-    [SerializeField] private ParticleSystem ps;
+    [SerializeField] private ParticleSystem[] ps;   
     private BoxCollider triggerBox;
     
     void Start() 
-    {
-        trace = gameObject.GetComponentInParent<PheromoneRailTrace>();        
-        ps = GetComponent<ParticleSystem>();
+    {        
+        trace = gameObject.GetComponentInParent<PheromoneRailTrace>(); 
         triggerBox = GetComponent<BoxCollider>();
-        life = 200f;
+        life = _maxLife;
     }
     void Update() 
     {
-        var emission = ps.emission;
-        emission.rateOverTime = life;  
+        foreach(ParticleSystem p in ps)
+        {
+            var emission = p.emission;
+            emission.rateOverTime = life * 0.02f; 
+            var sp = p.main.startSpeed; 
+            sp  = life * 0.002f;                
+        }     
         
         if(life > 0f)        
             life -= Time.deltaTime;                     

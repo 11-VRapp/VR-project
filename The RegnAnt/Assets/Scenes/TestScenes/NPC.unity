@@ -558,7 +558,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: db6a08539d221234d9010baf8879c9ea, type: 3}
       propertyPath: m_RootOrder
-      value: 13
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: db6a08539d221234d9010baf8879c9ea, type: 3}
       propertyPath: m_LocalPosition.x
@@ -941,7 +941,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4504055095927115754, guid: 745072a464ff91c4d93a5108ebf0241a, type: 3}
       propertyPath: m_RootOrder
-      value: 12
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 4504055095927115754, guid: 745072a464ff91c4d93a5108ebf0241a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1734,7 +1734,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 42464b78a7802a949bbe509aece6f57a, type: 3}
       propertyPath: m_RootOrder
-      value: 14
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 42464b78a7802a949bbe509aece6f57a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2256,10 +2256,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 467529019699639286, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
-      propertyPath: m_Data.m_MinLimit
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 1401612983035720968, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
       propertyPath: m_Name
       value: AntNPC
@@ -2274,7 +2270,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1401612983035720980, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
       propertyPath: m_RootOrder
-      value: 15
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 1401612983035720980, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
       propertyPath: m_LocalPosition.x
