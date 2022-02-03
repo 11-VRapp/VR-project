@@ -49,7 +49,7 @@ public class LoadFoodState : State
     public override void Tik() => _ant.moveToFood();
 
 
-    public override void Exit() { }
+    public override void Exit() => _ant.grabFood();
 
 
 }
@@ -59,12 +59,10 @@ public class FollowPheromoneTraceState : State
     private AntFSM _ant;
     public FollowPheromoneTraceState(string name, AntFSM ant) : base(name) => _ant = ant;
 
-    public override void Enter() { }
-
-    public override void Tik()
-    {
-        _ant.followPheromoneTrace();
+    public override void Enter() { _ant.StartCoroutine(_ant.followPheromoneTraceToFood());  
     }
+
+    public override void Tik() { }
 
     public override void Exit() { }
 
@@ -79,7 +77,7 @@ public class SpawnNewPheromoneTraceState : State
 
     public override void Tik() {}
 
-    public override void Exit() { _ant.StopCoroutine(_ant.spawnPheromoneCoroutine); }
+    public override void Exit() { _ant.StopCoroutine(_ant.spawnPheromoneCoroutine);}
 }
 
 public class FollowPheromoneTraceToNestState : State
@@ -87,14 +85,14 @@ public class FollowPheromoneTraceToNestState : State
     private AntFSM _ant;
     public FollowPheromoneTraceToNestState(string name, AntFSM ant) : base(name) => _ant = ant;
 
-    public override void Enter() { }
+    public override void Enter() {  _ant.StartCoroutine(_ant.followPheromoneTraceToNest());  }
 
     public override void Tik()
     {
-        _ant.followPheromoneTraceToNestState();
+       // _ant.followPheromoneTraceToNestState();
     }
 
-    public override void Exit() { }
+    public override void Exit() {}
 
 }
 

@@ -10,6 +10,8 @@ public class FoodManager : MonoBehaviour
 
     private void Start()
     {
-        phTrace = new PheromoneRailTrace();
+        phTrace = new PheromoneRailTrace(); //necessario? Da errore con il new...
     }
+
+    public void DestroyPhTrace() => Destroy(this.gameObject);  //destroy when trace has disappeared or problem with phTrace variable
 }
