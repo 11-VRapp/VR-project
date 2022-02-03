@@ -9,7 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 757240752918919999}
-  m_Layer: 0
+  - component: {fileID: 8372883634778543693}
+  - component: {fileID: 6561251947732992980}
+  m_Layer: 7
   m_Name: zanzaraDead
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41,6 +43,35 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8372883634778543693
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 128795552939647365}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6c8ac61f6ba55e479b749a6165eee84, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  phTrace: {fileID: 0}
+--- !u!54 &6561251947732992980
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 128795552939647365}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &384559819371308201
 GameObject:
   m_ObjectHideFlags: 0
@@ -52,7 +83,8 @@ GameObject:
   - component: {fileID: 2004654373833572789}
   - component: {fileID: 8277106713351735936}
   - component: {fileID: 8424331347961869748}
-  m_Layer: 0
+  - component: {fileID: 7239094935994403575}
+  m_Layer: 7
   m_Name: zanz_zampa3sx
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -122,6 +154,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &7239094935994403575
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 384559819371308201}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -157725036948225920, guid: 3ef8335bcb824464d9127601ad9b0a0a, type: 3}
 --- !u!1 &752223195677513236
 GameObject:
   m_ObjectHideFlags: 0
@@ -133,7 +179,8 @@ GameObject:
   - component: {fileID: 2466517805393059136}
   - component: {fileID: 3971738499291901515}
   - component: {fileID: 4582158473450666030}
-  m_Layer: 0
+  - component: {fileID: 3627074795240878597}
+  m_Layer: 7
   m_Name: zanz_zampa3dx
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -203,6 +250,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &3627074795240878597
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 752223195677513236}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 8357879991365885359, guid: 3ef8335bcb824464d9127601ad9b0a0a, type: 3}
 --- !u!1 &1494742433494891020
 GameObject:
   m_ObjectHideFlags: 0
@@ -214,7 +275,8 @@ GameObject:
   - component: {fileID: 5914301414361082017}
   - component: {fileID: 5946719280378276315}
   - component: {fileID: 7422560861017877584}
-  m_Layer: 0
+  - component: {fileID: 6652309990533770202}
+  m_Layer: 7
   m_Name: zanz_corpo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -284,6 +346,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &6652309990533770202
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1494742433494891020}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 7950867146387599763, guid: 3ef8335bcb824464d9127601ad9b0a0a, type: 3}
 --- !u!1 &3017727496461337216
 GameObject:
   m_ObjectHideFlags: 0
@@ -295,7 +371,8 @@ GameObject:
   - component: {fileID: 2896941776742375148}
   - component: {fileID: 4194086489977030789}
   - component: {fileID: 356338398680593760}
-  m_Layer: 0
+  - component: {fileID: 1144737238610182734}
+  m_Layer: 7
   m_Name: zanz_zampa1sx
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -365,6 +442,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &1144737238610182734
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3017727496461337216}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -6999841965599299610, guid: 3ef8335bcb824464d9127601ad9b0a0a, type: 3}
 --- !u!1 &6489333266286304030
 GameObject:
   m_ObjectHideFlags: 0
@@ -376,7 +467,8 @@ GameObject:
   - component: {fileID: 2760948925553304917}
   - component: {fileID: 4893311241251298801}
   - component: {fileID: 204115733692331134}
-  m_Layer: 0
+  - component: {fileID: 8944336197781720260}
+  m_Layer: 7
   m_Name: zanz_zampa1dx
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -446,6 +538,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &8944336197781720260
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6489333266286304030}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4663531326858560149, guid: 3ef8335bcb824464d9127601ad9b0a0a, type: 3}
 --- !u!1 &7616783617617773027
 GameObject:
   m_ObjectHideFlags: 0
@@ -457,7 +563,8 @@ GameObject:
   - component: {fileID: 7664509371709159270}
   - component: {fileID: 967702686885195887}
   - component: {fileID: 4998792872099717712}
-  m_Layer: 0
+  - component: {fileID: 723272022907650144}
+  m_Layer: 7
   m_Name: zanz_alaSX
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -472,8 +579,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7616783617617773027}
   m_LocalRotation: {x: -0.7071064, y: 0.000811807, z: 0.0008118073, w: 0.7071063}
-  m_LocalPosition: {x: 0.014131317, y: 3.4637923, z: 0.98302335}
-  m_LocalScale: {x: 100.00001, y: 100.00001, z: 100}
+  m_LocalPosition: {x: 0.014139811, y: 3.4637918, z: 0.9830729}
+  m_LocalScale: {x: 100, y: 100, z: 100}
   m_Children: []
   m_Father: {fileID: 757240752918919999}
   m_RootOrder: 1
@@ -527,6 +634,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &723272022907650144
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7616783617617773027}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 7751249725307286267, guid: 3ef8335bcb824464d9127601ad9b0a0a, type: 3}
 --- !u!1 &7750346587363548855
 GameObject:
   m_ObjectHideFlags: 0
@@ -538,7 +659,8 @@ GameObject:
   - component: {fileID: 114188811562415584}
   - component: {fileID: 614619569670886697}
   - component: {fileID: 1885785520610720141}
-  m_Layer: 0
+  - component: {fileID: 2155580737867571011}
+  m_Layer: 7
   m_Name: zanz_zampa2sx
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -608,6 +730,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &2155580737867571011
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7750346587363548855}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -5685903159017514818, guid: 3ef8335bcb824464d9127601ad9b0a0a, type: 3}
 --- !u!1 &8305875749365063659
 GameObject:
   m_ObjectHideFlags: 0
@@ -619,7 +755,8 @@ GameObject:
   - component: {fileID: 1340668188372554682}
   - component: {fileID: 6137111130117689454}
   - component: {fileID: 6579434223454550519}
-  m_Layer: 0
+  - component: {fileID: 7894617856899540164}
+  m_Layer: 7
   m_Name: zanz_zampa2dx
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -689,6 +826,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &7894617856899540164
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8305875749365063659}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 8484802808231526417, guid: 3ef8335bcb824464d9127601ad9b0a0a, type: 3}
 --- !u!1 &8811960808666879966
 GameObject:
   m_ObjectHideFlags: 0
@@ -700,7 +851,8 @@ GameObject:
   - component: {fileID: 8098742342980620166}
   - component: {fileID: 4396844097813537009}
   - component: {fileID: 6660102548414474118}
-  m_Layer: 0
+  - component: {fileID: 7702875494025366791}
+  m_Layer: 7
   m_Name: zanz_alaDX
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -715,8 +867,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8811960808666879966}
   m_LocalRotation: {x: -0.7071064, y: 0.000811807, z: 0.0008118073, w: 0.7071063}
-  m_LocalPosition: {x: 0.014131317, y: 3.4637923, z: 0.98302335}
-  m_LocalScale: {x: 100.00001, y: 100.00001, z: 100}
+  m_LocalPosition: {x: 0.014139811, y: 3.4637918, z: 0.9830729}
+  m_LocalScale: {x: 100, y: 100, z: 100}
   m_Children: []
   m_Father: {fileID: 757240752918919999}
   m_RootOrder: 0
@@ -770,6 +922,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &7702875494025366791
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8811960808666879966}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -8197499870220942736, guid: 3ef8335bcb824464d9127601ad9b0a0a, type: 3}
 --- !u!1 &9059580591036971981
 GameObject:
   m_ObjectHideFlags: 0
@@ -781,7 +947,8 @@ GameObject:
   - component: {fileID: 5866563138955981247}
   - component: {fileID: 7772915453463355498}
   - component: {fileID: 9177266617154090892}
-  m_Layer: 0
+  - component: {fileID: 1267454736513003249}
+  m_Layer: 7
   m_Name: zanz_coda
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -795,8 +962,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9059580591036971981}
-  m_LocalRotation: {x: 0.000000081460335, y: 0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.002806949, y: 0.017240342, z: 0.0020791749}
+  m_LocalRotation: {x: 0.000000081460335, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.0028483071, y: 0.017240047, z: 0.0020345051}
   m_LocalScale: {x: 100, y: 100, z: 100}
   m_Children: []
   m_Father: {fileID: 757240752918919999}
@@ -851,6 +1018,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &1267454736513003249
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9059580591036971981}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 5992499309910762206, guid: 3ef8335bcb824464d9127601ad9b0a0a, type: 3}
 --- !u!1 &9165781606950879130
 GameObject:
   m_ObjectHideFlags: 0
@@ -862,7 +1043,8 @@ GameObject:
   - component: {fileID: 4968941642808543009}
   - component: {fileID: 1958095505615777327}
   - component: {fileID: 7926644201388610926}
-  m_Layer: 0
+  - component: {fileID: 5153961453914860357}
+  m_Layer: 7
   m_Name: zanz_testa
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -933,3 +1115,17 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &5153961453914860357
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9165781606950879130}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -8196957729358076647, guid: 3ef8335bcb824464d9127601ad9b0a0a, type: 3}
