@@ -121,7 +121,7 @@ public class AntMovement : MonoBehaviour
     private void antennasMovement()
     {
         //Debug.DrawLine(_headPosition.position, _headPosition.position + _headPosition.forward - _headPosition.right * 0.5f, Color.green);
-        if (Physics.SphereCast(_headPosition.position, 0.2f, _headPosition.forward - _headPosition.right * 0.5f, out RaycastHit hitL, 1.1f))
+        if (Physics.SphereCast(_headPosition.position, 0.2f, _headPosition.forward - _headPosition.right * 0.5f, out RaycastHit hitL, 1.2f))
         {
             _animator.SetBool("objectClose", true); //animation stop  
             _antennaLeft.position = Vector3.MoveTowards(_antennaLeft.position, hitL.point, Time.fixedDeltaTime);
@@ -131,7 +131,7 @@ public class AntMovement : MonoBehaviour
 
 
         //Debug.DrawLine(_headPosition.position, _headPosition.position + _headPosition.forward + _headPosition.right * 0.5f, Color.red);
-        if (Physics.SphereCast(_headPosition.position, 0.2f, _headPosition.forward + _headPosition.right * 0.5f, out RaycastHit hitR, 1.1f))
+        if (Physics.SphereCast(_headPosition.position, 0.2f, _headPosition.forward + _headPosition.right * 0.5f, out RaycastHit hitR, 1.2f))
         {
             _animator.SetBool("objectClose", true); //animation stop  
                       

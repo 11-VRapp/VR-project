@@ -10,20 +10,26 @@ public class PlayerLook : MonoBehaviour
     [SerializeField] private float sensY = 100f;
 
     [SerializeField] Transform cam = null;
-    [SerializeField] Transform orientation = null;  
+    [SerializeField] Transform orientation = null;
     float mouseX;
     float mouseY;
 
     float multiplier = 0.01f;
-   
+
     private float xRotation;
-    private float yRotation;    
-    
-    
+    private float yRotation;
+
+    [SerializeField] private Transform _viewPosition;
+
+    [SerializeField] private GameObject cursor;
+    [SerializeField] private GameObject cursor_selected;
+    private Outline _lastHit;
+    private RaycastHit _hit;
+
     private void Start()
-    {        
+    {
         Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;        
+        Cursor.visible = false;
     }
 
     private void Update()
@@ -37,7 +43,40 @@ public class PlayerLook : MonoBehaviour
         xRotation = Mathf.Clamp(xRotation, -90f, 90f);
 
         cam.transform.localRotation = Quaternion.Euler(xRotation, yRotation, cam.transform.rotation.z);
-        orientation.transform.localEulerAngles = new Vector3(orientation.transform.localEulerAngles.x, yRotation, orientation.transform.localEulerAngles.z);   
-           
+        orientation.transform.localEulerAngles = new Vector3(orientation.transform.localEulerAngles.x, yRotation, orientation.transform.localEulerAngles.z);
+
+        detectLookingObject();
     }
+
+    private void detectLookingObject()
+    {
+        Debug.DrawLine(_viewPosition.position, _viewPosition.position + 2 * _viewPosition.forward, Color.magenta);
+        if (Physics.SphereCast(_viewPosition.position, 0.2f, _viewPosition.forward, out  _hit, 2f))
+        {
+            if (_lastHit != null && _hit.transform != _lastHit.transform)
+            {
+                _lastHit.outlineWidth = 1f;
+                _lastHit.UpdateMaterialProperties();
+            } 
+
+            _lastHit = _hit.collider.GetComponent<Outline>();
+            if (_lastHit != null)
+            {
+                cursor.SetActive(false);
+                cursor_selected.SetActive(true);
+
+                _lastHit.outlineWidth = 10f;
+                _lastHit.UpdateMaterialProperties();          
+            }
+            return;
+        }
+
+        if (_hit.collider == null)
+        {
+            cursor.SetActive(true);
+            cursor_selected.SetActive(false);
+        }       
+    }
+
+
 }
