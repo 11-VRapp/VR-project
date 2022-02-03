@@ -44,12 +44,12 @@ public class LoadFoodState : State
     private AntFSM _ant;
     public LoadFoodState(string name, AntFSM ant) : base(name) => _ant = ant;
 
-    public override void Enter() { }
+    public override void Enter() { _ant.StartCoroutine(_ant.moveToFood());} 
 
-    public override void Tik() => _ant.moveToFood();
+    public override void Tik() {} //=> _ant.moveToFood();
 
 
-    public override void Exit() => _ant.grabFood();
+    public override void Exit() {_ant.returnBack = false;}//=> _ant.grabFood();
 
 
 }
