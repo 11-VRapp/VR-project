@@ -9643,7 +9643,7 @@ GameObject:
   - component: {fileID: 5524466212555924355}
   - component: {fileID: 5041833590123928665}
   - component: {fileID: 3640389121024831466}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Pheromone
   m_TagString: Untagged
   m_Icon: {fileID: 0}

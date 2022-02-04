@@ -24,7 +24,7 @@ public class PlayerLook : MonoBehaviour
     [SerializeField] private GameObject cursor;
     [SerializeField] private GameObject cursor_selected;
     private Outline _lastHit;
-    private RaycastHit _hit;
+    public RaycastHit hit;
 
     private void Start()
     {
@@ -51,15 +51,15 @@ public class PlayerLook : MonoBehaviour
     private void detectLookingObject()
     {
         Debug.DrawLine(_viewPosition.position, _viewPosition.position + 2 * _viewPosition.forward, Color.magenta);
-        if (Physics.SphereCast(_viewPosition.position, 0.2f, _viewPosition.forward, out  _hit, 2f))
+        if (Physics.SphereCast(_viewPosition.position, 0.2f, _viewPosition.forward, out hit, 1f))
         {
-            if (_lastHit != null && _hit.transform != _lastHit.transform)
+            if (_lastHit != null && hit.transform != _lastHit.transform)
             {
                 _lastHit.outlineWidth = 1f;
                 _lastHit.UpdateMaterialProperties();
             } 
 
-            _lastHit = _hit.collider.GetComponent<Outline>();
+            _lastHit = hit.collider.GetComponent<Outline>();
             if (_lastHit != null)
             {
                 cursor.SetActive(false);
@@ -71,12 +71,10 @@ public class PlayerLook : MonoBehaviour
             return;
         }
 
-        if (_hit.collider == null)
+        if (hit.collider == null)
         {
             cursor.SetActive(true);
             cursor_selected.SetActive(false);
         }       
     }
-
-
 }

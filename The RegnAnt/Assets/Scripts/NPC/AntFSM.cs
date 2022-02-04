@@ -25,7 +25,6 @@ public class AntFSM : MonoBehaviour
     [SerializeField] private MultiAimConstraint _headController;
     [SerializeField] private Transform _headController_target;
     private Vector3 _headController_target_startPosition;
-
     [SerializeField] private Transform _mandibole_hook_position;
     private RaycastHit _hitPoint;
 
@@ -66,7 +65,6 @@ public class AntFSM : MonoBehaviour
         _stateMachine.SetState(wanderState);
     }
 
-
     void Update() => _stateMachine.Tik();
 
     public float DistanceFromTarget(Transform _target) => Vector3.Distance(new Vector3(_target.transform.position.x, 0f, _target.transform.position.z), new Vector3(transform.position.x, 0f, transform.position.z));
@@ -99,7 +97,8 @@ public class AntFSM : MonoBehaviour
             if (_hitPoint.transform.gameObject.layer == 7) //food layer
             {                
                 //hit.transform.name); PADRE  hit.collider.transform.name  FIGLIO  
-                _objectToLoad_Parent = _hitPoint.transform;
+                _objectToLoad_Parent = _hitPoint.transform; //se convex non va più??
+                //_objectToLoad_Parent = _hitPoint.transform.parent;
                 objectToLoad = _hitPoint.collider.transform;  
             }
             else if (_hitPoint.transform.gameObject.layer == 8) //pheromone layer
@@ -113,8 +112,8 @@ public class AntFSM : MonoBehaviour
 
     public IEnumerator moveToFood()
     {    
-       _headController_target.DOMove(objectToLoad.position, 1f);
-        pheromoneTrace = _objectToLoad_Parent.GetComponent<FoodManager>().phTrace; ///problema. Come con spider, con rb se collido mi da automaticamente il padre       
+       _headController_target.DOMove(objectToLoad.position, 1f);       
+        pheromoneTrace = _objectToLoad_Parent.GetComponent<FoodManager>().phTrace;      
         yield return StartCoroutine(moveToPhPoint(objectToLoad.position - 1f * transform.forward));           
         yield return new WaitForSeconds(1f);
         _animator.SetTrigger("loadObject");  //grab food Animation
@@ -148,7 +147,7 @@ public class AntFSM : MonoBehaviour
             GameObject parent = new GameObject("RailTrace");  //only setUp parent                        
             parent.AddComponent<PheromoneRailTrace>();
             pheromoneTrace = parent.GetComponent<PheromoneRailTrace>();
-            //pheromoneTrace.foodRelativeTo = objectToLoad;
+        
             _objectToLoad_Parent.GetComponent<FoodManager>().phTrace = pheromoneTrace;
         }
 
@@ -180,8 +179,15 @@ public class AntFSM : MonoBehaviour
 
     public IEnumerator followPheromoneTraceToFood()
     {       
-        for (; _currentPheromonePoint != null; _currentPheromonePoint = pheromoneTrace.getPrevPoint(_currentPheromonePoint))    //exit if life is < 0  
-            yield return StartCoroutine(moveToPhPoint(_currentPheromonePoint.Value.transform.position));   
+        for (; _currentPheromonePoint != null; _currentPheromonePoint = pheromoneTrace.getPrevPoint(_currentPheromonePoint))    
+        {
+            if(_currentPheromonePoint.Value.life <= 0)
+            {
+                _currentPheromonePoint = null;
+                break;
+            }                
+            yield return StartCoroutine(moveToPhPoint(_currentPheromonePoint.Value.transform.position));               
+        }   
     }
 
     public IEnumerator followPheromoneTraceToNest()
@@ -195,6 +201,10 @@ public class AntFSM : MonoBehaviour
         _navMeshAgent.SetDestination(new Vector3(_nest.position.x, transform.position.y, _nest.position.z)); 
         _headController_target.DOLocalMove(_headController_target_startPosition, 2f);
     }
+
+    public void destroyFood() => Destroy(objectToLoad.parent.gameObject);   
+
+    public void resetHeadPosition() => _headController_target.DOLocalMove(_headController_target_startPosition, 2f);
 
     void OnDrawGizmosSelected()
     {

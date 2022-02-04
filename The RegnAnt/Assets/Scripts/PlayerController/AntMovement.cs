@@ -32,6 +32,8 @@ public class AntMovement : MonoBehaviour
     [SerializeField] private Animator _animator;
 
     public bool canMove = true;  //from spider hook
+    [SerializeField] private Transform _grabPosition;
+    private bool _isGrabbing = false;
 
     private void Start()
     {
@@ -44,7 +46,9 @@ public class AntMovement : MonoBehaviour
         MyInput();
         _slopeMoveDirection = Vector3.ProjectOnPlane(_moveDirection, _hitGround.normal);
 
-        Attack();        
+        Grab();
+        Attack();
+        //interact();
     }
 
     void MyInput()
@@ -60,7 +64,7 @@ public class AntMovement : MonoBehaviour
         if (!canMove)
             return;
         MovePlayer();
-         
+
         if (wallCheck() == false)
             groundCheck();
     }
@@ -117,7 +121,7 @@ public class AntMovement : MonoBehaviour
         }
         return false;
     }
-   
+
     private void antennasMovement()
     {
         //Debug.DrawLine(_headPosition.position, _headPosition.position + _headPosition.forward - _headPosition.right * 0.5f, Color.green);
@@ -134,7 +138,7 @@ public class AntMovement : MonoBehaviour
         if (Physics.SphereCast(_headPosition.position, 0.2f, _headPosition.forward + _headPosition.right * 0.5f, out RaycastHit hitR, 1.2f))
         {
             _animator.SetBool("objectClose", true); //animation stop  
-                      
+
             _antennaRight.position = Vector3.MoveTowards(_antennaRight.position, hitR.point, Time.fixedDeltaTime);
         }
         else
@@ -146,11 +150,57 @@ public class AntMovement : MonoBehaviour
 
     private void rotateToSurfaceNormal(Vector3 vectorToReach, float speed) => transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.FromToRotation(transform.up, vectorToReach) * transform.rotation, speed);
 
+    private void Grab()
+    {
+        if (Input.GetKeyDown(KeyCode.G))
+        {
+            if (!_isGrabbing)
+            {
+                RaycastHit obj = GetComponent<PlayerLook>().hit;
+
+                if (obj.collider != null)
+                {
+                    _animator.SetBool("grab", true);
+                    GameObject pivot = new GameObject("pivotPoint");
+                    pivot.transform.position = obj.point;
+
+                    obj.collider.transform.SetParent(pivot.transform);
+                    pivot.transform.SetParent(_grabPosition.transform);
+                    pivot.transform.localPosition = Vector3.zero;
+
+                    // _headController_target.DOLocalMove(_headController_target_startPosition, 2f);
+
+                    _isGrabbing = true;
+                }
+
+            }
+            else
+            {
+                if (_grabPosition.childCount != 0)
+                {
+                    _animator.SetBool("grab", false);
+                    Transform pivot = _grabPosition.GetChild(0);                     
+                    //pivot.GetChild(0).parent = null;
+                    pivot.parent = null;
+                    pivot.gameObject.AddComponent<FoodManager>();
+                    
+                    _isGrabbing = false;
+                }
+            }
+        }
+    }
+
+
     private void Attack()
     {
-        if(Input.GetMouseButtonDown(0)) 
+        if (Input.GetMouseButtonDown(0))
         {
             _animator.SetTrigger("attack");
+            /*RayHit obj = GetComponent<PlayerLook>().hit;
+            if (obj.collider != null)
+            {
+
+            }*/
         }
     }
     void OnDrawGizmosSelected()

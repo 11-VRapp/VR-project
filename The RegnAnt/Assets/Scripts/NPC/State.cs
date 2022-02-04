@@ -27,6 +27,7 @@ public class WanderState : State
     {
         _ant.objectToLoad = null;
         _ant.pheromoneTrace = null;
+        _ant.resetHeadPosition();
     }
 
     public override void Tik()
@@ -77,7 +78,7 @@ public class SpawnNewPheromoneTraceState : State
 
     public override void Tik() {}
 
-    public override void Exit() { _ant.StopCoroutine(_ant.spawnPheromoneCoroutine);}
+    public override void Exit() { _ant.StopCoroutine(_ant.spawnPheromoneCoroutine); _ant.destroyFood();}
 }
 
 public class FollowPheromoneTraceToNestState : State
@@ -92,7 +93,7 @@ public class FollowPheromoneTraceToNestState : State
        // _ant.followPheromoneTraceToNestState();
     }
 
-    public override void Exit() {}
+    public override void Exit() {_ant.destroyFood();}
 
 }
 
