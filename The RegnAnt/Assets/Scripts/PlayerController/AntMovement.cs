@@ -48,7 +48,7 @@ public class AntMovement : MonoBehaviour
 
         Grab();
         Attack();
-        //interact();
+        GetComponent<PlayerLook>().Interact();
     }
 
     void MyInput()
@@ -172,7 +172,6 @@ public class AntMovement : MonoBehaviour
 
                     _isGrabbing = true;
                 }
-
             }
             else
             {
@@ -190,7 +189,7 @@ public class AntMovement : MonoBehaviour
         }
     }
 
-
+    
     private void Attack()
     {
         if (Input.GetMouseButtonDown(0))

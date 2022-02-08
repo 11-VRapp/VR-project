@@ -1338,7 +1338,8 @@ GameObject:
   - component: {fileID: 1401612983035720970}
   - component: {fileID: 1401612983035720971}
   - component: {fileID: 9109965806644770267}
-  m_Layer: 0
+  - component: {fileID: 5745146182011016171}
+  m_Layer: 9
   m_Name: AntNPC 1
   m_TagString: Untagged
   m_Icon: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000, type: 0}
@@ -1440,6 +1441,27 @@ MonoBehaviour:
   _antennaLstartPos: {fileID: 7341218285545127176}
   _antennaRstartPos: {fileID: 1812039564851434379}
   _animator: {fileID: 8619278760451712220}
+--- !u!114 &5745146182011016171
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1401612983035720968}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 992d86ddd85b1c24d821b570284065a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+    name: BananaJo
+    fraseIniziale: Oggi fa molto caldo
+    stage1_CourtesyQuestion: Di cosa hai bisogno?
+    esterno: 1
+    domande:
+    - "Perch\xE9 il terreno \xE8 a quadretti?"
+    risposte:
+    - Eh cosa vuoi da me
 --- !u!1 &1554337630809881844
 GameObject:
   m_ObjectHideFlags: 0
@@ -3656,7 +3678,7 @@ GameObject:
   - component: {fileID: 1096829799737149832}
   - component: {fileID: 3539007688322508699}
   - component: {fileID: 1750440442525648982}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: body
   m_TagString: Untagged
   m_Icon: {fileID: 0}

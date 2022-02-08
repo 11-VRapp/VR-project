@@ -45,12 +45,12 @@ public class LoadFoodState : State
     private AntFSM _ant;
     public LoadFoodState(string name, AntFSM ant) : base(name) => _ant = ant;
 
-    public override void Enter() { _ant.StartCoroutine(_ant.moveToFood());} 
+    public override void Enter() { _ant.StartCoroutine(_ant.moveToFood()); }
 
-    public override void Tik() {} //=> _ant.moveToFood();
+    public override void Tik() { } //=> _ant.moveToFood();
 
 
-    public override void Exit() {_ant.returnBack = false;}//=> _ant.grabFood();
+    public override void Exit() { _ant.returnBack = false; }//=> _ant.grabFood();
 
 
 }
@@ -60,7 +60,9 @@ public class FollowPheromoneTraceState : State
     private AntFSM _ant;
     public FollowPheromoneTraceState(string name, AntFSM ant) : base(name) => _ant = ant;
 
-    public override void Enter() { _ant.StartCoroutine(_ant.followPheromoneTraceToFood());  
+    public override void Enter()
+    {
+        _ant.StartCoroutine(_ant.followPheromoneTraceToFood());
     }
 
     public override void Tik() { }
@@ -74,11 +76,11 @@ public class SpawnNewPheromoneTraceState : State
     private AntFSM _ant;
     public SpawnNewPheromoneTraceState(string name, AntFSM ant) : base(name) => _ant = ant;
 
-    public override void Enter() { _ant.newPheromoneTraceHandler();}
+    public override void Enter() { _ant.newPheromoneTraceHandler(); }
 
-    public override void Tik() {}
+    public override void Tik() { }
 
-    public override void Exit() { _ant.StopCoroutine(_ant.spawnPheromoneCoroutine); _ant.destroyFood();}
+    public override void Exit() { _ant.StopCoroutine(_ant.spawnPheromoneCoroutine); _ant.destroyFood(); }
 }
 
 public class FollowPheromoneTraceToNestState : State
@@ -86,14 +88,31 @@ public class FollowPheromoneTraceToNestState : State
     private AntFSM _ant;
     public FollowPheromoneTraceToNestState(string name, AntFSM ant) : base(name) => _ant = ant;
 
-    public override void Enter() {  _ant.StartCoroutine(_ant.followPheromoneTraceToNest());  }
+    public override void Enter() { _ant.StartCoroutine(_ant.followPheromoneTraceToNest()); }
 
     public override void Tik()
     {
-       // _ant.followPheromoneTraceToNestState();
+        // _ant.followPheromoneTraceToNestState();
     }
 
-    public override void Exit() {_ant.destroyFood();}
+    public override void Exit() { _ant.destroyFood(); }
 
 }
+
+public class FollowPlayerState : State
+{
+    private AntFSM _ant;
+    public FollowPlayerState(string name, AntFSM ant) : base(name) => _ant = ant;
+
+    public override void Enter() { }
+
+    public override void Tik()
+    {
+        _ant.followPlayer();
+    }
+
+    public override void Exit() { }
+
+}
+
 

@@ -20,4 +20,7 @@ public class Dialogue {
 	[TextArea(3, 10)]
 	public string[] risposte;
 
+	public string follow_yes;
+	public string follow_no;
+
 }

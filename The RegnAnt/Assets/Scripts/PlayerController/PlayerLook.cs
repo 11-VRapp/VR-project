@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+using DG.Tweening;
+
 public class PlayerLook : MonoBehaviour
 {
     [Header("References")]
@@ -26,10 +28,12 @@ public class PlayerLook : MonoBehaviour
     private Outline _lastHit;
     public RaycastHit hit;
 
+    //public bool interactng = false; 
+
     private void Start()
     {
-        //Cursor.lockState = CursorLockMode.Locked;
-        //Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
 
     private void Update()
@@ -57,7 +61,7 @@ public class PlayerLook : MonoBehaviour
             {
                 _lastHit.outlineWidth = 1f;
                 _lastHit.UpdateMaterialProperties();
-            } 
+            }
 
             _lastHit = hit.collider.GetComponent<Outline>();
             if (_lastHit != null)
@@ -66,7 +70,7 @@ public class PlayerLook : MonoBehaviour
                 cursor_selected.SetActive(true);
 
                 _lastHit.outlineWidth = 10f;
-                _lastHit.UpdateMaterialProperties();          
+                _lastHit.UpdateMaterialProperties();
             }
             return;
         }
@@ -75,6 +79,22 @@ public class PlayerLook : MonoBehaviour
         {
             cursor.SetActive(true);
             cursor_selected.SetActive(false);
-        }       
+        }
+    }
+
+    public void Interact()
+    {
+        Debug.DrawLine(_viewPosition.position, _viewPosition.position + 2 * _viewPosition.forward, Color.magenta);
+        if (Physics.SphereCast(_viewPosition.position, 0.2f, _viewPosition.forward, out RaycastHit _hit, 2f, LayerMask.GetMask("Ant")))
+        {            
+            if(Input.GetKey(KeyCode.E))
+            {
+                Debug.Log(_hit.transform.name);
+                /*_hit.transform.GetComponent<NavMeshAgent>().speed = 0; //non farlo qua. Lo passo al triggerDialogue?
+                _hit.transform.DORotate(new Vector3(transform.position.x, 0f, transform.position.z), 2f);*/
+                _hit.transform.GetComponent<DialogueTrigger>().TriggerDialogue();
+            }
+        }
+
     }
 }

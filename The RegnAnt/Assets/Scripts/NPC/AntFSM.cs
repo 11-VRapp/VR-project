@@ -9,7 +9,8 @@ public class AntFSM : MonoBehaviour
 {
     [Header("NPC values")]
     [Range(0, 500)] public float walkRadius;
-    Vector3 destination; private FiniteStateMachine<AntFSM> _stateMachine;
+    Vector3 destination;
+    private FiniteStateMachine<AntFSM> _stateMachine;
     private NavMeshAgent _navMeshAgent;
     [SerializeField] private Animator _animator;
 
@@ -28,8 +29,12 @@ public class AntFSM : MonoBehaviour
     [SerializeField] private Transform _mandibole_hook_position;
     private RaycastHit _hitPoint;
 
+    public bool following = false;
+    private Transform _player;
+
     void Start()
     {
+        _player = GameObject.FindGameObjectWithTag("Player").transform;
         _headController_target_startPosition = _headController_target.localPosition;
 
         _navMeshAgent = GetComponent<NavMeshAgent>();
@@ -46,6 +51,8 @@ public class AntFSM : MonoBehaviour
         State spawnNewPheromoneTraceState = new SpawnNewPheromoneTraceState("spawnNewPheromoneTrace", this);
         State followPheromoneTraceToNestState = new FollowPheromoneTraceToNestState("followPheromoneTraceToNest", this);
 
+        State followPlayerState = new FollowPlayerState("followPlayer", this);
+
 
         //TRANSITIONS
         _stateMachine.AddTransition(wanderState, loadFoodState, () => objectToLoad != null);
@@ -59,6 +66,9 @@ public class AntFSM : MonoBehaviour
 
         _stateMachine.AddTransition(spawnNewPheromoneTraceState, wanderState, () => DistanceFromTarget(_nest) <= _navMeshAgent.stoppingDistance);
         _stateMachine.AddTransition(followPheromoneTraceToNestState, wanderState, () => DistanceFromTarget(_nest) <= _navMeshAgent.stoppingDistance);
+
+        _stateMachine.AddTransition(wanderState, followPlayerState, () => following);
+        _stateMachine.AddTransition(followPlayerState, wanderState, () => !following);
 
 
         //START STATE
@@ -95,31 +105,31 @@ public class AntFSM : MonoBehaviour
         {
             //if food, layer, pheromones
             if (_hitPoint.transform.gameObject.layer == 7) //food layer
-            {                
+            {
                 //hit.transform.name); PADRE  hit.collider.transform.name  FIGLIO  
                 _objectToLoad_Parent = _hitPoint.transform; //se convex non va più??
                 //_objectToLoad_Parent = _hitPoint.transform.parent;
-                objectToLoad = _hitPoint.collider.transform;  
+                objectToLoad = _hitPoint.collider.transform;
             }
             else if (_hitPoint.transform.gameObject.layer == 8) //pheromone layer
-            {                
+            {
                 pheromoneTrace = _hitPoint.transform.parent.GetComponent<PheromoneRailTrace>();
                 _currentPheromonePoint = pheromoneTrace.getNodeByPoint(_hitPoint.transform.GetComponent<PheromoneRailPoint>());
-                _animator.SetTrigger("seenObject");  
+                _animator.SetTrigger("seenObject");
             }
         }
     }
 
     public IEnumerator moveToFood()
-    {    
-       _headController_target.DOMove(objectToLoad.position, 1f);       
-        pheromoneTrace = _objectToLoad_Parent.GetComponent<FoodManager>().phTrace;      
-        yield return StartCoroutine(moveToPhPoint(objectToLoad.position - 1f * transform.forward));           
+    {
+        _headController_target.DOMove(objectToLoad.position, 1f);
+        pheromoneTrace = _objectToLoad_Parent.GetComponent<FoodManager>().phTrace;
+        yield return StartCoroutine(moveToPhPoint(objectToLoad.position - 1f * transform.forward));
         yield return new WaitForSeconds(1f);
         _animator.SetTrigger("loadObject");  //grab food Animation
         yield return new WaitForSeconds(1f);
 
-        grabFood();        
+        grabFood();
     }
 
     public void grabFood()
@@ -147,7 +157,7 @@ public class AntFSM : MonoBehaviour
             GameObject parent = new GameObject("RailTrace");  //only setUp parent                        
             parent.AddComponent<PheromoneRailTrace>();
             pheromoneTrace = parent.GetComponent<PheromoneRailTrace>();
-        
+
             _objectToLoad_Parent.GetComponent<FoodManager>().phTrace = pheromoneTrace;
         }
 
@@ -158,11 +168,14 @@ public class AntFSM : MonoBehaviour
         yield return new WaitUntil(() => pheromoneTrace != null);
         yield return new WaitForSeconds(2f); //sicuro? per spawnare il primo non subito attaccato, magari diminuire a 1 sec
         while (DistanceFromTarget(_nest) > _navMeshAgent.stoppingDistance)
-        { 
-            Physics.Raycast(transform.position, -transform.up, out RaycastHit groundHit); //on ground Layer!
-            GameObject newPoint = GameObject.Instantiate(_pheromonePrefab, groundHit.point,  Quaternion.Euler(-90f, 0f, 0f), pheromoneTrace.gameObject.transform); //spawn on the terrain...
-            newPoint.GetComponent<PheromoneRailPoint>().trace = pheromoneTrace;            
-            pheromoneTrace.pushPointToTrace(newPoint.GetComponent<PheromoneRailPoint>());   
+        {
+            if (_navMeshAgent.speed != 0)
+            {
+                Physics.Raycast(transform.position, -transform.up, out RaycastHit groundHit); //on ground Layer!
+                GameObject newPoint = GameObject.Instantiate(_pheromonePrefab, groundHit.point, Quaternion.Euler(-90f, 0f, 0f), pheromoneTrace.gameObject.transform); //spawn on the terrain...
+                newPoint.GetComponent<PheromoneRailPoint>().trace = pheromoneTrace;
+                pheromoneTrace.pushPointToTrace(newPoint.GetComponent<PheromoneRailPoint>());
+            }
 
             yield return new WaitForSeconds(2f);
         }
@@ -170,42 +183,54 @@ public class AntFSM : MonoBehaviour
 
     private IEnumerator moveToPhPoint(Vector3 point)
     {
-        do{   
-            _headController_target.DOMove(point + transform.forward * 1f, 2f);        
+        do
+        {
+            _headController_target.DOMove(point + transform.forward * 1f, 2f);
             _navMeshAgent.SetDestination(point);
             yield return null;
-        }while(_navMeshAgent.remainingDistance > 1f);
+        } while (_navMeshAgent.remainingDistance > 1f);
     }
 
     public IEnumerator followPheromoneTraceToFood()
-    {       
-        for (; _currentPheromonePoint != null; _currentPheromonePoint = pheromoneTrace.getPrevPoint(_currentPheromonePoint))    
+    {
+        for (; _currentPheromonePoint != null; _currentPheromonePoint = pheromoneTrace.getPrevPoint(_currentPheromonePoint))
         {
-            if(_currentPheromonePoint.Value.life <= 0)
+            if (_currentPheromonePoint.Value.life <= 0)
             {
                 _currentPheromonePoint = null;
                 break;
-            }                
-            yield return StartCoroutine(moveToPhPoint(_currentPheromonePoint.Value.transform.position));               
-        }   
+            }
+            yield return StartCoroutine(moveToPhPoint(_currentPheromonePoint.Value.transform.position));
+        }
     }
 
     public IEnumerator followPheromoneTraceToNest()
-    {  
-        for (_currentPheromonePoint = pheromoneTrace.getHeadNode(); _currentPheromonePoint != null; _currentPheromonePoint = pheromoneTrace.getNextPoint(_currentPheromonePoint))    
+    {
+        for (_currentPheromonePoint = pheromoneTrace.getHeadNode(); _currentPheromonePoint != null; _currentPheromonePoint = pheromoneTrace.getNextPoint(_currentPheromonePoint))
         {
-            yield return StartCoroutine(moveToPhPoint(_currentPheromonePoint.Value.transform.position)); 
+            yield return StartCoroutine(moveToPhPoint(_currentPheromonePoint.Value.transform.position));
             _currentPheromonePoint.Value.GetComponent<PheromoneRailPoint>().addLife();
-        }   
-             
-        _navMeshAgent.SetDestination(new Vector3(_nest.position.x, transform.position.y, _nest.position.z)); 
+        }
+
+        _navMeshAgent.SetDestination(new Vector3(_nest.position.x, transform.position.y, _nest.position.z));
         _headController_target.DOLocalMove(_headController_target_startPosition, 2f);
     }
 
-    public void destroyFood() => Destroy(objectToLoad.parent.gameObject);   
+    public void destroyFood() => Destroy(objectToLoad.parent.gameObject);
 
     public void resetHeadPosition() => _headController_target.DOLocalMove(_headController_target_startPosition, 2f);
 
+    public string getFSMstate() => _stateMachine._currentState.Name;
+
+    public bool canFollow() //can follow only in wander state, others are busy
+    {
+        if (!(_stateMachine._currentState.Name == "Wander"))
+            return false;
+
+        following = true;
+        return true;
+    }
+    public void followPlayer() => _navMeshAgent.SetDestination(_player.position - 3f * transform.forward);
     void OnDrawGizmosSelected()
     {
         // Draw a yellow sphere at the destination point
