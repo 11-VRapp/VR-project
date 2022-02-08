@@ -25,6 +25,7 @@ public class WanderState : State
 
     public override void Enter()
     {
+        _ant.following = false;
         _ant.objectToLoad = null;
         _ant.pheromoneTrace = null;
         _ant.resetHeadPosition();

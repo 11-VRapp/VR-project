@@ -68,7 +68,7 @@ public class AntFSM : MonoBehaviour
         _stateMachine.AddTransition(followPheromoneTraceToNestState, wanderState, () => DistanceFromTarget(_nest) <= _navMeshAgent.stoppingDistance);
 
         _stateMachine.AddTransition(wanderState, followPlayerState, () => following);
-        _stateMachine.AddTransition(followPlayerState, wanderState, () => !following);
+        _stateMachine.AddTransition(followPlayerState, wanderState, () => !following || DistanceFromTarget(_player) > 20f);
 
 
         //START STATE
