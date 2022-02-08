@@ -62,3 +62,5 @@ Nascita e scelta tipo formica, opzioni tra operaio/soldato, regina e maschio, la
 Book cover in diary system to: <a href="https://www.vecteezy.com/free-vector/ornament">Ornament Vectors by Vecteezy</a>
 
 Spider model by: misfit410 <a href="https://skfb.ly/6BGpt"> on sketchfab</a>
+
+Dialogue UI by <a href="https://opengameart.org/content/ui-pack-buttons-and-dialogue">OpenGameArt</a>
