@@ -34,6 +34,7 @@ public class AntFSM : MonoBehaviour
 
     void Start()
     {
+        _nest = GameObject.FindGameObjectWithTag("Nest").transform;
         _player = GameObject.FindGameObjectWithTag("Player").transform;
         _headController_target_startPosition = _headController_target.localPosition;
 

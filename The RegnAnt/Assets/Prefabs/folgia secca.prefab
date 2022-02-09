@@ -11,7 +11,8 @@ GameObject:
   - component: {fileID: 5731234585347700144}
   - component: {fileID: 8657806243099458069}
   - component: {fileID: 6900151941545512671}
-  m_Layer: 0
+  - component: {fileID: 5858809032104227214}
+  m_Layer: 6
   m_Name: folgia secca
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 4954733448366747402}
   m_LocalRotation: {x: 0.5509019, y: 0.47540715, z: -0.44813493, w: 0.5192979}
   m_LocalPosition: {x: 783.63, y: 0.89, z: -562.6953}
-  m_LocalScale: {x: 2.3562, y: 2.3562, z: 2.3562}
+  m_LocalScale: {x: 1.49, y: 1.89, z: 2.63}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -81,3 +82,17 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &5858809032104227214
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4954733448366747402}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 8902055432565399767, guid: 08351753e391fc6459ca967d5ec0db22, type: 3}

@@ -89,7 +89,7 @@ public class PlayerLook : MonoBehaviour
         {            
             if(Input.GetKey(KeyCode.E))
             {
-                Debug.Log(_hit.transform.name);
+                //Debug.Log(_hit.transform.name);
                 /*_hit.transform.GetComponent<NavMeshAgent>().speed = 0; //non farlo qua. Lo passo al triggerDialogue?
                 _hit.transform.DORotate(new Vector3(transform.position.x, 0f, transform.position.z), 2f);*/
                 _hit.transform.GetComponent<DialogueTrigger>().TriggerDialogue();

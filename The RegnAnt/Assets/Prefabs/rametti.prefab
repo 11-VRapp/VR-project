@@ -11,7 +11,8 @@ GameObject:
   - component: {fileID: 3224452781205306333}
   - component: {fileID: 1710909880046662240}
   - component: {fileID: 8732042361903280698}
-  m_Layer: 0
+  - component: {fileID: 4720269807087537152}
+  m_Layer: 6
   m_Name: stick02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -81,6 +82,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &4720269807087537152
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 881114315773979912}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 7173803687361484919, guid: a65166df0ec346346b9940f2246aaf69, type: 3}
 --- !u!1 &1455113148381263952
 GameObject:
   m_ObjectHideFlags: 0
@@ -92,7 +107,8 @@ GameObject:
   - component: {fileID: 7926373406721508627}
   - component: {fileID: 6548302716023003595}
   - component: {fileID: 8866790366408971052}
-  m_Layer: 0
+  - component: {fileID: 7588434226219745191}
+  m_Layer: 6
   m_Name: stick01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -162,6 +178,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &7588434226219745191
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1455113148381263952}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -6668643057902260931, guid: a65166df0ec346346b9940f2246aaf69, type: 3}
 --- !u!1 &2802709281802584130
 GameObject:
   m_ObjectHideFlags: 0
@@ -173,7 +203,8 @@ GameObject:
   - component: {fileID: 1398770880134913110}
   - component: {fileID: 8032888152629036989}
   - component: {fileID: 5570114152887708554}
-  m_Layer: 0
+  - component: {fileID: 8742699897978613489}
+  m_Layer: 6
   m_Name: stick03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -243,6 +274,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &8742699897978613489
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2802709281802584130}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -3967554148803627551, guid: a65166df0ec346346b9940f2246aaf69, type: 3}
 --- !u!1 &6607054694134916027
 GameObject:
   m_ObjectHideFlags: 0

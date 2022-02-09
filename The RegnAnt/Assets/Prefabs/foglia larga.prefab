@@ -11,7 +11,8 @@ GameObject:
   - component: {fileID: 330380114657937853}
   - component: {fileID: 3691374324637566488}
   - component: {fileID: 1503800034994811602}
-  m_Layer: 0
+  - component: {fileID: 8230313581832555544}
+  m_Layer: 6
   m_Name: foglia larga
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -81,3 +82,17 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &8230313581832555544
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1143472688857764615}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -462981019419857548, guid: 14a6d5c599942314daa1c9c03bed4023, type: 3}

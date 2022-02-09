@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7330897045479210016}
   - component: {fileID: 4780680183641229546}
   - component: {fileID: 8826249474209800806}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: fiore4
   m_TagString: Untagged
   m_Icon: {fileID: 0}

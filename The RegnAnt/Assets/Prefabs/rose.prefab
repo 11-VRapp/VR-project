@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6594676098656082588}
   - component: {fileID: 8962173915744398934}
   - component: {fileID: 4919419390985290970}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: rose
   m_TagString: Untagged
   m_Icon: {fileID: 0}
