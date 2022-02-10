@@ -1010,7 +1010,7 @@ BoxCollider:
   m_GameObject: {fileID: 68158291}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
@@ -1077,22 +1077,21 @@ Transform:
   m_Father: {fileID: 1929221449}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
---- !u!208 &68158296
-NavMeshObstacle:
+--- !u!114 &68158296
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 68158291}
   m_Enabled: 1
-  serializedVersion: 3
-  m_Shape: 1
-  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
-  m_MoveThreshold: 0.1
-  m_Carve: 0
-  m_CarveOnlyStationary: 1
-  m_Center: {x: 0, y: 0, z: 0}
-  m_TimeToStationary: 0.5
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db923dd5d9ab9cc469751e1219b1efdc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _playerBody: {fileID: 75296713}
+  warningPanel: {fileID: 1313519533}
+  compass: {fileID: 1313519532}
 --- !u!1001 &72426491
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1227,6 +1226,11 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 757240752918919999, guid: 6c3f2125f69d24349a8d396445d0a0c5, type: 3}
   m_PrefabInstance: {fileID: 73332587}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &75296713 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5060174073620826396, guid: 745072a464ff91c4d93a5108ebf0241a, type: 3}
+  m_PrefabInstance: {fileID: 1313519531}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &87968443
 PrefabInstance:
@@ -5488,6 +5492,7 @@ GameObject:
   - component: {fileID: 541279147}
   - component: {fileID: 541279146}
   - component: {fileID: 541279145}
+  - component: {fileID: 541279149}
   m_Layer: 0
   m_Name: WarningBoundaryO
   m_TagString: Untagged
@@ -5569,8 +5574,23 @@ Transform:
   m_LocalScale: {x: 1067.9426, y: 1156.4199, z: 156.6278}
   m_Children: []
   m_Father: {fileID: 1929221449}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+--- !u!114 &541279149
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 541279144}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db923dd5d9ab9cc469751e1219b1efdc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _playerBody: {fileID: 75296713}
+  warningPanel: {fileID: 1313519533}
+  compass: {fileID: 1313519532}
 --- !u!1001 &542622576
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7298,7 +7318,6 @@ GameObject:
   - component: {fileID: 741856663}
   - component: {fileID: 741856662}
   - component: {fileID: 741856661}
-  - component: {fileID: 741856660}
   m_Layer: 0
   m_Name: DeathBoundaryE
   m_TagString: Untagged
@@ -7320,22 +7339,6 @@ Transform:
   m_Father: {fileID: 1929221449}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
---- !u!208 &741856660
-NavMeshObstacle:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 741856658}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Shape: 1
-  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
-  m_MoveThreshold: 0.1
-  m_Carve: 0
-  m_CarveOnlyStationary: 1
-  m_Center: {x: 0, y: 0, z: 0}
-  m_TimeToStationary: 0.5
 --- !u!65 &741856661
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7345,7 +7348,7 @@ BoxCollider:
   m_GameObject: {fileID: 741856658}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
@@ -12206,7 +12209,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4504055095927115754, guid: 745072a464ff91c4d93a5108ebf0241a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 345
+      value: 755.5
       objectReference: {fileID: 0}
     - target: {fileID: 4504055095927115754, guid: 745072a464ff91c4d93a5108ebf0241a, type: 3}
       propertyPath: m_LocalPosition.y
@@ -12264,8 +12267,22 @@ PrefabInstance:
       propertyPath: cursor_selected
       value: 
       objectReference: {fileID: 1207321639}
+    - target: {fileID: 8352276770708157283, guid: 745072a464ff91c4d93a5108ebf0241a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 745072a464ff91c4d93a5108ebf0241a, type: 3}
+--- !u!1 &1313519532 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3483942142055986258, guid: 745072a464ff91c4d93a5108ebf0241a, type: 3}
+  m_PrefabInstance: {fileID: 1313519531}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1313519533 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8352276770708157283, guid: 745072a464ff91c4d93a5108ebf0241a, type: 3}
+  m_PrefabInstance: {fileID: 1313519531}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1314605984
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16509,6 +16526,7 @@ GameObject:
   - component: {fileID: 1806080589}
   - component: {fileID: 1806080588}
   - component: {fileID: 1806080587}
+  - component: {fileID: 1806080591}
   m_Layer: 0
   m_Name: WarningBoundaryN
   m_TagString: Untagged
@@ -16592,6 +16610,21 @@ Transform:
   m_Father: {fileID: 1929221449}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1806080591
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1806080586}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db923dd5d9ab9cc469751e1219b1efdc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _playerBody: {fileID: 75296713}
+  warningPanel: {fileID: 1313519533}
+  compass: {fileID: 1313519532}
 --- !u!1001 &1816078446
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17006,7 +17039,7 @@ Transform:
   m_LocalScale: {x: 1067.9426, y: 1156.4199, z: 156.6278}
   m_Children: []
   m_Father: {fileID: 1929221449}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!65 &1880016759
 BoxCollider:
@@ -17457,8 +17490,8 @@ Transform:
   - {fileID: 743238834}
   - {fileID: 68158295}
   - {fileID: 741856659}
-  - {fileID: 1880016758}
   - {fileID: 541279148}
+  - {fileID: 1880016758}
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -17474,6 +17507,7 @@ GameObject:
   - component: {fileID: 1929989212}
   - component: {fileID: 1929989211}
   - component: {fileID: 1929989210}
+  - component: {fileID: 1929989214}
   m_Layer: 7
   m_Name: WarningBoundaryS
   m_TagString: Untagged
@@ -17557,6 +17591,21 @@ Transform:
   m_Father: {fileID: 1929221449}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1929989214
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1929989209}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db923dd5d9ab9cc469751e1219b1efdc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _playerBody: {fileID: 75296713}
+  warningPanel: {fileID: 1313519533}
+  compass: {fileID: 1313519532}
 --- !u!4 &1948653594 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1473430621660666438, guid: 24a4f13f74e95d34987406226695c0fc, type: 3}
