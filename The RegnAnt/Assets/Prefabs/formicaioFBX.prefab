@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 9210899737334537636}
   - component: {fileID: 5223167415438758401}
   - component: {fileID: 8041349065793840843}
+  - component: {fileID: 8658145888711665962}
   m_Layer: 0
   m_Name: formicaioFBX
   m_TagString: Untagged
@@ -81,3 +82,17 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &8658145888711665962
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8401570859354949406}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 6293787072490487635, guid: dc8686492147e674a8c93d1335ea9543, type: 3}
