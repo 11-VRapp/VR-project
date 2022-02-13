@@ -15,8 +15,7 @@ public class Ant_int : MonoBehaviour
     [SerializeField] Transform orientation = null;
     private bool moving = true;
     private float time;
-    private float timeCounter;
-    private bool _falling = false;
+    private float timeCounter;    
 
     [Header("Slope variables")]
     [SerializeField] private float _gravity = 10f;  //faux gravity: stick player to surface
@@ -55,7 +54,7 @@ public class Ant_int : MonoBehaviour
             transform.DOLocalRotateQuaternion(transform.localRotation * Quaternion.Euler(0, Random.Range(-180, 180), 0), 2f);
             yield return new WaitForSeconds(3f);
             yield return moveForward();
-            yield return new WaitForSeconds(1f);
+            yield return new WaitForSeconds(Random.Range(0.0f, 2.0f));
         }
     }
 
@@ -82,8 +81,7 @@ public class Ant_int : MonoBehaviour
         {        
             if (_hitGround.collider.gameObject.layer == 6) //terrain layer
             {    
-                _rb.useGravity = false;
-                _falling = false;
+                _rb.useGravity = false;               
                 _speed = 3f;
 
                 rotateToSurfaceNormal(_hitGround.normal, _RotateSpeed * Time.deltaTime);

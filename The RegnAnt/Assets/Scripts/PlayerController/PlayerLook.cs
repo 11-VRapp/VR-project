@@ -23,8 +23,8 @@ public class PlayerLook : MonoBehaviour
 
     [SerializeField] private Transform _viewPosition;
 
-    [SerializeField] private GameObject cursor;
-    [SerializeField] private GameObject cursor_selected;
+    //[SerializeField] private GameObject cursor;
+    //[SerializeField] private GameObject cursor_selected;
     private Outline _lastHit;
     public RaycastHit hit;
 
@@ -49,10 +49,10 @@ public class PlayerLook : MonoBehaviour
         cam.transform.localRotation = Quaternion.Euler(xRotation, yRotation, cam.transform.rotation.z);
         orientation.transform.localEulerAngles = new Vector3(orientation.transform.localEulerAngles.x, yRotation, orientation.transform.localEulerAngles.z);
 
-        detectLookingObject();
+        //detectLookingObject();
     }
 
-    private void detectLookingObject()
+    /*private void detectLookingObject()
     {
         Debug.DrawLine(_viewPosition.position, _viewPosition.position + 2 * _viewPosition.forward, Color.magenta);
         if (Physics.SphereCast(_viewPosition.position, 0.2f, _viewPosition.forward, out hit, 1f))
@@ -88,13 +88,10 @@ public class PlayerLook : MonoBehaviour
         if (Physics.SphereCast(_viewPosition.position, 0.2f, _viewPosition.forward, out RaycastHit _hit, 2f, LayerMask.GetMask("Ant")))
         {            
             if(Input.GetKey(KeyCode.E))
-            {
-                //Debug.Log(_hit.transform.name);
-                /*_hit.transform.GetComponent<NavMeshAgent>().speed = 0; //non farlo qua. Lo passo al triggerDialogue?
-                _hit.transform.DORotate(new Vector3(transform.position.x, 0f, transform.position.z), 2f);*/
+            {                
                 _hit.transform.GetComponent<DialogueTrigger>().TriggerDialogue();
             }
         }
 
-    }
+    }*/
 }

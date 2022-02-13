@@ -23,4 +23,14 @@ public class Dialogue {
 	public string follow_yes;
 	public string follow_no;
 
+	public Dialogue(string name, string fraseIniziale, string courtesyQuestion, bool esterno, string[] domande, string[] risposte)
+	{
+		this.name = name;
+		this.fraseIniziale = fraseIniziale;
+		stage1_CourtesyQuestion = courtesyQuestion;
+		this.esterno = esterno;
+		this.domande = domande;
+		this.risposte = risposte;
+	}
+
 }

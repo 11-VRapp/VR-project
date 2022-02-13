@@ -48,7 +48,7 @@ public class AntMovement : MonoBehaviour
 
         Grab();
         Attack();
-        GetComponent<PlayerLook>().Interact();
+        //GetComponent<PlayerLook>().Interact();
     }
 
     void MyInput()
