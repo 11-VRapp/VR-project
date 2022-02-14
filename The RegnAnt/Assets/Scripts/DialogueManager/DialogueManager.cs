@@ -74,13 +74,13 @@ public class DialogueManager : MonoBehaviour
     public void DisplayStage0()
     {
         _stage0.imageBox.SetActive(true);
-        _stage0.imageBox.transform.DOScale(Vector3.one, .5f).SetEase(Ease.InSine);
+        _stage0.imageBox.transform.DOScale(Vector3.one, .5f).SetEase(Ease.InBounce);       
 
         StartCoroutine(TypeSentence(_stage0.dialogueText, _stage0.dialogueText_text));
     }
 
     public void DisplayStage1()
-    {        
+    {   
         if (!esterno)
             _stage1.followBtn.SetActive(false);
         else
@@ -110,9 +110,7 @@ public class DialogueManager : MonoBehaviour
     } 
 
     public void EndDialogue()
-    {
-        _stage1.imageBox.transform.DOScale(Vector3.zero, 1f).SetEase(Ease.InBounce);
-
+    {     
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
 
@@ -124,8 +122,7 @@ public class DialogueManager : MonoBehaviour
         _player.GetComponent<FPSInteractionManager>().Interaction(null);        
 
         _speakerTransform.GetComponent<DialogueTrigger>().dialogueEnd = true;
-        StartCoroutine(rotateTowards(5f, 3f, _lastPosition.position));
-        _stage1.imageBox.transform.DOScale(Vector3.one, 0f);
+        StartCoroutine(rotateTowards(5f, 3f, _lastPosition.position));        
     }
 
     public void followPlayer() //called by button    //if following is already true stop following! (maybe in another stage or like esterno)
