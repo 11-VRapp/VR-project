@@ -6150,6 +6150,7 @@ GameObject:
   - component: {fileID: 7624277554374250911}
   - component: {fileID: 7624277554374250898}
   - component: {fileID: 3119067597090311628}
+  - component: {fileID: 4287016987220696524}
   m_Layer: 0
   m_Name: PlayerUI
   m_TagString: Player
@@ -6188,7 +6189,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 1
-  m_Constraints: 0
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!114 &7624277554374250911
 MonoBehaviour:
@@ -6207,8 +6208,6 @@ MonoBehaviour:
   cam: {fileID: 7624277552810656445}
   orientation: {fileID: 7624277554609787734}
   _viewPosition: {fileID: 8711832374314068762}
-  cursor: {fileID: 0}
-  cursor_selected: {fileID: 0}
 --- !u!114 &7624277554374250898
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6252,6 +6251,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   life: 0
   _maxlife: 0
+--- !u!114 &4287016987220696524
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4867618617683880790}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9400824023f9ee42b251550329924e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _fpsCameraT: {fileID: 147470277335572975}
+  _debugRay: 0
+  _interactionDistance: 3
+  _target: {fileID: 0}
+  _viewPosition: {fileID: 8711832374314068762}
 --- !u!1 &5043376538129338611
 GameObject:
   m_ObjectHideFlags: 0

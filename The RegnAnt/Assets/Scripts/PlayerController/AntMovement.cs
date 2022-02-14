@@ -48,7 +48,7 @@ public class AntMovement : MonoBehaviour
 
         Grab();
         Attack();
-        GetComponent<PlayerLook>().Interact();
+        //GetComponent<PlayerLook>().Interact();
     }
 
     void MyInput()
@@ -95,14 +95,16 @@ public class AntMovement : MonoBehaviour
             _rb.useGravity = true;
             return;
         }
-
-        if (Physics.SphereCast(_groundCheckPosition.position + 1f * orientation.forward, 0.5f, -transform.up, out _hitGround, 4f, terrainLayer.value))
+        else
         {
-            _rb.useGravity = false;
-            _falling = false;
-            moveSpeed = 3f;
+            if (_hitGround.collider.gameObject.layer == 6) //terrain layer
+            {
+                _rb.useGravity = false;
+                _falling = false;
+                moveSpeed = 3f;
 
-            rotateToSurfaceNormal(_hitGround.normal, _rotateSpeed * Time.deltaTime);
+                rotateToSurfaceNormal(_hitGround.normal, _rotateSpeed * Time.deltaTime);
+            }
         }
     }
 
@@ -125,7 +127,7 @@ public class AntMovement : MonoBehaviour
     private void antennasMovement()
     {
         //Debug.DrawLine(_headPosition.position, _headPosition.position + _headPosition.forward - _headPosition.right * 0.5f, Color.green);
-        if (Physics.SphereCast(_headPosition.position, 0.2f, _headPosition.forward - _headPosition.right * 0.5f, out RaycastHit hitL, 1.2f))
+        if (Physics.SphereCast(_headPosition.position, 0.5f, _headPosition.forward - _headPosition.right * 0.5f, out RaycastHit hitL, 1.2f))
         {
             _animator.SetBool("objectClose", true); //animation stop  
             _antennaLeft.position = Vector3.MoveTowards(_antennaLeft.position, hitL.point, Time.fixedDeltaTime);
@@ -135,7 +137,7 @@ public class AntMovement : MonoBehaviour
 
 
         //Debug.DrawLine(_headPosition.position, _headPosition.position + _headPosition.forward + _headPosition.right * 0.5f, Color.red);
-        if (Physics.SphereCast(_headPosition.position, 0.2f, _headPosition.forward + _headPosition.right * 0.5f, out RaycastHit hitR, 1.2f))
+        if (Physics.SphereCast(_headPosition.position, 0.5f, _headPosition.forward + _headPosition.right * 0.5f, out RaycastHit hitR, 1.2f))
         {
             _animator.SetBool("objectClose", true); //animation stop  
 
@@ -178,18 +180,18 @@ public class AntMovement : MonoBehaviour
                 if (_grabPosition.childCount != 0)
                 {
                     _animator.SetBool("grab", false);
-                    Transform pivot = _grabPosition.GetChild(0);                     
+                    Transform pivot = _grabPosition.GetChild(0);
                     //pivot.GetChild(0).parent = null;
                     pivot.parent = null;
                     pivot.gameObject.AddComponent<FoodManager>();
-                    
+
                     _isGrabbing = false;
                 }
             }
         }
     }
 
-    
+
     private void Attack()
     {
         if (Input.GetMouseButtonDown(0))

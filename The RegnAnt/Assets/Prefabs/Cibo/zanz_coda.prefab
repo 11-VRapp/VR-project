@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6367615668675647865}
   - component: {fileID: 4956693773623589225}
   - component: {fileID: 2254144626624385625}
+  - component: {fileID: 7944266655342938727}
   m_Layer: 0
   m_Name: zanz_coda
   m_TagString: Untagged
@@ -81,3 +82,17 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &7944266655342938727
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5518234966090165791}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 5992499309910762206, guid: 3ef8335bcb824464d9127601ad9b0a0a, type: 3}
