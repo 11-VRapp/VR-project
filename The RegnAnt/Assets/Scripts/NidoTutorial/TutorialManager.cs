@@ -75,13 +75,13 @@ public class TutorialManager : MonoBehaviour
 
         yield return new WaitUntil(() => _startingAnt.GetComponent<DialogueTrigger>().dialogueEnd);
         //show on screen keys info  wasd   space ...wait time... interact with egg/ant
-        yield return StartCoroutine(DisplayTextPopupHint("Premi W/A/S/D per muoverti\nUsa SPACE per smettere di aggrapparti\nUsa E per interagire con le sorelle", 4f));
+        yield return StartCoroutine(DisplayTextPopupHint("Premi W/A/S/D per muoverti\nUsa SPACE per smettere di aggrapparti\nUsa E per interagire con le sorelle", 6f));
     }
 
     private IEnumerator SecondPhase()
     {
         phase++;
-        yield return StartCoroutine(DisplayTextPopupHint("Usa CLICK DX per afferrare un oggetto con puntatore giallo\nUsa CLICK SX per rialsciarlo", 5f));
+        yield return StartCoroutine(DisplayTextPopupHint("Usa CLICK DX per afferrare un oggetto con puntatore giallo\nUsa CLICK SX per rialsciarlo", 6f));
         //wait for grabbing object by user
         yield return new WaitUntil(() => grabbedEgg);
         _cursor.position = new Vector3(156f, 220f, -25.7f);
@@ -143,7 +143,7 @@ public class TutorialManager : MonoBehaviour
 
         //blink animation
         _blinkCanvas.SetActive(true);
-        _blinkCanvas.GetComponent<Animator>().SetBool("blink", true);
+        _blinkCanvas.GetComponent<Animator>().SetTrigger("restBlink");
         yield return new WaitForSeconds(6f);
         _blinkCanvas.SetActive(false);
     }
