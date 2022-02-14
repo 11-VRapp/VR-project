@@ -86,7 +86,7 @@ public class DialogueManager : MonoBehaviour
             case Stages.stage0:
                 _stage0.imageBox.SetActive(true);
                 _stage0.imageBox.transform.DOScale(Vector3.one, .5f).SetEase(Ease.InSine);
-                 //StopAllCoroutines();
+                //StopAllCoroutines();
                 StartCoroutine(TypeSentence(_stage0.dialogueText, _stage0.dialogueText_text));
                 break;
             case Stages.stage1:
@@ -112,10 +112,12 @@ public class DialogueManager : MonoBehaviour
                 _stage2.imageBox.SetActive(true);
                 break;
             case Stages.stage3:
+                _stage1.imageBox.SetActive(false);
                 _stage2.imageBox.SetActive(false);
                 _stage3.imageBox.SetActive(true);
                 break;
             case Stages.End:
+                _stage1.imageBox.SetActive(false);
                 EndDialogue();
                 return;
         };
@@ -193,22 +195,22 @@ public class DialogueManager : MonoBehaviour
     }
 
     public IEnumerator rotateTowards(float timeNeeded, float speed, Vector3 _target)
-    {       
+    {
         do
-        {  
+        {
             Vector3 dirToTarget = _target - _speakerTransform.position;
             dirToTarget.y = 0f;
             dirToTarget.Normalize();
-            _speakerTransform.localRotation = Quaternion.Slerp(_speakerTransform.localRotation, Quaternion.LookRotation(dirToTarget), speed * Time.deltaTime);          
+            _speakerTransform.localRotation = Quaternion.Slerp(_speakerTransform.localRotation, Quaternion.LookRotation(dirToTarget), speed * Time.deltaTime);
             timeNeeded -= Time.deltaTime;
-            yield return null;            
-        } while (timeNeeded  > 0f);      
-      
+            yield return null;
+        } while (timeNeeded > 0f);
+
     }
 
     public enum Stages
     {
-         stage0,
+        stage0,
         stage1,
         stage2,
         stage3,

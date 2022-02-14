@@ -107,6 +107,7 @@ public class TutorialManager : MonoBehaviour
         _startingAnt.GetComponent<DialogueTrigger>().dialogue = new Dialogue("Sara", "Ok, bravissima! Adesso recati fino al magazzino che hanno bisogno di te",
                                 "Segui i cartelli se non sai dove andare", false, new string[0], new string[0]);
         yield return new WaitUntil(() => _startingAnt.GetComponent<DialogueTrigger>().dialogueEnd);
+        _storageAnt.GetComponent<DialogueTrigger>().dialogueEnd = false; //se l'utente ci ha interagito precedentemente falserebbe il filo del tutorial
 
     }
     private IEnumerator ThirdPhase()
