@@ -67,7 +67,7 @@ public class TutorialManager : MonoBehaviour
     {
         phase++;
         _player.GetComponent<AntMovement>().enabled = false;
-        yield return StartCoroutine(_startingAnt.GetComponent<AntNPC_int>().moveForward(3f)); //move to player
+        yield return StartCoroutine(_startingAnt.GetComponent<AntNPC_int>().moveForward(4f)); //move to player
         _player.GetComponent<FPSInteractionManager>().Interaction(GetComponent<Interactable>());
         _startingAnt.GetComponent<DialogueTrigger>().TriggerDialogue();  // trigger dialog      
         _player.GetComponent<AntMovement>().enabled = true;

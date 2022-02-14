@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7101748214016772379}
   - component: {fileID: 1757735312328237254}
   - component: {fileID: 1229578897562147496}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: zanz_corpo
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -171,7 +171,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3892337777463123772}
-  m_Layer: 0
+  - component: {fileID: 3569600034850648964}
+  m_Layer: 6
   m_Name: larva-prePupaLP (26)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -194,3 +195,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: -70.712, y: 6.791, z: 19.111}
+--- !u!136 &3569600034850648964
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4417903942645941638}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.3
+  m_Height: 1.29
+  m_Direction: 1
+  m_Center: {x: -0.78, y: -0.09, z: -0.01}
