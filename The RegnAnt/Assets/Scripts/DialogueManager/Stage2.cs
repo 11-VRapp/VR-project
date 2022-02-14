@@ -17,7 +17,7 @@ public class Stage2 : MonoBehaviour
             newButton.transform.GetChild(0).GetComponent<Text>().text = dialogue.domande[i];
             newButton.transform.GetChild(1).GetComponent<Text>().text = dialogue.risposte[i];
             newButton.GetComponent<Button>().onClick.AddListener(() => buttonAskHandler(newButton));
-            newButton.GetComponent<Button>().onClick.AddListener(() => transform.GetComponent<DialogueManager>().DisplayNextStage());            
+            newButton.GetComponent<Button>().onClick.AddListener(() => transform.GetComponent<DialogueManager>().DisplayStage3());            
         }
     }
 

@@ -18,7 +18,6 @@ public class DialogueManager : MonoBehaviour
     private Transform _lastPosition;
 
     private bool esterno;
-    public Stages stages;
 
     void Start()
     {
@@ -49,16 +48,9 @@ public class DialogueManager : MonoBehaviour
         _player.GetComponent<FPSInteractionManager>().Interaction(speaker.GetComponent<Interactable>());
 
         speaker.GetComponent<DialogueTrigger>().dialogueEnd = false;
-
-
-        /*Vector3 dirToTarget = _player.GetChild(0).transform.localPosition - speaker.transform.localPosition; //da fixare
-        dirToTarget.y = 0f;
-        dirToTarget.Normalize();
-        speaker.DOLocalRotate(dirToTarget, 1f);*/
+        
         _lastPosition = _speakerTransform.transform;
-        StartCoroutine(rotateTowards(5f, 3f, _player.position));
-
-        stages = Stages.stage0;
+        StartCoroutine(rotateTowards(5f, 3f, _player.position));       
 
         _stage0.nameText.text = dialogue.name;
         _stage0.dialogueText_text = dialogue.fraseIniziale;
@@ -76,52 +68,35 @@ public class DialogueManager : MonoBehaviour
         _stageFollow.answer_yes = dialogue.follow_yes;
         esterno = dialogue.esterno;
 
-        DisplayNextStage();
+        DisplayStage0();
+    }    
+
+    public void DisplayStage0()
+    {
+        _stage0.imageBox.SetActive(true);
+        _stage0.imageBox.transform.DOScale(Vector3.one, .5f).SetEase(Ease.InSine);
+
+        StartCoroutine(TypeSentence(_stage0.dialogueText, _stage0.dialogueText_text));
     }
 
-    public void DisplayNextStage()
-    {
-        switch (stages)
+    public void DisplayStage1()
+    {        
+        if (!esterno)
+            _stage1.followBtn.SetActive(false);
+        else
         {
-            case Stages.stage0:
-                _stage0.imageBox.SetActive(true);
-                _stage0.imageBox.transform.DOScale(Vector3.one, .5f).SetEase(Ease.InSine);
-                //StopAllCoroutines();
-                StartCoroutine(TypeSentence(_stage0.dialogueText, _stage0.dialogueText_text));
-                break;
-            case Stages.stage1:
-                _stage0.imageBox.SetActive(false);
-                _stage2.imageBox.SetActive(false);
-                _stage1.imageBox.transform.DOScale(Vector3.one, 0f);
-                _stage1.imageBox.SetActive(true);
-                if (!esterno)
-                    _stage1.followBtn.SetActive(false);
-                else
-                {
-                    if (!_speaker.GetComponent<AntFSM>().following)
-                        _stage1.followBtn.GetComponentInChildren<Text>().text = "Seguimi";
-                    else
-                        _stage1.followBtn.GetComponentInChildren<Text>().text = "Non seguirmi più";
-                }
-                //StopAllCoroutines();
-                StartCoroutine(TypeSentence(_stage1.dialogueText, _stage1.dialogueText_text));
-                break;
-            case Stages.stage2:
-                _stage1.imageBox.SetActive(false);
-                _stage3.imageBox.SetActive(false);
-                _stage2.imageBox.SetActive(true);
-                break;
-            case Stages.stage3:
-                _stage1.imageBox.SetActive(false);
-                _stage2.imageBox.SetActive(false);
-                _stage3.imageBox.SetActive(true);
-                break;
-            case Stages.End:
-                _stage1.imageBox.SetActive(false);
-                EndDialogue();
-                return;
-        };
-        stages++;
+            if (!_speaker.GetComponent<AntFSM>().following)
+                _stage1.followBtn.GetComponentInChildren<Text>().text = "Seguimi";
+            else
+                _stage1.followBtn.GetComponentInChildren<Text>().text = "Non seguirmi più";
+        }
+
+        StartCoroutine(TypeSentence(_stage1.dialogueText, _stage1.dialogueText_text));
+    }
+
+    public void DisplayStage3()
+    {
+        _stage3.imageBox.SetActive(true);
     }
 
     IEnumerator TypeSentence(Text field, string sentence)
@@ -132,21 +107,7 @@ public class DialogueManager : MonoBehaviour
             field.text += letter;
             yield return null;
         }
-    }
-
-    public void goBack()
-    {
-        _stageFollow.imageBox.SetActive(false);
-        stages -= 2;
-        DisplayNextStage();
-    }
-
-
-    public void writeAnswer()
-    {
-        //StopAllCoroutines();
-        StartCoroutine(TypeSentence(_stage1.dialogueText, _stage1.dialogueText_text));
-    }
+    } 
 
     public void EndDialogue()
     {
@@ -160,19 +121,17 @@ public class DialogueManager : MonoBehaviour
 
         _player.GetComponent<AntMovement>().canMove = true;
         _player.GetComponent<PlayerLook>().enabled = true;
-        _player.GetComponent<FPSInteractionManager>().Interaction(null);
-        stages = Stages.stage0;
+        _player.GetComponent<FPSInteractionManager>().Interaction(null);        
 
         _speakerTransform.GetComponent<DialogueTrigger>().dialogueEnd = true;
         StartCoroutine(rotateTowards(5f, 3f, _lastPosition.position));
+        _stage1.imageBox.transform.DOScale(Vector3.one, 0f);
     }
 
     public void followPlayer() //called by button    //if following is already true stop following! (maybe in another stage or like esterno)
     {
         if (!_speaker.GetComponent<AntFSM>().following)
-        {
-            _stageFollow.imageBox.SetActive(true);
-            //StopAllCoroutines();
+        {          
             //set ant status to follow player
             //if ant busy (not in wander state) show negative response canvas (that has a ok button that just hide it again)
             if (_speaker.GetComponent<AntFSM>().canFollow())
@@ -181,17 +140,11 @@ public class DialogueManager : MonoBehaviour
             {
                 string state = _speaker.GetComponent<AntFSM>().getFSMstate();
                 StartCoroutine(TypeSentence(_stageFollow.answer, _stageFollow.getPhraseByState(state)));
-            }
-
-            //if yes it will already following, show canvas again
-            stages++; //so goback works
+            }           
         }
-        else
-        {
-            _speaker.GetComponent<AntFSM>().following = false;
-            stages--;
-            DisplayNextStage();
-        }
+        else        
+            _speaker.GetComponent<AntFSM>().following = false;           
+        
     }
 
     public IEnumerator rotateTowards(float timeNeeded, float speed, Vector3 _target)
@@ -205,15 +158,5 @@ public class DialogueManager : MonoBehaviour
             timeNeeded -= Time.deltaTime;
             yield return null;
         } while (timeNeeded > 0f);
-
-    }
-
-    public enum Stages
-    {
-        stage0,
-        stage1,
-        stage2,
-        stage3,
-        End
     }
 }
