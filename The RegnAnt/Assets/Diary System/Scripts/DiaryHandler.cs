@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class DiaryHandler : MonoBehaviour
 {
@@ -29,11 +30,11 @@ public class DiaryHandler : MonoBehaviour
     {
         //** page flip **//
 
-        if (Input.GetKeyDown(KeyCode.RightArrow))        
+        if (Input.GetKeyDown(KeyCode.RightArrow))
             turnForwPage();
 
-        if (Input.GetKeyDown(KeyCode.LeftArrow))        
-            turnBackPage();        
+        if (Input.GetKeyDown(KeyCode.LeftArrow))
+            turnBackPage();
 
         _indexText.text = $"{_indexOfPage}/{_textures.Count}";
     }
@@ -42,8 +43,8 @@ public class DiaryHandler : MonoBehaviour
     {
         if (_indexOfPage == 0)
             _pageLeft.gameObject.SetActive(true);
-        
-        if(_indexOfPage == _textures.Count - 1)
+
+        if (_indexOfPage == _textures.Count - 1)
             return;
 
         _pageLeft.sprite = _textures[_indexOfPage];
@@ -67,11 +68,15 @@ public class DiaryHandler : MonoBehaviour
 
     public void moveToPage(int chapterIndex)
     {
-        
-         _pageLeft.gameObject.SetActive(true);
+        _pageLeft.gameObject.SetActive(true);
 
         _indexOfPage = chapterIndex;
-        _pageLeft.sprite = _textures[_indexOfPage - 1];        
+        _pageLeft.sprite = _textures[_indexOfPage - 1];
         _pageRight.sprite = _textures[_indexOfPage];
+    }
+
+    public void returnToMainMenu()
+    {       
+        SceneManager.LoadScene("MainMenu");
     }
 }
