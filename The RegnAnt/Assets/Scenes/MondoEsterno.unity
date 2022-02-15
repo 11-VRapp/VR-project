@@ -5143,7 +5143,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &487350936
 PrefabInstance:
@@ -7871,6 +7871,7 @@ GameObject:
   - component: {fileID: 741856663}
   - component: {fileID: 741856662}
   - component: {fileID: 741856661}
+  - component: {fileID: 741856660}
   m_Layer: 0
   m_Name: DeathBoundaryE
   m_TagString: Untagged
@@ -7892,6 +7893,20 @@ Transform:
   m_Father: {fileID: 1929221449}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+--- !u!114 &741856660
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 741856658}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f92a68478622504a9da04ab23ff8d43, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _player: {fileID: 504857564}
+  _spawnPosition: {fileID: 722948397}
 --- !u!65 &741856661
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7966,6 +7981,7 @@ GameObject:
   - component: {fileID: 743238837}
   - component: {fileID: 743238836}
   - component: {fileID: 743238835}
+  - component: {fileID: 743238838}
   m_Layer: 7
   m_Name: DeathBoundaryS
   m_TagString: Untagged
@@ -8049,6 +8065,20 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 743238833}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &743238838
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 743238833}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f92a68478622504a9da04ab23ff8d43, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _player: {fileID: 504857564}
+  _spawnPosition: {fileID: 722948397}
 --- !u!1001 &753402222
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17248,7 +17278,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 16
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1730576127 stripped
 Transform:
@@ -17361,7 +17391,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 265.82, y: 34.962006, z: 25.225998}
 --- !u!1001 &1752780656
 PrefabInstance:
@@ -18377,6 +18407,7 @@ GameObject:
   - component: {fileID: 1880016761}
   - component: {fileID: 1880016760}
   - component: {fileID: 1880016759}
+  - component: {fileID: 1880016762}
   m_Layer: 0
   m_Name: DeathBoundaryO
   m_TagString: Untagged
@@ -18460,6 +18491,20 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1880016757}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1880016762
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1880016757}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f92a68478622504a9da04ab23ff8d43, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _player: {fileID: 504857564}
+  _spawnPosition: {fileID: 722948397}
 --- !u!4 &1880640112 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1102336598597880911, guid: 1a9a9d65e020d764898b9f3e2c6bed34, type: 3}
@@ -21390,6 +21435,7 @@ GameObject:
   - component: {fileID: 2129727333}
   - component: {fileID: 2129727332}
   - component: {fileID: 2129727331}
+  - component: {fileID: 2129727334}
   m_Layer: 0
   m_Name: DeathBoundaryN
   m_TagString: Untagged
@@ -21473,6 +21519,20 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2129727329}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &2129727334
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2129727329}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f92a68478622504a9da04ab23ff8d43, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _player: {fileID: 504857564}
+  _spawnPosition: {fileID: 722948397}
 --- !u!4 &2130179820 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1401612983035720980, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
@@ -21957,7 +22017,7 @@ Transform:
   - {fileID: 1340668187595219694}
   - {fileID: 2004654373586858209}
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &906932991587176373 stripped
 Transform:
