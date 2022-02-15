@@ -58,7 +58,7 @@ public class MenuController : MonoBehaviour
             string option = resolutions[i].width + " x " + resolutions[i].height;
             options.Add(option);
 
-            if(resolutions[i].width == Screen.width && resolutions[i].height == Screen.height)
+            if (resolutions[i].width == Screen.width && resolutions[i].height == Screen.height)
                 currentResolutionIndex = i;
         }
 
@@ -165,13 +165,14 @@ public class MenuController : MonoBehaviour
 
             qualityDropdown.value = 1;
             QualitySettings.SetQualityLevel(1);
-            
+
             Resolution currentResolution = Screen.currentResolution;
             Screen.SetResolution(currentResolution.width, currentResolution.height, Screen.fullScreen);
             resolutionDropdown.value = resolutions.Length;
 
             GraphicApply();
         }
+
 
         if (MenuType == "Audio")
         {
@@ -188,6 +189,11 @@ public class MenuController : MonoBehaviour
             mainMouseSen = defaultMouseSen;
             GameplayApply();
         }
+    }
+
+    public void LoadDiary()
+    {        
+        SceneManager.LoadScene("Diary");
     }
 
     public IEnumerator ConfirmationBox()

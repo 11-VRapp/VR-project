@@ -17,7 +17,7 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] public StageFollow _stageFollow;
     private Transform _lastPosition;
 
-    private bool esterno;
+    private bool canFollow;
 
     void Start()
     {
@@ -66,7 +66,7 @@ public class DialogueManager : MonoBehaviour
         _stageFollow.nameText.text = dialogue.name;
         _stageFollow.answer_no = dialogue.follow_no;
         _stageFollow.answer_yes = dialogue.follow_yes;
-        esterno = dialogue.esterno;
+        canFollow = dialogue.esterno;
 
         DisplayStage0();
     }    
@@ -81,7 +81,7 @@ public class DialogueManager : MonoBehaviour
 
     public void DisplayStage1()
     {   
-        if (!esterno)
+        if (!canFollow)
             _stage1.followBtn.SetActive(false);
         else
         {
@@ -121,8 +121,7 @@ public class DialogueManager : MonoBehaviour
         _player.GetComponent<PlayerLook>().enabled = true;
         _player.GetComponent<FPSInteractionManager>().Interaction(null);        
 
-        _speakerTransform.GetComponent<DialogueTrigger>().dialogueEnd = true;
-        StartCoroutine(rotateTowards(5f, 3f, _lastPosition.position));        
+        _speakerTransform.GetComponent<DialogueTrigger>().dialogueEnd = true;             
     }
 
     public void followPlayer() //called by button    //if following is already true stop following! (maybe in another stage or like esterno)

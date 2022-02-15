@@ -124,13 +124,18 @@ public class AntFSM : MonoBehaviour
     public IEnumerator moveToFood()
     {
         _headController_target.DOMove(objectToLoad.position, 1f);
-        pheromoneTrace = _objectToLoad_Parent.GetComponent<FoodManager>().phTrace;
-        yield return StartCoroutine(moveToPhPoint(objectToLoad.position - 1f * transform.forward));
-        yield return new WaitForSeconds(1f);
-        _animator.SetTrigger("loadObject");  //grab food Animation
-        yield return new WaitForSeconds(1f);
+        pheromoneTrace = _objectToLoad_Parent.GetComponent<FoodManager>().phTrace != null ? _objectToLoad_Parent.GetComponent<FoodManager>().phTrace : null;
+        if (pheromoneTrace != null)
+        {
+            yield return StartCoroutine(moveToPhPoint(objectToLoad.position - 1f * transform.forward));
+            yield return new WaitForSeconds(1f);
+            _animator.SetTrigger("loadObject");  //grab food Animation
+            yield return new WaitForSeconds(1f);
 
-        grabFood();
+            grabFood();
+        }
+        else {}
+            //! return to wander state
     }
 
     public void grabFood()
@@ -150,7 +155,8 @@ public class AntFSM : MonoBehaviour
     public void newPheromoneTraceHandler()
     {
         destination = _nest.position;
-        _navMeshAgent.SetDestination(_nest.position);
+
+        _navMeshAgent.SetDestination(destination); //NOT Working nest position??? manco se trascino il player in editor O.o but player.position sì
 
         if (pheromoneTrace == null)
         {

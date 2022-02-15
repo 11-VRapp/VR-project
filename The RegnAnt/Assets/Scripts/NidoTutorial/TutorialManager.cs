@@ -24,6 +24,7 @@ public class TutorialManager : MonoBehaviour
     {
         phase = 0;
         _popUp.SetActive(false);
+        _blinkCanvas.SetActive(true);
         StartCoroutine(tutorialManager());
     }
 

@@ -14,4 +14,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MondoEsterno.unity
     guid: 30483a8f83845da4ea99e19460c90248
+  - enabled: 1
+    path: Assets/Diary System/Scenes/Diary.unity
+    guid: 34ba71395cea9cb458c62904b49c3125
+  - enabled: 1
+    path: Assets/Scenes/SpiderFight.unity
+    guid: 5775a69c830753b45acff19e63dd8675
   m_configObjects: {}

@@ -89,7 +89,7 @@ public class FPSInteractionManager : MonoBehaviour
             _target.color = Color.red;
     }
 
-    private void Drop()
+    public void Drop()
     {
         if (_grabbedObject == null)
             return;
@@ -101,7 +101,7 @@ public class FPSInteractionManager : MonoBehaviour
         _grabbedObject = null;
     }
 
-    private void Grab(Grabbable grabbable)
+    public void Grab(Grabbable grabbable)
     {
         _grabbedObject = grabbable;
         grabbable.transform.SetParent(_fpsCameraT);

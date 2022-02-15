@@ -573,9 +573,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4806417114467742590}
   - component: {fileID: 5972892021543208606}
-  - component: {fileID: 5302792884075663635}
   - component: {fileID: 1238320566307613875}
   - component: {fileID: 8306772619969677021}
+  - component: {fileID: 4598525961740332809}
   m_Layer: 0
   m_Name: afide
   m_TagString: Aphid
@@ -618,20 +618,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!64 &5302792884075663635
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5330012679946201540}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 0}
 --- !u!54 &1238320566307613875
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -660,6 +646,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc866bd60984e1b43adabd8d624ad979, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!136 &4598525961740332809
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5330012679946201540}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.21
+  m_Height: 0.82
+  m_Direction: 0
+  m_Center: {x: -0.09, y: 0.12, z: 0.09}
 --- !u!1 &5724644017865927752
 GameObject:
   m_ObjectHideFlags: 0
