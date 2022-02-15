@@ -20,7 +20,7 @@ public class Dialogue {
 	[TextArea(3, 10)]
 	public string[] risposte;
 
-	public string follow_yes;
+	public string follow_yes = "Va bene";
 	public string follow_no;
 
 	public Dialogue(string name, string fraseIniziale, string courtesyQuestion, bool esterno, string[] domande, string[] risposte)

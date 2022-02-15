@@ -844,11 +844,21 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
       propertyPath: dialogue.domande.Array.size
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
       propertyPath: dialogue.risposte.Array.size
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
+      propertyPath: dialogue.domande.Array.data[0]
+      value: Raccontami qualcosa
+      objectReference: {fileID: 0}
+    - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
+      propertyPath: dialogue.risposte.Array.data[0]
+      value: "Sapevi che alcune specie, fra cui anche la nostra, assaltano i nidi
+        nemici per rubarne le uova e schiavizzarle? Serve per far crescere la colonia
+        il pi\xF9 in fretta possibile"
       objectReference: {fileID: 0}
     - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
       propertyPath: dialogue.stage1_CourtesyQuestion
@@ -2173,11 +2183,21 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
       propertyPath: dialogue.domande.Array.size
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
       propertyPath: dialogue.risposte.Array.size
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
+      propertyPath: dialogue.domande.Array.data[0]
+      value: Cosa si intende per superorganismo?
+      objectReference: {fileID: 0}
+    - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
+      propertyPath: dialogue.risposte.Array.data[0]
+      value: "La colonia funziona talmente bene, in cui ogni sorella ha il suo ruolo
+        specifico a cui si dedica, tanto che \xE8 paragonabile con un organismo umano,
+        dove tutte le parti cooperano al meglio"
       objectReference: {fileID: 0}
     - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
       propertyPath: dialogue.stage1_CourtesyQuestion
@@ -3443,11 +3463,20 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
       propertyPath: dialogue.domande.Array.size
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
       propertyPath: dialogue.risposte.Array.size
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
+      propertyPath: dialogue.domande.Array.data[0]
+      value: Raccontami qualcosa
+      objectReference: {fileID: 0}
+    - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
+      propertyPath: dialogue.risposte.Array.data[0]
+      value: "Siamo cos\xEC famose che in computer science ci hanno dedicato un algoritmo,
+        l'ACO (ant colony algorithm) per la ricerca di cammini lungo un grafo."
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
@@ -4727,11 +4756,20 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
       propertyPath: dialogue.domande.Array.size
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
       propertyPath: dialogue.risposte.Array.size
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
+      propertyPath: dialogue.domande.Array.data[0]
+      value: Raccontami qualcosa
+      objectReference: {fileID: 0}
+    - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
+      propertyPath: dialogue.risposte.Array.data[0]
+      value: "Sapevi che siamo gli insetti che vivono di pi\xF9 al mondo? No? Bene,
+        ora lo sai"
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
@@ -6101,11 +6139,24 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
       propertyPath: dialogue.domande.Array.size
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
       propertyPath: dialogue.risposte.Array.size
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
+      propertyPath: dialogue.domande.Array.data[0]
+      value: Raccontami qualcosa
+      objectReference: {fileID: 0}
+    - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
+      propertyPath: dialogue.risposte.Array.data[0]
+      value: "I voli nuziali rappresentano, per le formiche, il momento supremo del\r
+        ciclo biologico. Le colonie possono soffrire la fame, i nemici possono sottrarre
+        parte della forza lavoro, molte altre disgrazie possono causare un\r forte
+        declino della colonia; e tuttavia una ripresa \xE8 ancora possibile. Ma se
+        il\r volo nuziale non viene effettuato, o avviene nel periodo sbagliato,
+        allora tutti\r\ngli sforzi della colonia risultano vani."
       objectReference: {fileID: 0}
     - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
       propertyPath: dialogue.stage1_CourtesyQuestion
@@ -8248,6 +8299,10 @@ PrefabInstance:
     - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
       propertyPath: dialogue.name
       value: sorella
+      objectReference: {fileID: 0}
+    - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
+      propertyPath: dialogue.follow_yes
+      value: Va bene
       objectReference: {fileID: 0}
     - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
       propertyPath: dialogue.fraseIniziale
@@ -14881,11 +14936,21 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
       propertyPath: dialogue.domande.Array.size
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
       propertyPath: dialogue.risposte.Array.size
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
+      propertyPath: dialogue.domande.Array.data[0]
+      value: Raccontami qualcosa
+      objectReference: {fileID: 0}
+    - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
+      propertyPath: dialogue.risposte.Array.data[0]
+      value: "Sai che le formiche combattono fra loro? Ovviamente quelle di colonie
+        diverse, anche se appartengono alla stessa specie, ma le guerre sono dei
+        veri e propri massacri. In genere vince la colonia pi\xF9 grande per\xF2"
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
@@ -16545,11 +16610,21 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
       propertyPath: dialogue.domande.Array.size
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
       propertyPath: dialogue.risposte.Array.size
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
+      propertyPath: dialogue.domande.Array.data[0]
+      value: Raccontami qualcosa
+      objectReference: {fileID: 0}
+    - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
+      propertyPath: dialogue.risposte.Array.data[0]
+      value: Noi formiche siamo maestre per quanto riguarda la perfetta organizzazione
+        e precisione per la nostra pianificazione. Tutti dovrebbero imparare, soprattutto
+        le cicale...
       objectReference: {fileID: 0}
     - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
       propertyPath: dialogue.stage1_CourtesyQuestion
@@ -16708,11 +16783,22 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
       propertyPath: dialogue.domande.Array.size
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
       propertyPath: dialogue.risposte.Array.size
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
+      propertyPath: dialogue.domande.Array.data[0]
+      value: Raccontami qualcosa
+      objectReference: {fileID: 0}
+    - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
+      propertyPath: dialogue.risposte.Array.data[0]
+      value: "Le operaie di Myrmecocystus mimicus, fanno molto affidamento su sorveglianza,\r
+        propaganda e ci\xF2 che pu\xF2 ben essere definito, senza esagerazione, una
+        forma\r rudimentale di politica estera. Esse perlustrano il territorio nemico,\r\norganizzano
+        picchetti e cercano di indurre con l\u2019inganno gli avversari a\r sottomettersi."
       objectReference: {fileID: 0}
     - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
       propertyPath: dialogue.stage1_CourtesyQuestion
@@ -17511,11 +17597,22 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
       propertyPath: dialogue.domande.Array.size
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
       propertyPath: dialogue.risposte.Array.size
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
+      propertyPath: dialogue.domande.Array.data[0]
+      value: Raccontami qualcosa
+      objectReference: {fileID: 0}
+    - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
+      propertyPath: dialogue.risposte.Array.data[0]
+      value: 'Sapevi che pure la Bibbia parla di noi?
+
+        Io non l''ho letta,
+        ma parlano di un Prov. 6: 6'
       objectReference: {fileID: 0}
     - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
       propertyPath: dialogue.stage1_CourtesyQuestion
@@ -17752,11 +17849,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
       propertyPath: dialogue.domande.Array.size
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
       propertyPath: dialogue.risposte.Array.size
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
+      propertyPath: dialogue.domande.Array.data[0]
+      value: Raccontami qualcosa
+      objectReference: {fileID: 0}
+    - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
+      propertyPath: dialogue.risposte.Array.data[0]
+      value: "Vi sono almeno tre vie mediante le quali le operaie\r potrebbero stimare
+        indirettamente le forze del nemico. Esse possono\r \xABcontare le teste\xBB
+        mentre passano da una combattente all\u2019altra: se le\r compagne di nido
+        sono pi\xF9 numerose del nemico esse saranno \xABsoggettivamente consapevoli\xBB
+        della disparit\xE0 in\r\nloro favore e pi\xF9 inclini a pressare il nemico"
       objectReference: {fileID: 0}
     - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
       propertyPath: dialogue.stage1_CourtesyQuestion
@@ -19194,11 +19303,22 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
       propertyPath: dialogue.domande.Array.size
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
       propertyPath: dialogue.risposte.Array.size
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
+      propertyPath: dialogue.domande.Array.data[0]
+      value: Raccontami qualcosa
+      objectReference: {fileID: 0}
+    - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
+      propertyPath: dialogue.risposte.Array.data[0]
+      value: "Le colonie poliginiche (cio\xE8 con pi\xF9 regine fertili) non solo
+        sono\r potenzialmente immortali, ma possono accrescersi fino a raggiungere
+        dimensioni enormi. Quelle delle formiche del faraone, che invadono le pareti\r
+        degli ospedali e degli uffici, possono arrivare a contare milioni di operaie"
       objectReference: {fileID: 0}
     - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
       propertyPath: dialogue.stage1_CourtesyQuestion
@@ -19419,6 +19539,22 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3358016231280802683, guid: 91f56a31c1db8ae47ab35ef81a0bd141, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5057692970214533167, guid: 91f56a31c1db8ae47ab35ef81a0bd141, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5057692970285406658, guid: 91f56a31c1db8ae47ab35ef81a0bd141, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5057692970834697463, guid: 91f56a31c1db8ae47ab35ef81a0bd141, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5057692971465409666, guid: 91f56a31c1db8ae47ab35ef81a0bd141, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -19898,11 +20034,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
       propertyPath: dialogue.domande.Array.size
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
       propertyPath: dialogue.risposte.Array.size
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
+      propertyPath: dialogue.domande.Array.data[0]
+      value: Raccontami qualcosa
+      objectReference: {fileID: 0}
+    - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
+      propertyPath: dialogue.risposte.Array.data[0]
+      value: "I maschi non hanno alcuna possibilit\xE0: dopo avere lasciato la colonia\r
+        madre, essi muoiono tutti nel giro di poche ore, o di qualche giorno. Solo
+        un\r numero esiguo di maschi, pur morendo in questo processo, pu\xF2 sperare
+        di\r vincere la lotteria, in senso darwiniano, inseminando una delle rare
+        regine\r vincenti"
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
