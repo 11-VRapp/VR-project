@@ -136,7 +136,8 @@ public class DialogueManager : MonoBehaviour
             {
                 string state = _speaker.GetComponent<AntFSM>().getFSMstate();
                 StartCoroutine(TypeSentence(_stageFollow.answer, _stageFollow.getPhraseByState(state)));
-            }           
+            }        
+            _speaker.GetComponent<AntFSM>().following = true;      
         }
         else        
             _speaker.GetComponent<AntFSM>().following = false;           
