@@ -44,11 +44,7 @@ public class AntMovement : MonoBehaviour
     private void Update()
     {
         MyInput();
-        _slopeMoveDirection = Vector3.ProjectOnPlane(_moveDirection, _hitGround.normal);
-
-        Grab();
-        Attack();
-        //GetComponent<PlayerLook>().Interact();
+        _slopeMoveDirection = Vector3.ProjectOnPlane(_moveDirection, _hitGround.normal);  
     }
 
     void MyInput()
@@ -151,75 +147,11 @@ public class AntMovement : MonoBehaviour
     }
 
     private void rotateToSurfaceNormal(Vector3 vectorToReach, float speed) => transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.FromToRotation(transform.up, vectorToReach) * transform.rotation, speed);
-
-    private void Grab()
-    {
-        if (Input.GetKeyDown(KeyCode.G))
-        {
-            if (!_isGrabbing)
-            {
-                RaycastHit obj = GetComponent<PlayerLook>().hit;
-
-                if (obj.collider != null)
-                {
-                    _animator.SetBool("grab", true);
-                    GameObject pivot = new GameObject("pivotPoint");
-                    pivot.transform.position = obj.point;
-
-                    obj.collider.transform.SetParent(pivot.transform);
-                    pivot.transform.SetParent(_grabPosition.transform);
-                    pivot.transform.localPosition = Vector3.zero;
-
-                    // _headController_target.DOLocalMove(_headController_target_startPosition, 2f);
-
-                    _isGrabbing = true;
-                }
-            }
-            else
-            {
-                if (_grabPosition.childCount != 0)
-                {
-                    _animator.SetBool("grab", false);
-                    Transform pivot = _grabPosition.GetChild(0);
-                    //pivot.GetChild(0).parent = null;
-                    pivot.parent = null;
-                    pivot.gameObject.AddComponent<FoodManager>();
-
-                    _isGrabbing = false;
-                }
-            }
-        }
-    }
-
-
-    private void Attack()
-    {
-        if (Input.GetMouseButtonDown(0))
-        {
-            _animator.SetTrigger("attack");
-            /*RayHit obj = GetComponent<PlayerLook>().hit;
-            if (obj.collider != null)
-            {
-
-            }*/
-        }
-    }
+    
     void OnDrawGizmosSelected()
     {
         // Draw a yellow sphere at the position
         Gizmos.color = Color.yellow;
-        Gizmos.DrawSphere(_hitGround.point, 0.5f);
-
-        /*Gizmos.color = Color.red;
-        Gizmos.DrawSphere(hit.point, 0.5f);*/
-
-        /*Gizmos.color = Color.green;
-        Gizmos.DrawSphere(_antennaRstartPos.position, 0.2f);
-        Gizmos.DrawSphere(_antennaLstartPos.position, 0.2f);*/
-
-        /*Gizmos.color = Color.green;
-        Gizmos.DrawSphere(hitL.point, 0.2f);
-        Gizmos.color = Color.red;
-        Gizmos.DrawSphere(hitR.point, 0.2f);*/
+        Gizmos.DrawSphere(_hitGround.point, 0.5f);       
     }
 }

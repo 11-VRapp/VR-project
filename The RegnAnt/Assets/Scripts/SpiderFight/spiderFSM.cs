@@ -35,6 +35,8 @@ public class spiderFSM : MonoBehaviour
 
     public bool JawsHooking = false;
 
+    public bool test = false;
+
     void Start()
     {
         _navMeshAgent = GetComponent<NavMeshAgent>();
@@ -47,7 +49,7 @@ public class spiderFSM : MonoBehaviour
         State attackState = new AttackState("Attack", this);
 
         //TRANSITIONS
-        _stateMachine.AddTransition(runState, attackState, () => _navMeshAgent.remainingDistance <= _navMeshAgent.stoppingDistance);
+        _stateMachine.AddTransition(runState, attackState, () => _navMeshAgent.remainingDistance <= _navMeshAgent.stoppingDistance);        
         _stateMachine.AddTransition(attackState, runState, () => attackCounter == _maxAttacksPerRound); //counter of legs
 
         //START STATE
@@ -65,7 +67,8 @@ public class spiderFSM : MonoBehaviour
     {
         //Vector3 destination;
         destination = RandomNavMeshLocation();
-        _navMeshAgent.SetDestination(destination);
+        
+        _navMeshAgent.SetDestination(destination);        
     }
 
     private Vector3 RandomNavMeshLocation()
@@ -74,9 +77,10 @@ public class spiderFSM : MonoBehaviour
         NavMeshHit hit;
         Vector3 randomPosition;
         do
-        {
+        {            
             randomPosition = UnityEngine.Random.insideUnitSphere * walkRadius;
             randomPosition += transform.position;
+            //print(randomPosition + "   " + NavMesh.SamplePosition(randomPosition, out hit, walkRadius, 1) + "   " + Vector3.Distance(transform.position, hit.position)+ "  " + (Vector3.Distance(transform.position, hit.position) < _minDistance));
         } while (!NavMesh.SamplePosition(randomPosition, out hit, walkRadius, 1) || Vector3.Distance(transform.position, hit.position) < _minDistance);
 
         finalPosition = hit.position;
@@ -85,7 +89,7 @@ public class spiderFSM : MonoBehaviour
     }
 
     private Vector3 _direction;
-    public void RotateTowardsCenter()
+    public void RotateTowardsCenter()  //! mi sa non necessario, o almeno da convertire con Coroutine
     {
         if (_navMeshAgent.remainingDistance <= _navMeshAgent.stoppingDistance + 45f)
         {
@@ -196,7 +200,8 @@ public class spiderFSM : MonoBehaviour
             transform.rotation = Quaternion.LookRotation(newDirection, transform.up);
 
 
-            _headTarget.transform.position = _player.position - Vector3.up * offset; //DOMove?
+            //_headTarget.transform.position = _player.position - Vector3.up * offset; //DOMove?
+            _headTarget.transform.DOMove(_player.position - Vector3.up * 2f, 1f);
 
             if (Vector3.Distance(transform.position, _player.position) < _biteDistance)
                 _animator.SetBool("AttackZone", true);
@@ -204,7 +209,9 @@ public class spiderFSM : MonoBehaviour
             return;
         }
         else
-            _headTarget.transform.localPosition = new Vector3(0f, 1.7f, 0f);
+        _headTarget.transform.DOLocalMove(new Vector3(0f, 1.7f, 0f), 3f);
+            //_headTarget.transform.localPosition = new Vector3(0f, 1.7f, 0f);
+            
     }    
 
     public void re_Posing(bool p) => _waitingToRe_pose = p;

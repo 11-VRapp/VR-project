@@ -1,10 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class playerLife : MonoBehaviour
 {
     public float life;
+    [SerializeField] private Image _canvas;
+    [SerializeField] private List<Sprite> _bloodTextures;
     [SerializeField] private float _maxlife;
     void Start()
     {
@@ -18,7 +21,9 @@ public class playerLife : MonoBehaviour
         if (life < 0)
         {
             Debug.LogError("MORTOOOOOOOOOOOOOOOOOOOOOOOOO");
+            //! BAD ENDing
         }
+        setLifeTexture();
     }
 
     public void setHeal(float qty)
@@ -26,5 +31,13 @@ public class playerLife : MonoBehaviour
         life += qty;
         if (life > _maxlife)
             life = _maxlife;
+        
+        setLifeTexture();
+    }
+
+    private void setLifeTexture()
+    {
+        int index = (int) ((life/_maxlife)*10f);
+        _canvas.sprite = _bloodTextures[index];
     }
 }

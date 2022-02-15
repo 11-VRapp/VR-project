@@ -19,7 +19,7 @@ public class RunState : State
 
     public override void Tik()
     {
-        _spider.RotateTowardsCenter();
+        //_spider.RotateTowardsCenter();
     }
 
     public override void Exit() { }
@@ -32,7 +32,7 @@ public class AttackState : State
     public AttackState(string name, spiderFSM spider) : base(name) => _spider = spider;
 
     public override void Enter()
-    {
+    {        
         _spider.moving = false;
         _spider.StartAttack();
     }

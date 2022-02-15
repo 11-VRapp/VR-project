@@ -23,15 +23,15 @@ public class CollisionManager : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-            Debug.LogWarning("name: " + name + "   " + collision.gameObject.name + "    Player HIT ");
-            Debug.Log(collision.contacts[0].thisCollider.name);
+            //Debug.LogWarning("name: " + name + "   " + collision.gameObject.name + "    Player HIT ");
+            //Debug.Log(collision.contacts[0].thisCollider.name);
 
             if (legsColliders.Contains(collision.contacts[0].thisCollider)) //se è una zampa
             {
                 if (_spiderFSM.collidingWithAttackingLeg(legsColliders.FindIndex(d => d == collision.contacts[0].thisCollider)))  //in questo modo se provi a salire su gamba a terra dopo attacco non vieni ferito
                     _player.GetComponent<playerLife>().setDamage(_legDamage);
-                    //collision.gameObject.GetComponent<playerLife>().setDamage(_legDamage);
-                Debug.LogWarning("Gamba");
+                //collision.gameObject.GetComponent<playerLife>().setDamage(_legDamage);
+                //Debug.LogWarning("Gamba");
                 return;
             }
 
@@ -46,54 +46,59 @@ public class CollisionManager : MonoBehaviour
                 _player.transform.parent = _jawHookPosition.transform;
                 _player.localPosition = Vector3.zero;
                 StartCoroutine(timerHookingInJaws());
-               
+
                 return;
-            }
-
-
-            /*foreach (ContactPoint c in collision.contacts)
-            {
-                Debug.Log(c.thisCollider.name);
-            }*/
+            }           
             return;
         }
-
-
+        
         if (collision.gameObject.layer == 9) // ANT layer
         {
-
-            Debug.LogWarning("Ant npc|player hit");
+            collision.transform.GetComponent<antNPCfight>().setDamage(8f);
+            collision.transform.GetComponent<Rigidbody>().AddForce(500 * collision.contacts[0].normal, ForceMode.Acceleration);
         }
     }
 
     public IEnumerator timerHookingInJaws()
     {
-        for(int i = 0; i < 5 && _getFreeAttack < _nAttacksToFree; i++)
-        {            
+        for (int i = 0; i < 5 && _getFreeAttack < _nAttacksToFree; i++)
+        {
             yield return new WaitForSeconds(1f);
             _player.GetComponent<playerLife>().setDamage(_mandDamagePerSecond);
         }
         /* Unset parent: free the player*/
         _player.parent = null;
         //or play launch animation
-        GetComponent<Animator>().SetBool("launch", true);
+        GetComponent<Animator>().SetTrigger("launch");
 
         _player.GetComponent<Rigidbody>().AddForce(3500f * (4 * _spiderFSM.transform.forward + Vector3.up), ForceMode.Acceleration);
         _player.GetComponent<AntMovement>().canMove = true;
-        if(_getFreeAttack > _nAttacksToFree)
-            yield return new WaitForSeconds(3f);
+       
         _spiderFSM.JawsHooking = false;
         _getFreeAttack = 0;
-        _nAttacksToFree++;
-        GetComponent<Animator>().SetBool("launch", false);
+        _nAttacksToFree+=5;
+        
         yield return null;
     }
 
-    void Update() //just temporary, to free. Attack ant not implemented yet
+    void Update() 
     {
-        if(Input.GetMouseButtonDown(0)) 
+        if (_spiderFSM.JawsHooking && Input.GetMouseButtonDown(0))        
+            _getFreeAttack++;        
+
+        if (_spiderFSM.JawsHooking && _getFreeAttack > _nAttacksToFree)
         {
-           _getFreeAttack++;
+            GetComponent<Animator>().SetTrigger("launch");
+            _spiderFSM.JawsHooking = false;
+            _getFreeAttack = 0;
+            _nAttacksToFree+=5;
+            StopAllCoroutines();
+
+            _player.parent = null;
+            _player.GetComponent<Rigidbody>().AddForce(350f * (4 * _spiderFSM.transform.forward + Vector3.up), ForceMode.Acceleration);
+            _player.GetComponent<AntMovement>().canMove = true;
+
         }
+
     }
 }

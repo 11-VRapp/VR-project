@@ -12,6 +12,7 @@ public class FPSInteractionManager : MonoBehaviour
 
     private Interactable _pointingInteractable;
     private Grabbable _pointingGrabbable;
+    private Damagable _pointingDamagable;
 
     [SerializeField] private Transform _viewPosition;
     private Vector3 _rayOrigin;
@@ -40,15 +41,15 @@ public class FPSInteractionManager : MonoBehaviour
         RaycastHit hit;
 
         if (Physics.Raycast(ray, out hit, _interactionDistance))
-        {
+        {           
             //Check if is interactable
             _pointingInteractable = hit.transform.GetComponent<Interactable>();
             if (_pointingInteractable)
             {
                 if (Input.GetKey(KeyCode.E) && _interactingObject == null)
                 {
-                    _pointingInteractable.Interact(gameObject);                   
-                }                    
+                    _pointingInteractable.Interact(gameObject);
+                }
             }
 
             //Check if is grabbable
@@ -60,15 +61,21 @@ public class FPSInteractionManager : MonoBehaviour
                     _pointingGrabbable.Grab(gameObject);
                     Grab(_pointingGrabbable);
                 }
-
             }
+            
+            if (Input.GetMouseButton(0) && !_animator.GetBool("hit"))
+            {                        
+                _animator.SetBool("hit", true);                
+                if (hit.transform.GetComponent<Food>() != null)
+                {
+                    hit.transform.GetComponent<Food>().Eat();
+                    GetComponent<playerLife>().setHeal(25f);
+                    feeding = true;
+                }
 
-            if(Input.GetMouseButton(0) && hit.transform.GetComponent<Food>() != null)
-            {
-                _animator.SetTrigger("attack");
-                hit.transform.GetComponent<Food>().Eat();
-                GetComponent<playerLife>().life += 25f;
-                feeding = true;
+                _pointingDamagable = hit.collider.transform.GetComponent<Damagable>();
+                if (_pointingDamagable && GetComponent<AntMovement>().canMove) //spiderHit (not if you are grabbed)                               
+                    _pointingDamagable.Hit();  //damage SPIDER  
             }
         }
         //If NOTHING is detected set all to null
@@ -76,6 +83,7 @@ public class FPSInteractionManager : MonoBehaviour
         {
             _pointingInteractable = null;
             _pointingGrabbable = null;
+            _pointingDamagable = null;
         }
     }
 
@@ -84,6 +92,8 @@ public class FPSInteractionManager : MonoBehaviour
         if (_pointingInteractable)
             _target.color = Color.green;
         else if (_pointingGrabbable)
+            _target.color = Color.blue;
+        else if (_pointingDamagable)
             _target.color = Color.yellow;
         else
             _target.color = Color.red;
@@ -110,5 +120,5 @@ public class FPSInteractionManager : MonoBehaviour
     }
 
     public void Interaction(Interactable interactable) => _interactingObject = interactable;
-    
+
 }
