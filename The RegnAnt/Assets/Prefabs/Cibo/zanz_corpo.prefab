@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 7101748214016772379}
   - component: {fileID: 1757735312328237254}
   - component: {fileID: 1229578897562147496}
+  - component: {fileID: 2535134165095225166}
   m_Layer: 6
   m_Name: zanz_corpo
   m_TagString: Untagged
@@ -124,5 +125,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fc866bd60984e1b43adabd8d624ad979, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2535134165095225166
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5531533872331807547}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7368393b8a5c94447907ca3cb9116484, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
