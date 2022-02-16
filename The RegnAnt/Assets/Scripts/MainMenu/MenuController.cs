@@ -77,7 +77,7 @@ public class MenuController : MonoBehaviour
             if (PlayerPrefs.GetInt("diary") == 1)
                 diaryBtn.interactable = true;
         
-
+        LoadVolumeInfo();
     }
 
     public void SetResolution(int resolutionIndex)
