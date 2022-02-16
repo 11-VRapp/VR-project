@@ -1340,6 +1340,8 @@ GameObject:
   - component: {fileID: 9109965806644770267}
   - component: {fileID: 5745146182011016171}
   - component: {fileID: 7483781601796809072}
+  - component: {fileID: 4607101618436704825}
+  - component: {fileID: 7600430342869180829}
   m_Layer: 9
   m_Name: AntNPC
   m_TagString: Untagged
@@ -1479,6 +1481,55 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e6ae2eb54f0ad648a641c69fd7c7fd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &4607101618436704825
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1401612983035720968}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 296a70b6b5b1a194ca989b94b3fe478d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &7600430342869180829
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1401612983035720968}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d84d45d27fb334e45a959dc5294a87fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - name: Walk
+    clip: {fileID: 8300000, guid: 50b51dfd9f7d78c469b0abca5457eab6, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 1
+    stereoPan: 0
+    audio3D: 1
+    source: {fileID: 0}
+  - name: Verso
+    clip: {fileID: 8300000, guid: 76e6590241cda444e858f7f93cb3d618, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    stereoPan: 0
+    audio3D: 1
+    source: {fileID: 0}
+  - name: Chat
+    clip: {fileID: 8300000, guid: 57822949348775646adf19e882f6caa0, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    stereoPan: 0
+    audio3D: 1
+    source: {fileID: 0}
 --- !u!1 &1554337630809881844
 GameObject:
   m_ObjectHideFlags: 0

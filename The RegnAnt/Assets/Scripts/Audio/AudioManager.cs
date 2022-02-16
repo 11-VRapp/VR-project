@@ -56,9 +56,6 @@ public class AudioManager : MonoBehaviour
         {
             s.source.pitch = UnityEngine.Random.Range(0.1f, 3f);
             s.source.Play();
-        }
-            
-    }
-
-    //pooi usa FindObjectOfType.Play("Death")
+        }            
+    }    
 }

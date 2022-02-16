@@ -20,6 +20,7 @@ public class MissionManager : MonoBehaviour
     [SerializeField] private GameObject _railTraceToEnemy;
     [SerializeField] private Transform _fightPosition;
     public string fightScene;
+    [SerializeField] private AudioManager _generalAudioManager;
     void Start()
     {
         _player.position = _spawnPosition.position;
@@ -32,8 +33,6 @@ public class MissionManager : MonoBehaviour
     {
         yield return StartCoroutine(FirstPhase());
         yield return StartCoroutine(SecondPhase());
-        //yield return StartCoroutine(ThirdPhase());
-        //yield return StartCoroutine(FourthPhase());
     }
 
     private IEnumerator FirstPhase()
@@ -45,12 +44,13 @@ public class MissionManager : MonoBehaviour
 
 
         yield return new WaitUntil(() => Vector3.Distance(_aphid.position, _aphidSetPosition.position) <= 2f); //reached target point with aphid
+        _generalAudioManager.Play("QuestCompleted");
 
         //detach aphid
         _player.GetComponent<FPSInteractionManager>().Drop();
         _aphid.position = _aphidSetPosition.position;
         _aphid.up = _aphidSetPosition.up;
-             
+
         _aphid.GetComponent<Rigidbody>().useGravity = false;
         _aphid.GetComponent<Rigidbody>().isKinematic = true;
         //phase 1 complete, now return from tree and encounter (spawn new ant)
@@ -88,7 +88,8 @@ public class MissionManager : MonoBehaviour
 
 
         yield return new WaitUntil(() => Vector3.Distance(_player.position, _mosquito.transform.position) < 5f);
-        StartCoroutine(arrowScaleByDistance(_player, _antNest));        
+        _generalAudioManager.Play("QuestCompleted");
+        StartCoroutine(arrowScaleByDistance(_player, _antNest));
 
         //change dialog to ant on nest
         _antNest.GetComponent<DialogueTrigger>().dialogueEnd = false; //reset dialogue for new dialogue
@@ -104,14 +105,13 @@ public class MissionManager : MonoBehaviour
         yield return new WaitUntil(() => _antNest.GetComponent<DialogueTrigger>().dialogueEnd); //chatted once arrived
         _arrow.gameObject.SetActive(false);
         //spawn blue pheromone trail to boss point
-        GameObject.Instantiate(_railTraceToEnemy, new Vector3(380.253784f,0.850000024f,-64.1017075f), Quaternion.Euler(0f, 0f, 0f)); //spawn already generated trace    
+        GameObject.Instantiate(_railTraceToEnemy, new Vector3(380.253784f, 0.850000024f, -64.1017075f), Quaternion.Euler(0f, 0f, 0f)); //spawn already generated trace    
 
         //? spawn spider     
 
         yield return new WaitUntil(() => Vector3.Distance(_player.position, _fightPosition.position) <= 30f);  //when arrived change SCENE!
         //change scene to fight!
         SceneManager.LoadScene(fightScene);
-
     }
 
 

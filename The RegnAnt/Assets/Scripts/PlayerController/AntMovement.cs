@@ -21,15 +21,7 @@ public class AntMovement : MonoBehaviour
     private Vector3 _slopeMoveDirection;
     private RaycastHit _hitGround;
     [SerializeField] private Transform _groundCheckPosition;
-    private Rigidbody _rb;
-
-    [Header("Antennas")]
-    [SerializeField] private Transform _headPosition;
-    [SerializeField] private Transform _antennaLeft;
-    [SerializeField] private Transform _antennaRight;
-    [SerializeField] private Transform _antennaLstartPos;
-    [SerializeField] private Transform _antennaRstartPos;
-    [SerializeField] private Animator _animator;
+    private Rigidbody _rb;    
 
     public bool canMove = true;  //from spider hook
     [SerializeField] private Transform _grabPosition;
@@ -107,9 +99,7 @@ public class AntMovement : MonoBehaviour
     private bool wallCheck()
     {
         //Debug.Log("Checking Wall");
-        Debug.DrawLine(transform.position - 1f * orientation.up, transform.position - 1f * orientation.up + 2.5f * orientation.forward, Color.black);
-        antennasMovement();
-
+        Debug.DrawLine(transform.position - 1f * orientation.up, transform.position - 1f * orientation.up + 2.5f * orientation.forward, Color.black);    
         if (Physics.Raycast(transform.position - 1f * orientation.up, orientation.forward, out _hitGround, 2.5f, terrainLayer.value))
         //|| Physics.Raycast(transform.position - 1f * orientation.up, -orientation.forward, out _hitGround, 2.5f, terrainLayer.value))
         {
@@ -118,37 +108,6 @@ public class AntMovement : MonoBehaviour
             return true;
         }
         return false;
-    }
-
-    private void antennasMovement()
-    {
-        //Debug.DrawLine(_headPosition.position, _headPosition.position + _headPosition.forward - _headPosition.right * 0.5f, Color.green);
-        if (Physics.SphereCast(_headPosition.position, 0.5f, _headPosition.forward - _headPosition.right * 0.5f, out RaycastHit hitL, 1.2f))
-        {
-            _animator.SetBool("objectClose", true); //animation stop  
-            _antennaLeft.position = Vector3.MoveTowards(_antennaLeft.position, hitL.point, Time.fixedDeltaTime);
-        }
-        else
-            _antennaLeft.position = Vector3.MoveTowards(_antennaLeft.position, _antennaLstartPos.position, Time.fixedDeltaTime);
-
-
-        //Debug.DrawLine(_headPosition.position, _headPosition.position + _headPosition.forward + _headPosition.right * 0.5f, Color.red);
-        if (Physics.SphereCast(_headPosition.position, 0.5f, _headPosition.forward + _headPosition.right * 0.5f, out RaycastHit hitR, 1.2f))
-        {
-            _animator.SetBool("objectClose", true); //animation stop  
-
-            _antennaRight.position = Vector3.MoveTowards(_antennaRight.position, hitR.point, Time.fixedDeltaTime);
-        }
-        else
-            _antennaRight.position = Vector3.MoveTowards(_antennaRight.position, _antennaRstartPos.position, Time.fixedDeltaTime);
-
-        if (Vector3.Distance(_antennaLeft.position, _antennaLstartPos.position) < 0.005f && Vector3.Distance(_antennaRight.position, _antennaRstartPos.position) < 0.005f)
-        {
-            _animator.SetBool("objectClose", false);
-            if (!GetComponent<AudioManager>().audioIsPlaying("Verso"))
-                GetComponent<AudioManager>().PlayWithRandomPitch("Verso");
-        }
-
     }
 
     private void rotateToSurfaceNormal(Vector3 vectorToReach, float speed) => transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.FromToRotation(transform.up, vectorToReach) * transform.rotation, speed);

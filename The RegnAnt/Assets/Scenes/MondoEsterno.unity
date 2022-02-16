@@ -5131,6 +5131,7 @@ MonoBehaviour:
   _railTraceToEnemy: {fileID: 5203534733724316615, guid: a8b51a6fed47f2c4791d6625467ac556, type: 3}
   _fightPosition: {fileID: 1726844765}
   fightScene: SpiderFight
+  _generalAudioManager: {fileID: 0}
 --- !u!4 &484706568
 Transform:
   m_ObjectHideFlags: 0
@@ -5728,6 +5729,58 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1401612983035720980, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
   m_PrefabInstance: {fileID: 979486336}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &522320230
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 522320232}
+  - component: {fileID: 522320231}
+  m_Layer: 0
+  m_Name: GeneralAudioManager
+  m_TagString: GeneralAudioManager
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &522320231
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 522320230}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d84d45d27fb334e45a959dc5294a87fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - name: QuestCompleted
+    clip: {fileID: 8300000, guid: e2b92d17bd04e764eb9e71b3adf07ce5, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    stereoPan: 0
+    audio3D: 0
+    source: {fileID: 0}
+--- !u!4 &522320232
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 522320230}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 925.9892, y: 583.7506, z: -67.817406}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 17
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &529181536
 PrefabInstance:
   m_ObjectHideFlags: 0

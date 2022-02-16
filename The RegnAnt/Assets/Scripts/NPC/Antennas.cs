@@ -10,8 +10,7 @@ public class Antennas : MonoBehaviour
     [SerializeField] private Transform _antennaLeft;
     [SerializeField] private Transform _antennaRight;
     [SerializeField] private Transform _antennaLstartPos;
-    [SerializeField] private Transform _antennaRstartPos;
-    [SerializeField] private Animator _animator;
+    [SerializeField] private Transform _antennaRstartPos;    
 
     void Update() => antennasMovement();
 
