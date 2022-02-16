@@ -10,7 +10,10 @@ public class MenuController : MonoBehaviour
     [Header("Levels to Load")]
     public string newGameLevel;
     private string _levelToLoad;
-    [SerializeField] private Button loadBtn;
+    [SerializeField] private Button modBtn;
+
+    [Header("Diary")]
+    [SerializeField] private Button diaryBtn;
 
     [Header("Volume Settings")]
     [SerializeField] private TMP_Text _volumeTextValue = null;
@@ -66,8 +69,15 @@ public class MenuController : MonoBehaviour
         resolutionDropdown.value = currentResolutionIndex;
         resolutionDropdown.RefreshShownValue();
 
-        if (!PlayerPrefs.HasKey("SavedLevel"))
-            loadBtn.interactable = false;
+        if (PlayerPrefs.HasKey("gameFinished"))        
+            if (PlayerPrefs.GetInt("gameFinished") == 1)
+                modBtn.interactable = true;
+
+        if (PlayerPrefs.HasKey("diary"))        
+            if (PlayerPrefs.GetInt("diary") == 1)
+                diaryBtn.interactable = true;
+        
+
     }
 
     public void SetResolution(int resolutionIndex)
@@ -83,9 +93,9 @@ public class MenuController : MonoBehaviour
 
     public void LoadGameDialogYes()
     {
-        if (PlayerPrefs.HasKey("SavedLevel"))
+        if (PlayerPrefs.HasKey("gameFinished"))
         {
-            _levelToLoad = PlayerPrefs.GetString("SavedLevel");
+            _levelToLoad = PlayerPrefs.GetString("gameFinished");
             SceneManager.LoadScene(_levelToLoad);
         }
 
@@ -191,10 +201,9 @@ public class MenuController : MonoBehaviour
         }
     }
 
-    public void LoadDiary()
-    {        
-        SceneManager.LoadScene("Diary");
-    }
+    public void LoadDiary() => SceneManager.LoadScene("Diary");    
+
+    public void LoadSpiderFight() => SceneManager.LoadScene("SpiderFight");    
 
     public IEnumerator ConfirmationBox()
     {

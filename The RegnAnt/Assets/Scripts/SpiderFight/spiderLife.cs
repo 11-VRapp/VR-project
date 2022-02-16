@@ -23,14 +23,11 @@ public class spiderLife : MonoBehaviour
     {
         life -= dmg;
         if (life < 0)
-        {
-            Debug.LogError("MORTOOOOOOOOOOOOOOOOOOOOOOOOO");
-            //! BAD ENDing
+        {            
+            //! GOOD ENDing
+            StartCoroutine(GameObject.FindObjectOfType<EndingManager>().finalWin());
         }
     }
 
-    public void setHeal(float qty) => life += qty;
-        
-        
-    
+    public void setHeal(float qty) => life += qty;    
 }

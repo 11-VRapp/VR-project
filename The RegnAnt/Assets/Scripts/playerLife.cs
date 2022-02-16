@@ -19,9 +19,9 @@ public class playerLife : MonoBehaviour
     {
         life -= dmg;
         if (life < 0)
-        {
-            Debug.LogError("MORTOOOOOOOOOOOOOOOOOOOOOOOOO");
+        {            
             //! BAD ENDing
+            StartCoroutine(GameObject.FindObjectOfType<EndingManager>().finalDeath());
         }
         setLifeTexture();
     }
