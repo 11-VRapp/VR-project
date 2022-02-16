@@ -88,20 +88,7 @@ public class spiderFSM : MonoBehaviour
         return finalPosition;
     }
 
-    private Vector3 _direction;
-    public void RotateTowardsCenter()  //! mi sa non necessario, o almeno da convertire con Coroutine
-    {
-        if (_navMeshAgent.remainingDistance <= _navMeshAgent.stoppingDistance + 45f)
-        {
-            _direction = _terrain.position - transform.position;
-            _direction.y = 0f;
-            _direction.Normalize();
-            Quaternion lookRotation = Quaternion.LookRotation(_direction);
-            
-            transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.fixedDeltaTime * .25f);
-            //transform.DORotate(_direction, 2.5f, RotateMode.Fast);
-        }
-    }
+    private Vector3 _direction;    
     public void StartAttack()
     {
         _maxAttacksPerRound = Random.Range(2, 5);

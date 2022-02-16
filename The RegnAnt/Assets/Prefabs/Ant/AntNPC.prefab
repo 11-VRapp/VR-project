@@ -1444,7 +1444,6 @@ MonoBehaviour:
   _antennaRight: {fileID: 8712314403556195581}
   _antennaLstartPos: {fileID: 7341218285545127176}
   _antennaRstartPos: {fileID: 1812039564851434379}
-  _animator: {fileID: 8619278760451712220}
 --- !u!114 &5745146182011016171
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1524,6 +1523,22 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: Chat
     clip: {fileID: 8300000, guid: 57822949348775646adf19e882f6caa0, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    stereoPan: 0
+    audio3D: 1
+    source: {fileID: 0}
+  - name: Attack
+    clip: {fileID: 8300000, guid: f33414c5efb55b346ad034ef7042ba82, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    stereoPan: 0
+    audio3D: 1
+    source: {fileID: 0}
+  - name: Death
+    clip: {fileID: 8300000, guid: c48916d2b8dc56f4db0cdf124f07eb7a, type: 3}
     volume: 1
     pitch: 1
     loop: 0

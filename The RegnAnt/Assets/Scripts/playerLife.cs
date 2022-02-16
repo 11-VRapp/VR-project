@@ -19,11 +19,12 @@ public class playerLife : MonoBehaviour
     {
         life -= dmg;
         if (life < 0)
-        {            
+        {
             //! BAD ENDing
             StartCoroutine(GameObject.FindObjectOfType<EndingManager>().finalDeath());
         }
-        setLifeTexture();
+        else
+            setLifeTexture();
     }
 
     public void setHeal(float qty)
@@ -31,15 +32,16 @@ public class playerLife : MonoBehaviour
         life += qty;
         if (life > _maxlife)
             life = _maxlife;
-        
+
         setLifeTexture();
     }
 
     private void setLifeTexture()
     {
-       /* int index = (int) ((life/_maxlife)*10f);
-        if(index > _bloodTextures.Count -1)
-            index = _bloodTextures.Count -1;
-        _canvas.sprite = _bloodTextures[index];*/ //TODO
+        int index = (int)((life / _maxlife) * 10f);
+        Debug.Log(index + "   " + _bloodTextures.Count);
+        if (index > _bloodTextures.Count - 1)
+            index = _bloodTextures.Count - 1;
+        _canvas.sprite = _bloodTextures[index];
     }
 }

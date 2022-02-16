@@ -42,6 +42,8 @@ GameObject:
   m_Component:
   - component: {fileID: 64719107690538639}
   - component: {fileID: 64719107690538624}
+  - component: {fileID: 8935830545788731229}
+  - component: {fileID: 5097165919839607381}
   m_Layer: 6
   m_Name: legColliderL2.R
   m_TagString: Untagged
@@ -77,6 +79,49 @@ CapsuleCollider:
   m_Height: 0.6788157
   m_Direction: 1
   m_Center: {x: 7.333686e-10, y: -0.03568712, z: -0.0000000021434727}
+--- !u!114 &8935830545788731229
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 64719107690538638}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d84d45d27fb334e45a959dc5294a87fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - name: FootStep
+    clip: {fileID: 8300000, guid: 1cd744f476796c24790774b95e25273f, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    stereoPan: 0
+    audio3D: 1
+    source: {fileID: 0}
+  - name: Attack
+    clip: {fileID: 8300000, guid: a3de2587e1eaed24a9f826e618faa5b2, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    stereoPan: 0
+    audio3D: 1
+    source: {fileID: 0}
+--- !u!114 &5097165919839607381
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 64719107690538638}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37175936703ac624fb220c7d65f86695, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 7
+  _sl: {fileID: 0}
 --- !u!1 &64719107726120887
 GameObject:
   m_ObjectHideFlags: 0
@@ -222,6 +267,8 @@ GameObject:
   m_Component:
   - component: {fileID: 64719107742074219}
   - component: {fileID: 64719107742074220}
+  - component: {fileID: 5215982624274207482}
+  - component: {fileID: 7231527210362543677}
   m_Layer: 6
   m_Name: legColliderL1.L
   m_TagString: Untagged
@@ -257,6 +304,49 @@ CapsuleCollider:
   m_Height: 0.54138815
   m_Direction: 1
   m_Center: {x: 1.9930063e-10, y: -0.035687122, z: -0.0000000012116796}
+--- !u!114 &5215982624274207482
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 64719107742074218}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37175936703ac624fb220c7d65f86695, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 7
+  _sl: {fileID: 0}
+--- !u!114 &7231527210362543677
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 64719107742074218}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d84d45d27fb334e45a959dc5294a87fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - name: FootStep
+    clip: {fileID: 8300000, guid: 1cd744f476796c24790774b95e25273f, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    stereoPan: 0
+    audio3D: 1
+    source: {fileID: 0}
+  - name: Attack
+    clip: {fileID: 8300000, guid: a3de2587e1eaed24a9f826e618faa5b2, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    stereoPan: 0
+    audio3D: 1
+    source: {fileID: 0}
 --- !u!1 &64719107782161407
 GameObject:
   m_ObjectHideFlags: 0
@@ -852,6 +942,8 @@ GameObject:
   m_Component:
   - component: {fileID: 64719108263344689}
   - component: {fileID: 64719108263344690}
+  - component: {fileID: 6536886376156626793}
+  - component: {fileID: 7253326237143435762}
   m_Layer: 6
   m_Name: legColliderL1.R
   m_TagString: Untagged
@@ -887,6 +979,49 @@ CapsuleCollider:
   m_Height: 0.54138815
   m_Direction: 1
   m_Center: {x: 1.9930063e-10, y: -0.035687122, z: -0.0000000012116796}
+--- !u!114 &6536886376156626793
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 64719108263344688}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37175936703ac624fb220c7d65f86695, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 7
+  _sl: {fileID: 0}
+--- !u!114 &7253326237143435762
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 64719108263344688}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d84d45d27fb334e45a959dc5294a87fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - name: FootStep
+    clip: {fileID: 8300000, guid: 1cd744f476796c24790774b95e25273f, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    stereoPan: 0
+    audio3D: 1
+    source: {fileID: 0}
+  - name: Attack
+    clip: {fileID: 8300000, guid: a3de2587e1eaed24a9f826e618faa5b2, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    stereoPan: 0
+    audio3D: 1
+    source: {fileID: 0}
 --- !u!1 &64719108268145868
 GameObject:
   m_ObjectHideFlags: 0
@@ -1032,6 +1167,8 @@ GameObject:
   m_Component:
   - component: {fileID: 64719108444124289}
   - component: {fileID: 64719108444124290}
+  - component: {fileID: 331548020894575140}
+  - component: {fileID: 2744556480503267524}
   m_Layer: 6
   m_Name: legColliderL4.L
   m_TagString: Untagged
@@ -1067,6 +1204,49 @@ CapsuleCollider:
   m_Height: 0.5768859
   m_Direction: 1
   m_Center: {x: 2.1348227e-10, y: -0.035687137, z: 0.0000000041876644}
+--- !u!114 &331548020894575140
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 64719108444124288}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37175936703ac624fb220c7d65f86695, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 7
+  _sl: {fileID: 0}
+--- !u!114 &2744556480503267524
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 64719108444124288}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d84d45d27fb334e45a959dc5294a87fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - name: FootStep
+    clip: {fileID: 8300000, guid: 1cd744f476796c24790774b95e25273f, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    stereoPan: 0
+    audio3D: 1
+    source: {fileID: 0}
+  - name: Attack
+    clip: {fileID: 8300000, guid: a3de2587e1eaed24a9f826e618faa5b2, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    stereoPan: 0
+    audio3D: 1
+    source: {fileID: 0}
 --- !u!1 &64719108463428427
 GameObject:
   m_ObjectHideFlags: 0
@@ -1212,6 +1392,8 @@ GameObject:
   m_Component:
   - component: {fileID: 64719108563930681}
   - component: {fileID: 64719108563930682}
+  - component: {fileID: 8570048219505801210}
+  - component: {fileID: 3526831016473161898}
   m_Layer: 6
   m_Name: legColliderL4.R
   m_TagString: Untagged
@@ -1247,6 +1429,49 @@ CapsuleCollider:
   m_Height: 0.6788157
   m_Direction: 1
   m_Center: {x: 7.333686e-10, y: -0.03568712, z: -0.0000000021434727}
+--- !u!114 &8570048219505801210
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 64719108563930680}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37175936703ac624fb220c7d65f86695, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 7
+  _sl: {fileID: 0}
+--- !u!114 &3526831016473161898
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 64719108563930680}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d84d45d27fb334e45a959dc5294a87fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - name: FootStep
+    clip: {fileID: 8300000, guid: 1cd744f476796c24790774b95e25273f, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    stereoPan: 0
+    audio3D: 1
+    source: {fileID: 0}
+  - name: Attack
+    clip: {fileID: 8300000, guid: a3de2587e1eaed24a9f826e618faa5b2, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    stereoPan: 0
+    audio3D: 1
+    source: {fileID: 0}
 --- !u!1 &64719108758414577
 GameObject:
   m_ObjectHideFlags: 0
@@ -1842,6 +2067,8 @@ GameObject:
   m_Component:
   - component: {fileID: 64719109356488249}
   - component: {fileID: 64719109356488250}
+  - component: {fileID: 9028945128638070999}
+  - component: {fileID: 909634786976034846}
   m_Layer: 6
   m_Name: legColliderL3.R
   m_TagString: Untagged
@@ -1877,6 +2104,49 @@ CapsuleCollider:
   m_Height: 0.6788157
   m_Direction: 1
   m_Center: {x: 7.333686e-10, y: -0.03568712, z: -0.0000000021434727}
+--- !u!114 &9028945128638070999
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 64719109356488248}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37175936703ac624fb220c7d65f86695, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 7
+  _sl: {fileID: 0}
+--- !u!114 &909634786976034846
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 64719109356488248}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d84d45d27fb334e45a959dc5294a87fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - name: FootStep
+    clip: {fileID: 8300000, guid: 1cd744f476796c24790774b95e25273f, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    stereoPan: 0
+    audio3D: 1
+    source: {fileID: 0}
+  - name: Attack
+    clip: {fileID: 8300000, guid: a3de2587e1eaed24a9f826e618faa5b2, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    stereoPan: 0
+    audio3D: 1
+    source: {fileID: 0}
 --- !u!1 &64719109367179609
 GameObject:
   m_ObjectHideFlags: 0
@@ -1932,6 +2202,8 @@ GameObject:
   m_Component:
   - component: {fileID: 64719109370502869}
   - component: {fileID: 64719109370502870}
+  - component: {fileID: 1579232094274628757}
+  - component: {fileID: 4492952811657260365}
   m_Layer: 6
   m_Name: legColliderL3.L
   m_TagString: Untagged
@@ -1967,6 +2239,49 @@ CapsuleCollider:
   m_Height: 0.6117342
   m_Direction: 1
   m_Center: {x: -0.000000001310476, y: -0.03568713, z: 0.000000006927646}
+--- !u!114 &1579232094274628757
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 64719109370502868}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37175936703ac624fb220c7d65f86695, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 7
+  _sl: {fileID: 0}
+--- !u!114 &4492952811657260365
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 64719109370502868}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d84d45d27fb334e45a959dc5294a87fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - name: FootStep
+    clip: {fileID: 8300000, guid: 1cd744f476796c24790774b95e25273f, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    stereoPan: 0
+    audio3D: 1
+    source: {fileID: 0}
+  - name: Attack
+    clip: {fileID: 8300000, guid: a3de2587e1eaed24a9f826e618faa5b2, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    stereoPan: 0
+    audio3D: 1
+    source: {fileID: 0}
 --- !u!1 &64719109429016628
 GameObject:
   m_ObjectHideFlags: 0
@@ -2088,6 +2403,7 @@ GameObject:
   m_Component:
   - component: {fileID: 64719109496866298}
   - component: {fileID: 64719109496866299}
+  - component: {fileID: 4794417351592800616}
   m_Layer: 6
   m_Name: headCollider
   m_TagString: Untagged
@@ -2123,6 +2439,20 @@ CapsuleCollider:
   m_Height: 1.7243588
   m_Direction: 1
   m_Center: {x: -7.6403717e-10, y: -0.03568713, z: 0.000000005194962}
+--- !u!114 &4794417351592800616
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 64719109496866297}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd72ddcfd61d5444c8cc58a88823f480, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 20
+  _sl: {fileID: 8675859137534531913}
 --- !u!1 &64719109531162028
 GameObject:
   m_ObjectHideFlags: 0
@@ -2178,6 +2508,8 @@ GameObject:
   m_Component:
   - component: {fileID: 64719109550895313}
   - component: {fileID: 64719109550895314}
+  - component: {fileID: 8260352138361964425}
+  - component: {fileID: 1526588715064999984}
   m_Layer: 6
   m_Name: legColliderL2.L
   m_TagString: Untagged
@@ -2213,6 +2545,49 @@ CapsuleCollider:
   m_Height: 0.6761634
   m_Direction: 1
   m_Center: {x: -0.0000000017550394, y: -0.035687126, z: 0.0000000051332565}
+--- !u!114 &8260352138361964425
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 64719109550895312}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d84d45d27fb334e45a959dc5294a87fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - name: FootStep
+    clip: {fileID: 8300000, guid: 1cd744f476796c24790774b95e25273f, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    stereoPan: 0
+    audio3D: 1
+    source: {fileID: 0}
+  - name: Attack
+    clip: {fileID: 8300000, guid: a3de2587e1eaed24a9f826e618faa5b2, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    stereoPan: 0
+    audio3D: 1
+    source: {fileID: 0}
+--- !u!114 &1526588715064999984
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 64719109550895312}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37175936703ac624fb220c7d65f86695, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 7
+  _sl: {fileID: 0}
 --- !u!1 &64719109573266756
 GameObject:
   m_ObjectHideFlags: 0
@@ -7409,6 +7784,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7959415466070211771}
   - component: {fileID: 7959415466070211770}
+  - component: {fileID: 547601609377678111}
   m_Layer: 6
   m_Name: backCollider
   m_TagString: Untagged
@@ -7444,6 +7820,20 @@ CapsuleCollider:
   m_Height: 2.768653
   m_Direction: 1
   m_Center: {x: 0.0069419537, y: -0.15122609, z: 0.005352048}
+--- !u!114 &547601609377678111
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7959415466070211772}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4d74b1d3fd688a479220782854386fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 13
+  _sl: {fileID: 8675859137534531913}
 --- !u!1 &8261692114418113755
 GameObject:
   m_ObjectHideFlags: 0
@@ -7492,6 +7882,8 @@ GameObject:
   - component: {fileID: 8300412791490500595}
   - component: {fileID: 8300412791490500596}
   - component: {fileID: 8300412791490500597}
+  - component: {fileID: 8675859137534531913}
+  - component: {fileID: 9066248700339147010}
   m_Layer: 0
   m_Name: Ragno
   m_TagString: Untagged
@@ -7650,7 +8042,7 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
-  m_IsKinematic: 1
+  m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
@@ -7750,6 +8142,7 @@ MonoBehaviour:
   moving: 1
   _maxAttacksPerRound: 3
   JawsHooking: 0
+  test: 0
 --- !u!114 &8300412791490500597
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7780,6 +8173,58 @@ MonoBehaviour:
   _jawHookPosition: {fileID: 6785380561924295083}
   _getFreeAttack: 0
   _nAttacksToFree: 2
+--- !u!114 &8675859137534531913
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8300412791490500598}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 877379329eb1aa44f8349f70762ddc48, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  life: 800
+  regenTime: 5
+  regenQty: 12
+--- !u!114 &9066248700339147010
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8300412791490500598}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d84d45d27fb334e45a959dc5294a87fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - name: Verso
+    clip: {fileID: 8300000, guid: 034417cdb22ab364faa439a3127cb7b7, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    stereoPan: 0
+    audio3D: 1
+    source: {fileID: 0}
+  - name: LegAttack
+    clip: {fileID: 8300000, guid: a3de2587e1eaed24a9f826e618faa5b2, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    stereoPan: 0
+    audio3D: 1
+    source: {fileID: 0}
+  - name: JawAttack
+    clip: {fileID: 8300000, guid: 697a505d849d23847966d8f983638737, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    stereoPan: 0
+    audio3D: 1
+    source: {fileID: 0}
 --- !u!1 &8344188405677104800
 GameObject:
   m_ObjectHideFlags: 0

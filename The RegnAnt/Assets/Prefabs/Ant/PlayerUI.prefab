@@ -6150,10 +6150,10 @@ GameObject:
   - component: {fileID: 7624277554374250911}
   - component: {fileID: 7624277554374250898}
   - component: {fileID: 3119067597090311628}
+  - component: {fileID: 7385948772084037729}
   - component: {fileID: 4287016987220696524}
   - component: {fileID: 6918435614891828544}
   - component: {fileID: 8185043152650038491}
-  - component: {fileID: 7385948772084037729}
   m_Layer: 0
   m_Name: PlayerUI
   m_TagString: Player
@@ -6232,12 +6232,6 @@ MonoBehaviour:
   orientation: {fileID: 7624277554609787734}
   _gravity: 10
   _groundCheckPosition: {fileID: 7624277554348077465}
-  _headPosition: {fileID: 2618854455665370450}
-  _antennaLeft: {fileID: 612783173842490295}
-  _antennaRight: {fileID: 612783173044552155}
-  _antennaLstartPos: {fileID: 3548135453935979737}
-  _antennaRstartPos: {fileID: 1726723150344934964}
-  _animator: {fileID: 2925478908898955422}
   canMove: 1
   _grabPosition: {fileID: 980270560971652345}
 --- !u!114 &3119067597090311628
@@ -6256,6 +6250,23 @@ MonoBehaviour:
   _canvas: {fileID: 0}
   _bloodTextures: []
   _maxlife: 0
+--- !u!114 &7385948772084037729
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4867618617683880790}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b70bc299aa34b524dbd7e1da714fe441, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _headPosition: {fileID: 2618854455665370450}
+  _antennaLeft: {fileID: 612783173842490295}
+  _antennaRight: {fileID: 612783173044552155}
+  _antennaLstartPos: {fileID: 3548135453935979737}
+  _antennaRstartPos: {fileID: 1726723150344934964}
 --- !u!114 &4287016987220696524
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6350,23 +6361,6 @@ MonoBehaviour:
     stereoPan: 0
     audio3D: 0
     source: {fileID: 0}
---- !u!114 &7385948772084037729
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4867618617683880790}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b70bc299aa34b524dbd7e1da714fe441, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _headPosition: {fileID: 2618854455665370450}
-  _antennaLeft: {fileID: 612783173842490295}
-  _antennaRight: {fileID: 612783173044552155}
-  _antennaLstartPos: {fileID: 3548135453935979737}
-  _antennaRstartPos: {fileID: 1726723150344934964}
 --- !u!1 &5043376538129338611
 GameObject:
   m_ObjectHideFlags: 0

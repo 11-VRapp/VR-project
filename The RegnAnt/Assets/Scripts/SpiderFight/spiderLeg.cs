@@ -11,6 +11,4 @@ public class spiderLeg : Damagable
     {
         _sl.setDamage(damage);
     }
-
-
 }

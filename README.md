@@ -68,3 +68,8 @@ Dialogue UI by <a href="https://opengameart.org/content/ui-pack-buttons-and-dial
 Compass texture by <a href="https://www.vecteezy.com/free-vector/compass">Compass Vectors by Vecteezy</a>
 
 Warning Icon by  <a href="https://www.flaticon.com/free-icons/warning" title="warning icons">Warning icons created by Smashicons - Flaticon</a>
+
+Epic Boss Battle by Juhani Junkala | <a href=https://soundcloud.com/juhanijunkala>
+Music promoted by <a href=https://www.free-stock-music.com>
+Creative Commons Attribution 3.0 Unported License <a href=https://creativecommons.org/licenses/by/3.0/deed.en_US>
+

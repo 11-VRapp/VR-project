@@ -33,14 +33,20 @@ public class antNPCfight : MonoBehaviour
         {
             _navAgent.enabled = false;
             StopAllCoroutines();
-            _animator.SetTrigger("death");            
+            _animator.SetTrigger("death");   
+            //death sound
+            GetComponent<AudioManager>().Play("Death");         
         }
     }
 
     void Update()
     {
-        if(Vector3.Distance(transform.position, _target.position) < 1f)        
+        if(Vector3.Distance(transform.position, _target.position) < 1f) 
+        {
             _animator.SetTrigger("attack");
+            GetComponent<AudioManager>().PlayWithRandomPitch("Attack");
+        }       
+            
         
     }
 }
