@@ -21,7 +21,7 @@ public class playerLife : MonoBehaviour
         if (life < 0)
         {
             //! BAD ENDing
-            StartCoroutine(GameObject.FindObjectOfType<EndingManager>().finalDeath());
+            GameObject.FindObjectOfType<EndingManager>().finalManager(false);
         }
         else
             setLifeTexture();

@@ -21,7 +21,15 @@ public class EndingManager : MonoBehaviour
 
     void Start()
     {
-       _finaleObj.SetActive(false);       
+        _finaleObj.SetActive(false);
+    }
+
+    public void finalManager(bool win)
+    {
+        if(win)
+            StartCoroutine(finalWin());
+        else
+            StartCoroutine(finalDeath());
     }
 
     public IEnumerator finalDeath()
@@ -29,11 +37,12 @@ public class EndingManager : MonoBehaviour
         hideAllObjects();
         _deathPanel.SetActive(true);
         yield return StartCoroutine(TypeSentence(_deathText, "SEI MORTO", .5f));
-        yield return StartCoroutine(TypeSentence(_deathPhrase, "Il tuo sacrificio non sarà vano.\nLa colonia continuerà a vivere e opporsi a ogni ostacolo per garantire la sua sopravvivenza", .05f));
+        Debug.LogWarning("saasdasdasd");
+        yield return StartCoroutine(TypeSentence(_deathPhrase, "Il tuo sacrificio non sarà vano.\nLa colonia continuerà a vivere e opporsi a ogni ostacolo per garantire la sua sopravvivenza", .1f));
         yield return StartCoroutine(TypeSentence(_deathAchievmentDiary, "Per sbloccare il diario nel menu principale vinci il combattimento iniziando una nuova partita o tramite la modalità apposita", 0f));
-        
+
         PlayerPrefs.SetInt("gameFinished", 1);
-        StartCoroutine(ToMainScreen());        
+        StartCoroutine(ToMainScreen());
     }
 
     public IEnumerator finalWin()
@@ -42,9 +51,9 @@ public class EndingManager : MonoBehaviour
         _winPanel.SetActive(true);
         _winText.transform.DOScale(Vector3.zero, 0f);
         _winText.transform.DOScale(Vector3.one, 2f).SetEase(Ease.InBounce);
-        yield return StartCoroutine(TypeSentence(_winPhrase, "Sei riuscito valorosamente a sconfiggere la minaccia insieme alle tue sorelle, ma i nemici della colonia non finiscono mai",.05f));
+        yield return StartCoroutine(TypeSentence(_winPhrase, "Sei riuscito valorosamente a sconfiggere la minaccia insieme alle tue sorelle, ma i nemici della colonia non finiscono mai", .05f));
         yield return StartCoroutine(TypeSentence(_winAchievmentDiary, "Il diario nel menu principale è stato sbloccato", 0f));
-        
+
         PlayerPrefs.SetInt("gameFinished", 1);
         PlayerPrefs.SetInt("diary", 1);
         StartCoroutine(ToMainScreen());
@@ -53,15 +62,22 @@ public class EndingManager : MonoBehaviour
     private void hideAllObjects()
     {
         GameObject[] allObjects = SceneManager.GetActiveScene().GetRootGameObjects();
-        
+
         foreach (GameObject obj in allObjects)
         {
-            print(obj.name);
-            if (obj != this.gameObject)
-                obj.SetActive(false);
+
+            if (obj != this.gameObject && obj != _finaleObj)
+            {
+                UnityEditor.EditorApplication.delayCall += () =>
+                 {
+                     UnityEditor.Undo.DestroyObjectImmediate(obj);
+                 };
+            }
+            //Destroy(obj);
+            //obj.SetActive(false);
         }
-        _finaleObj.SetActive(true);            
-    } 
+        _finaleObj.SetActive(true);
+    }
 
     IEnumerator TypeSentence(TMP_Text field, string sentence, float delay)
     {

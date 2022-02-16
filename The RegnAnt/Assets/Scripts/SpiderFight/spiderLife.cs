@@ -25,7 +25,7 @@ public class spiderLife : MonoBehaviour
         if (life < 0)
         {            
             //! GOOD ENDing
-            StartCoroutine(GameObject.FindObjectOfType<EndingManager>().finalWin());
+            GameObject.FindObjectOfType<EndingManager>().finalManager(true);
         }
     }
 
