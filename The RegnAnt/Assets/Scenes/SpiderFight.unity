@@ -1577,7 +1577,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7624277554374250898, guid: 745072a464ff91c4d93a5108ebf0241a, type: 3}
       propertyPath: movementMultiplier
-      value: 30
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7624277554609787735, guid: 745072a464ff91c4d93a5108ebf0241a, type: 3}
       propertyPath: m_Layer
