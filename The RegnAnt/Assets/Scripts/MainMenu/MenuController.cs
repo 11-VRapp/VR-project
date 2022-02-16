@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Video;
 using UnityEngine.SceneManagement;
 using TMPro;
 
@@ -46,6 +47,10 @@ public class MenuController : MonoBehaviour
     public TMP_Dropdown resolutionDropdown;
     private Resolution[] resolutions;
 
+    [SerializeField] private GameObject _canvas;
+    [SerializeField] private AudioSource _backgroundAudio;
+    public VideoPlayer VideoPlayer;
+
 
     public void Start()
     {
@@ -69,14 +74,14 @@ public class MenuController : MonoBehaviour
         resolutionDropdown.value = currentResolutionIndex;
         resolutionDropdown.RefreshShownValue();
 
-        if (PlayerPrefs.HasKey("gameFinished"))        
+        if (PlayerPrefs.HasKey("gameFinished"))
             if (PlayerPrefs.GetInt("gameFinished") == 1)
                 modBtn.interactable = true;
 
-        if (PlayerPrefs.HasKey("diary"))        
+        if (PlayerPrefs.HasKey("diary"))
             if (PlayerPrefs.GetInt("diary") == 1)
                 diaryBtn.interactable = true;
-        
+
         LoadVolumeInfo();
     }
 
@@ -86,9 +91,18 @@ public class MenuController : MonoBehaviour
         Screen.SetResolution(resolution.width, resolution.height, Screen.fullScreen);
     }
 
-    public void NewGameDialogYes()
+    void LoadScene(VideoPlayer vp)
     {
         SceneManager.LoadScene(newGameLevel);
+    }
+
+    public void NewGameDialogYes()
+    {
+        _canvas.SetActive(false);
+        _backgroundAudio.Stop();
+        VideoPlayer.gameObject.SetActive(true);
+        VideoPlayer.Play();
+        VideoPlayer.loopPointReached += LoadScene;
     }
 
     public void LoadGameDialogYes()
@@ -201,9 +215,9 @@ public class MenuController : MonoBehaviour
         }
     }
 
-    public void LoadDiary() => SceneManager.LoadScene("Diary");    
+    public void LoadDiary() => SceneManager.LoadScene("Diary");
 
-    public void LoadSpiderFight() => SceneManager.LoadScene("SpiderFight");    
+    public void LoadSpiderFight() => SceneManager.LoadScene("SpiderFight");
 
     public IEnumerator ConfirmationBox()
     {

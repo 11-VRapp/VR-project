@@ -21,11 +21,9 @@ public class AntMovement : MonoBehaviour
     private Vector3 _slopeMoveDirection;
     private RaycastHit _hitGround;
     [SerializeField] private Transform _groundCheckPosition;
-    private Rigidbody _rb;    
-
-    public bool canMove = true;  //from spider hook
-    [SerializeField] private Transform _grabPosition;
-    private bool _isGrabbing = false;
+    private Rigidbody _rb;       
+    public bool canMove = true;  //from spider hook    
+    
 
     private void Start()
     {
