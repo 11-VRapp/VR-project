@@ -37,7 +37,9 @@ public class playerLife : MonoBehaviour
 
     private void setLifeTexture()
     {
-        int index = (int) ((life/_maxlife)*10f);
-        _canvas.sprite = _bloodTextures[index];
+       /* int index = (int) ((life/_maxlife)*10f);
+        if(index > _bloodTextures.Count -1)
+            index = _bloodTextures.Count -1;
+        _canvas.sprite = _bloodTextures[index];*/ //TODO
     }
 }

@@ -44,7 +44,16 @@ public class AntMovement : MonoBehaviour
     private void Update()
     {
         MyInput();
-        _slopeMoveDirection = Vector3.ProjectOnPlane(_moveDirection, _hitGround.normal);  
+        _slopeMoveDirection = Vector3.ProjectOnPlane(_moveDirection, _hitGround.normal);
+
+       // Debug.LogWarning(" " + (_rb.velocity.magnitude > 2f && !FindObjectOfType<AudioManager>().audioIsPlaying("PlayerWalk")));
+        //Debug.Log(_rb.velocity.magnitude + "    " + (_rb.velocity.magnitude > 2f) + "   " + !FindObjectOfType<AudioManager>().audioIsPlaying("PlayerWalk"));
+       /* if (_rb.velocity.magnitude > 1f && !FindObjectOfType<AudioManager>().audioIsPlaying("PlayerWalk"))
+            FindObjectOfType<AudioManager>().Play("PlayerWalk");
+        else
+            FindObjectOfType<AudioManager>().Pause("PlayerWalk");*/
+
+
     }
 
     void MyInput()
@@ -147,11 +156,11 @@ public class AntMovement : MonoBehaviour
     }
 
     private void rotateToSurfaceNormal(Vector3 vectorToReach, float speed) => transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.FromToRotation(transform.up, vectorToReach) * transform.rotation, speed);
-    
+
     void OnDrawGizmosSelected()
     {
         // Draw a yellow sphere at the position
         Gizmos.color = Color.yellow;
-        Gizmos.DrawSphere(_hitGround.point, 0.5f);       
+        Gizmos.DrawSphere(_hitGround.point, 0.5f);
     }
 }

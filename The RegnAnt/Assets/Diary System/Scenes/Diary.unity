@@ -1134,7 +1134,6 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 05d3bf47d26295b49958e1bbe5e92d3e, type: 3}
   - {fileID: 21300000, guid: 150624372b7dd724391f5f4f934c7a01, type: 3}
   - {fileID: 21300000, guid: ff79419e0d1549b4b9729085541a82bc, type: 3}
-  - {fileID: 21300000, guid: bf06d2986f2666b4880d156075040c94, type: 3}
   _indexText: {fileID: 588153597}
 --- !u!4 &548379418
 Transform:

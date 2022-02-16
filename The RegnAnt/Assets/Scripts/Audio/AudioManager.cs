@@ -33,5 +33,20 @@ public class AudioManager : MonoBehaviour
             s.source.Stop();
     }
 
+    public void Pause(string name)
+    {
+        Sound s = Array.Find(sounds, sound => sound.name == name);
+        if (s != null)
+            s.source.Pause();
+    }
+
+    public bool audioIsPlaying(string name)
+    {
+        Sound s = Array.Find(sounds, sound => sound.name == name);
+        if (s != null)
+            return s.source.isPlaying;
+        return false;
+    }
+
     //pooi usa FindObjectOfType.Play("Death")
 }

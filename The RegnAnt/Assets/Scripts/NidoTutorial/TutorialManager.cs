@@ -120,7 +120,7 @@ public class TutorialManager : MonoBehaviour
                             "Un po' di tutto, basta che sia masticato per bene dalle sorelle",
                             "Le larve destinate a diventare regine o maschi vengono nutrite molto più abbondantemente delle altre così che possano sviluppare anche gli organi sessuali per riprodursi.",
                             "Man mano che cresce e dopo 3 mute, la larva si rinchiude in un bozzolo che si crea girando su se stessa, diventando una pupa. Inizialmente è bianca, ma più va avanti la metamorfosi, più il bozzolo si iscurisce fino a ché non si rompe"};
-        _storageAnt.GetComponent<DialogueTrigger>().dialogue = new Dialogue("sorella", "Eccoti. Ci serve aiuto a nutrire le nostre larve.\nPorta del cibo alle larve nella loro stanza.Ricordati di marsticarlo prima eh",
+        _storageAnt.GetComponent<DialogueTrigger>().dialogue = new Dialogue("sorella", "Eccoti. Ci serve aiuto a nutrire le nostre larve.\nPorta del cibo alle larve nella loro stanza.\nRicordati di marsticarlo prima eh",
                                 "Cosa ti serve?", false, questions, answers);
         yield return new WaitUntil(() => _storageAnt.GetComponent<DialogueTrigger>().dialogueEnd);
         _storageAnt.GetComponent<DialogueTrigger>().dialogueEnd = false;
