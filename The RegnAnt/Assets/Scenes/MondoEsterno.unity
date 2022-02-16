@@ -5739,6 +5739,7 @@ GameObject:
   m_Component:
   - component: {fileID: 522320232}
   - component: {fileID: 522320231}
+  - component: {fileID: 522320233}
   m_Layer: 0
   m_Name: GeneralAudioManager
   m_TagString: GeneralAudioManager
@@ -5767,6 +5768,14 @@ MonoBehaviour:
     stereoPan: 0
     audio3D: 0
     source: {fileID: 0}
+  - name: WindAudio
+    clip: {fileID: 8300000, guid: 3d7da64aad30a014296158e479e72ff4, type: 3}
+    volume: 0.2
+    pitch: 1
+    loop: 1
+    stereoPan: 0
+    audio3D: 0
+    source: {fileID: 0}
 --- !u!4 &522320232
 Transform:
   m_ObjectHideFlags: 0
@@ -5781,6 +5790,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &522320233
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 522320230}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0e27d84ba92db1459fbe3b6d2ba1f70, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &529181536
 PrefabInstance:
   m_ObjectHideFlags: 0
