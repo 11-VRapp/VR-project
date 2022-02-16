@@ -19,6 +19,8 @@ public class TutorialManager : MonoBehaviour
     [SerializeField] private GameObject _blinkCanvas;
     [SerializeField] private Collider _exitCollider;
 
+    [SerializeField] private AudioManager _generalAudioManager;
+
     private int phase;
     void Start()
     {
@@ -75,13 +77,13 @@ public class TutorialManager : MonoBehaviour
         _startingAnt.GetComponent<Rigidbody>().isKinematic = true;
 
         yield return new WaitUntil(() => _startingAnt.GetComponent<DialogueTrigger>().dialogueEnd);
-        //show on screen keys info  wasd   space ...wait time... interact with egg/ant
-        yield return StartCoroutine(DisplayTextPopupHint("Premi W/A/S/D per muoverti\nUsa SPACE per smettere di aggrapparti\nUsa E per interagire con le sorelle", 6f));
+        //show on screen keys info  wasd   space ...wait time... interact with egg/ant        
     }
 
     private IEnumerator SecondPhase()
     {
         phase++;
+        yield return StartCoroutine(DisplayTextPopupHint("Premi W/A/S/D per muoverti\nUsa SPACE per smettere di aggrapparti\nUsa E per interagire con le sorelle", 6f));
         yield return StartCoroutine(DisplayTextPopupHint("Usa CLICK DX per afferrare un oggetto con puntatore giallo\nUsa CLICK SX per rialsciarlo", 6f));
         //wait for grabbing object by user
         yield return new WaitUntil(() => grabbedEgg);
@@ -97,7 +99,7 @@ public class TutorialManager : MonoBehaviour
         //wait until boudnaries && grabbingObject null
 
         yield return new WaitUntil(() => checkBoundaries() && !grabbedEgg);
-
+        _generalAudioManager.Play("QuestCompleted");
 
         //compare canvas "torna a parlare con Sara"      
         StartCoroutine(DisplayTextPopupHint("Ritorna da Sara", 4f));
@@ -132,6 +134,7 @@ public class TutorialManager : MonoBehaviour
         larvaFeeding = false; // se per caso l'utente l'avesse fatto precedentemente
 
         yield return new WaitUntil(() => larvaFeeding);
+        _generalAudioManager.Play("QuestCompleted");
 
         yield return StartCoroutine(DisplayTextPopupHint("Torna a parlare con la sorella del magazzino", 4f));
         _cursor.position = _storageAnt.position + Vector3.up * 2.5f;

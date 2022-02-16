@@ -16,6 +16,7 @@ public class AudioManager : MonoBehaviour
             s.source.pitch = s.pitch;
             s.source.loop = s.loop;
             s.source.panStereo = s.stereoPan;
+            s.source.spatialBlend = s.audio3D;
         }
     }
 
@@ -46,6 +47,17 @@ public class AudioManager : MonoBehaviour
         if (s != null)
             return s.source.isPlaying;
         return false;
+    }
+
+    public void PlayWithRandomPitch(string name)
+    {
+        Sound s = Array.Find(sounds, sound => sound.name == name);
+        if (s != null)
+        {
+            s.source.pitch = UnityEngine.Random.Range(0.1f, 3f);
+            s.source.Play();
+        }
+            
     }
 
     //pooi usa FindObjectOfType.Play("Death")

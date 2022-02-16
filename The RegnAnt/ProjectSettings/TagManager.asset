@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Nest
   - Aphid
+  - GeneralAudioManager
   layers:
   - Default
   - TransparentFX

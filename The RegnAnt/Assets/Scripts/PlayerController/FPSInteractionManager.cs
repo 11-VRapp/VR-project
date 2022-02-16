@@ -71,11 +71,16 @@ public class FPSInteractionManager : MonoBehaviour
                     hit.transform.GetComponent<Food>().Eat();
                     GetComponent<playerLife>().setHeal(25f);
                     feeding = true;
+                    GetComponent<AudioManager>().Play("Eat");
                 }
 
                 _pointingDamagable = hit.collider.transform.GetComponent<Damagable>();
-                if (_pointingDamagable && GetComponent<AntMovement>().canMove) //spiderHit (not if you are grabbed)                               
+                if (_pointingDamagable && GetComponent<AntMovement>().canMove) //spiderHit (not if you are grabbed)   
+                {
                     _pointingDamagable.Hit();  //damage SPIDER  
+                    GetComponent<AudioManager>().Play("Attack");
+                }                            
+                    
             }
         }
         //If NOTHING is detected set all to null
@@ -109,6 +114,7 @@ public class FPSInteractionManager : MonoBehaviour
 
         _target.enabled = true;
         _grabbedObject = null;
+        GetComponent<AudioManager>().Play("Drop");
     }
 
     public void Grab(Grabbable grabbable)
@@ -117,6 +123,8 @@ public class FPSInteractionManager : MonoBehaviour
         grabbable.transform.SetParent(_fpsCameraT);
 
         _target.enabled = false;
+
+        GetComponent<AudioManager>().Play("Grab");
     }
 
     public void Interaction(Interactable interactable) => _interactingObject = interactable;

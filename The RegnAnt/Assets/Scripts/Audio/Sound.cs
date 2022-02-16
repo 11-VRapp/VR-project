@@ -9,13 +9,16 @@ public class Sound
     public AudioClip clip;
 
     [Range(0f, 1f)]
-    public float volume;
+    public float volume = 1;
     [Range(.1f, 3f)]
-    public float pitch;
+    public float pitch = 1;
     public bool loop;
 
+    [Range(-1f, 1f)]
+    public float stereoPan = 0;
+
     [Range(0f, 1f)]
-    public float stereoPan;
+    public float audio3D;
 
     [HideInInspector]
     public AudioSource source;

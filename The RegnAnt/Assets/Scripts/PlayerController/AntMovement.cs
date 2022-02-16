@@ -45,15 +45,6 @@ public class AntMovement : MonoBehaviour
     {
         MyInput();
         _slopeMoveDirection = Vector3.ProjectOnPlane(_moveDirection, _hitGround.normal);
-
-       // Debug.LogWarning(" " + (_rb.velocity.magnitude > 2f && !FindObjectOfType<AudioManager>().audioIsPlaying("PlayerWalk")));
-        //Debug.Log(_rb.velocity.magnitude + "    " + (_rb.velocity.magnitude > 2f) + "   " + !FindObjectOfType<AudioManager>().audioIsPlaying("PlayerWalk"));
-       /* if (_rb.velocity.magnitude > 1f && !FindObjectOfType<AudioManager>().audioIsPlaying("PlayerWalk"))
-            FindObjectOfType<AudioManager>().Play("PlayerWalk");
-        else
-            FindObjectOfType<AudioManager>().Pause("PlayerWalk");*/
-
-
     }
 
     void MyInput()
@@ -152,7 +143,12 @@ public class AntMovement : MonoBehaviour
             _antennaRight.position = Vector3.MoveTowards(_antennaRight.position, _antennaRstartPos.position, Time.fixedDeltaTime);
 
         if (Vector3.Distance(_antennaLeft.position, _antennaLstartPos.position) < 0.005f && Vector3.Distance(_antennaRight.position, _antennaRstartPos.position) < 0.005f)
+        {
             _animator.SetBool("objectClose", false);
+            if (!GetComponent<AudioManager>().audioIsPlaying("Verso"))
+                GetComponent<AudioManager>().PlayWithRandomPitch("Verso");
+        }
+
     }
 
     private void rotateToSurfaceNormal(Vector3 vectorToReach, float speed) => transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.FromToRotation(transform.up, vectorToReach) * transform.rotation, speed);

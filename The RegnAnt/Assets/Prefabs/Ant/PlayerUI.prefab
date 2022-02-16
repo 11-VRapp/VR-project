@@ -6151,6 +6151,8 @@ GameObject:
   - component: {fileID: 7624277554374250898}
   - component: {fileID: 3119067597090311628}
   - component: {fileID: 4287016987220696524}
+  - component: {fileID: 6918435614891828544}
+  - component: {fileID: 8185043152650038491}
   m_Layer: 0
   m_Name: PlayerUI
   m_TagString: Player
@@ -6274,6 +6276,79 @@ MonoBehaviour:
   _interactingObject: {fileID: 0}
   feeding: 0
   _animator: {fileID: 0}
+--- !u!114 &6918435614891828544
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4867618617683880790}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 296a70b6b5b1a194ca989b94b3fe478d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &8185043152650038491
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4867618617683880790}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d84d45d27fb334e45a959dc5294a87fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - name: Walk
+    clip: {fileID: 8300000, guid: 50b51dfd9f7d78c469b0abca5457eab6, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 1
+    stereoPan: 0
+    audio3D: 0
+    source: {fileID: 0}
+  - name: Verso
+    clip: {fileID: 8300000, guid: 76e6590241cda444e858f7f93cb3d618, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    stereoPan: 0
+    audio3D: 0
+    source: {fileID: 0}
+  - name: Eat
+    clip: {fileID: 8300000, guid: 682e82942b3506345a38f95a4b6a0f30, type: 3}
+    volume: 0.7
+    pitch: 1
+    loop: 0
+    stereoPan: 0
+    audio3D: 0
+    source: {fileID: 0}
+  - name: Grab
+    clip: {fileID: 8300000, guid: c549a85127acee5409de1be1c06f4d9f, type: 3}
+    volume: 0.7
+    pitch: 2
+    loop: 0
+    stereoPan: 0
+    audio3D: 0
+    source: {fileID: 0}
+  - name: Drop
+    clip: {fileID: 8300000, guid: c549a85127acee5409de1be1c06f4d9f, type: 3}
+    volume: 0.7
+    pitch: 1
+    loop: 0
+    stereoPan: 0
+    audio3D: 0
+    source: {fileID: 0}
+  - name: Attack
+    clip: {fileID: 8300000, guid: f33414c5efb55b346ad034ef7042ba82, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    stereoPan: 0
+    audio3D: 0
+    source: {fileID: 0}
 --- !u!1 &5043376538129338611
 GameObject:
   m_ObjectHideFlags: 0

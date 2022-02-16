@@ -12,5 +12,7 @@ public class DialogueTrigger : MonoBehaviour
     public void TriggerDialogue()
     {
         FindObjectOfType<DialogueManager>().StartDialogue(dialogue, transform);
+        //verso formica
+        GetComponent<AudioManager>().PlayWithRandomPitch("Chat"); 
     }   
 }
