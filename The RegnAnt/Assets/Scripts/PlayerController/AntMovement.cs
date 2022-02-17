@@ -23,6 +23,7 @@ public class AntMovement : MonoBehaviour
     [SerializeField] private Transform _groundCheckPosition;
     private Rigidbody _rb;       
     public bool canMove = true;  //from spider hook    
+    public bool grounded;
     
 
     private void Start()
@@ -52,7 +53,7 @@ public class AntMovement : MonoBehaviour
         MovePlayer();
 
         if (wallCheck() == false)
-            groundCheck();
+            grounded = groundCheck();
     }
 
     void MovePlayer()
@@ -74,12 +75,12 @@ public class AntMovement : MonoBehaviour
         _rb.AddForce(-transform.up * _gravity, ForceMode.Acceleration); //gravità fittizia alle pareti per tenerlo incollato
     }
 
-    private void groundCheck() //fattibile con sphere collider?
+    private bool groundCheck() //fattibile con sphere collider?
     {
         if (!Physics.SphereCast(_groundCheckPosition.position + 1f * orientation.forward, 0.5f, -transform.up, out _hitGround, 4f))
         {
             _rb.useGravity = true;
-            return;
+            return false;
         }
         else
         {
@@ -92,6 +93,7 @@ public class AntMovement : MonoBehaviour
                 rotateToSurfaceNormal(_hitGround.normal, _rotateSpeed * Time.deltaTime);
             }
         }
+        return true;
     }
 
     private bool wallCheck()

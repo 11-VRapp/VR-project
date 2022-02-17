@@ -21,9 +21,9 @@ public class AntNPC_int : MonoBehaviour
     [SerializeField] private float _gravity = 10f;  //faux gravity: stick player to surface
     private RaycastHit _hitGround;
     [SerializeField] private Transform _groundCheckPosition;
-    private Rigidbody _rb;
-    [SerializeField] private Animator _animator;
+    private Rigidbody _rb;    
     private Transform _player;
+    public bool grounded;
 
     // Start is called before the first frame update
     void Start() //dare questo script sia a quella del tutorial sia alle altre, ma nelle altre aggiungere uno script con Start => StartCorutine(RandomMovement)
@@ -41,7 +41,7 @@ public class AntNPC_int : MonoBehaviour
         _rb.AddForce(-transform.up * _gravity, ForceMode.Acceleration); //gravità fittizia alle pareti per tenerlo incollato
 
         if (wallCheck() == false)
-            groundCheck();
+            grounded = groundCheck();
     }
 
     public IEnumerator randomMovement()
@@ -79,13 +79,13 @@ public class AntNPC_int : MonoBehaviour
         timeNeeded = time;
     }
 
-    private void groundCheck() //fattibile con sphere collider?
+    private bool groundCheck() //fattibile con sphere collider?
     {
         Debug.DrawLine(_groundCheckPosition.position + 1f * orientation.forward, _groundCheckPosition.position + 1f * orientation.forward - 4f * transform.up, Color.yellow);
         if (!Physics.SphereCast(_groundCheckPosition.position + 1f * orientation.up, 0.5f, -transform.up, out _hitGround, 3f))
         {
             _rb.useGravity = true;
-            return;
+            return false;
         }
         else
         {
@@ -95,6 +95,7 @@ public class AntNPC_int : MonoBehaviour
                 rotateToSurfaceNormal(_hitGround.normal, _RotateSpeed * Time.deltaTime);
             }
         }
+        return true;
     }
 
     private bool wallCheck()

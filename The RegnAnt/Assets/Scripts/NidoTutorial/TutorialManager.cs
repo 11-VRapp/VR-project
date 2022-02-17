@@ -70,11 +70,14 @@ public class TutorialManager : MonoBehaviour
     {
         phase++;
         _player.GetComponent<AntMovement>().enabled = false;
-        yield return StartCoroutine(_startingAnt.GetComponent<AntNPC_int>().moveForward(4f)); //move to player
-        _player.GetComponent<FPSInteractionManager>().Interaction(GetComponent<Interactable>());
-        _startingAnt.GetComponent<DialogueTrigger>().TriggerDialogue();  // trigger dialog      
+        //yield return StartCoroutine(_startingAnt.GetComponent<AntNPC_int>().moveForward(4f)); //move to player
+        //_startingAnt.GetComponent<DialogueTrigger>().TriggerDialogue();  // trigger dialog   
+
+        _player.GetComponent<FPSInteractionManager>().Interaction(GetComponent<Interactable>());           
         _player.GetComponent<AntMovement>().enabled = true;
-        _startingAnt.GetComponent<Rigidbody>().isKinematic = true;
+        //_startingAnt.GetComponent<Rigidbody>().isKinematic = true;
+
+        _cursor.position = _startingAnt.position + 2.5f * Vector3.up;
 
         yield return new WaitUntil(() => _startingAnt.GetComponent<DialogueTrigger>().dialogueEnd);
         //show on screen keys info  wasd   space ...wait time... interact with egg/ant        

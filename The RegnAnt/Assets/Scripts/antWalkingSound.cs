@@ -26,14 +26,25 @@ public class antWalkingSound : MonoBehaviour
 
             if (_navMeshAgent.velocity.magnitude > 2f && !_audio.audioIsPlaying("Walk"))
                 _audio.Play("Walk");
-            
+
             return;
         }
 
         if (_rigidbody.velocity.magnitude <= 2f)
             _audio.Pause("Walk");
 
-        if (_rigidbody.velocity.magnitude > 2f && !_audio.audioIsPlaying("Walk"))
-            _audio.Play("Walk");
+        if (GetComponent<AntMovement>())
+        {
+            if (_rigidbody.velocity.magnitude > 2f && !_audio.audioIsPlaying("Walk") && GetComponent<AntMovement>().grounded)
+                _audio.Play("Walk");
+        }
+
+        if (GetComponent<AntNPC_int>())
+        {
+            if (_rigidbody.velocity.magnitude > 2f && !_audio.audioIsPlaying("Walk") && GetComponent<AntNPC_int>().grounded)
+                _audio.Play("Walk");
+        }
+
+
     }
 }
