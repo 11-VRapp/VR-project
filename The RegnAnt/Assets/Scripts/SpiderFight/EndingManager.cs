@@ -20,46 +20,38 @@ public class EndingManager : MonoBehaviour
     [SerializeField] private TMP_Text _winAchievmentDiary;
 
     void Start()
-    {
-        _finaleObj.SetActive(false);
-    }
-
-    public void finalManager(bool win)
-    {
-        if(win)
-            StartCoroutine(finalWin());
-        else
+    {        
+        if(PlayerPrefs.GetInt("diary") == 0) //not win
             StartCoroutine(finalDeath());
+        else
+            StartCoroutine(finalWin());
     }
-
+  
     public IEnumerator finalDeath()
     {
-        hideAllObjects();
+        //hideAllObjects();
         _deathPanel.SetActive(true);
         yield return StartCoroutine(TypeSentence(_deathText, "SEI MORTO", .5f));
-        Debug.LogWarning("saasdasdasd");
+        
         yield return StartCoroutine(TypeSentence(_deathPhrase, "Il tuo sacrificio non sarà vano.\nLa colonia continuerà a vivere e opporsi a ogni ostacolo per garantire la sua sopravvivenza", .1f));
         yield return StartCoroutine(TypeSentence(_deathAchievmentDiary, "Per sbloccare il diario nel menu principale vinci il combattimento iniziando una nuova partita o tramite la modalità apposita", 0f));
-
-        PlayerPrefs.SetInt("gameFinished", 1);
+        
         StartCoroutine(ToMainScreen());
     }
 
     public IEnumerator finalWin()
-    {
-        hideAllObjects();
+    {     
         _winPanel.SetActive(true);
         _winText.transform.DOScale(Vector3.zero, 0f);
         _winText.transform.DOScale(Vector3.one, 2f).SetEase(Ease.InBounce);
         yield return StartCoroutine(TypeSentence(_winPhrase, "Sei riuscito valorosamente a sconfiggere la minaccia insieme alle tue sorelle, ma i nemici della colonia non finiscono mai", .05f));
         yield return StartCoroutine(TypeSentence(_winAchievmentDiary, "Il diario nel menu principale è stato sbloccato", 0f));
 
-        PlayerPrefs.SetInt("gameFinished", 1);
-        PlayerPrefs.SetInt("diary", 1);
+        
         StartCoroutine(ToMainScreen());
     }
 
-    private void hideAllObjects()
+   /* private void hideAllObjects()
     {
         GameObject[] allObjects = SceneManager.GetActiveScene().GetRootGameObjects();
 
@@ -68,16 +60,15 @@ public class EndingManager : MonoBehaviour
 
             if (obj != this.gameObject && obj != _finaleObj)
             {
-                UnityEditor.EditorApplication.delayCall += () =>
-                 {
-                     UnityEditor.Undo.DestroyObjectImmediate(obj);
-                 };
+                //UnityEditor.EditorApplication.delayCall += () => UnityEditor.Undo.DestroyObjectImmediate(obj);
+                Hide
+                 
             }
             //Destroy(obj);
             //obj.SetActive(false);
         }
         _finaleObj.SetActive(true);
-    }
+    }*/
 
     IEnumerator TypeSentence(TMP_Text field, string sentence, float delay)
     {

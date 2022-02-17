@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SpiderFight.unity
     guid: 5775a69c830753b45acff19e63dd8675
+  - enabled: 1
+    path: Assets/Scenes/Ending.unity
+    guid: 6d3b775c7deb39b4c9ab17757fde4382
   m_configObjects: {}

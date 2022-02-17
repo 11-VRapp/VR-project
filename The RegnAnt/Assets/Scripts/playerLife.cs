@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class playerLife : MonoBehaviour
 {
@@ -21,7 +22,9 @@ public class playerLife : MonoBehaviour
         if (life < 0)
         {
             //! BAD ENDing
-            GameObject.FindObjectOfType<EndingManager>().finalManager(false);
+            PlayerPrefs.SetInt("gameFinished", 1);
+            PlayerPrefs.SetInt("diary", 0);
+            SceneManager.LoadScene("Ending");
         }
         else
             setLifeTexture();

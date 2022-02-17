@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class spiderLife : MonoBehaviour
 {
@@ -25,7 +26,9 @@ public class spiderLife : MonoBehaviour
         if (life < 0)
         {            
             //! GOOD ENDing
-            GameObject.FindObjectOfType<EndingManager>().finalManager(true);
+            PlayerPrefs.SetInt("gameFinished", 1);
+            PlayerPrefs.SetInt("diary", 1);
+            SceneManager.LoadScene("Ending");
         }
     }
 
