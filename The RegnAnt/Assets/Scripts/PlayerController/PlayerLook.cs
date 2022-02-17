@@ -16,7 +16,7 @@ public class PlayerLook : MonoBehaviour
     float mouseX;
     float mouseY;
 
-    float multiplier = 0.01f;
+    float multiplier = 0.005f;
 
     private float xRotation;
     private float yRotation;
@@ -41,8 +41,8 @@ public class PlayerLook : MonoBehaviour
         mouseX = Input.GetAxisRaw("Mouse X");
         mouseY = Input.GetAxisRaw("Mouse Y");
 
-        yRotation += mouseX * sensX * multiplier;
-        xRotation -= mouseY * sensY * multiplier;
+        yRotation += mouseX * sensX * multiplier * PlayerPrefs.GetFloat("masterSen");
+        xRotation -= mouseY * sensY * multiplier * PlayerPrefs.GetFloat("masterSen");
 
         xRotation = Mathf.Clamp(xRotation, -90f, 90f);
 
