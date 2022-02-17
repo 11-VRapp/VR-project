@@ -297,7 +297,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5835303447314659585}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: rametti
   m_TagString: Untagged
   m_Icon: {fileID: 0}
