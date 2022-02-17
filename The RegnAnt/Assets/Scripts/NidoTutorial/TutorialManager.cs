@@ -78,6 +78,7 @@ public class TutorialManager : MonoBehaviour
         //_startingAnt.GetComponent<Rigidbody>().isKinematic = true;
 
         _cursor.position = _startingAnt.position + 2.5f * Vector3.up;
+        yield return StartCoroutine(DisplayTextPopupHint("Premi W/A/S/D per muoverti\nUsa SPACE per smettere di aggrapparti\nUsa E per interagire con le sorelle", 6f));
 
         yield return new WaitUntil(() => _startingAnt.GetComponent<DialogueTrigger>().dialogueEnd);
         //show on screen keys info  wasd   space ...wait time... interact with egg/ant        
@@ -86,7 +87,7 @@ public class TutorialManager : MonoBehaviour
     private IEnumerator SecondPhase()
     {
         phase++;
-        yield return StartCoroutine(DisplayTextPopupHint("Premi W/A/S/D per muoverti\nUsa SPACE per smettere di aggrapparti\nUsa E per interagire con le sorelle", 6f));
+        
         yield return StartCoroutine(DisplayTextPopupHint("Usa CLICK DX per afferrare un oggetto con puntatore blu\nUsa CLICK SX per rialsciarlo", 6f));
         //wait for grabbing object by user
         yield return new WaitUntil(() => grabbedEgg);

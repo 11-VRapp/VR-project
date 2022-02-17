@@ -54,6 +54,9 @@ public class MenuController : MonoBehaviour
 
     public void Start()
     {
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+
         resolutions = Screen.resolutions;
         resolutionDropdown.ClearOptions();
 
@@ -159,7 +162,7 @@ public class MenuController : MonoBehaviour
     public void SetBrightness(float brightness)
     {
         _brightnessLevel = brightness * 10f;
-        brightnessTextValue.text = brightness.ToString("0.0");        
+        brightnessTextValue.text = brightness.ToString("0.0");
     }
 
     public void SetQuality(int qualityIndex)
