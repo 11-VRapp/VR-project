@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
+  m_SkyboxMaterial: {fileID: 2100000, guid: 29efde085d395a044a5536899f37d548, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -37,8 +37,8 @@ RenderSettings:
   m_ReflectionBounces: 1
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
-  m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_Sun: {fileID: 1936737291}
+  m_IndirectSpecularColor: {r: 0.78063315, g: 0.86849356, b: 0.9875794, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1247,6 +1247,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 26465700875256156, guid: 745072a464ff91c4d93a5108ebf0241a, type: 3}
+      propertyPath: m_RenderingPath
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 159030701569294525, guid: 745072a464ff91c4d93a5108ebf0241a, type: 3}
       propertyPath: m_Layer
       value: 9
@@ -1577,7 +1581,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7624277554374250898, guid: 745072a464ff91c4d93a5108ebf0241a, type: 3}
       propertyPath: movementMultiplier
-      value: 30
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7624277554609787735, guid: 745072a464ff91c4d93a5108ebf0241a, type: 3}
       propertyPath: m_Layer
@@ -23662,13 +23666,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1936737290}
-  m_LocalRotation: {x: 0.40821788, y: -0.23456968, z: 0.10938163, w: 0.8754261}
-  m_LocalPosition: {x: 0, y: 3, z: 0}
+  m_LocalRotation: {x: 0.41575924, y: 0.16262361, z: -0.07583266, w: 0.8915982}
+  m_LocalPosition: {x: 0, y: 681, z: -522}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 7
-  m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+  m_LocalEulerAnglesHint: {x: 50, y: 20.674, z: 0}
 --- !u!1001 &1948188768
 PrefabInstance:
   m_ObjectHideFlags: 0

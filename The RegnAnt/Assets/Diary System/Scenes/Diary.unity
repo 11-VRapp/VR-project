@@ -1122,18 +1122,17 @@ MonoBehaviour:
   _pageRight: {fileID: 947333514}
   _indexOfPage: 0
   _textures:
-  - {fileID: 21300000, guid: bf06d2986f2666b4880d156075040c94, type: 3}
-  - {fileID: 21300000, guid: 17a512f1edc30cf498470d6d7afc1b21, type: 3}
-  - {fileID: 21300000, guid: 754fc6329956f174cab72eb00440b4c7, type: 3}
-  - {fileID: 21300000, guid: 16129362ecdb1394d9be672049a69501, type: 3}
-  - {fileID: 21300000, guid: 68dbb6aa15b349d49a7c9bb70fd438d2, type: 3}
-  - {fileID: 21300000, guid: 04ed602070b76754c994eb29560203f3, type: 3}
-  - {fileID: 21300000, guid: 07ac4323ba7c7db4ea1680107a5a3b88, type: 3}
-  - {fileID: 21300000, guid: c3ed73f4e46a9764cadd49181765e243, type: 3}
-  - {fileID: 21300000, guid: 79d6a47409ad84747aa396338c0af609, type: 3}
-  - {fileID: 21300000, guid: 05d3bf47d26295b49958e1bbe5e92d3e, type: 3}
-  - {fileID: 21300000, guid: 150624372b7dd724391f5f4f934c7a01, type: 3}
-  - {fileID: 21300000, guid: ff79419e0d1549b4b9729085541a82bc, type: 3}
+  - {fileID: 21300000, guid: 0725c3dc93e93b944b1d712c647e12ef, type: 3}
+  - {fileID: 21300000, guid: 6957ce16ff964154489bfa89d0a9a8cb, type: 3}
+  - {fileID: 21300000, guid: e7446cfbbe1154f458db2abd59916a7d, type: 3}
+  - {fileID: 21300000, guid: 01612bfb9a61dcd4b864589718b77ffc, type: 3}
+  - {fileID: 21300000, guid: 58d95d03443c90d47966f4c6e893d517, type: 3}
+  - {fileID: 21300000, guid: 08ace483feb93ac44a4003d9d939bc16, type: 3}
+  - {fileID: 21300000, guid: 40d69b6a979cc3a468ecdc52f3ae68c8, type: 3}
+  - {fileID: 21300000, guid: 70aa155c9148e0a45a17996b4d644fdf, type: 3}
+  - {fileID: 21300000, guid: 237d50e91b345834daa7a746a248a7db, type: 3}
+  - {fileID: 21300000, guid: d2b686a2ee216174e9f08460724af7cc, type: 3}
+  - {fileID: 21300000, guid: a2d006feb1f1e7d42bab48ecdae4e27d, type: 3}
   _indexText: {fileID: 588153597}
 --- !u!4 &548379418
 Transform:
@@ -2887,10 +2886,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
