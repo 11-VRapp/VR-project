@@ -9,11 +9,17 @@ public class BrightnessController : MonoBehaviour
     ColorGrading colorGradingLayer = null;
     PostProcessVolume volume;
     void Start()
-    {
-        Debug.Log(PlayerPrefs.GetFloat("masterBrightness"));
+    {        
         volume = gameObject.GetComponent<PostProcessVolume>();
         volume.profile.TryGetSettings(out colorGradingLayer);
         colorGradingLayer.enabled.value = true;
         colorGradingLayer.brightness.value = PlayerPrefs.GetFloat("masterBrightness");        
+    }
+
+    public void updateBrightness(float brightness)
+    {
+        volume.profile.TryGetSettings(out colorGradingLayer);
+        colorGradingLayer.enabled.value = true;
+        colorGradingLayer.brightness.value = brightness;   
     }
 }

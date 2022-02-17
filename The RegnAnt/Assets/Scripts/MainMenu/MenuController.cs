@@ -33,7 +33,7 @@ public class MenuController : MonoBehaviour
     [Header("Graphics Settings")]
     [SerializeField] private Slider brightnessSlider = null;
     [SerializeField] private TMP_Text brightnessTextValue = null;
-    [SerializeField] private int defaultBrightness = 4;
+    [SerializeField] private int defaultBrightness = 0;
 
     [Space(10)]
     [SerializeField] private TMP_Dropdown qualityDropdown;
@@ -158,8 +158,8 @@ public class MenuController : MonoBehaviour
 
     public void SetBrightness(float brightness)
     {
-        _brightnessLevel = brightness;
-        brightnessTextValue.text = brightness.ToString("0.0");
+        _brightnessLevel = brightness * 10f;
+        brightnessTextValue.text = brightness.ToString("0.0");        
     }
 
     public void SetQuality(int qualityIndex)
@@ -170,6 +170,7 @@ public class MenuController : MonoBehaviour
     public void GraphicApply()
     {
         PlayerPrefs.SetFloat("masterBrightness", _brightnessLevel);
+        FindObjectOfType<BrightnessController>().updateBrightness(_brightnessLevel);
         //change brightness post processing
 
         PlayerPrefs.SetInt("masterQuality", _qualityLevel);
