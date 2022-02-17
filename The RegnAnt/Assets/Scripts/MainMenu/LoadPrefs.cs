@@ -58,6 +58,8 @@ public class LoadPrefs : MonoBehaviour
                 brightnessSlider.value = localBrightness;
                 //Change the brighness
             }
+            else
+                PlayerPrefs.SetFloat("masterBrightness", 0f);
 
             if(PlayerPrefs.HasKey("masterSen"))
             {
@@ -67,6 +69,8 @@ public class LoadPrefs : MonoBehaviour
                 mouseSenSlider.value = localSensitivity;
                 menuController.mainMouseSen = Mathf.RoundToInt(localSensitivity);
             }
+            else
+                PlayerPrefs.SetFloat("masterSen", 4f);
         }
     }
 

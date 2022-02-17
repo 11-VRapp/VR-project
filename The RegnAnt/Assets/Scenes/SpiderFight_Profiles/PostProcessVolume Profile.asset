@@ -1335,7 +1335,7 @@ MonoBehaviour:
     value: 5.59
   focalLength:
     overrideState: 1
-    value: 1.37
+    value: 1
   kernelSize:
     overrideState: 1
     value: 1
@@ -1403,9 +1403,9 @@ MonoBehaviour:
   settings:
   - {fileID: 1100616656261698061}
   - {fileID: -440434714081112945}
-  - {fileID: 2811119828115103884}
   - {fileID: -5547357183933662355}
   - {fileID: -8402563424559008144}
+  - {fileID: 5810490209331324800}
 --- !u!114 &1100616656261698061
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -1453,7 +1453,7 @@ MonoBehaviour:
   dirtIntensity:
     overrideState: 0
     value: 0
---- !u!114 &2811119828115103884
+--- !u!114 &5810490209331324800
 MonoBehaviour:
   m_ObjectHideFlags: 3
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1462,31 +1462,20 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7a34fa72bd4185749832024e9c8010bf, type: 3}
-  m_Name: ScreenSpaceReflections
+  m_Script: {fileID: 11500000, guid: 6050e2d5de785ce4d931e4dbdbf2d755, type: 3}
+  m_Name: ChromaticAberration
   m_EditorClassIdentifier: 
-  active: 0
+  active: 1
   enabled:
     overrideState: 1
     value: 1
-  preset:
+  spectralLut:
     overrideState: 1
-    value: 2
-  maximumIterationCount:
-    overrideState: 0
-    value: 16
-  resolution:
+    value: {fileID: 0}
+    defaultState: 1
+  intensity:
+    overrideState: 1
+    value: 0.2
+  fastMode:
     overrideState: 0
     value: 0
-  thickness:
-    overrideState: 0
-    value: 8
-  maximumMarchDistance:
-    overrideState: 1
-    value: 100
-  distanceFade:
-    overrideState: 1
-    value: 0.5
-  vignette:
-    overrideState: 0
-    value: 0.5

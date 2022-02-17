@@ -84,7 +84,7 @@ public class TutorialManager : MonoBehaviour
     {
         phase++;
         yield return StartCoroutine(DisplayTextPopupHint("Premi W/A/S/D per muoverti\nUsa SPACE per smettere di aggrapparti\nUsa E per interagire con le sorelle", 6f));
-        yield return StartCoroutine(DisplayTextPopupHint("Usa CLICK DX per afferrare un oggetto con puntatore giallo\nUsa CLICK SX per rialsciarlo", 6f));
+        yield return StartCoroutine(DisplayTextPopupHint("Usa CLICK DX per afferrare un oggetto con puntatore blu\nUsa CLICK SX per rialsciarlo", 6f));
         //wait for grabbing object by user
         yield return new WaitUntil(() => grabbedEgg);
         _cursor.position = new Vector3(156f, 220f, -25.7f);
