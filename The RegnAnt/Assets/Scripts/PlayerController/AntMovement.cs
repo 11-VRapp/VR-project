@@ -36,6 +36,11 @@ public class AntMovement : MonoBehaviour
     {
         MyInput();
         _slopeMoveDirection = Vector3.ProjectOnPlane(_moveDirection, _hitGround.normal);
+
+        if(Input.GetKeyDown(KeyCode.LeftShift))
+            movementMultiplier = 30f;
+        if(Input.GetKeyUp(KeyCode.LeftShift))
+            movementMultiplier = 10f;
     }
 
     void MyInput()

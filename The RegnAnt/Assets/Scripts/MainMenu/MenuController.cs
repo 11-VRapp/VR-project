@@ -86,7 +86,7 @@ public class MenuController : MonoBehaviour
                 diaryBtn.interactable = true;
 
         LoadVolumeInfo();
-    }
+    }    
 
     public void SetResolution(int resolutionIndex)
     {

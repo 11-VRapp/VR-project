@@ -49,26 +49,7 @@ public class EndingManager : MonoBehaviour
 
         
         StartCoroutine(ToMainScreen());
-    }
-
-   /* private void hideAllObjects()
-    {
-        GameObject[] allObjects = SceneManager.GetActiveScene().GetRootGameObjects();
-
-        foreach (GameObject obj in allObjects)
-        {
-
-            if (obj != this.gameObject && obj != _finaleObj)
-            {
-                //UnityEditor.EditorApplication.delayCall += () => UnityEditor.Undo.DestroyObjectImmediate(obj);
-                Hide
-                 
-            }
-            //Destroy(obj);
-            //obj.SetActive(false);
-        }
-        _finaleObj.SetActive(true);
-    }*/
+    }   
 
     IEnumerator TypeSentence(TMP_Text field, string sentence, float delay)
     {

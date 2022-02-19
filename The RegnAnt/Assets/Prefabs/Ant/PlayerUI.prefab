@@ -6233,7 +6233,7 @@ MonoBehaviour:
   _gravity: 10
   _groundCheckPosition: {fileID: 7624277554348077465}
   canMove: 1
-  _grabPosition: {fileID: 980270560971652345}
+  grounded: 0
 --- !u!114 &3119067597090311628
 MonoBehaviour:
   m_ObjectHideFlags: 0

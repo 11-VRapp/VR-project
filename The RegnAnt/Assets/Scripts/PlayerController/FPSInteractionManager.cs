@@ -37,8 +37,11 @@ public class FPSInteractionManager : MonoBehaviour
 
     private void CheckInteraction()
     {
+        
         Ray ray = new Ray(_rayOrigin, _fpsCameraT.forward);
         RaycastHit hit;
+
+        Debug.DrawRay(_rayOrigin, _fpsCameraT.forward, Color.red);
 
         if (Physics.Raycast(ray, out hit, _interactionDistance))
         {           
