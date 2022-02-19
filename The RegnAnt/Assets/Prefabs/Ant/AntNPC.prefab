@@ -1342,6 +1342,7 @@ GameObject:
   - component: {fileID: 7483781601796809072}
   - component: {fileID: 4607101618436704825}
   - component: {fileID: 7600430342869180829}
+  - component: {fileID: 1662916406464404710}
   m_Layer: 9
   m_Name: AntNPC
   m_TagString: Untagged
@@ -1545,6 +1546,30 @@ MonoBehaviour:
     stereoPan: 0
     audio3D: 1
     source: {fileID: 0}
+--- !u!114 &1662916406464404710
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1401612983035720968}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33230b2e1014b7f4fbf2bc31e4928f52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _animator: {fileID: 8619278760451712220}
+  spiderLegsEnd:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  _target: {fileID: 0}
+  life: 100
 --- !u!1 &1554337630809881844
 GameObject:
   m_ObjectHideFlags: 0
