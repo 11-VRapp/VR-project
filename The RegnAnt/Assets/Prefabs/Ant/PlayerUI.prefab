@@ -6248,7 +6248,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   life: 0
   _canvas: {fileID: 0}
-  _bloodTextures: []
+  _bloodTextures:
+  - {fileID: 21300000, guid: cc125bc7c14545d4e9cb7a84e61091a0, type: 3}
+  - {fileID: 21300000, guid: 66374dcd023c8f440ab7c3b72b8188bf, type: 3}
+  - {fileID: 21300000, guid: 140bf80f25e942449a2f5484c3fd561d, type: 3}
+  - {fileID: 21300000, guid: 8e53087c80415fd49a1690a964dcaeb2, type: 3}
+  - {fileID: 21300000, guid: dec859dfa3e60434393779fc33438512, type: 3}
+  - {fileID: 21300000, guid: ed3d8fd9427a3db45a4ac82ee8c205fc, type: 3}
+  - {fileID: 21300000, guid: 5a86d170f4fe5674aba73cc7f1e4adaf, type: 3}
+  - {fileID: 21300000, guid: e94a5b3a063721f4fb6818d9befd69a2, type: 3}
+  - {fileID: 21300000, guid: b0fcdbb863d7dfb478152154690b9bda, type: 3}
+  - {fileID: 21300000, guid: b64f5b3f161fb5740919bdde9576399c, type: 3}
+  - {fileID: 21300000, guid: 2d5b739f16f9cb64db80639f7bbe7d8f, type: 3}
   _maxlife: 0
 --- !u!114 &7385948772084037729
 MonoBehaviour:
