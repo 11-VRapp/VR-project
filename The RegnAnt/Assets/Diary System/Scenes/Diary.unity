@@ -938,7 +938,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Il superorganismo
+  m_Text: Superorganismo
 --- !u!1 &362678468
 GameObject:
   m_ObjectHideFlags: 0
@@ -1122,6 +1122,7 @@ MonoBehaviour:
   _pageRight: {fileID: 947333514}
   _indexOfPage: 0
   _textures:
+  - {fileID: 21300000, guid: 08fdc129cd9c8884aa94c9998b7cc4d0, type: 3}
   - {fileID: 21300000, guid: 0725c3dc93e93b944b1d712c647e12ef, type: 3}
   - {fileID: 21300000, guid: 6957ce16ff964154489bfa89d0a9a8cb, type: 3}
   - {fileID: 21300000, guid: e7446cfbbe1154f458db2abd59916a7d, type: 3}
@@ -1133,6 +1134,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 237d50e91b345834daa7a746a248a7db, type: 3}
   - {fileID: 21300000, guid: d2b686a2ee216174e9f08460724af7cc, type: 3}
   - {fileID: 21300000, guid: a2d006feb1f1e7d42bab48ecdae4e27d, type: 3}
+  - {fileID: 21300000, guid: 559169e62b814284aaaa03b45134ba14, type: 3}
+  - {fileID: 21300000, guid: 08fdc129cd9c8884aa94c9998b7cc4d0, type: 3}
   _indexText: {fileID: 588153597}
 --- !u!4 &548379418
 Transform:
@@ -1182,7 +1185,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: 45}
+  m_AnchoredPosition: {x: 0, y: 13}
   m_SizeDelta: {x: 87.9531, y: 18.6647}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &588153597
@@ -1218,7 +1221,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: i/14
+  m_Text: i/a
 --- !u!222 &588153598
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1658,15 +1661,15 @@ RectTransform:
   m_GameObject: {fileID: 947333512}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 0.9625, z: 1}
   m_Children: []
   m_Father: {fileID: 2072878188}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 307, y: 26}
-  m_SizeDelta: {x: 673.2833, y: 915.0947}
+  m_AnchoredPosition: {x: 307, y: 7}
+  m_SizeDelta: {x: 673.2833, y: 897.5979}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &947333514
 MonoBehaviour:
@@ -2790,15 +2793,15 @@ RectTransform:
   m_GameObject: {fileID: 1892187684}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 0.9625, z: 1}
   m_Children: []
   m_Father: {fileID: 2072878188}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -371.50763, y: 26.000025}
-  m_SizeDelta: {x: 673.2883, y: 915.1003}
+  m_AnchoredPosition: {x: -371.50763, y: 7.0000286}
+  m_SizeDelta: {x: 673.2883, y: 897.6033}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1892187686
 MonoBehaviour:
@@ -2820,7 +2823,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: f3955e75faeb2674d8ec74c6953621cf, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 08fdc129cd9c8884aa94c9998b7cc4d0, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

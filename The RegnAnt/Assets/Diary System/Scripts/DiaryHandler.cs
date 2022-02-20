@@ -13,17 +13,15 @@ public class DiaryHandler : MonoBehaviour
     [SerializeField] private List<Sprite> _textures;
     [SerializeField] private Text _indexText;
 
+    int voidPages = 2;
+
 
     void Start()
     {
         _indexOfPage = 0; //load from DB
-        _indexText.text = $"{_indexOfPage}/{_textures.Count}";
-        if (_indexOfPage == 0)
-        {
-            _pageLeft.gameObject.SetActive(false);
-
-            _pageRight.sprite = _textures[0];
-        }
+        _indexText.text = $"{_indexOfPage}/{(_textures.Count - voidPages)}";
+        _pageRight.sprite = _textures[0];
+        _pageRight.sprite = _textures[1];
     }
 
     void Update()
@@ -36,47 +34,51 @@ public class DiaryHandler : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.LeftArrow))
             turnBackPage();
 
-        _indexText.text = $"{_indexOfPage}/{_textures.Count}";
+
     }
 
     public void turnForwPage()
     {
-        if (_indexOfPage == 0)
-            _pageLeft.gameObject.SetActive(true);
-
-        if (_indexOfPage == _textures.Count - 1)
+        if (_indexOfPage >= _textures.Count - voidPages - 1)
             return;
 
-        _pageLeft.sprite = _textures[_indexOfPage];
-        _indexOfPage++;
-        _pageRight.sprite = _textures[_indexOfPage];
+        _pageLeft.sprite = _textures[_indexOfPage + 2];
+        _pageRight.sprite = _textures[_indexOfPage + 3];
+        _indexOfPage += 2;
+
+        _indexText.text = $"{_indexOfPage}/{_textures.Count - voidPages}";
     }
 
     public void turnBackPage()
     {
-        if (_indexOfPage == 0)
+        if (_indexOfPage <= 2)
+        {
+            _pageLeft.sprite = _textures[0];
+            _pageRight.sprite = _textures[1];
+            _indexOfPage = 0;
+
+            _indexText.text = $"{_indexOfPage}/{_textures.Count - voidPages}";
             return;
-        if (_indexOfPage == 1)
-            _pageLeft.gameObject.SetActive(false);
+        }
 
 
-        _pageLeft.sprite = _textures[_indexOfPage];
-        _indexOfPage--;
-        _pageRight.sprite = _textures[_indexOfPage];
+        _pageLeft.sprite = _textures[_indexOfPage - 2];
+        _pageRight.sprite = _textures[_indexOfPage - 1];
+        _indexOfPage -= 2;
+
+        _indexText.text = $"{_indexOfPage}/{_textures.Count - voidPages}";
 
     }
 
     public void moveToPage(int chapterIndex)
     {
-        _pageLeft.gameObject.SetActive(true);
-
         _indexOfPage = chapterIndex;
         _pageLeft.sprite = _textures[_indexOfPage - 1];
         _pageRight.sprite = _textures[_indexOfPage];
     }
 
     public void returnToMainMenu()
-    {       
+    {
         SceneManager.LoadScene("MainMenu");
     }
 }
