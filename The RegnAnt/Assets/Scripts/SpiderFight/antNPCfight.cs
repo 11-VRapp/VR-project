@@ -7,13 +7,13 @@ public class antNPCfight : MonoBehaviour
 {
     private NavMeshAgent _navAgent;
     [SerializeField] private Animator _animator;
-    [SerializeField] private List<Transform> spiderLegsEnd = new List<Transform>();
+    public List<Transform> spiderLegsEnd = new List<Transform>();
     [SerializeField] private Transform _target;
     public float life = 100f;
     void Start()
     {        
         _navAgent = GetComponent<NavMeshAgent>();
-        StartCoroutine(randomChangeTarget());
+        StartCoroutine(randomChangeTarget());        
     }
 
     private IEnumerator randomChangeTarget()
@@ -35,7 +35,14 @@ public class antNPCfight : MonoBehaviour
             StopAllCoroutines();
             _animator.SetTrigger("death");   
             //death sound
-            GetComponent<AudioManager>().Play("Death");         
+            GetComponent<AudioManager>().Play("Death");       
+            FindObjectOfType<antSpawner>().spawnAnt();  
+            //disable all components
+            GetComponent<NavMeshAgent>().enabled = false;
+            GetComponent<Antennas>().enabled = false;
+            GetComponent<antWalkingSound>().enabled = false;
+            GetComponent<Rigidbody>().isKinematic = true;
+            this.enabled = false;
         }
     }
 
