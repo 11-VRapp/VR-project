@@ -1782,7 +1782,7 @@ MonoBehaviour:
   orientation: {fileID: 2121931182569593955}
   _gravity: 10
   _groundCheckPosition: {fileID: 2121931182569593955}
-  _animator: {fileID: 0}
+  grounded: 0
 --- !u!114 &8100853255330716844
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1800,7 +1800,6 @@ MonoBehaviour:
   _antennaRight: {fileID: 8568451739835274634}
   _antennaLstartPos: {fileID: 7773254314558821503}
   _antennaRstartPos: {fileID: 1667654427737438972}
-  _animator: {fileID: 8763106446494846379}
 --- !u!114 &4736597946181401244
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1863,7 +1862,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sounds:
   - name: Walk
-    clip: {fileID: 8300000, guid: 50b51dfd9f7d78c469b0abca5457eab6, type: 3}
+    clip: {fileID: 8300000, guid: f6ee32b4c25c617409a88363fdab02b7, type: 3}
     volume: 1
     pitch: 1
     loop: 1
