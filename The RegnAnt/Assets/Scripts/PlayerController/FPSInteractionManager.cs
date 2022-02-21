@@ -52,12 +52,13 @@ public class FPSInteractionManager : MonoBehaviour
 
         if (Physics.Raycast(ray, out hit, _interactionDistance, _maskInteraction))
         { 
-            infoPanel.SetActive(true);
+            
 
             //Check if is interactable
             _pointingInteractable = hit.transform.GetComponent<Interactable>();
             if (_pointingInteractable)
             {                
+                infoPanel.SetActive(true);
                 infoImage.sprite = keyE;
 
                 if (Input.GetKey(KeyCode.E) && _interactingObject == null)
@@ -70,6 +71,7 @@ public class FPSInteractionManager : MonoBehaviour
             _pointingGrabbable = hit.transform.GetComponent<Grabbable>();
             if (_grabbedObject == null && _pointingGrabbable)
             {
+                infoPanel.SetActive(true);
                 infoImage.sprite = clickDX;
 
                 if (Input.GetMouseButtonDown(1))
