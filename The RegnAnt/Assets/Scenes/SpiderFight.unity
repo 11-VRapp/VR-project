@@ -1498,6 +1498,14 @@ PrefabInstance:
       propertyPath: _debugRay
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4287016987220696524, guid: 745072a464ff91c4d93a5108ebf0241a, type: 3}
+      propertyPath: infoImage
+      value: 
+      objectReference: {fileID: 623566817}
+    - target: {fileID: 4287016987220696524, guid: 745072a464ff91c4d93a5108ebf0241a, type: 3}
+      propertyPath: infoPanel
+      value: 
+      objectReference: {fileID: 623566816}
     - target: {fileID: 4504055095927115754, guid: 745072a464ff91c4d93a5108ebf0241a, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -4649,6 +4657,22 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: af3066399fa457446bd599a14975d235, type: 3}
+--- !u!1 &623566816 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5387473366739296758, guid: af3066399fa457446bd599a14975d235, type: 3}
+  m_PrefabInstance: {fileID: 623566815}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &623566817 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6221038362185704877, guid: af3066399fa457446bd599a14975d235, type: 3}
+  m_PrefabInstance: {fileID: 623566815}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &630901931
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7246,11 +7270,11 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 868882188}
+  - {fileID: 1066078121}
   - {fileID: 1136189582}
   - {fileID: 1110362095}
   - {fileID: 1873042599}
   - {fileID: 715487469}
-  - {fileID: 1066078121}
   - {fileID: 63939000}
   - {fileID: 136907026}
   m_Father: {fileID: 0}
@@ -9798,7 +9822,7 @@ Transform:
   - {fileID: 1087868026}
   - {fileID: 1999266129}
   m_Father: {fileID: 823211830}
-  m_RootOrder: 5
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1068075733
 GameObject:
