@@ -5770,8 +5770,8 @@ MonoBehaviour:
     audio3D: 0
     source: {fileID: 0}
   - name: WindAudio
-    clip: {fileID: 8300000, guid: 3d7da64aad30a014296158e479e72ff4, type: 3}
-    volume: 0.5
+    clip: {fileID: 8300000, guid: 58859d38a241fab419b1edb02524b3f9, type: 3}
+    volume: 1
     pitch: 1
     loop: 1
     stereoPan: 0
