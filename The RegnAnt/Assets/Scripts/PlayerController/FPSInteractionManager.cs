@@ -4,12 +4,11 @@ using System.Collections;
 
 public class FPSInteractionManager : MonoBehaviour
 {
-    [SerializeField] private Transform _fpsCameraT;
-    [SerializeField] private bool _debugRay;
+    [SerializeField] private Transform _fpsCameraT;    
     [SerializeField] private float _interactionDistance;
-
     [SerializeField] private Image _target;
 
+    [SerializeField] private LayerMask _maskInteraction;
     private Interactable _pointingInteractable;
     private Grabbable _pointingGrabbable;
     private Damagable _pointingDamagable;
@@ -23,6 +22,14 @@ public class FPSInteractionManager : MonoBehaviour
     public bool feeding = false;
     [SerializeField] private Animator _animator;
 
+    [Header("KeyInfo Icon")]
+    [SerializeField] private GameObject infoPanel;
+    [SerializeField] private Image infoImage;
+    [SerializeField] private Sprite clickSX;
+    [SerializeField] private Sprite clickDX;
+    [SerializeField] private Sprite keyE;
+
+    void Start() => infoPanel.SetActive(false);
     void Update()
     {
         _rayOrigin = _viewPosition.position;
@@ -43,12 +50,17 @@ public class FPSInteractionManager : MonoBehaviour
 
         Debug.DrawRay(_rayOrigin, _fpsCameraT.forward, Color.red);
 
-        if (Physics.Raycast(ray, out hit, _interactionDistance))
-        {           
+        if (Physics.Raycast(ray, out hit, _interactionDistance, _maskInteraction))
+        { 
+            
+
             //Check if is interactable
             _pointingInteractable = hit.transform.GetComponent<Interactable>();
             if (_pointingInteractable)
-            {
+            {                
+                infoPanel.SetActive(true);
+                infoImage.sprite = keyE;
+
                 if (Input.GetKey(KeyCode.E) && _interactingObject == null)
                 {
                     _pointingInteractable.Interact(gameObject);
@@ -59,6 +71,9 @@ public class FPSInteractionManager : MonoBehaviour
             _pointingGrabbable = hit.transform.GetComponent<Grabbable>();
             if (_grabbedObject == null && _pointingGrabbable)
             {
+                infoPanel.SetActive(true);
+                infoImage.sprite = clickDX;
+
                 if (Input.GetMouseButtonDown(1))
                 {
                     _pointingGrabbable.Grab(gameObject);
@@ -67,7 +82,7 @@ public class FPSInteractionManager : MonoBehaviour
             }
             
             if (Input.GetMouseButton(0) && !_animator.GetBool("hit"))
-            {                        
+            {                   
                 _animator.SetBool("hit", true);                
                 if (hit.transform.GetComponent<Food>() != null)
                 {
@@ -92,6 +107,7 @@ public class FPSInteractionManager : MonoBehaviour
             _pointingInteractable = null;
             _pointingGrabbable = null;
             _pointingDamagable = null;
+            infoPanel.SetActive(false);
         }
     }
 
@@ -111,19 +127,21 @@ public class FPSInteractionManager : MonoBehaviour
     {
         if (_grabbedObject == null)
             return;
-
+        
         _grabbedObject.transform.parent = _grabbedObject.OriginalParent;
         _grabbedObject.Drop();
 
         _target.enabled = true;
         _grabbedObject = null;
         GetComponent<AudioManager>().Play("Drop");
+        infoPanel.SetActive(false);
     }
 
     public void Grab(Grabbable grabbable)
     {
         _grabbedObject = grabbable;
         grabbable.transform.SetParent(_fpsCameraT);
+        infoImage.sprite = clickSX;
 
         _target.enabled = false;
 

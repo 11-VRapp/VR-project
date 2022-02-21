@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 8819993669032708260}
   - component: {fileID: 4559812551286942453}
   - component: {fileID: 818334979065936032}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: zanz_zampa2sx
   m_TagString: Untagged
   m_Icon: {fileID: 0}
