@@ -23,10 +23,10 @@ RenderSettings:
   m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
-  m_AmbientIntensity: 1
+  m_AmbientIntensity: 1.5
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
+  m_SkyboxMaterial: {fileID: 2100000, guid: 29efde085d395a044a5536899f37d548, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.78063315, g: 0.86849356, b: 0.9875794, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -356,6 +356,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1662916406464404710, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
       propertyPath: dialogue.name
       value: sorella
@@ -376,7 +380,8 @@ PrefabInstance:
       propertyPath: dialogue.stage1_CourtesyQuestion
       value: Cosa volevi dirmi?
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1662916406464404710, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
 --- !u!4 &19821222 stripped
 Transform:
@@ -630,6 +635,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1662916406464404710, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
       propertyPath: dialogue.name
       value: sorella
@@ -658,7 +667,8 @@ PrefabInstance:
       propertyPath: dialogue.stage1_CourtesyQuestion
       value: Sii sempre pronto ad aiutare il prossimo
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1662916406464404710, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
 --- !u!4 &40748713 stripped
 Transform:
@@ -740,6 +750,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1662916406464404710, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
       propertyPath: dialogue.name
       value: sorella
@@ -760,7 +774,8 @@ PrefabInstance:
       propertyPath: dialogue.stage1_CourtesyQuestion
       value: Cosa volevi dirmi?
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1662916406464404710, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
 --- !u!1001 &45493299
 PrefabInstance:
@@ -903,6 +918,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1662916406464404710, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
       propertyPath: dialogue.name
       value: sorella
@@ -933,7 +952,8 @@ PrefabInstance:
       propertyPath: dialogue.stage1_CourtesyQuestion
       value: Cosa volevi dirmi?
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1662916406464404710, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
 --- !u!4 &56031418 stripped
 Transform:
@@ -1901,6 +1921,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1662916406464404710, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
       propertyPath: dialogue.name
       value: sorella
@@ -1921,7 +1945,8 @@ PrefabInstance:
       propertyPath: dialogue.risposte.Array.data[0]
       value: 
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1662916406464404710, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
 --- !u!1001 &154010152
 PrefabInstance:
@@ -2244,6 +2269,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1662916406464404710, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
       propertyPath: dialogue.name
       value: sorella
@@ -2324,7 +2353,8 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 0.004
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1662916406464404710, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
 --- !u!1001 &179170533
 PrefabInstance:
@@ -2401,6 +2431,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1662916406464404710, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
       propertyPath: dialogue.name
       value: sorella
@@ -2431,7 +2465,8 @@ PrefabInstance:
       propertyPath: dialogue.stage1_CourtesyQuestion
       value: Sii sempre pronto ad aiutare il prossimo
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1662916406464404710, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
 --- !u!1001 &181698356
 PrefabInstance:
@@ -2574,6 +2609,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1662916406464404710, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
       propertyPath: dialogue.name
       value: sorella
@@ -2602,7 +2641,8 @@ PrefabInstance:
       propertyPath: dialogue.stage1_CourtesyQuestion
       value: Sii sempre pronto ad aiutare il prossimo
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1662916406464404710, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
 --- !u!4 &185832745 stripped
 Transform:
@@ -2771,6 +2811,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1662916406464404710, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
       propertyPath: dialogue.name
       value: sorella
@@ -2799,7 +2843,8 @@ PrefabInstance:
       propertyPath: dialogue.stage1_CourtesyQuestion
       value: Cosa volevi dirmi?
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1662916406464404710, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
 --- !u!1001 &195022252
 PrefabInstance:
@@ -2946,6 +2991,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1662916406464404710, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
       propertyPath: dialogue.name
       value: sorella
@@ -2966,7 +3015,8 @@ PrefabInstance:
       propertyPath: dialogue.stage1_CourtesyQuestion
       value: Sii sempre pronto ad aiutare il prossimo
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1662916406464404710, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
 --- !u!4 &208146758 stripped
 Transform:
@@ -3196,6 +3246,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1662916406464404710, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
       propertyPath: dialogue.name
       value: sorella
@@ -3208,7 +3262,8 @@ PrefabInstance:
       propertyPath: dialogue.risposte.Array.size
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1662916406464404710, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
 --- !u!1001 &245874525
 PrefabInstance:
@@ -3285,6 +3340,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1662916406464404710, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
       propertyPath: dialogue.name
       value: sorella
@@ -3305,7 +3364,8 @@ PrefabInstance:
       propertyPath: dialogue.risposte.Array.data[0]
       value: 
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1662916406464404710, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
 --- !u!1001 &257445957
 PrefabInstance:
@@ -3529,6 +3589,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1662916406464404710, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
       propertyPath: dialogue.name
       value: sorella
@@ -3550,7 +3614,8 @@ PrefabInstance:
       value: "Siamo cos\xEC famose che in computer science ci hanno dedicato un algoritmo,
         l'ACO (ant colony algorithm) per la ricerca di cammini lungo un grafo."
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1662916406464404710, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
 --- !u!1001 &294451750
 PrefabInstance:
@@ -3820,6 +3885,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1662916406464404710, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
       propertyPath: dialogue.name
       value: sorella
@@ -3840,7 +3909,8 @@ PrefabInstance:
       propertyPath: dialogue.stage1_CourtesyQuestion
       value: Cosa volevi dirmi?
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1662916406464404710, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
 --- !u!1001 &344513507
 PrefabInstance:
@@ -4860,6 +4930,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1662916406464404710, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
       propertyPath: dialogue.name
       value: sorella
@@ -4881,7 +4955,8 @@ PrefabInstance:
       value: "Sapevi che siamo gli insetti che vivono di pi\xF9 al mondo? No? Bene,
         ora lo sai"
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1662916406464404710, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
 --- !u!1001 &449811870
 PrefabInstance:
@@ -5258,6 +5333,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1662916406464404710, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
       propertyPath: dialogue.name
       value: sorella
@@ -5270,7 +5349,8 @@ PrefabInstance:
       propertyPath: dialogue.risposte.Array.size
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1662916406464404710, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
 --- !u!1001 &489140636
 PrefabInstance:
@@ -5717,6 +5797,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1662916406464404710, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
       propertyPath: dialogue.name
       value: sorella
@@ -5745,7 +5829,8 @@ PrefabInstance:
       propertyPath: dialogue.stage1_CourtesyQuestion
       value: Sii sempre pronto ad aiutare il prossimo
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1662916406464404710, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
 --- !u!4 &516242774 stripped
 Transform:
@@ -5905,6 +5990,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1662916406464404710, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
       propertyPath: dialogue.name
       value: sorella
@@ -5933,7 +6022,8 @@ PrefabInstance:
       propertyPath: dialogue.stage1_CourtesyQuestion
       value: Cosa volevi dirmi?
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1662916406464404710, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
 --- !u!4 &529261821 stripped
 Transform:
@@ -6131,6 +6221,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1662916406464404710, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
       propertyPath: dialogue.name
       value: sorella
@@ -6159,7 +6253,8 @@ PrefabInstance:
       propertyPath: dialogue.stage1_CourtesyQuestion
       value: Cosa volevi dirmi?
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1662916406464404710, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
 --- !u!1001 &542869742
 PrefabInstance:
@@ -6236,6 +6331,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1662916406464404710, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
       propertyPath: dialogue.name
       value: sorella
@@ -6269,7 +6368,8 @@ PrefabInstance:
       propertyPath: dialogue.stage1_CourtesyQuestion
       value: Cosa volevi dirmi?
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1662916406464404710, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
 --- !u!4 &544638289 stripped
 Transform:
@@ -6474,6 +6574,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1662916406464404710, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
       propertyPath: dialogue.name
       value: sorella
@@ -6502,7 +6606,8 @@ PrefabInstance:
       propertyPath: dialogue.stage1_CourtesyQuestion
       value: Sii sempre pronto ad aiutare il prossimo
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1662916406464404710, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
 --- !u!4 &600124696 stripped
 Transform:
@@ -6756,6 +6861,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1662916406464404710, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
       propertyPath: dialogue.name
       value: sorella
@@ -6784,7 +6893,8 @@ PrefabInstance:
       propertyPath: dialogue.stage1_CourtesyQuestion
       value: Cosa volevi dirmi?
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1662916406464404710, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
 --- !u!1001 &637199336
 PrefabInstance:
@@ -6939,6 +7049,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1662916406464404710, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
       propertyPath: dialogue.name
       value: sorella
@@ -6967,7 +7081,8 @@ PrefabInstance:
       propertyPath: dialogue.stage1_CourtesyQuestion
       value: Cosa volevi dirmi?
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1662916406464404710, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
 --- !u!4 &646189186 stripped
 Transform:
@@ -7691,6 +7806,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1662916406464404710, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
       propertyPath: dialogue.name
       value: sorella
@@ -7711,7 +7830,8 @@ PrefabInstance:
       propertyPath: dialogue.risposte.Array.data[0]
       value: 
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1662916406464404710, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
 --- !u!1001 &738523775
 PrefabInstance:
@@ -8293,6 +8413,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1662916406464404710, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
       propertyPath: dialogue.name
       value: sorella
@@ -8321,7 +8445,8 @@ PrefabInstance:
       propertyPath: dialogue.stage1_CourtesyQuestion
       value: Sii sempre pronto ad aiutare il prossimo
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1662916406464404710, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
 --- !u!4 &756440943 stripped
 Transform:
@@ -8403,6 +8528,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1662916406464404710, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
       propertyPath: dialogue.name
       value: sorella
@@ -8435,7 +8564,8 @@ PrefabInstance:
       propertyPath: dialogue.stage1_CourtesyQuestion
       value: Sii sempre pronto ad aiutare il prossimo
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1662916406464404710, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
 --- !u!1001 &759801194
 PrefabInstance:
@@ -8647,6 +8777,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1662916406464404710, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
       propertyPath: dialogue.name
       value: sorella
@@ -8667,7 +8801,8 @@ PrefabInstance:
       propertyPath: dialogue.stage1_CourtesyQuestion
       value: Cosa volevi dirmi?
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1662916406464404710, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
 --- !u!1001 &772982780
 PrefabInstance:
@@ -9078,6 +9213,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1662916406464404710, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
       propertyPath: dialogue.name
       value: sorella
@@ -9098,7 +9237,8 @@ PrefabInstance:
       propertyPath: dialogue.risposte.Array.data[0]
       value: 
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1662916406464404710, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
 --- !u!4 &837326329 stripped
 Transform:
@@ -9536,6 +9676,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1662916406464404710, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
       propertyPath: dialogue.name
       value: sorella
@@ -9556,7 +9700,8 @@ PrefabInstance:
       propertyPath: dialogue.risposte.Array.data[0]
       value: 
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1662916406464404710, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
 --- !u!1001 &882526816
 PrefabInstance:
@@ -9633,6 +9778,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1662916406464404710, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
       propertyPath: dialogue.name
       value: sorella
@@ -9645,7 +9794,8 @@ PrefabInstance:
       propertyPath: dialogue.risposte.Array.size
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1662916406464404710, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
 --- !u!1001 &883971028
 PrefabInstance:
@@ -9802,6 +9952,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1662916406464404710, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
       propertyPath: dialogue.name
       value: sorella
@@ -9822,7 +9976,8 @@ PrefabInstance:
       propertyPath: dialogue.risposte.Array.data[0]
       value: 
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1662916406464404710, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
 --- !u!1001 &903306518
 PrefabInstance:
@@ -9965,6 +10120,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1662916406464404710, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
       propertyPath: dialogue.name
       value: sorella
@@ -9985,7 +10144,8 @@ PrefabInstance:
       propertyPath: dialogue.risposte.Array.data[0]
       value: 
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1662916406464404710, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
 --- !u!1001 &914871704
 PrefabInstance:
@@ -10602,6 +10762,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1662916406464404710, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
       propertyPath: dialogue.name
       value: sorella
@@ -10622,7 +10786,8 @@ PrefabInstance:
       propertyPath: dialogue.stage1_CourtesyQuestion
       value: Sii sempre pronto ad aiutare il prossimo
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1662916406464404710, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
 --- !u!4 &983518918 stripped
 Transform:
@@ -21154,6 +21319,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1662916406464404710, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
       propertyPath: dialogue.name
       value: sorella
@@ -21182,7 +21351,8 @@ PrefabInstance:
       propertyPath: dialogue.stage1_CourtesyQuestion
       value: Cosa volevi dirmi?
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1662916406464404710, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
 --- !u!1001 &1286033974
 PrefabInstance:
@@ -21593,6 +21763,76 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 8352276770708157283, guid: 745072a464ff91c4d93a5108ebf0241a, type: 3}
   m_PrefabInstance: {fileID: 1313519531}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1313519534 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3656914742604133193, guid: 745072a464ff91c4d93a5108ebf0241a, type: 3}
+  m_PrefabInstance: {fileID: 1313519531}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1313519535
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1313519534}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 948f4100a11a5c24981795d21301da5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  volumeTrigger: {fileID: 1313519536}
+  volumeLayer:
+    serializedVersion: 2
+    m_Bits: 1024
+  stopNaNPropagation: 1
+  finalBlitToCameraTarget: 0
+  antialiasingMode: 0
+  temporalAntialiasing:
+    jitterSpread: 0.75
+    sharpness: 0.25
+    stationaryBlending: 0.95
+    motionBlending: 0.85
+  subpixelMorphologicalAntialiasing:
+    quality: 2
+  fastApproximateAntialiasing:
+    fastMode: 0
+    keepAlpha: 0
+  fog:
+    enabled: 1
+    excludeSkybox: 1
+  debugLayer:
+    lightMeter:
+      width: 512
+      height: 256
+      showCurves: 1
+    histogram:
+      width: 512
+      height: 256
+      channel: 3
+    waveform:
+      exposure: 0.12
+      height: 256
+    vectorscope:
+      size: 256
+      exposure: 0.12
+    overlaySettings:
+      linearDepth: 0
+      motionColorIntensity: 4
+      motionGridSize: 64
+      colorBlindnessType: 0
+      colorBlindnessStrength: 1
+  m_Resources: {fileID: 11400000, guid: d82512f9c8e5d4a4d938b575d47f88d4, type: 2}
+  m_ShowToolkit: 0
+  m_ShowCustomSorter: 0
+  breakBeforeColorGrading: 0
+  m_BeforeTransparentBundles: []
+  m_BeforeStackBundles: []
+  m_AfterStackBundles: []
+--- !u!4 &1313519536 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 147470277335572975, guid: 745072a464ff91c4d93a5108ebf0241a, type: 3}
+  m_PrefabInstance: {fileID: 1313519531}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1314605984
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -21808,6 +22048,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1662916406464404710, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
       propertyPath: dialogue.name
       value: sorella
@@ -21836,7 +22080,8 @@ PrefabInstance:
       propertyPath: dialogue.stage1_CourtesyQuestion
       value: Sii sempre pronto ad aiutare il prossimo
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1662916406464404710, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
 --- !u!4 &1316848360 stripped
 Transform:
@@ -22521,7 +22766,8 @@ PrefabInstance:
       propertyPath: dialogue.stage1_CourtesyQuestion
       value: Non senti nulla tu?
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1662916406464404710, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
 --- !u!4 &1399392487 stripped
 Transform:
@@ -22756,6 +23002,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1662916406464404710, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
       propertyPath: dialogue.name
       value: sorella
@@ -22784,7 +23034,8 @@ PrefabInstance:
       propertyPath: dialogue.stage1_CourtesyQuestion
       value: Cosa volevi dirmi?
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1662916406464404710, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
 --- !u!4 &1438799026 stripped
 Transform:
@@ -23365,6 +23616,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1662916406464404710, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
       propertyPath: dialogue.name
       value: sorella
@@ -23387,7 +23642,8 @@ PrefabInstance:
         diverse, anche se appartengono alla stessa specie, ma le guerre sono dei
         veri e propri massacri. In genere vince la colonia pi\xF9 grande per\xF2"
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1662916406464404710, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
 --- !u!4 &1485077631 stripped
 Transform:
@@ -23992,6 +24248,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1662916406464404710, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
       propertyPath: dialogue.name
       value: sorella
@@ -24012,7 +24272,8 @@ PrefabInstance:
       propertyPath: dialogue.stage1_CourtesyQuestion
       value: Sii sempre pronto ad aiutare il prossimo
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1662916406464404710, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
 --- !u!1001 &1529046428
 PrefabInstance:
@@ -24425,6 +24686,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1662916406464404710, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
       propertyPath: dialogue.name
       value: sorella
@@ -24453,7 +24718,8 @@ PrefabInstance:
       propertyPath: dialogue.stage1_CourtesyQuestion
       value: Sii sempre pronto ad aiutare il prossimo
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1662916406464404710, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
 --- !u!1001 &1585441239
 PrefabInstance:
@@ -25179,6 +25445,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1662916406464404710, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
       propertyPath: dialogue.name
       value: sorella
@@ -25209,7 +25479,8 @@ PrefabInstance:
       propertyPath: dialogue.stage1_CourtesyQuestion
       value: Cosa volevi dirmi?
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1662916406464404710, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
 --- !u!4 &1696571011 stripped
 Transform:
@@ -25352,6 +25623,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1662916406464404710, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
       propertyPath: dialogue.name
       value: sorella
@@ -25383,7 +25658,8 @@ PrefabInstance:
       propertyPath: dialogue.stage1_CourtesyQuestion
       value: Cosa volevi dirmi?
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1662916406464404710, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
 --- !u!1001 &1705142937
 PrefabInstance:
@@ -25508,6 +25784,54 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 24a4f13f74e95d34987406226695c0fc, type: 3}
+--- !u!1 &1712342381
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1712342383}
+  - component: {fileID: 1712342382}
+  m_Layer: 10
+  m_Name: PostProcessing
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1712342382
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1712342381}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b9a305e18de0c04dbd257a21cd47087, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sharedProfile: {fileID: 11400000, guid: c77b8d721cec4ec42bf45b6fdf7e4ca0, type: 2}
+  isGlobal: 1
+  blendDistance: 0
+  weight: 1
+  priority: 0
+--- !u!4 &1712342383
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1712342381}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 313.9358, y: -403.26184, z: 575.6515}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 19
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1718431053
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -25583,6 +25907,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1662916406464404710, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
       propertyPath: dialogue.name
       value: sorella
@@ -25603,7 +25931,8 @@ PrefabInstance:
       propertyPath: dialogue.risposte.Array.data[0]
       value: 
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1662916406464404710, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
 --- !u!1001 &1721231680
 PrefabInstance:
@@ -25680,6 +26009,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1662916406464404710, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
       propertyPath: dialogue.name
       value: sorella
@@ -25692,7 +26025,8 @@ PrefabInstance:
       propertyPath: dialogue.risposte.Array.size
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1662916406464404710, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
 --- !u!1001 &1721333300
 PrefabInstance:
@@ -25769,6 +26103,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1662916406464404710, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
       propertyPath: dialogue.name
       value: sorella
@@ -25797,7 +26135,8 @@ PrefabInstance:
       propertyPath: dialogue.stage1_CourtesyQuestion
       value: Sii sempre pronto ad aiutare il prossimo
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1662916406464404710, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
 --- !u!1001 &1726180130
 PrefabInstance:
@@ -26162,6 +26501,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1662916406464404710, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
       propertyPath: dialogue.name
       value: sorella
@@ -26193,7 +26536,8 @@ PrefabInstance:
       propertyPath: dialogue.stage1_CourtesyQuestion
       value: Sii sempre pronto ad aiutare il prossimo
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1662916406464404710, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
 --- !u!1001 &1776180338
 PrefabInstance:
@@ -26414,6 +26758,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1662916406464404710, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
       propertyPath: dialogue.name
       value: sorella
@@ -26446,7 +26794,8 @@ PrefabInstance:
       propertyPath: dialogue.stage1_CourtesyQuestion
       value: Sii sempre pronto ad aiutare il prossimo
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1662916406464404710, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
 --- !u!4 &1798090313 stripped
 Transform:
@@ -26528,6 +26877,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1662916406464404710, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
       propertyPath: dialogue.name
       value: sorella
@@ -26556,7 +26909,8 @@ PrefabInstance:
       propertyPath: dialogue.stage1_CourtesyQuestion
       value: Cosa volevi dirmi?
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1662916406464404710, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
 --- !u!1 &1806080586
 GameObject:
@@ -26972,6 +27326,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1662916406464404710, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
       propertyPath: dialogue.name
       value: sorella
@@ -26992,7 +27350,8 @@ PrefabInstance:
       propertyPath: dialogue.risposte.Array.data[0]
       value: 
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1662916406464404710, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
 --- !u!4 &1869105803 stripped
 Transform:
@@ -27277,6 +27636,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1662916406464404710, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
       propertyPath: dialogue.name
       value: sorella
@@ -27305,7 +27668,8 @@ PrefabInstance:
       propertyPath: dialogue.stage1_CourtesyQuestion
       value: Sii sempre pronto ad aiutare il prossimo
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1662916406464404710, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
 --- !u!1001 &1904336317
 PrefabInstance:
@@ -28031,6 +28395,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1662916406464404710, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
       propertyPath: dialogue.name
       value: sorella
@@ -28062,7 +28430,8 @@ PrefabInstance:
       propertyPath: dialogue.stage1_CourtesyQuestion
       value: Sii sempre pronto ad aiutare il prossimo
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1662916406464404710, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
 --- !u!4 &1972636640 stripped
 Transform:
@@ -28282,6 +28651,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1662916406464404710, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
       propertyPath: dialogue.name
       value: sorella
@@ -28302,7 +28675,8 @@ PrefabInstance:
       propertyPath: dialogue.stage1_CourtesyQuestion
       value: Sii sempre pronto ad aiutare il prossimo
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1662916406464404710, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
 --- !u!1001 &1977581389
 PrefabInstance:
@@ -28537,6 +28911,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1662916406464404710, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
       propertyPath: dialogue.name
       value: sorella
@@ -28561,7 +28939,8 @@ PrefabInstance:
         di\r vincere la lotteria, in senso darwiniano, inseminando una delle rare
         regine\r vincenti"
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1662916406464404710, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
 --- !u!1001 &2000920218
 PrefabInstance:
@@ -28712,6 +29091,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1662916406464404710, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
       propertyPath: dialogue.name
       value: sorella
@@ -28732,7 +29115,8 @@ PrefabInstance:
       propertyPath: dialogue.risposte.Array.data[0]
       value: 
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1662916406464404710, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
 --- !u!1001 &2010864878
 PrefabInstance:
@@ -28948,6 +29332,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1662916406464404710, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
       propertyPath: dialogue.name
       value: sorella
@@ -28968,7 +29356,8 @@ PrefabInstance:
       propertyPath: dialogue.risposte.Array.data[0]
       value: 
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1662916406464404710, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
 --- !u!4 &2015748174 stripped
 Transform:
@@ -29093,7 +29482,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!222 &2029457585
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -29258,6 +29647,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1662916406464404710, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
       propertyPath: dialogue.name
       value: sorella
@@ -29286,7 +29679,8 @@ PrefabInstance:
       propertyPath: dialogue.stage1_CourtesyQuestion
       value: Cosa volevi dirmi?
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1662916406464404710, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
 --- !u!1001 &2033144270
 PrefabInstance:
@@ -29585,6 +29979,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1662916406464404710, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
       propertyPath: dialogue.name
       value: sorella
@@ -29613,7 +30011,8 @@ PrefabInstance:
       propertyPath: dialogue.stage1_CourtesyQuestion
       value: Cosa volevi dirmi?
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1662916406464404710, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
 --- !u!1 &2073434333
 GameObject:
