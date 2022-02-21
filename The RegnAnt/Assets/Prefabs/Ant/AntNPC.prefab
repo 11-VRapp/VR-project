@@ -1507,7 +1507,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sounds:
   - name: Walk
-    clip: {fileID: 8300000, guid: 50b51dfd9f7d78c469b0abca5457eab6, type: 3}
+    clip: {fileID: 8300000, guid: f6ee32b4c25c617409a88363fdab02b7, type: 3}
     volume: 1
     pitch: 1
     loop: 1
