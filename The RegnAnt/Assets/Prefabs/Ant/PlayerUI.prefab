@@ -6291,14 +6291,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _fpsCameraT: {fileID: 147470277335572975}
-  _debugRay: 0
   _interactionDistance: 3
   _target: {fileID: 0}
+  _maskInteraction:
+    serializedVersion: 2
+    m_Bits: 641
   _viewPosition: {fileID: 8711832374314068762}
   _grabbedObject: {fileID: 0}
   _interactingObject: {fileID: 0}
   feeding: 0
-  _animator: {fileID: 0}
+  _animator: {fileID: 2925478908898955422}
+  infoPanel: {fileID: 0}
+  infoImage: {fileID: 0}
+  clickSX: {fileID: 21300000, guid: 2ac87077a54f6c54fb1442bfa7ca17f9, type: 3}
+  clickDX: {fileID: 21300000, guid: 67a09e0a7574582489e0e4482c70e9a7, type: 3}
+  keyE: {fileID: 21300000, guid: 7c9d8f7ccf058be4bb6174ae170481c0, type: 3}
 --- !u!114 &6918435614891828544
 MonoBehaviour:
   m_ObjectHideFlags: 0

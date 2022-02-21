@@ -73,3 +73,4 @@ Epic Boss Battle by Juhani Junkala | <a href=https://soundcloud.com/juhanijunkal
 Music promoted by <a href=https://www.free-stock-music.com>
 Creative Commons Attribution 3.0 Unported License <a href=https://creativecommons.org/licenses/by/3.0/deed.en_US>
 
+<a target="_blank" href="https://icons8.com/icon/54526/1-key">1 Key</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
