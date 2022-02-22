@@ -13,8 +13,7 @@ public class TutorialManager : MonoBehaviour
     [SerializeField] private Transform _cursor;
     [SerializeField] private GameObject _popUp;
     [SerializeField] private List<Transform> pathList = new List<Transform>();
-    public bool grabbedEgg = false;
-    private bool larvaFeeding = false;
+    public bool grabbedEgg = false;    
     public bool grabbedAphid = false;
     [SerializeField] private GameObject _blinkCanvas;
     [SerializeField] private Collider _exitCollider;
@@ -135,9 +134,9 @@ public class TutorialManager : MonoBehaviour
         yield return StartCoroutine(DisplayTextPopupHint("Mentre il cibo è nello stomaco sociale, premi E sulla larva per nutrirla", 4f));
 
         _cursor.position = new Vector3(53.4f, 214f, -110f);
-        larvaFeeding = false; // se per caso l'utente l'avesse fatto precedentemente
+        _player.GetComponent<FPSInteractionManager>().feeded = false; // se per caso l'utente l'avesse fatto precedentemente
 
-        yield return new WaitUntil(() => larvaFeeding);
+        yield return new WaitUntil(() => _player.GetComponent<FPSInteractionManager>().feeded);
         _generalAudioManager.Play("QuestCompleted");
 
         yield return StartCoroutine(DisplayTextPopupHint("Torna a parlare con la sorella del magazzino", 4f));
@@ -179,11 +178,5 @@ public class TutorialManager : MonoBehaviour
     private bool checkBoundaries() =>
          ((140f < _player.position.x && _player.position.x < 210f) &&
            (220f < _player.position.y && _player.position.y < 260f) &&
-           (-6f < _player.position.z && _player.position.z < 50f));
-
-    public void larvaInteraction()
-    {
-        if (_player.GetComponent<FPSInteractionManager>().feeding)
-            larvaFeeding = true;
-    }
+           (-6f < _player.position.z && _player.position.z < 50f));    
 }

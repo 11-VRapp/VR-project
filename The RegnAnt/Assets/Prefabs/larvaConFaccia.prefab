@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 63393349938532944}
   - component: {fileID: 7360551696888289226}
   - component: {fileID: 6302534457661882760}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: larvaConFaccia
   m_TagString: Untagged
   m_Icon: {fileID: 0}

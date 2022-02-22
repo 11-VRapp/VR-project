@@ -4,7 +4,7 @@ using System.Collections;
 
 public class FPSInteractionManager : MonoBehaviour
 {
-    [SerializeField] private Transform _fpsCameraT;    
+    [SerializeField] private Transform _fpsCameraT;
     [SerializeField] private float _interactionDistance;
     [SerializeField] private Image _target;
 
@@ -19,7 +19,7 @@ public class FPSInteractionManager : MonoBehaviour
     public Grabbable _grabbedObject = null;
     public Interactable _interactingObject = null;
 
-    public bool feeding = false;
+    public bool feeded = false;
     [SerializeField] private Animator _animator;
 
     [Header("KeyInfo Icon")]
@@ -44,15 +44,15 @@ public class FPSInteractionManager : MonoBehaviour
 
     private void CheckInteraction()
     {
-        
+
         Ray ray = new Ray(_rayOrigin, _fpsCameraT.forward);
         RaycastHit hit;
 
         Debug.DrawRay(_rayOrigin, _fpsCameraT.forward, Color.red);
 
         if (Physics.Raycast(ray, out hit, _interactionDistance, _maskInteraction))
-        { 
-            
+        {
+
 
             //Check if is interactable
             _pointingInteractable = hit.transform.GetComponent<Interactable>();
@@ -80,15 +80,15 @@ public class FPSInteractionManager : MonoBehaviour
                     Grab(_pointingGrabbable);
                 }
             }
-            
+
             if (Input.GetMouseButton(0) && !_animator.GetBool("hit"))
-            {                   
-                _animator.SetBool("hit", true);                
+            {
+                _animator.SetBool("hit", true);
                 if (hit.transform.GetComponent<Food>() != null)
                 {
                     hit.transform.GetComponent<Food>().Eat();
                     GetComponent<playerLife>().setHeal(25f);
-                    feeding = true;
+                    feeded = true;
                     GetComponent<AudioManager>().Play("Eat");
                 }
 
@@ -97,8 +97,8 @@ public class FPSInteractionManager : MonoBehaviour
                 {
                     _pointingDamagable.Hit();  //damage SPIDER  
                     GetComponent<AudioManager>().Play("Attack");
-                }                            
-                    
+                }
+
             }
         }
         //If NOTHING is detected set all to null
@@ -127,7 +127,7 @@ public class FPSInteractionManager : MonoBehaviour
     {
         if (_grabbedObject == null)
             return;
-        
+
         _grabbedObject.transform.parent = _grabbedObject.OriginalParent;
         _grabbedObject.Drop();
 
