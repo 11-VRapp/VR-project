@@ -27,6 +27,7 @@ public class TutorialManager : MonoBehaviour
         _popUp.SetActive(false);
         _blinkCanvas.SetActive(true);
         StartCoroutine(tutorialManager());
+        _generalAudioManager.Play("BkAudio");
     }
 
     void Update()
