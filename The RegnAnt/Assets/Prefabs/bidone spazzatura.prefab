@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7353300152293640424}
   - component: {fileID: 713556301232724425}
   - component: {fileID: 8389599192419927383}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Trash_Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -90,7 +90,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3744311405169382501}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: bidone spazzatura
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -124,7 +124,7 @@ GameObject:
   - component: {fileID: 6958979431852961525}
   - component: {fileID: 5408526778884700152}
   - component: {fileID: 1151087536805549951}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Trash_Lid
   m_TagString: Untagged
   m_Icon: {fileID: 0}

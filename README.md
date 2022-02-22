@@ -28,7 +28,7 @@ Nascita e scelta tipo formica, opzioni tra operaio/soldato, regina e maschio, la
     * Dopo battaglia estenuante muori, inizia cinematica con zoom out con finale battaglia e raccolta cadaveri --> scritta o narratore che dice "Tu e altre siete cadute per la colonia, ma il nido continuerà"
 
 # Storyboard
-||
+|                                           |
 |:-----------------------------------------:|
 | ![S1](/ReadmeImages/Storyboard1.png "s1") |
 | ![S2](/ReadmeImages/Storyboard2.png "s2") |
@@ -51,13 +51,31 @@ Nascita e scelta tipo formica, opzioni tra operaio/soldato, regina e maschio, la
 # Boss_Fight
 
 | ![spider FSM](/ReadmeImages/spiderFSM.png "spider FSM") |
-|:----------------------------------------------:|
-|                   *spider FSM*                    |
+|:-------------------------------------------------------:|
+|                      *spider FSM*                       |
 
 - `SetRandomPointDestination()` (in `spiderFSM.cs`): Ottiene una posizione random via RandomNavMeshLocation() in un certo walkRadius e la imposta come destinazione
 - `RandomNavMeshLocation()` (in `spiderFSM.cs`): Lancia uno spherecast per identificare il tipo di oggetto (food, pheromone, enemy) di fronte a sé
 
 # Attributions
+
+Rigged ant model by Ryan_Plyler<a href="https://www.blendswap.com/blend/11127"> on blendswap.com</a>
+
+Cottage model by gerhald3d<a href="https://free3d.com/3d-model/gameready-cottage-free-163528.html"> on free3d.com</a>
+
+Tree model by atrodler<a href="https://sketchfab.com/3d-models/maple-tree-4b27adcf92f644bdabf8ecc6c5bef399"> on sketchfab.com</a>
+
+Garden set models by Prudence<a href="https://sketchfab.com/3d-models/garden-set-d7b65635448f403ca22ffd1b27856bff"> on sketchfab.com</a>
+
+White flower model by tojamerlin<a href="https://sketchfab.com/3d-models/white-flower-9e025b18a39741a4a38b197cee3cdcac"> on sketchfab.com</a>
+
+3D model Rose by Stylesharp<a href="https://www.turbosquid.com/3d-models/3d-model-rose-1242547#"> on turbosquid.com</a>
+
+Rose Branch by Lassi Kaukonen<a href="https://sketchfab.com/3d-models/rose-branch-42b44a59993847d58ae0cf5ef8cef4b7"> on sketchfab.com</a>
+
+Flower model by 16874uy<a href="https://sketchfab.com/3d-models/flower-99237f1d475244c9aed11c9979251ced"> on sketchfab.com</a>
+
+Tree branch model by oscarherry3d<a href="https://sketchfab.com/3d-models/tree-branch-ad3ba37cc8e946e2a429d1b5c315ce19"> on sketchfab.com</a>
 
 Book cover in diary system to: <a href="https://www.vecteezy.com/free-vector/ornament">Ornament Vectors by Vecteezy</a>
 

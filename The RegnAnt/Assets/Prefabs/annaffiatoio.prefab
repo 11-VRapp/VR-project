@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5970395251303472412}
   - component: {fileID: 7310680629380666041}
   - component: {fileID: 4796393000777328243}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: annaffiatoio
   m_TagString: Untagged
   m_Icon: {fileID: 0}
