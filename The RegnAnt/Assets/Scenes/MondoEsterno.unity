@@ -3977,11 +3977,32 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
       propertyPath: dialogue.domande.Array.size
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
       propertyPath: dialogue.risposte.Array.size
-      value: 0
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
+      propertyPath: dialogue.domande.Array.data[0]
+      value: Noi formiche attacchiamo i nemici?
+      objectReference: {fileID: 0}
+    - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
+      propertyPath: dialogue.domande.Array.data[1]
+      value: Ci accorgiamo se le nostre compagne sono morte?
+      objectReference: {fileID: 0}
+    - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
+      propertyPath: dialogue.risposte.Array.data[0]
+      value: "Noi Lasius Niger non siamo una specie aggressiva, ma siamo molto territoriali
+        cio\xE8 difendiamo il nostro territorio. Inoltre, come avrai gi\xE0 notato,
+        la nostra specie non ha la casta delle formiche soldato o guerriere, ma siamo
+        noi operaie a combattere"
+      objectReference: {fileID: 0}
+    - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
+      propertyPath: dialogue.risposte.Array.data[1]
+      value: "No, o almeno non subito. Noi formiche riconosciamo le altre tramite
+        l'odore, infatti esistono parassiti che lo imitano e ci ingannano. Perci\xF2
+        anche se morta, una nostra compagna a noi sembra solo ferma."
       objectReference: {fileID: 0}
     - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
       propertyPath: dialogue.stage1_CourtesyQuestion
@@ -20492,9 +20513,37 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5057692971360168614, guid: 91f56a31c1db8ae47ab35ef81a0bd141, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 53.3
+      objectReference: {fileID: 0}
     - target: {fileID: 5057692971465409666, guid: 91f56a31c1db8ae47ab35ef81a0bd141, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5057692971554505809, guid: 91f56a31c1db8ae47ab35ef81a0bd141, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 588.1074
+      objectReference: {fileID: 0}
+    - target: {fileID: 5057692971554505809, guid: 91f56a31c1db8ae47ab35ef81a0bd141, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 124.35
+      objectReference: {fileID: 0}
+    - target: {fileID: 5057692971554505809, guid: 91f56a31c1db8ae47ab35ef81a0bd141, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 6.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5057692971554505809, guid: 91f56a31c1db8ae47ab35ef81a0bd141, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -27.828
+      objectReference: {fileID: 0}
+    - target: {fileID: 5057692971554505810, guid: 91f56a31c1db8ae47ab35ef81a0bd141, type: 3}
+      propertyPath: m_FontData.m_MinSize
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5057692971554505810, guid: 91f56a31c1db8ae47ab35ef81a0bd141, type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 17
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 91f56a31c1db8ae47ab35ef81a0bd141, type: 3}
