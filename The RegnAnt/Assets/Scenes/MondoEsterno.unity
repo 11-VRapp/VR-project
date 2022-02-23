@@ -5348,7 +5348,7 @@ MonoBehaviour:
   _mosquito: {fileID: 128795552162074833}
   _railTraceToNest: {fileID: 8966250927108841922, guid: d773e9ef903dd6a4c934fff9200667bc, type: 3}
   _railTraceToEnemy: {fileID: 5203534733724316615, guid: a8b51a6fed47f2c4791d6625467ac556, type: 3}
-  _fightTrigger: {fileID: 0}
+  _fightTrigger: {fileID: 1726844767}
   fightScene: SpiderFight
   _popUp: {fileID: 1831968565}
   _generalAudioManager: {fileID: 522320231}
@@ -13622,6 +13622,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerUI
       objectReference: {fileID: 0}
+    - target: {fileID: 5806748990439432984, guid: 745072a464ff91c4d93a5108ebf0241a, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 6772761442362198212, guid: 745072a464ff91c4d93a5108ebf0241a, type: 3}
       propertyPath: m_UiScaleMode
       value: 1
@@ -18168,7 +18172,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1743622262}
   m_LocalRotation: {x: 0.6370799, y: -0.35213682, z: -0.35651386, w: -0.5856849}
-  m_LocalPosition: {x: 580.6, y: 172.95, z: -356.68}
+  m_LocalPosition: {x: 581.23, y: 172.95, z: -356.42}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
