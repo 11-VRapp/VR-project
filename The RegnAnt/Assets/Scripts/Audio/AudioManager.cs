@@ -27,6 +27,8 @@ public class AudioManager : MonoBehaviour
             s.source.Play();
     }
 
+    public Sound getClip(string name) => Array.Find(sounds, sound => sound.name == name);      
+
     public void Stop(string name)
     {
         Sound s = Array.Find(sounds, sound => sound.name == name);
@@ -56,6 +58,6 @@ public class AudioManager : MonoBehaviour
         {
             s.source.pitch = UnityEngine.Random.Range(0.1f, 3f);
             s.source.Play();
-        }            
-    }    
+        }
+    }
 }

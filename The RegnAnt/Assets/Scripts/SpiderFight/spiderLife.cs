@@ -6,12 +6,14 @@ using UnityEngine.SceneManagement;
 public class spiderLife : MonoBehaviour
 {
     [Header("Spider life stats")]
-    [SerializeField] private float life = 400f;
+    [SerializeField] private float life;
     [SerializeField] private float regenTime = 5f;
     [SerializeField] private float regenQty= 2f;
+    private float maxLife = 400f;
 
     void Start()
     {
+        life = maxLife;
         StartCoroutine(regeneration());
     }
 
@@ -29,7 +31,10 @@ public class spiderLife : MonoBehaviour
             PlayerPrefs.SetInt("gameFinished", 1);
             PlayerPrefs.SetInt("diary", 1);
             SceneManager.LoadScene("Ending");
+            return;
         }
+
+        FindObjectOfType<audioGeneral>().spiderLifeAudio(life, maxLife);
     }
 
     public void setHeal(float qty) => life += qty;    

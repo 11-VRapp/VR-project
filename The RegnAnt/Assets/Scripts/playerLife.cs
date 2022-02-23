@@ -27,7 +27,11 @@ public class playerLife : MonoBehaviour
             SceneManager.LoadScene("Ending");
         }
         else
+        {
             setLifeTexture();
+            FindObjectOfType<audioGeneral>().antLifeAudio(life, _maxlife);
+        }
+            
     }
 
     public void setHeal(float qty)
@@ -44,7 +48,7 @@ public class playerLife : MonoBehaviour
         if (!FindObjectOfType<TutorialManager>())
         {
             int index = (int)((life / _maxlife) * 10f);
-            Debug.Log(index + "   " + _bloodTextures.Count);
+           
             if (index > _bloodTextures.Count - 1)
                 index = _bloodTextures.Count - 1;
             _canvas.sprite = _bloodTextures[index];

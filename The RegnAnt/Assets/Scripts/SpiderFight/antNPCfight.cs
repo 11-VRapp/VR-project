@@ -42,7 +42,7 @@ public class antNPCfight : MonoBehaviour
             GetComponent<Antennas>().enabled = false;
             GetComponent<antWalkingSound>().enabled = false;
             GetComponent<Rigidbody>().isKinematic = true;
-            this.enabled = false;
+            this.enabled = false;            
         }
     }
 

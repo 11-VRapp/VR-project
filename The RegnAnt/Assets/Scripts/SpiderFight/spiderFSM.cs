@@ -176,7 +176,7 @@ public class spiderFSM : MonoBehaviour
 
         if (Vector3.Distance(transform.position, _player.position) < _warningDistance && !_waitingToRe_pose) //NON re-posing nell'istante in cui si è fermato dopo attacco!!
         {
-            Debug.LogWarning("Too CLOSE!");
+            //Debug.LogWarning("Too CLOSE!");
             Vector3 targetDirection = _player.transform.position - transform.position;
             targetDirection.y = 0f;
             targetDirection.Normalize();
