@@ -18,9 +18,10 @@ public class MissionManager : MonoBehaviour
     [SerializeField] private GameObject _mosquito;
     [SerializeField] private GameObject _railTraceToNest;
     [SerializeField] private GameObject _railTraceToEnemy;
-    [SerializeField] private Transform _fightPosition;
+    [SerializeField] private roomTrigger _fightTrigger;
     public string fightScene;
     [SerializeField] private GameObject _popUp;
+  
 
     [Header("Audio")]
     [SerializeField] private AudioManager _generalAudioManager;
@@ -48,9 +49,12 @@ public class MissionManager : MonoBehaviour
         yield return new WaitUntil(() => !_voiceOverAudioManager.voiceOverBusy); //per evitare sovrapposizioni di voci
         StartCoroutine(_voiceOverAudioManager.atti[0].playAudioSequentially());
 
+        _arrow.position = _aphidSetPosition.position;
+        _arrow.transform.Rotate(0.0f, 0.0f, 90.0f, Space.World);        
+        StartCoroutine(arrowScaleByDistance(_player, _aphidSetPosition));
         StartCoroutine(DisplayTextPopupHint("Scala l’albero per posarci l’afide", 4f));
 
-        yield return new WaitUntil(() => Vector3.Distance(_aphid.position, _aphidSetPosition.position) <= 2f); //reached target point with aphid
+        yield return new WaitUntil(() => Vector3.Distance(_aphid.position, _aphidSetPosition.position) <= 3f); //reached target point with aphid
         _generalAudioManager.Play("QuestCompleted");
 
         //detach aphid
@@ -64,6 +68,7 @@ public class MissionManager : MonoBehaviour
 
     private IEnumerator Act2()
     {
+        yield return new WaitForSeconds(2f);
         yield return new WaitUntil(() => !_voiceOverAudioManager.voiceOverBusy); //per evitare sovrapposizioni di voci
         StartCoroutine(_voiceOverAudioManager.atti[1].playAudioSequentially());
 
@@ -74,7 +79,7 @@ public class MissionManager : MonoBehaviour
         StartCoroutine(arrowScaleByDistance(_player, _antToFollow));
 
 
-        yield return new WaitUntil(() => Vector3.Distance(_player.position, _antToFollow.position) <= 2f);
+        yield return new WaitUntil(() => Vector3.Distance(_player.position, _antToFollow.position) <= 6f);
     }
 
 
@@ -84,12 +89,10 @@ public class MissionManager : MonoBehaviour
         StartCoroutine(_voiceOverAudioManager.atti[2].playAudioSequentially());
 
         StartCoroutine(DisplayTextPopupHint("Segui la sorella", 4f));
-
-        _antToFollow.gameObject.SetActive(true);
-        _arrow.transform.Rotate(0.0f, 0.0f, -90.0f, Space.World);
+      
         StartCoroutine(arrowScaleByDistance(_player, _antToFollow));
 
-        yield return new WaitUntil(() => Vector3.Distance(_player.position, _antToFollow.position) <= 2f);
+        yield return new WaitUntil(() => Vector3.Distance(_player.position, _antToFollow.position) <= 4f);
 
         _mosquito.SetActive(true);
         GameObject trace = GameObject.Instantiate(_railTraceToNest, Vector3.zero, Quaternion.Euler(0f, 0f, 0f)); //spawn already generated trace
@@ -124,7 +127,7 @@ public class MissionManager : MonoBehaviour
 
         StartCoroutine(arrowScaleByDistance(_player, _antNest));
 
-        yield return new WaitUntil(() => Vector3.Distance(_player.position, _antNest.position) < 3f);
+        yield return new WaitUntil(() => Vector3.Distance(_player.position, _antNest.position) < 8f);
 
         _arrow.gameObject.SetActive(false);
         _generalAudioManager.Play("QuestCompleted");
@@ -139,9 +142,9 @@ public class MissionManager : MonoBehaviour
         yield return new WaitUntil(() => !_voiceOverAudioManager.voiceOverBusy); //per evitare sovrapposizioni di voci
         StartCoroutine(_voiceOverAudioManager.atti[5].playAudioSequentially());
 
-        StartCoroutine(DisplayTextPopupHint("Segui i feromoni verso il nemico", 4f));        
+        StartCoroutine(DisplayTextPopupHint("Segui i feromoni verso il nemico", 5f));        
 
-        yield return new WaitUntil(() => Vector3.Distance(_player.position, _fightPosition.position) <= 30f);  //when arrived change SCENE!
+        yield return new WaitUntil(() => _fightTrigger.insideTrigger);  //when arrived change SCENE!
         //change scene to fight!
         SceneManager.LoadScene(fightScene);        
     }

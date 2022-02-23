@@ -18069,6 +18069,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1726844765}
+  - component: {fileID: 1726844766}
+  - component: {fileID: 1726844767}
   m_Layer: 0
   m_Name: BossFightPosition
   m_TagString: Untagged
@@ -18084,12 +18086,38 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1726844764}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 511.86, y: -2.3511558, z: -66.16}
+  m_LocalPosition: {x: 557, y: -2.3511558, z: -50.8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!135 &1726844766
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1726844764}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 102.79811
+  m_Center: {x: 14.049973, y: 0, z: 0}
+--- !u!114 &1726844767
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1726844764}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5ce3f299fe52cd4492075d57fdd9aed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  insideTrigger: 0
 --- !u!4 &1730576127 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1401612983035720980, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
@@ -22951,20 +22979,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 194674494131100477, guid: c223bd560e785a04b9bbc2e05f29a037, type: 3}
   m_PrefabInstance: {fileID: 1019376660193055880}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &915168224533389795
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7113576508350295104}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 65.58946, y: 373.8191, z: 97.05394}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 20
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &967702686031987003
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -23092,230 +23106,17 @@ Transform:
   m_Father: {fileID: 757240752629942891}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1357503370844725930
+--- !u!114 &1357503370844725930 stripped
 MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 3770521051754574743, guid: 5bb12db29522c0b4a8df806287cc4097, type: 3}
+  m_PrefabInstance: {fileID: 2775702763348087101}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7113576508350295104}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5870cb0546121184dbb4ee05c4260e22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  atti:
-  - Name: RAGGIUNTO ESTERNO
-    sounds:
-    - name: N1
-      clip: {fileID: 8300000, guid: 1305bee6e08438b4ba9b3b40d0840182, type: 3}
-      volume: 1
-      pitch: 0.9
-      loop: 0
-      stereoPan: 0
-      audio3D: 0
-      source: {fileID: 0}
-    - name: B1
-      clip: {fileID: 8300000, guid: a7e801884eb679f41a9ee4bbe75bde51, type: 3}
-      volume: 1
-      pitch: 1.2
-      loop: 0
-      stereoPan: 0
-      audio3D: 0
-      source: {fileID: 0}
-    - name: N2
-      clip: {fileID: 8300000, guid: de43d0d1b19d7c04d8b70851a61b083a, type: 3}
-      volume: 1
-      pitch: 0.9
-      loop: 0
-      stereoPan: 0
-      audio3D: 0
-      source: {fileID: 0}
-    - name: B2
-      clip: {fileID: 0}
-      volume: 1
-      pitch: 0.9
-      loop: 0
-      stereoPan: 0
-      audio3D: 0
-      source: {fileID: 0}
-    - name: N3
-      clip: {fileID: 8300000, guid: 3c052b6f1471a0e468e489da86e978b4, type: 3}
-      volume: 1
-      pitch: 1.2
-      loop: 0
-      stereoPan: 0
-      audio3D: 0
-      source: {fileID: 0}
-    - name: B3
-      clip: {fileID: 0}
-      volume: 1
-      pitch: 0.9
-      loop: 0
-      stereoPan: 0
-      audio3D: 0
-      source: {fileID: 0}
-    voiceManager: {fileID: 0}
-  - Name: RAGGIUNTA CIMA ALBERO
-    sounds:
-    - name: N1
-      clip: {fileID: 8300000, guid: 1b02e2c4e240fa347b6834fcf0fdadda, type: 3}
-      volume: 1
-      pitch: 1
-      loop: 0
-      stereoPan: 0
-      audio3D: 0
-      source: {fileID: 0}
-    voiceManager: {fileID: 0}
-  - Name: SCESA ALBERO
-    sounds:
-    - name: N1
-      clip: {fileID: 8300000, guid: e2dac2cd61599334b8092bf3cb07a15d, type: 3}
-      volume: 1
-      pitch: 1
-      loop: 0
-      stereoPan: 0
-      audio3D: 0
-      source: {fileID: 0}
-    - name: B1
-      clip: {fileID: 8300000, guid: 85bc88459bff6c34faa03cd0050181cc, type: 3}
-      volume: 1
-      pitch: 1
-      loop: 0
-      stereoPan: 0
-      audio3D: 0
-      source: {fileID: 0}
-    - name: N2
-      clip: {fileID: 0}
-      volume: 1
-      pitch: 1
-      loop: 0
-      stereoPan: 0
-      audio3D: 0
-      source: {fileID: 0}
-    - name: B2
-      clip: {fileID: 0}
-      volume: 1
-      pitch: 1
-      loop: 0
-      stereoPan: 0
-      audio3D: 0
-      source: {fileID: 0}
-    - name: N3
-      clip: {fileID: 0}
-      volume: 1
-      pitch: 1
-      loop: 0
-      stereoPan: 0
-      audio3D: 0
-      source: {fileID: 0}
-    - name: B3
-      clip: {fileID: 0}
-      volume: 1
-      pitch: 1
-      loop: 0
-      stereoPan: 0
-      audio3D: 0
-      source: {fileID: 0}
-    voiceManager: {fileID: 0}
-  - Name: RAGGIUNTA SCIA FEROMONI
-    sounds:
-    - name: N1
-      clip: {fileID: 8300000, guid: bd3db588f26462749b71480e3c1fd7c1, type: 3}
-      volume: 1
-      pitch: 1
-      loop: 0
-      stereoPan: 0
-      audio3D: 0
-      source: {fileID: 0}
-    - name: B1
-      clip: {fileID: 8300000, guid: 4ed38463128ce8d4db8560d9bbce10f0, type: 3}
-      volume: 1
-      pitch: 1
-      loop: 0
-      stereoPan: 0
-      audio3D: 0
-      source: {fileID: 0}
-    - name: N2
-      clip: {fileID: 8300000, guid: f0c473a9566455649b5048ea9dda2456, type: 3}
-      volume: 1
-      pitch: 1
-      loop: 0
-      stereoPan: 0
-      audio3D: 0
-      source: {fileID: 0}
-    voiceManager: {fileID: 0}
-  - Name: RAGGIUNTO CIBO
-    sounds:
-    - name: N1
-      clip: {fileID: 8300000, guid: 0c6afe9f55bf09044b0080978f089ce5, type: 3}
-      volume: 1
-      pitch: 1
-      loop: 0
-      stereoPan: 0
-      audio3D: 0
-      source: {fileID: 0}
-    - name: N2
-      clip: {fileID: 8300000, guid: c3e10c32770de194cbe646501c649251, type: 3}
-      volume: 1
-      pitch: 1
-      loop: 0
-      stereoPan: 0
-      audio3D: 0
-      source: {fileID: 0}
-    - name: B1
-      clip: {fileID: 8300000, guid: c3e10c32770de194cbe646501c649251, type: 3}
-      volume: 1
-      pitch: 1
-      loop: 0
-      stereoPan: 0
-      audio3D: 0
-      source: {fileID: 0}
-    voiceManager: {fileID: 0}
-  - Name: RAGGIUNTO NIDO
-    sounds:
-    - name: N1
-      clip: {fileID: 8300000, guid: e2dac2cd61599334b8092bf3cb07a15d, type: 3}
-      volume: 1
-      pitch: 1
-      loop: 0
-      stereoPan: 0
-      audio3D: 0
-      source: {fileID: 0}
-    - name: B1
-      clip: {fileID: 8300000, guid: 85bc88459bff6c34faa03cd0050181cc, type: 3}
-      volume: 1
-      pitch: 1
-      loop: 0
-      stereoPan: 0
-      audio3D: 0
-      source: {fileID: 0}
-    - name: N2
-      clip: {fileID: 0}
-      volume: 1
-      pitch: 1
-      loop: 0
-      stereoPan: 0
-      audio3D: 0
-      source: {fileID: 0}
-    - name: B2
-      clip: {fileID: 0}
-      volume: 1
-      pitch: 1
-      loop: 0
-      stereoPan: 0
-      audio3D: 0
-      source: {fileID: 0}
-    - name: N3
-      clip: {fileID: 0}
-      volume: 1
-      pitch: 1
-      loop: 0
-      stereoPan: 0
-      audio3D: 0
-      source: {fileID: 0}
-    voiceManager: {fileID: 0}
-  voiceOverBusy: 0
 --- !u!1 &1494742433205914456
 GameObject:
   m_ObjectHideFlags: 0
@@ -23545,6 +23346,87 @@ Transform:
   m_Father: {fileID: 757240752629942891}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &2775702763348087101
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3041638742778933470, guid: 5bb12db29522c0b4a8df806287cc4097, type: 3}
+      propertyPath: m_RootOrder
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 3041638742778933470, guid: 5bb12db29522c0b4a8df806287cc4097, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 65.58946
+      objectReference: {fileID: 0}
+    - target: {fileID: 3041638742778933470, guid: 5bb12db29522c0b4a8df806287cc4097, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 373.8191
+      objectReference: {fileID: 0}
+    - target: {fileID: 3041638742778933470, guid: 5bb12db29522c0b4a8df806287cc4097, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 97.05394
+      objectReference: {fileID: 0}
+    - target: {fileID: 3041638742778933470, guid: 5bb12db29522c0b4a8df806287cc4097, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3041638742778933470, guid: 5bb12db29522c0b4a8df806287cc4097, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3041638742778933470, guid: 5bb12db29522c0b4a8df806287cc4097, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3041638742778933470, guid: 5bb12db29522c0b4a8df806287cc4097, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3041638742778933470, guid: 5bb12db29522c0b4a8df806287cc4097, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3041638742778933470, guid: 5bb12db29522c0b4a8df806287cc4097, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3041638742778933470, guid: 5bb12db29522c0b4a8df806287cc4097, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3770521051754574743, guid: 5bb12db29522c0b4a8df806287cc4097, type: 3}
+      propertyPath: atti.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3770521051754574743, guid: 5bb12db29522c0b4a8df806287cc4097, type: 3}
+      propertyPath: atti.Array.data[5].sounds.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3770521051754574743, guid: 5bb12db29522c0b4a8df806287cc4097, type: 3}
+      propertyPath: atti.Array.data[5].sounds.Array.data[5].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: a8e8ba07887e375428c080a9ee4b3887, type: 3}
+    - target: {fileID: 3770521051754574743, guid: 5bb12db29522c0b4a8df806287cc4097, type: 3}
+      propertyPath: atti.Array.data[5].sounds.Array.data[5].name
+      value: N4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3770521051754574743, guid: 5bb12db29522c0b4a8df806287cc4097, type: 3}
+      propertyPath: atti.Array.data[5].sounds.Array.data[5].pitch
+      value: 0.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 3770521051754574743, guid: 5bb12db29522c0b4a8df806287cc4097, type: 3}
+      propertyPath: atti.Array.data[5].sounds.Array.data[5].volume
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4917304972961824125, guid: 5bb12db29522c0b4a8df806287cc4097, type: 3}
+      propertyPath: m_Name
+      value: VoiceOverManager_ext
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 5bb12db29522c0b4a8df806287cc4097, type: 3}
 --- !u!4 &2896941777576308664
 Transform:
   m_ObjectHideFlags: 0
@@ -24478,23 +24360,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7794364734390179129, guid: 1788e51a922c7504894768f74da99389, type: 3}
   m_PrefabInstance: {fileID: 7066431452645169153}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &7113576508350295104
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 915168224533389795}
-  - component: {fileID: 1357503370844725930}
-  m_Layer: 0
-  m_Name: VoiceOverManager_ext
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
 --- !u!64 &7239094935698144163
 MeshCollider:
   m_ObjectHideFlags: 0

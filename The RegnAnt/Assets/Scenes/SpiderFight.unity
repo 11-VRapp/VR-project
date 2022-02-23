@@ -17626,6 +17626,53 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8765532907415094155, guid: a3831e52d7cd05c44850a4df4a327758, type: 3}
   m_PrefabInstance: {fileID: 6785380561396027967}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2859207448005338517
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6324074485407443839}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5870cb0546121184dbb4ee05c4260e22, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  atti:
+  - Name: RAGGIUNTO SITO DA BATTAGLIA
+    sounds:
+    - name: B1
+      clip: {fileID: 8300000, guid: 6680b9dc0969617439542104d9cdfb64, type: 3}
+      volume: 1
+      pitch: 1.2
+      loop: 0
+      stereoPan: 0
+      audio3D: 0
+      source: {fileID: 0}
+    - name: N2
+      clip: {fileID: 8300000, guid: 706ad6ab9c14e1c4db3a08e6d4fcbb45, type: 3}
+      volume: 1
+      pitch: 0.9
+      loop: 0
+      stereoPan: 0
+      audio3D: 0
+      source: {fileID: 0}
+    voiceManager: {fileID: 0}
+  voiceOverBusy: 0
+--- !u!4 &4163706219863975644
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6324074485407443839}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 65.58946, y: 373.8191, z: 97.05394}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 16
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &5464780752685877738
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17715,6 +17762,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 984e6dfec794973498579d1ea7a6c4ca, type: 3}
+--- !u!1 &6324074485407443839
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4163706219863975644}
+  - component: {fileID: 2859207448005338517}
+  m_Layer: 0
+  m_Name: VoiceOverManager_fight
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!4 &6388875797138728892 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 469318960271242627, guid: a3831e52d7cd05c44850a4df4a327758, type: 3}

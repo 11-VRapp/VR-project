@@ -20,7 +20,8 @@ public class audioGeneral : MonoBehaviour
     void Start()
     {
         _audioManager = GetComponent<AudioManager>();
-       _audioManager.Play("WindAudio");
+       _audioManager.Play("WindAudio");      
+       StartCoroutine(FindObjectOfType<VoiceOverManager>().atti[0].playAudioSequentially());
     }
 
     public void antLifeAudio(float remainingLife, float maxLife)
