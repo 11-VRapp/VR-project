@@ -389,6 +389,10 @@ PrefabInstance:
       value: sorella
       objectReference: {fileID: 0}
     - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
+      propertyPath: dialogue.follow_yes
+      value: Certo!
+      objectReference: {fileID: 0}
+    - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
       propertyPath: dialogue.fraseIniziale
       value: Chi cerca, trova
       objectReference: {fileID: 0}
@@ -673,8 +677,12 @@ PrefabInstance:
       value: sorella
       objectReference: {fileID: 0}
     - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
+      propertyPath: dialogue.follow_yes
+      value: Altro lavoro! Mi rendi una formica felice!
+      objectReference: {fileID: 0}
+    - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
       propertyPath: dialogue.fraseIniziale
-      value: Chi cerca, trova
+      value: 'Andiam, andiam, andiamo a lavorar! '
       objectReference: {fileID: 0}
     - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
       propertyPath: dialogue.domande.Array.size
@@ -686,7 +694,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
       propertyPath: dialogue.stage1_CourtesyQuestion
-      value: Cosa volevi dirmi?
+      value: Posso aiutarti?
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 1662916406464404710, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
@@ -877,9 +885,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
       propertyPath: dialogue.risposte.Array.data[0]
-      value: "Sapevi che alcune specie, fra cui anche la nostra, assaltano i nidi
-        nemici per rubarne le uova e schiavizzarle? Serve per far crescere la colonia
-        il pi\xF9 in fretta possibile"
+      value: "Sapevi che alcune specie, fra cui anche la nostra, attaccano gli altri
+        nidi per rubare le uova e prendere le altre formiche prigioniere? Lo facciamo
+        perch\xE9 \xE8 molto importante che la nostra colonia cresca il pi\xF9 in
+        fretta possibile!"
       objectReference: {fileID: 0}
     - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
       propertyPath: dialogue.stage1_CourtesyQuestion
@@ -1863,6 +1872,14 @@ PrefabInstance:
       value: sorella
       objectReference: {fileID: 0}
     - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
+      propertyPath: dialogue.follow_yes
+      value: Volentieri se posso essere di aiuto!
+      objectReference: {fileID: 0}
+    - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
+      propertyPath: dialogue.fraseIniziale
+      value: Oggi fa molto caldo!
+      objectReference: {fileID: 0}
+    - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
       propertyPath: dialogue.domande.Array.size
       value: 0
       objectReference: {fileID: 0}
@@ -1877,6 +1894,10 @@ PrefabInstance:
     - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
       propertyPath: dialogue.risposte.Array.data[0]
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
+      propertyPath: dialogue.stage1_CourtesyQuestion
+      value: Posso aiutarti?
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 1662916406464404710, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
@@ -2228,7 +2249,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
       propertyPath: dialogue.risposte.Array.size
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
       propertyPath: dialogue.domande.Array.data[0]
@@ -2248,31 +2269,29 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
       propertyPath: dialogue.risposte.Array.data[0]
-      value: "Vanno portati sulle piante, perch\xE9 si nutrono della linfa floematica.
-        Indeboliscono la pianta e causano l'arricciamento delle foglie, ma i loro
-        escrementi sono divini per noi, dato che non digeriscono gli zuccheri"
+      value: "Vanno portati sulle piante, perch\xE9 si mangiano la linfa delle foglie.
+        Dopo che hanno mangiato producono una sostanza molto dolce di cui noi andiamo
+        ghiotte! "
       objectReference: {fileID: 0}
     - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
       propertyPath: dialogue.risposte.Array.data[1]
       value: "Assolutamente no, anzi una volta che sei in cima schiaccia BARRA SPAZIATRICE
         per scendere rapidamente. Noi siamo talmente leggere che nessuna caduta pu\xF2
-        scalfirci"
+        farci male!"
       objectReference: {fileID: 0}
     - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
       propertyPath: dialogue.risposte.Array.data[2]
       value: Devi stare attenta ai predatori, come ragni e mantidi, anche se nei
-        dintorni non ne ho visti. E attenta anche a non finire in acqua o finiresti
-        per annegare. Ma soprattutto NON allontanarti troppo dal nido!
+        dintorni non ne ho visti. E attenta anche a non finire in acqua o annegheresti!
+        Ma soprattutto NON allontanarti troppo dal nido!
       objectReference: {fileID: 0}
     - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
       propertyPath: dialogue.risposte.Array.data[3]
-      value: Devi stare attenta ai predatori, come ragni e mantidi, anche se nei
-        dintorni non ne ho visti. E attenta anche a non finire in acqua o finiresti
-        per annegare. Ma soprattutto NON allontanarti troppo dal nido!
+      value: "E' una bussola che punta sempre al nido, cos\xEC non puoi perderti"
       objectReference: {fileID: 0}
     - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
       propertyPath: dialogue.risposte.Array.data[4]
-      value: "E' una bussola che punta sempre al nido, cos\xEC non puoi perderti"
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
       propertyPath: dialogue.stage1_CourtesyQuestion
@@ -2390,13 +2409,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
       propertyPath: dialogue.domande.Array.data[0]
-      value: Cosa si intende per superorganismo?
+      value: "Che cos'\xE8 un superorganismo?"
       objectReference: {fileID: 0}
     - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
       propertyPath: dialogue.risposte.Array.data[0]
-      value: "La colonia funziona talmente bene, in cui ogni sorella ha il suo ruolo
-        specifico a cui si dedica, tanto che \xE8 paragonabile con un organismo umano,
-        dove tutte le parti cooperano al meglio"
+      value: "Siamo talmente brave a dividerci i compiti e a collaborare che gli
+        umani paragonano la nostra colonia al loro corpo. Anch\u2019esso \xE8 composto
+        da tante parti che collaborano tra loro e lo fanno funzionare al meglio."
       objectReference: {fileID: 0}
     - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
       propertyPath: dialogue.stage1_CourtesyQuestion
@@ -2555,6 +2574,10 @@ PrefabInstance:
       value: sorella
       objectReference: {fileID: 0}
     - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
+      propertyPath: dialogue.follow_yes
+      value: Subito sorella!
+      objectReference: {fileID: 0}
+    - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
       propertyPath: dialogue.fraseIniziale
       value: Il duro lavoro ripaga sempre
       objectReference: {fileID: 0}
@@ -2576,7 +2599,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
       propertyPath: dialogue.stage1_CourtesyQuestion
-      value: Sii sempre pronto ad aiutare il prossimo
+      value: "Sii sempre pronto ad aiutare il prossimo \xE8 il mio motto!"
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 1662916406464404710, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
@@ -2755,8 +2778,12 @@ PrefabInstance:
       value: sorella
       objectReference: {fileID: 0}
     - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
+      propertyPath: dialogue.follow_yes
+      value: "Aiutare una sorella \xE8 una delle mie priorit\xE0!"
+      objectReference: {fileID: 0}
+    - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
       propertyPath: dialogue.fraseIniziale
-      value: Chi cerca, trova
+      value: "\xC8 proprio una bella giornata per lavorare all'aria aperta!"
       objectReference: {fileID: 0}
     - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
       propertyPath: dialogue.domande.Array.size
@@ -2776,7 +2803,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
       propertyPath: dialogue.stage1_CourtesyQuestion
-      value: Cosa volevi dirmi?
+      value: Hai bisogno di aiuto?
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 1662916406464404710, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
@@ -2933,6 +2960,10 @@ PrefabInstance:
     - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
       propertyPath: dialogue.name
       value: sorella
+      objectReference: {fileID: 0}
+    - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
+      propertyPath: dialogue.follow_yes
+      value: Subito sorella!
       objectReference: {fileID: 0}
     - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
       propertyPath: dialogue.fraseIniziale
@@ -3190,12 +3221,24 @@ PrefabInstance:
       value: sorella
       objectReference: {fileID: 0}
     - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
+      propertyPath: dialogue.follow_yes
+      value: "Aiutare una sorella \xE8 una delle mie priorit\xE0!"
+      objectReference: {fileID: 0}
+    - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
+      propertyPath: dialogue.fraseIniziale
+      value: "\xC8 proprio una bella giornata per lavorare all'aria aperta!"
+      objectReference: {fileID: 0}
+    - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
       propertyPath: dialogue.domande.Array.size
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
       propertyPath: dialogue.risposte.Array.size
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
+      propertyPath: dialogue.stage1_CourtesyQuestion
+      value: Hai bisogno di aiuto?
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 1662916406464404710, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
@@ -3282,6 +3325,14 @@ PrefabInstance:
     - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
       propertyPath: dialogue.name
       value: sorella
+      objectReference: {fileID: 0}
+    - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
+      propertyPath: dialogue.follow_yes
+      value: "Aiutare una sorella \xE8 una delle mie priorit\xE0!"
+      objectReference: {fileID: 0}
+    - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
+      propertyPath: dialogue.fraseIniziale
+      value: "\xC8 proprio una bella giornata per lavorare all'aria aperta!"
       objectReference: {fileID: 0}
     - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
       propertyPath: dialogue.domande.Array.size
@@ -3533,12 +3584,20 @@ PrefabInstance:
       value: sorella
       objectReference: {fileID: 0}
     - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
+      propertyPath: dialogue.follow_yes
+      value: Altro lavoro! Mi rendi una formica felice!
+      objectReference: {fileID: 0}
+    - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
+      propertyPath: dialogue.fraseIniziale
+      value: 'Andiam, andiam, andiamo a lavorar! '
+      objectReference: {fileID: 0}
+    - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
       propertyPath: dialogue.domande.Array.size
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
       propertyPath: dialogue.risposte.Array.size
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
       propertyPath: dialogue.domande.Array.data[0]
@@ -3548,6 +3607,10 @@ PrefabInstance:
       propertyPath: dialogue.risposte.Array.data[0]
       value: "Siamo cos\xEC famose che in computer science ci hanno dedicato un algoritmo,
         l'ACO (ant colony algorithm) per la ricerca di cammini lungo un grafo."
+      objectReference: {fileID: 0}
+    - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
+      propertyPath: dialogue.stage1_CourtesyQuestion
+      value: Posso aiutarti?
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 1662916406464404710, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
@@ -3827,6 +3890,10 @@ PrefabInstance:
     - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
       propertyPath: dialogue.name
       value: sorella
+      objectReference: {fileID: 0}
+    - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
+      propertyPath: dialogue.follow_yes
+      value: Certo!
       objectReference: {fileID: 0}
     - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
       propertyPath: dialogue.fraseIniziale
@@ -4874,6 +4941,10 @@ PrefabInstance:
       value: sorella
       objectReference: {fileID: 0}
     - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
+      propertyPath: dialogue.fraseIniziale
+      value: "\xC8 proprio una bella giornata per lavorare all'aria aperta!"
+      objectReference: {fileID: 0}
+    - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
       propertyPath: dialogue.domande.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -4887,8 +4958,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
       propertyPath: dialogue.risposte.Array.data[0]
-      value: "Sapevi che siamo gli insetti che vivono di pi\xF9 al mondo? No? Bene,
-        ora lo sai"
+      value: "Sapevi che siamo gli insetti che vivono di pi\xF9 al mondo?"
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 1662916406464404710, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
@@ -5280,6 +5350,14 @@ PrefabInstance:
     - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
       propertyPath: dialogue.name
       value: sorella
+      objectReference: {fileID: 0}
+    - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
+      propertyPath: dialogue.follow_yes
+      value: Volentieri se posso essere di aiuto!
+      objectReference: {fileID: 0}
+    - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
+      propertyPath: dialogue.fraseIniziale
+      value: Oggi fa molto caldo!
       objectReference: {fileID: 0}
     - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
       propertyPath: dialogue.domande.Array.size
@@ -5746,8 +5824,12 @@ PrefabInstance:
       value: sorella
       objectReference: {fileID: 0}
     - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
+      propertyPath: dialogue.follow_yes
+      value: Altro lavoro! Mi rendi una formica felice!
+      objectReference: {fileID: 0}
+    - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
       propertyPath: dialogue.fraseIniziale
-      value: Il duro lavoro ripaga sempre
+      value: 'Andiam, andiam, andiamo a lavorar! '
       objectReference: {fileID: 0}
     - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
       propertyPath: dialogue.domande.Array.size
@@ -5767,7 +5849,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
       propertyPath: dialogue.stage1_CourtesyQuestion
-      value: Sii sempre pronto ad aiutare il prossimo
+      value: Posso aiutarti?
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 1662916406464404710, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
@@ -5937,6 +6019,10 @@ PrefabInstance:
     - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
       propertyPath: dialogue.name
       value: sorella
+      objectReference: {fileID: 0}
+    - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
+      propertyPath: dialogue.follow_yes
+      value: Certo!
       objectReference: {fileID: 0}
     - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
       propertyPath: dialogue.fraseIniziale
@@ -6170,8 +6256,12 @@ PrefabInstance:
       value: sorella
       objectReference: {fileID: 0}
     - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
+      propertyPath: dialogue.follow_yes
+      value: "Aiutare una sorella \xE8 una delle mie priorit\xE0!"
+      objectReference: {fileID: 0}
+    - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
       propertyPath: dialogue.fraseIniziale
-      value: Chi cerca, trova
+      value: "\xC8 proprio una bella giornata per lavorare all'aria aperta!"
       objectReference: {fileID: 0}
     - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
       propertyPath: dialogue.domande.Array.size
@@ -6191,7 +6281,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
       propertyPath: dialogue.stage1_CourtesyQuestion
-      value: Cosa volevi dirmi?
+      value: Hai bisogno di aiuto?
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 1662916406464404710, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
@@ -6297,12 +6387,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
       propertyPath: dialogue.risposte.Array.data[0]
-      value: "I voli nuziali rappresentano, per le formiche, il momento supremo del\r
-        ciclo biologico. Le colonie possono soffrire la fame, i nemici possono sottrarre
-        parte della forza lavoro, molte altre disgrazie possono causare un\r forte
-        declino della colonia; e tuttavia una ripresa \xE8 ancora possibile. Ma se
-        il\r volo nuziale non viene effettuato, o avviene nel periodo sbagliato,
-        allora tutti\r\ngli sforzi della colonia risultano vani."
+      value: "Per una nuova regina \xE8 molto importante trovare uno sposo. Creare
+        una nuova famiglia e una nuova colonia permette alle formiche di rendere
+        pi\xF9 grande il loro regno e quindi di vivere in pace."
       objectReference: {fileID: 0}
     - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
       propertyPath: dialogue.stage1_CourtesyQuestion
@@ -6523,6 +6610,10 @@ PrefabInstance:
       value: sorella
       objectReference: {fileID: 0}
     - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
+      propertyPath: dialogue.follow_yes
+      value: Subito sorella!
+      objectReference: {fileID: 0}
+    - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
       propertyPath: dialogue.fraseIniziale
       value: Il duro lavoro ripaga sempre
       objectReference: {fileID: 0}
@@ -6544,7 +6635,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
       propertyPath: dialogue.stage1_CourtesyQuestion
-      value: Sii sempre pronto ad aiutare il prossimo
+      value: "Sii sempre pronto ad aiutare il prossimo \xE8 il mio motto!"
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 1662916406464404710, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
@@ -6810,6 +6901,10 @@ PrefabInstance:
       value: sorella
       objectReference: {fileID: 0}
     - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
+      propertyPath: dialogue.follow_yes
+      value: Certo!
+      objectReference: {fileID: 0}
+    - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
       propertyPath: dialogue.fraseIniziale
       value: Chi cerca, trova
       objectReference: {fileID: 0}
@@ -6996,6 +7091,10 @@ PrefabInstance:
     - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
       propertyPath: dialogue.name
       value: sorella
+      objectReference: {fileID: 0}
+    - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
+      propertyPath: dialogue.follow_yes
+      value: Certo!
       objectReference: {fileID: 0}
     - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
       propertyPath: dialogue.fraseIniziale
@@ -7755,6 +7854,10 @@ PrefabInstance:
       value: sorella
       objectReference: {fileID: 0}
     - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
+      propertyPath: dialogue.follow_yes
+      value: Volentieri se posso essere di aiuto!
+      objectReference: {fileID: 0}
+    - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
       propertyPath: dialogue.domande.Array.size
       value: 0
       objectReference: {fileID: 0}
@@ -8362,6 +8465,10 @@ PrefabInstance:
       value: sorella
       objectReference: {fileID: 0}
     - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
+      propertyPath: dialogue.follow_yes
+      value: Subito sorella!
+      objectReference: {fileID: 0}
+    - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
       propertyPath: dialogue.fraseIniziale
       value: Il duro lavoro ripaga sempre
       objectReference: {fileID: 0}
@@ -8478,7 +8585,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
       propertyPath: dialogue.follow_yes
-      value: Va bene
+      value: Subito sorella!
       objectReference: {fileID: 0}
     - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
       propertyPath: dialogue.fraseIniziale
@@ -8726,8 +8833,12 @@ PrefabInstance:
       value: sorella
       objectReference: {fileID: 0}
     - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
+      propertyPath: dialogue.follow_yes
+      value: "Aiutare una sorella \xE8 una delle mie priorit\xE0!"
+      objectReference: {fileID: 0}
+    - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
       propertyPath: dialogue.fraseIniziale
-      value: Chi cerca, trova
+      value: "\xC8 proprio una bella giornata per lavorare all'aria aperta!"
       objectReference: {fileID: 0}
     - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
       propertyPath: dialogue.domande.Array.size
@@ -9160,6 +9271,14 @@ PrefabInstance:
     - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
       propertyPath: dialogue.name
       value: sorella
+      objectReference: {fileID: 0}
+    - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
+      propertyPath: dialogue.follow_yes
+      value: Altro lavoro! Mi rendi una formica felice!
+      objectReference: {fileID: 0}
+    - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
+      propertyPath: dialogue.fraseIniziale
+      value: 'Andiam, andiam, andiamo a lavorar! '
       objectReference: {fileID: 0}
     - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
       propertyPath: dialogue.domande.Array.size
@@ -9620,6 +9739,10 @@ PrefabInstance:
       value: sorella
       objectReference: {fileID: 0}
     - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
+      propertyPath: dialogue.follow_yes
+      value: Volentieri se posso essere di aiuto!
+      objectReference: {fileID: 0}
+    - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
       propertyPath: dialogue.domande.Array.size
       value: 0
       objectReference: {fileID: 0}
@@ -9720,6 +9843,10 @@ PrefabInstance:
     - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
       propertyPath: dialogue.name
       value: sorella
+      objectReference: {fileID: 0}
+    - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
+      propertyPath: dialogue.follow_yes
+      value: Volentieri se posso essere di aiuto!
       objectReference: {fileID: 0}
     - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
       propertyPath: dialogue.domande.Array.size
@@ -9896,6 +10023,10 @@ PrefabInstance:
       value: sorella
       objectReference: {fileID: 0}
     - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
+      propertyPath: dialogue.follow_yes
+      value: Volentieri se posso essere di aiuto!
+      objectReference: {fileID: 0}
+    - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
       propertyPath: dialogue.domande.Array.size
       value: 0
       objectReference: {fileID: 0}
@@ -10062,6 +10193,10 @@ PrefabInstance:
     - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
       propertyPath: dialogue.name
       value: sorella
+      objectReference: {fileID: 0}
+    - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
+      propertyPath: dialogue.follow_yes
+      value: Volentieri se posso essere di aiuto!
       objectReference: {fileID: 0}
     - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
       propertyPath: dialogue.domande.Array.size
@@ -10704,6 +10839,10 @@ PrefabInstance:
     - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
       propertyPath: dialogue.name
       value: sorella
+      objectReference: {fileID: 0}
+    - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
+      propertyPath: dialogue.follow_yes
+      value: Subito sorella!
       objectReference: {fileID: 0}
     - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
       propertyPath: dialogue.fraseIniziale
@@ -12900,6 +13039,10 @@ PrefabInstance:
       value: sorella
       objectReference: {fileID: 0}
     - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
+      propertyPath: dialogue.follow_yes
+      value: Certo!
+      objectReference: {fileID: 0}
+    - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
       propertyPath: dialogue.fraseIniziale
       value: Chi cerca, trova
       objectReference: {fileID: 0}
@@ -13642,6 +13785,10 @@ PrefabInstance:
       value: sorella
       objectReference: {fileID: 0}
     - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
+      propertyPath: dialogue.follow_yes
+      value: Subito sorella!
+      objectReference: {fileID: 0}
+    - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
       propertyPath: dialogue.fraseIniziale
       value: Il duro lavoro ripaga sempre
       objectReference: {fileID: 0}
@@ -13663,7 +13810,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
       propertyPath: dialogue.stage1_CourtesyQuestion
-      value: Sii sempre pronto ad aiutare il prossimo
+      value: "Sii sempre pronto ad aiutare il prossimo \xE8 il mio motto!"
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 1662916406464404710, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
@@ -14615,6 +14762,10 @@ PrefabInstance:
       value: sorella
       objectReference: {fileID: 0}
     - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
+      propertyPath: dialogue.follow_yes
+      value: Certo!
+      objectReference: {fileID: 0}
+    - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
       propertyPath: dialogue.fraseIniziale
       value: Chi cerca, trova
       objectReference: {fileID: 0}
@@ -15248,6 +15399,10 @@ PrefabInstance:
       value: sorella
       objectReference: {fileID: 0}
     - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
+      propertyPath: dialogue.fraseIniziale
+      value: "\xC8 proprio una bella giornata per lavorare all'aria aperta!"
+      objectReference: {fileID: 0}
+    - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
       propertyPath: dialogue.domande.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -15261,9 +15416,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
       propertyPath: dialogue.risposte.Array.data[0]
-      value: "Sai che le formiche combattono fra loro? Ovviamente quelle di colonie
-        diverse, anche se appartengono alla stessa specie, ma le guerre sono dei
-        veri e propri massacri. In genere vince la colonia pi\xF9 grande per\xF2"
+      value: "Sai che le formiche combattono fra loro? Lo facciamo perch\xE9 siamo
+        insetti molto territoriali, ci teniamo a quello che \xE8 nostro! Alcune volte
+        \xE8 necessario far allontanare le altre colonie cos\xEC da tenere per noi
+        le fonti di cibo."
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 1662916406464404710, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
@@ -15880,8 +16036,12 @@ PrefabInstance:
       value: sorella
       objectReference: {fileID: 0}
     - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
+      propertyPath: dialogue.follow_yes
+      value: "Aiutare una sorella \xE8 una delle mie priorit\xE0!"
+      objectReference: {fileID: 0}
+    - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
       propertyPath: dialogue.fraseIniziale
-      value: Il duro lavoro ripaga sempre
+      value: "\xC8 proprio una bella giornata per lavorare all'aria aperta!"
       objectReference: {fileID: 0}
     - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
       propertyPath: dialogue.domande.Array.size
@@ -15893,7 +16053,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
       propertyPath: dialogue.stage1_CourtesyQuestion
-      value: Sii sempre pronto ad aiutare il prossimo
+      value: Hai bisogno di aiuto?
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 1662916406464404710, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
@@ -16316,6 +16476,10 @@ PrefabInstance:
     - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
       propertyPath: dialogue.name
       value: sorella
+      objectReference: {fileID: 0}
+    - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
+      propertyPath: dialogue.follow_yes
+      value: Subito sorella!
       objectReference: {fileID: 0}
     - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
       propertyPath: dialogue.fraseIniziale
@@ -17094,9 +17258,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
       propertyPath: dialogue.risposte.Array.data[0]
-      value: Noi formiche siamo maestre per quanto riguarda la perfetta organizzazione
-        e precisione per la nostra pianificazione. Tutti dovrebbero imparare, soprattutto
-        le cicale...
+      value: Noi formiche siamo organizzatissime e super precise! Tutti dovrebbero
+        imparare da noi! Soprattutto le cicale...
       objectReference: {fileID: 0}
     - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
       propertyPath: dialogue.stage1_CourtesyQuestion
@@ -17272,10 +17435,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
       propertyPath: dialogue.risposte.Array.data[0]
-      value: "Le operaie di Myrmecocystus mimicus, fanno molto affidamento su sorveglianza,\r
-        propaganda e ci\xF2 che pu\xF2 ben essere definito, senza esagerazione, una
-        forma\r rudimentale di politica estera. Esse perlustrano il territorio nemico,\r\norganizzano
-        picchetti e cercano di indurre con l\u2019inganno gli avversari a\r sottomettersi."
+      value: "Lo sapevi che le operaie di Myrmecocystus mimicus, un\u2019altra specie
+        di formiche chiamate formiche nordamericane, entrano nel territorio di un
+        altro formicaio, infastidiscono le altre formiche ostacolando il loro lavoro
+        e cercano di convincerle a fare ci\xF2 che vogliono loro? Sono davvero delle
+        bulle!"
       objectReference: {fileID: 0}
     - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
       propertyPath: dialogue.stage1_CourtesyQuestion
@@ -17539,6 +17703,10 @@ PrefabInstance:
       value: sorella
       objectReference: {fileID: 0}
     - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
+      propertyPath: dialogue.follow_yes
+      value: Volentieri se posso essere di aiuto!
+      objectReference: {fileID: 0}
+    - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
       propertyPath: dialogue.domande.Array.size
       value: 0
       objectReference: {fileID: 0}
@@ -17639,6 +17807,14 @@ PrefabInstance:
     - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
       propertyPath: dialogue.name
       value: sorella
+      objectReference: {fileID: 0}
+    - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
+      propertyPath: dialogue.follow_yes
+      value: "Aiutare una sorella \xE8 una delle mie priorit\xE0!"
+      objectReference: {fileID: 0}
+    - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
+      propertyPath: dialogue.fraseIniziale
+      value: Andiam, andiam, andiamo a lavorar!
       objectReference: {fileID: 0}
     - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
       propertyPath: dialogue.domande.Array.size
@@ -18040,10 +18216,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
       propertyPath: dialogue.risposte.Array.data[0]
-      value: 'Sapevi che pure la Bibbia parla di noi?
-
-        Io non l''ho letta,
-        ma parlano di un Prov. 6: 6'
+      value: "Io non l'ho letta, ma parlano di un Prov. 6: 6\r-7:\n\u201CVa', pigro,
+        alla formica;\r\nconsidera il suo fare e diventa saggio!\u201D\r"
       objectReference: {fileID: 0}
     - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
       propertyPath: dialogue.stage1_CourtesyQuestion
@@ -18297,11 +18471,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
       propertyPath: dialogue.risposte.Array.data[0]
-      value: "Vi sono almeno tre vie mediante le quali le operaie\r potrebbero stimare
-        indirettamente le forze del nemico. Esse possono\r \xABcontare le teste\xBB
-        mentre passano da una combattente all\u2019altra: se le\r compagne di nido
-        sono pi\xF9 numerose del nemico esse saranno \xABsoggettivamente consapevoli\xBB
-        della disparit\xE0 in\r\nloro favore e pi\xF9 inclini a pressare il nemico"
+      value: "Sai come le formiche fanno a sapere quanto \xE8 forte il loro avversario?\r\nContano
+        il numero di teste delle formiche nemiche e se le avversarie sono meno di
+        loro all\u2019ora sanno che possono vincere la battaglia e quindi attaccano
+        con maggiore insistenza.\r"
       objectReference: {fileID: 0}
     - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
       propertyPath: dialogue.stage1_CourtesyQuestion
@@ -18399,8 +18572,12 @@ PrefabInstance:
       value: sorella
       objectReference: {fileID: 0}
     - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
+      propertyPath: dialogue.follow_yes
+      value: Subito sorella!
+      objectReference: {fileID: 0}
+    - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
       propertyPath: dialogue.fraseIniziale
-      value: Chi cerca, trova
+      value: "Aiutare una sorella \xE8 una delle mie priorit\xE0!"
       objectReference: {fileID: 0}
     - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
       propertyPath: dialogue.domande.Array.size
@@ -18848,6 +19025,14 @@ PrefabInstance:
       value: sorella
       objectReference: {fileID: 0}
     - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
+      propertyPath: dialogue.follow_yes
+      value: "Aiutare una sorella \xE8 una delle mie priorit\xE0!"
+      objectReference: {fileID: 0}
+    - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
+      propertyPath: dialogue.fraseIniziale
+      value: "\xC8 proprio una bella giornata per lavorare all'aria aperta!"
+      objectReference: {fileID: 0}
+    - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
       propertyPath: dialogue.domande.Array.size
       value: 0
       objectReference: {fileID: 0}
@@ -19158,6 +19343,10 @@ PrefabInstance:
       value: sorella
       objectReference: {fileID: 0}
     - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
+      propertyPath: dialogue.follow_yes
+      value: Subito sorella!
+      objectReference: {fileID: 0}
+    - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
       propertyPath: dialogue.fraseIniziale
       value: Il duro lavoro ripaga sempre
       objectReference: {fileID: 0}
@@ -19179,7 +19368,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
       propertyPath: dialogue.stage1_CourtesyQuestion
-      value: Sii sempre pronto ad aiutare il prossimo
+      value: "Sii sempre pronto ad aiutare il prossimo \xE8 il mio motto!"
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 1662916406464404710, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
@@ -19929,10 +20118,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
       propertyPath: dialogue.risposte.Array.data[0]
-      value: "Le colonie poliginiche (cio\xE8 con pi\xF9 regine fertili) non solo
-        sono\r potenzialmente immortali, ma possono accrescersi fino a raggiungere
-        dimensioni enormi. Quelle delle formiche del faraone, che invadono le pareti\r
-        degli ospedali e degli uffici, possono arrivare a contare milioni di operaie"
+      value: "La presenza di pi\xF9 regine all\u2019interno di un nido permette di
+        far vivere a lungo un formicaio perch\xE9 alla morte di una regina una sua
+        figlia ne prende il posto mandando avanti il regno della madre"
       objectReference: {fileID: 0}
     - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
       propertyPath: dialogue.stage1_CourtesyQuestion
@@ -20168,6 +20356,10 @@ PrefabInstance:
       value: sorella
       objectReference: {fileID: 0}
     - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
+      propertyPath: dialogue.follow_yes
+      value: Subito sorella!
+      objectReference: {fileID: 0}
+    - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
       propertyPath: dialogue.fraseIniziale
       value: Il duro lavoro ripaga sempre
       objectReference: {fileID: 0}
@@ -20181,7 +20373,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
       propertyPath: dialogue.stage1_CourtesyQuestion
-      value: Sii sempre pronto ad aiutare il prossimo
+      value: "Sii sempre pronto ad aiutare il prossimo \xE8 il mio motto!"
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 1662916406464404710, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
@@ -20452,11 +20644,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
       propertyPath: dialogue.risposte.Array.data[0]
-      value: "I maschi non hanno alcuna possibilit\xE0: dopo avere lasciato la colonia\r
-        madre, essi muoiono tutti nel giro di poche ore, o di qualche giorno. Solo
-        un\r numero esiguo di maschi, pur morendo in questo processo, pu\xF2 sperare
-        di\r vincere la lotteria, in senso darwiniano, inseminando una delle rare
-        regine\r vincenti"
+      value: 'Le formiche maschio non lasciano molto spesso il formicaio. Solitamente
+        avventurarsi da soli fuori dalla loro casa li mette in pericolo ma loro hanno
+        una missione: trovare la loro futura sposa quindi si armano di coraggio e
+        volano in cerca di una regina.'
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 1662916406464404710, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
@@ -20619,6 +20810,14 @@ PrefabInstance:
       value: sorella
       objectReference: {fileID: 0}
     - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
+      propertyPath: dialogue.follow_yes
+      value: "Aiutare una sorella \xE8 una delle mie priorit\xE0!"
+      objectReference: {fileID: 0}
+    - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
+      propertyPath: dialogue.fraseIniziale
+      value: "\xC8 proprio una bella giornata per lavorare all'aria aperta!"
+      objectReference: {fileID: 0}
+    - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
       propertyPath: dialogue.domande.Array.size
       value: 0
       objectReference: {fileID: 0}
@@ -20633,6 +20832,10 @@ PrefabInstance:
     - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
       propertyPath: dialogue.risposte.Array.data[0]
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
+      propertyPath: dialogue.stage1_CourtesyQuestion
+      value: Hai bisogno di aiuto?
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 1662916406464404710, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
@@ -20858,6 +21061,10 @@ PrefabInstance:
     - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
       propertyPath: dialogue.name
       value: sorella
+      objectReference: {fileID: 0}
+    - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
+      propertyPath: dialogue.follow_yes
+      value: Volentieri se posso essere di aiuto!
       objectReference: {fileID: 0}
     - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
       propertyPath: dialogue.domande.Array.size
@@ -21173,6 +21380,10 @@ PrefabInstance:
     - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
       propertyPath: dialogue.name
       value: sorella
+      objectReference: {fileID: 0}
+    - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
+      propertyPath: dialogue.follow_yes
+      value: Certo!
       objectReference: {fileID: 0}
     - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
       propertyPath: dialogue.fraseIniziale
@@ -21507,8 +21718,12 @@ PrefabInstance:
       value: sorella
       objectReference: {fileID: 0}
     - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
+      propertyPath: dialogue.follow_yes
+      value: Altro lavoro! Mi rendi una formica felice!
+      objectReference: {fileID: 0}
+    - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
       propertyPath: dialogue.fraseIniziale
-      value: Chi cerca, trova
+      value: 'Andiam, andiam, andiamo a lavorar! '
       objectReference: {fileID: 0}
     - target: {fileID: 5745146182011016171, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
       propertyPath: dialogue.domande.Array.size
