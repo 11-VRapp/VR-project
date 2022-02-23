@@ -21,10 +21,17 @@ public class PlayerLook : MonoBehaviour
     private float xRotation;
     private float yRotation;
 
+    private float sensibilityByPrefs;
+
     private void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+
+        sensibilityByPrefs = PlayerPrefs.GetFloat("masterSen");
+        if(sensibilityByPrefs == 0f)
+            sensibilityByPrefs = 1f;
+
     }
 
     private void Update()
@@ -32,8 +39,8 @@ public class PlayerLook : MonoBehaviour
         mouseX = Input.GetAxisRaw("Mouse X");
         mouseY = Input.GetAxisRaw("Mouse Y");
 
-        yRotation += mouseX * sensX * multiplier * PlayerPrefs.GetFloat("masterSen");
-        xRotation -= mouseY * sensY * multiplier * PlayerPrefs.GetFloat("masterSen");
+        yRotation += mouseX * sensX * multiplier * sensibilityByPrefs;
+        xRotation -= mouseY * sensY * multiplier * sensibilityByPrefs;
 
         xRotation = Mathf.Clamp(xRotation, -90f, 90f);
 
