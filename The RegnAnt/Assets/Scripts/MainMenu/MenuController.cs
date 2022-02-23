@@ -50,6 +50,7 @@ public class MenuController : MonoBehaviour
     [SerializeField] private GameObject _canvas;
     [SerializeField] private AudioSource _backgroundAudio;
     public VideoPlayer VideoPlayer;
+    public VideoClip antCinematic;
 
 
     public void Start()
@@ -94,6 +95,15 @@ public class MenuController : MonoBehaviour
         Screen.SetResolution(resolution.width, resolution.height, Screen.fullScreen);
     }
 
+    void LoadCinematic(VideoPlayer vp)
+    {
+        vp.clip = antCinematic;
+        vp.Play();
+        vp.playbackSpeed = 5;        
+        VideoPlayer.loopPointReached += LoadScene;
+    }
+
+
     void LoadScene(VideoPlayer vp)
     {
         SceneManager.LoadScene(newGameLevel);
@@ -105,7 +115,8 @@ public class MenuController : MonoBehaviour
         _backgroundAudio.Stop();
         VideoPlayer.gameObject.SetActive(true);
         VideoPlayer.Play();
-        VideoPlayer.loopPointReached += LoadScene;
+        //VideoPlayer.loopPointReached += LoadScene;
+        VideoPlayer.loopPointReached += LoadCinematic;        
     }
 
     public void LoadGameDialogYes()
