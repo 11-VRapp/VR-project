@@ -31,6 +31,9 @@ public class EndingManager : MonoBehaviour
     {
         //hideAllObjects();
         _deathPanel.SetActive(true);
+
+        yield return new WaitForSeconds(1f);
+        GetComponent<AudioManager>().Play("Loser");
         yield return StartCoroutine(TypeSentence(_deathText, "SEI MORTO", .5f));
         
         yield return StartCoroutine(TypeSentence(_deathPhrase, "Il tuo sacrificio non sarà vano.\nLa colonia continuerà a vivere e opporsi a ogni ostacolo per garantire la sua sopravvivenza", .1f));
@@ -44,6 +47,8 @@ public class EndingManager : MonoBehaviour
         _winPanel.SetActive(true);
         _winText.transform.DOScale(Vector3.zero, 0f);
         _winText.transform.DOScale(Vector3.one, 2f).SetEase(Ease.InBounce);
+        yield return new WaitForSeconds(1f);
+        GetComponent<AudioManager>().Play("Winner");
         yield return StartCoroutine(TypeSentence(_winPhrase, "Sei riuscito valorosamente a sconfiggere la minaccia insieme alle tue sorelle, ma i nemici della colonia non finiscono mai", .05f));
         yield return StartCoroutine(TypeSentence(_winAchievmentDiary, "Il diario nel menu principale è stato sbloccato", 0f));
 
@@ -63,7 +68,7 @@ public class EndingManager : MonoBehaviour
 
     IEnumerator ToMainScreen()
     {
-        yield return new WaitForSeconds(7f);
+        yield return new WaitForSeconds(13f);
         //Load Main Menu scene
         SceneManager.LoadScene("MainMenu");
     }
