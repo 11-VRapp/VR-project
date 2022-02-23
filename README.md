@@ -81,6 +81,8 @@ Book cover in diary system to: <a href="https://www.vecteezy.com/free-vector/orn
 
 Spider model by: misfit410 <a href="https://skfb.ly/6BGpt"> on sketchfab</a>
 
+Mosquito model by: Branislav<a href="https://sketchfab.com/3d-models/mosquito-fce3bbae949c4966a6cfd9d757deba9b"> on sketchfab</a>
+
 Dialogue UI by <a href="https://opengameart.org/content/ui-pack-buttons-and-dialogue">OpenGameArt</a>
 
 Compass texture by <a href="https://www.vecteezy.com/free-vector/compass">Compass Vectors by Vecteezy</a>

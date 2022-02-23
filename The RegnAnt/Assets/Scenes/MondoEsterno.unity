@@ -1902,6 +1902,82 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 1662916406464404710, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
+--- !u!1 &135551335
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 135551336}
+  - component: {fileID: 135551338}
+  - component: {fileID: 135551337}
+  m_Layer: 5
+  m_Name: MessagePanel
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &135551336
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 135551335}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 918029900}
+  m_Father: {fileID: 1831968569}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 1}
+  m_AnchorMax: {x: 0.5, y: 1}
+  m_AnchoredPosition: {x: -10.200012, y: -50.1}
+  m_SizeDelta: {x: 303.3549, y: 74.1449}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &135551337
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 135551335}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.9811321, g: 0.9811321, b: 0.9811321, a: 0.6117647}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 91829d85ad42cfa41a94feff32a76535, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &135551338
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 135551335}
+  m_CullTransparentMesh: 1
 --- !u!1001 &154010152
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5253,7 +5329,9 @@ MonoBehaviour:
   _railTraceToEnemy: {fileID: 5203534733724316615, guid: a8b51a6fed47f2c4791d6625467ac556, type: 3}
   _fightPosition: {fileID: 1726844765}
   fightScene: SpiderFight
+  _popUp: {fileID: 1831968565}
   _generalAudioManager: {fileID: 522320231}
+  _voiceOverAudioManager: {fileID: 1357503370844725930}
 --- !u!4 &484706568
 Transform:
   m_ObjectHideFlags: 0
@@ -5266,7 +5344,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 16
+  m_RootOrder: 21
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &487350936
 PrefabInstance:
@@ -10286,6 +10364,87 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 969b97bc37c05fd4790e06a519734a1f, type: 3}
+--- !u!1 &918029899
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 918029900}
+  - component: {fileID: 918029902}
+  - component: {fileID: 918029901}
+  m_Layer: 5
+  m_Name: Text
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &918029900
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 918029899}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 135551336}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0.158, y: -1.7402}
+  m_SizeDelta: {x: 273.3113, y: 54.9087}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &918029901
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 918029899}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 14
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 1
+    m_MaxSize: 40
+    m_Alignment: 0
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: 'Ti stai allontanando troppo dal nido
+
+    Rischi di perderti'
+--- !u!222 &918029902
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 918029899}
+  m_CullTransparentMesh: 1
 --- !u!1001 &919020151
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -18789,6 +18948,106 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1401612983035720980, guid: 0adc108727c935c45ae07c35238911f6, type: 3}
   m_PrefabInstance: {fileID: 244027313}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1831968565
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1831968569}
+  - component: {fileID: 1831968568}
+  - component: {fileID: 1831968567}
+  - component: {fileID: 1831968566}
+  m_Layer: 5
+  m_Name: PopUpCanvas
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!114 &1831968566
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1831968565}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IgnoreReversedGraphics: 1
+  m_BlockingObjects: 0
+  m_BlockingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+--- !u!114 &1831968567
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1831968565}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_UiScaleMode: 1
+  m_ReferencePixelsPerUnit: 100
+  m_ScaleFactor: 1
+  m_ReferenceResolution: {x: 800, y: 600}
+  m_ScreenMatchMode: 0
+  m_MatchWidthOrHeight: 0
+  m_PhysicalUnit: 3
+  m_FallbackScreenDPI: 96
+  m_DefaultSpriteDPI: 96
+  m_DynamicPixelsPerUnit: 1
+  m_PresetInfoIsWorld: 0
+--- !u!223 &1831968568
+Canvas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1831968565}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_RenderMode: 0
+  m_Camera: {fileID: 0}
+  m_PlaneDistance: 100
+  m_PixelPerfect: 0
+  m_ReceivesEvents: 1
+  m_OverrideSorting: 0
+  m_OverridePixelPerfect: 0
+  m_SortingBucketNormalizedSize: 0
+  m_AdditionalShaderChannelsFlag: 0
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+  m_TargetDisplay: 0
+--- !u!224 &1831968569
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1831968565}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0, y: 0, z: 0}
+  m_Children:
+  - {fileID: 135551336}
+  m_Father: {fileID: 0}
+  m_RootOrder: 16
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0, y: 0}
 --- !u!1001 &1834793729
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -21208,7 +21467,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!222 &2029457585
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -22692,6 +22951,20 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 194674494131100477, guid: c223bd560e785a04b9bbc2e05f29a037, type: 3}
   m_PrefabInstance: {fileID: 1019376660193055880}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &915168224533389795
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7113576508350295104}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 65.58946, y: 373.8191, z: 97.05394}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 20
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &967702686031987003
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -22819,6 +23092,230 @@ Transform:
   m_Father: {fileID: 757240752629942891}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1357503370844725930
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7113576508350295104}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5870cb0546121184dbb4ee05c4260e22, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  atti:
+  - Name: RAGGIUNTO ESTERNO
+    sounds:
+    - name: N1
+      clip: {fileID: 8300000, guid: 1305bee6e08438b4ba9b3b40d0840182, type: 3}
+      volume: 1
+      pitch: 0.9
+      loop: 0
+      stereoPan: 0
+      audio3D: 0
+      source: {fileID: 0}
+    - name: B1
+      clip: {fileID: 8300000, guid: a7e801884eb679f41a9ee4bbe75bde51, type: 3}
+      volume: 1
+      pitch: 1.2
+      loop: 0
+      stereoPan: 0
+      audio3D: 0
+      source: {fileID: 0}
+    - name: N2
+      clip: {fileID: 8300000, guid: de43d0d1b19d7c04d8b70851a61b083a, type: 3}
+      volume: 1
+      pitch: 0.9
+      loop: 0
+      stereoPan: 0
+      audio3D: 0
+      source: {fileID: 0}
+    - name: B2
+      clip: {fileID: 0}
+      volume: 1
+      pitch: 0.9
+      loop: 0
+      stereoPan: 0
+      audio3D: 0
+      source: {fileID: 0}
+    - name: N3
+      clip: {fileID: 8300000, guid: 3c052b6f1471a0e468e489da86e978b4, type: 3}
+      volume: 1
+      pitch: 1.2
+      loop: 0
+      stereoPan: 0
+      audio3D: 0
+      source: {fileID: 0}
+    - name: B3
+      clip: {fileID: 0}
+      volume: 1
+      pitch: 0.9
+      loop: 0
+      stereoPan: 0
+      audio3D: 0
+      source: {fileID: 0}
+    voiceManager: {fileID: 0}
+  - Name: RAGGIUNTA CIMA ALBERO
+    sounds:
+    - name: N1
+      clip: {fileID: 8300000, guid: 1b02e2c4e240fa347b6834fcf0fdadda, type: 3}
+      volume: 1
+      pitch: 1
+      loop: 0
+      stereoPan: 0
+      audio3D: 0
+      source: {fileID: 0}
+    voiceManager: {fileID: 0}
+  - Name: SCESA ALBERO
+    sounds:
+    - name: N1
+      clip: {fileID: 8300000, guid: e2dac2cd61599334b8092bf3cb07a15d, type: 3}
+      volume: 1
+      pitch: 1
+      loop: 0
+      stereoPan: 0
+      audio3D: 0
+      source: {fileID: 0}
+    - name: B1
+      clip: {fileID: 8300000, guid: 85bc88459bff6c34faa03cd0050181cc, type: 3}
+      volume: 1
+      pitch: 1
+      loop: 0
+      stereoPan: 0
+      audio3D: 0
+      source: {fileID: 0}
+    - name: N2
+      clip: {fileID: 0}
+      volume: 1
+      pitch: 1
+      loop: 0
+      stereoPan: 0
+      audio3D: 0
+      source: {fileID: 0}
+    - name: B2
+      clip: {fileID: 0}
+      volume: 1
+      pitch: 1
+      loop: 0
+      stereoPan: 0
+      audio3D: 0
+      source: {fileID: 0}
+    - name: N3
+      clip: {fileID: 0}
+      volume: 1
+      pitch: 1
+      loop: 0
+      stereoPan: 0
+      audio3D: 0
+      source: {fileID: 0}
+    - name: B3
+      clip: {fileID: 0}
+      volume: 1
+      pitch: 1
+      loop: 0
+      stereoPan: 0
+      audio3D: 0
+      source: {fileID: 0}
+    voiceManager: {fileID: 0}
+  - Name: RAGGIUNTA SCIA FEROMONI
+    sounds:
+    - name: N1
+      clip: {fileID: 8300000, guid: bd3db588f26462749b71480e3c1fd7c1, type: 3}
+      volume: 1
+      pitch: 1
+      loop: 0
+      stereoPan: 0
+      audio3D: 0
+      source: {fileID: 0}
+    - name: B1
+      clip: {fileID: 8300000, guid: 4ed38463128ce8d4db8560d9bbce10f0, type: 3}
+      volume: 1
+      pitch: 1
+      loop: 0
+      stereoPan: 0
+      audio3D: 0
+      source: {fileID: 0}
+    - name: N2
+      clip: {fileID: 8300000, guid: f0c473a9566455649b5048ea9dda2456, type: 3}
+      volume: 1
+      pitch: 1
+      loop: 0
+      stereoPan: 0
+      audio3D: 0
+      source: {fileID: 0}
+    voiceManager: {fileID: 0}
+  - Name: RAGGIUNTO CIBO
+    sounds:
+    - name: N1
+      clip: {fileID: 8300000, guid: 0c6afe9f55bf09044b0080978f089ce5, type: 3}
+      volume: 1
+      pitch: 1
+      loop: 0
+      stereoPan: 0
+      audio3D: 0
+      source: {fileID: 0}
+    - name: N2
+      clip: {fileID: 8300000, guid: c3e10c32770de194cbe646501c649251, type: 3}
+      volume: 1
+      pitch: 1
+      loop: 0
+      stereoPan: 0
+      audio3D: 0
+      source: {fileID: 0}
+    - name: B1
+      clip: {fileID: 8300000, guid: c3e10c32770de194cbe646501c649251, type: 3}
+      volume: 1
+      pitch: 1
+      loop: 0
+      stereoPan: 0
+      audio3D: 0
+      source: {fileID: 0}
+    voiceManager: {fileID: 0}
+  - Name: RAGGIUNTO NIDO
+    sounds:
+    - name: N1
+      clip: {fileID: 8300000, guid: e2dac2cd61599334b8092bf3cb07a15d, type: 3}
+      volume: 1
+      pitch: 1
+      loop: 0
+      stereoPan: 0
+      audio3D: 0
+      source: {fileID: 0}
+    - name: B1
+      clip: {fileID: 8300000, guid: 85bc88459bff6c34faa03cd0050181cc, type: 3}
+      volume: 1
+      pitch: 1
+      loop: 0
+      stereoPan: 0
+      audio3D: 0
+      source: {fileID: 0}
+    - name: N2
+      clip: {fileID: 0}
+      volume: 1
+      pitch: 1
+      loop: 0
+      stereoPan: 0
+      audio3D: 0
+      source: {fileID: 0}
+    - name: B2
+      clip: {fileID: 0}
+      volume: 1
+      pitch: 1
+      loop: 0
+      stereoPan: 0
+      audio3D: 0
+      source: {fileID: 0}
+    - name: N3
+      clip: {fileID: 0}
+      volume: 1
+      pitch: 1
+      loop: 0
+      stereoPan: 0
+      audio3D: 0
+      source: {fileID: 0}
+    voiceManager: {fileID: 0}
+  voiceOverBusy: 0
 --- !u!1 &1494742433205914456
 GameObject:
   m_ObjectHideFlags: 0
@@ -23981,6 +24478,23 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7794364734390179129, guid: 1788e51a922c7504894768f74da99389, type: 3}
   m_PrefabInstance: {fileID: 7066431452645169153}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &7113576508350295104
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 915168224533389795}
+  - component: {fileID: 1357503370844725930}
+  m_Layer: 0
+  m_Name: VoiceOverManager_ext
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!64 &7239094935698144163
 MeshCollider:
   m_ObjectHideFlags: 0
