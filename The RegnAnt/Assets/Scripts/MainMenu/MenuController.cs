@@ -51,6 +51,7 @@ public class MenuController : MonoBehaviour
     [SerializeField] private AudioSource _backgroundAudio;
     public VideoPlayer VideoPlayer;
     public VideoClip antCinematic;
+    [SerializeField] private bool speeded = false;
 
 
     public void Start()
@@ -87,7 +88,20 @@ public class MenuController : MonoBehaviour
                 diaryBtn.interactable = true;
 
         LoadVolumeInfo();
-    }    
+    } 
+
+    void Update()
+    {
+        if(VideoPlayer.gameObject.activeSelf && Input.GetKeyDown(KeyCode.Space))
+        {
+            if(!speeded)
+                VideoPlayer.playbackSpeed = 5;
+            else
+                VideoPlayer.playbackSpeed = 1;
+
+            speeded = !speeded;
+        }
+    }   
 
     public void SetResolution(int resolutionIndex)
     {
@@ -98,8 +112,7 @@ public class MenuController : MonoBehaviour
     void LoadCinematic(VideoPlayer vp)
     {
         vp.clip = antCinematic;
-        vp.Play();
-        vp.playbackSpeed = 5;        
+        vp.Play();         
         VideoPlayer.loopPointReached += LoadScene;
     }
 
